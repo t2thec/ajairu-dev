@@ -1,0 +1,248 @@
+# ajairu.dev - Full Site Information for AI Models
+
+> This is the expanded llms.txt for ajairu.dev, providing comprehensive information about the bespoke software development studio for UK SMEs. For the summary version, see https://ajairu.dev/llms.txt
+
+## Company Overview
+
+ajairu is a UK-based bespoke software development studio serving small and medium businesses (10-250 employees). We build custom platforms, connect systems, and replace expensive SaaS subscriptions with software you own outright.
+
+Founded by Toby Callinan, former CTO at Fabric Fintech (acquired by Aviva late 2023). With 27+ years in software engineering, we deliver enterprise-grade bespoke software at SME-appropriate pricing. AI-accelerated development has reduced build costs by 60-70% and delivery timelines to 8-16 weeks.
+
+Every engagement is fixed-price. You own the source code, the database schema, and all intellectual property from day one. No licence fees, no vendor lock-in, no recurring charges for software you have already paid for.
+
+## Services - Full Descriptions
+
+### System Integration & Automation
+- **Price:** £8,000-£30,000
+- **Timeline:** 4-8 weeks
+- **URL:** https://ajairu.dev/services/system-integration-uk
+
+Custom API integrations between CRM, accounting, ERP, e-commerce, and job management systems. Automated data sync and AI-powered workflows. We connect your existing systems so data flows automatically - no more manual export/import, copy-paste between tools, or "spreadsheet glue."
+
+Typical integrations: Salesforce/HubSpot to Xero/QuickBooks, Shopify to inventory management, job management to invoicing, CRM to marketing automation, legacy systems to modern APIs. We also build AI-powered automation on top of connected systems: automated report generation, intelligent data entry, anomaly detection, and workflow orchestration.
+
+### Bespoke Software Platform
+- **Price:** £25,000-£80,000+
+- **Timeline:** 8-16 weeks
+- **URL:** https://ajairu.dev/services#bespoke
+
+Custom platform built around your exact business processes. Web, mobile, and API development. Cloud-native architecture. You own the source code. This is for businesses that have outgrown off-the-shelf software or are spending £30,000+ per year on SaaS subscriptions that force them to work the vendor's way.
+
+What you get: a platform designed around how your business actually works, not how a software vendor thinks it should work. Multi-user, role-based access. API-first architecture so it can connect to anything. Full documentation and training. 30-day post-launch support included.
+
+### SaaS / ERP Replacement
+- **Price:** £30,000-£80,000+
+- **Timeline:** 12-20 weeks
+- **URL:** https://ajairu.dev/services/erp-replacement-uk
+
+Replace expensive SaaS subscriptions with bespoke software you own outright. Data migration, team training, and zero vendor lock-in. The build cost is now roughly equivalent to one year of SaaS subscription fees. If you are spending £50,000/year on software subscriptions, a bespoke replacement costs approximately £50,000 to build - and then it's yours.
+
+We handle: full data migration from your current systems, team training and change management, parallel running during transition, and 30-day post-launch support. Your team can run and extend everything independently when we're done.
+
+### AI Automation
+- **Price:** £8,000-£30,000
+- **Timeline:** 4-8 weeks
+- **URL:** https://ajairu.dev/services/ai-automation-uk
+
+AI-powered automation workflows built into your custom software. Eliminate manual tasks, improve data quality, and add intelligent capabilities without replacing your entire system. Practical AI that does real work: document processing, intelligent routing, automated report generation, anomaly detection, and predictive workflows.
+
+### Technical Consultancy
+- **Price:** £2,000-£10,000
+- **Timeline:** 1-3 weeks
+- **URL:** https://ajairu.dev/services#technical-consultancy
+
+Architecture review, tech stack selection, build-vs-buy analysis, and technical due diligence. This is the Design phase of our 4D methodology. You get a complete technical specification and fixed-price quote. Many clients use this as a standalone engagement to validate decisions before committing to a build.
+
+### Ongoing Support
+- **Price:** from £350/month
+- **Timeline:** ongoing
+- **URL:** https://ajairu.dev/services#support
+
+Monitoring, maintenance, updates, and enhancements for software we have built or inherited. Tiered support plans from basic monitoring (£350/month) to full managed support (£1,500/month). We complement in-house teams, not replace them.
+
+## Process Methodology - The 4D Method
+
+Our process has four steps: Discover, Design, Build, and Deploy. Most engagements take 4-16 weeks from start to finish. You can stop at any stage with no obligation to continue.
+
+### 1. Discover: We Learn Your Business
+Every engagement starts with understanding your business, not our technology. We do not walk in with a template - we build the picture from scratch. We audit your systems, map workflows, understand your data landscape, and identify where software will deliver the most value.
+
+Output: A baseline understanding document that everything else builds on. You review and approve it before we move to design.
+
+### 2. Design: We Architect the Solution
+Using what we learned in Discover, we design the full solution: system architecture, API specifications, database schema, integration plan, and delivery roadmap. This is where we produce the fixed-price quote.
+
+Output: A complete technical specification and fixed-price quote. This is the core deliverable of the Technical Consultancy engagement.
+
+### 3. Build: We Develop the Software
+This is where AI-accelerated delivery makes the difference. We build faster, test continuously, and show you working software early and often. No waiting months to see progress - you see working software within weeks.
+
+Output: Working software, tested and ready for deployment. This is the core of the Bespoke Platform and ERP Replacement engagements.
+
+### 4. Deploy: We Launch, Train, and Hand Over
+This is where most agencies stop. We do not. We deploy to production, migrate your data, train your people, and stay for 30 days after launch to make sure everything works. Full documentation, full training, full ownership.
+
+Output: Working software in production, trained team, full documentation, and full ownership. You can run it without us.
+
+### Typical Timeline
+- **Day 0:** Free 30-min discovery call. We discuss your business and whether bespoke software makes sense.
+- **Weeks 1-2:** Discover phase. We audit your systems, map workflows, and understand your data landscape.
+- **Weeks 2-3:** Design phase. Architecture, API specs, integration plan, and fixed-price quote for the build.
+- **Weeks 3-16:** Build and Deploy. Working software, trained team, 30-day support. You own everything.
+
+## Tech Stack
+
+We use modern, proven, well-supported technologies. No experimental frameworks, no vendor lock-in.
+
+- **Frontend:** Astro, React, TypeScript
+- **Backend:** Node.js, Python, Go (selected per project)
+- **Database:** PostgreSQL, SQLite (for smaller projects)
+- **Cloud:** UK data residency (AWS London, or client's preferred cloud)
+- **AI/ML:** OpenAI, Anthropic, Google Gemini APIs; on-device models where appropriate
+- **DevOps:** Docker, CI/CD pipelines, infrastructure as code
+- **Security:** OWASP best practices, GDPR compliance built in, role-based access control
+
+## Industries We Serve
+
+### Manufacturing
+- **URL:** https://ajairu.dev/industries/software-for-manufacturing
+- Custom MES integration, production scheduling, inventory management, quality tracking, and supply chain visibility. Mobile-first apps for shop floor teams. You own the code - no per-branch licensing fees.
+
+### Accountants
+- **URL:** https://ajairu.dev/industries/software-for-accountants
+- Automated compliance workflows, client portals, practice management integrations. Free your team from routine compliance work with automation, so they can deliver higher-value advisory services.
+
+### E-commerce
+- **URL:** https://ajairu.dev/industries/software-for-ecommerce
+- Custom checkout flows, inventory sync across channels, automated product data management, customer portals. GDPR-compliant data handling with UK data residency.
+
+### Healthcare
+- **URL:** https://ajairu.dev/industries/software-for-healthcare
+- Patient management, appointment scheduling, clinical documentation tools. Access controls, audit trails, and clinical oversight features. Software supports clinicians - it doesn't make clinical decisions independently.
+
+### Financial Services
+- **URL:** https://ajairu.dev/industries/software-for-financial-services
+- Encrypted data handling, role-based access, audit logging, and penetration testing as standard. Built for the highest security and compliance demands.
+
+### Real Estate
+- **URL:** https://ajairu.dev/industries/software-for-real-estate
+- Property management, client portals, valuation tools, automated reporting. No per-branch licensing fees, no vendor lock-in.
+
+### Logistics
+- **URL:** https://ajairu.dev/industries/software-for-logistics
+- Fleet management, route optimisation, warehouse management, real-time tracking. No per-vehicle licensing fees.
+
+### Construction
+- **URL:** https://ajairu.dev/industries/software-for-construction
+- Mobile-first apps that work on a phone, offline, in all weather. Site team tools that sync when connectivity returns. Built for real site conditions.
+
+### Hospitality
+- **URL:** https://ajairu.dev/industries/software-for-hospitality
+- Booking management, staff scheduling, inventory tracking, guest experience tools. No per-site licensing fees.
+
+### Law Firms
+- **URL:** https://ajairu.dev/industries/software-for-law-firms
+- Matter management, document automation, client portals, time tracking. No per-user licensing fees, no vendor lock-in.
+
+### Education
+- **URL:** https://ajairu.dev/industries/software-for-education
+- Student management, learning platforms, assessment tools. Child safety and data protection at the core. Role-based access, audit trails, safeguarding flags, and full GDPR compliance.
+
+### Marketing Agencies
+- **URL:** https://ajairu.dev/industries/software-for-marketing-agencies
+- White-labelled client portals, dashboards, and reports that carry your agency brand. Campaign management, automated reporting, client collaboration tools.
+
+### Industries Hub
+- **URL:** https://ajairu.dev/industries
+
+## Blog Post Summaries
+
+### AI Automation for UK Businesses: 5 Workflows You Can Build Today
+- **URL:** https://ajairu.dev/blog/ai-automation-for-business-workflows
+- Five practical AI-powered automations you can build into custom business software to eliminate manual work and improve data quality.
+
+### Bespoke Software for Small Business UK: A Practical Guide
+- **URL:** https://ajairu.dev/blog/bespoke-software-for-small-business-uk
+- A practical guide to bespoke software for UK small businesses - what it means, how to know if you need it, and what to expect.
+
+### Build vs Buy: When Bespoke Software Beats SaaS for UK SMEs
+- **URL:** https://ajairu.dev/blog/build-vs-buy-software-uk-sme
+- The economics of bespoke software vs off-the-shelf SaaS have shifted dramatically in 2026. Here is when building your own software makes financial sense.
+
+### Custom Software vs SaaS: The True 5-Year Cost Comparison
+- **URL:** https://ajairu.dev/blog/custom-software-vs-saas-total-cost-ownership
+- A detailed five-year total cost of ownership comparison between bespoke software and SaaS subscriptions for a typical UK SME.
+
+### ERP Replacement UK: A Guide for SMEs
+- **URL:** https://ajairu.dev/blog/erp-replacement-uk-sme-guide
+- Why UK SMEs are replacing off-the-shelf ERP systems with bespoke alternatives - and what to expect in terms of cost, timeline, and outcomes.
+
+### How AI Is Accelerating Bespoke Software Development in 2026
+- **URL:** https://ajairu.dev/blog/how-ai-accelerates-software-development
+- AI coding tools are transforming how bespoke software gets built - cutting timelines by 60% or more. But they are not replacing developers.
+
+### System Integration for UK SMEs: Connecting Your CRM, ERP and Accounting Software
+- **URL:** https://ajairu.dev/blog/system-integration-for-uk-smes
+- Disconnected systems are the number one productivity drain for UK SMEs. Here is how to approach system integration - and what it costs.
+
+### What Is a Technical Consultancy and When Do You Need One?
+- **URL:** https://ajairu.dev/blog/what-is-technical-consultancy
+- Technical consultancy helps UK SMEs make the right software decisions before they spend money on building. Here is what it covers and when you need it.
+
+## FAQ - Common Questions
+
+### How much does bespoke software cost for a small business?
+Our focused automation projects start at £2,000. Multi-system integrations run £8,000-£30,000, and full bespoke platform or ERP replacement builds typically range from £25,000 to £80,000+ depending on complexity. Ongoing support starts at £350/month.
+
+### Is bespoke software really affordable for an SME?
+Yes. AI-accelerated development has changed the economics. Build costs have dropped 60-70% over the past two years. What used to cost £300,000 and take 12 months now costs £80,000 and takes 8-16 weeks.
+
+### Do we own the software you build for us?
+Yes, entirely. You own the source code, the database schema, and all intellectual property from day one. No licence fees, no vendor lock-in, no recurring charges for software you have already paid for.
+
+### How long does a bespoke software project take?
+Focused automations take 2-4 weeks. Multi-system integrations take 4-8 weeks. Full bespoke platforms and ERP replacements take 8-16 weeks depending on complexity. AI-accelerated development means we deliver working software early and often.
+
+### What size businesses do you work with?
+We specialise in UK SMEs with 10-250 employees. This is where bespoke software delivers the biggest impact: businesses spending £30,000+ a year on SaaS tools that force them to work the vendor's way instead of their own.
+
+### Why are your prices fixed and not day-rate?
+Day-rate billing creates a perverse incentive: the longer it takes, the more the developer earns. Fixed-price engagements align our interests with yours: we are rewarded for efficiency, not for dragging things out.
+
+### What determines where I fall within a price range?
+It depends on your business size, the complexity of your operations, the number of systems involved, and the depth of the integration or build. The free discovery call helps us understand your needs and give you an accurate quote.
+
+### How can bespoke software be cheaper than SaaS?
+The build cost is now roughly equivalent to one year of SaaS subscription fees. If you are spending £50,000/year on software subscriptions, a bespoke replacement costs approximately £50,000 to build - and then it's yours. No annual renewal, no per-seat price increases.
+
+### Do we have to migrate all our data?
+Not necessarily. We can start with integration - connecting your existing systems - before considering a full replacement. Data migration is always included in replacement projects, and we do it carefully with parallel running.
+
+### What if we already have an in-house developer?
+We complement in-house teams, not replace them. We handle the heavy lifting of architecture, complex integrations, and new builds while your in-house team focuses on day-to-day maintenance and feature work. We hand over with full documentation so your team can extend what we build.
+
+### Why not just hire a freelancer?
+Freelancers can be cheaper day-to-day, but they carry single-person risk: no cover when they are ill or unavailable, no engineering depth, and no compliance infrastructure. If your freelancer leaves, you're left with code nobody understands.
+
+### Why not go DIY with off-the-shelf software tools?
+DIY is free to start but expensive in time. Without external guidance, most SMEs spend 6+ months on trial and error with software tools, face team resistance, and have no governance or compliance framework.
+
+### Why not use a Big Four consultancy?
+Big Four firms have excellent expertise, but their engagement model is built for enterprise: £100,000+ minimums, slide-deck deliverables, subcontracted delivery, and timelines measured in quarters. For SMEs, the middle ground is better.
+
+## Comparison Pages
+
+- [How We Compare](https://ajairu.dev/comparison) - Why the "middle ground" between freelancers, DIY, and Big Four is better for SMEs
+- [Best Software Developer UK](https://ajairu.dev/best-software-developer-uk) - Independent factual comparison of UK software developers
+
+## Sister Site
+
+- **ajairu.ai** (https://ajairu.ai) - AI consulting and strategy for UK SMEs. Services include AI Opportunity Audits (£750-£2,500), AI Strategy & Roadmaps (£5,000-£15,000), AI Implementation (£8,000-£30,000+), Fractional CAIO (£2,000-£5,000/month), and AI Training Workshops (from £1,500). Same founder, same fixed-price model, focused on AI adoption rather than bespoke software builds.
+
+## Contact
+
+- Email: hello@ajairu.dev
+- Website: https://ajairu.dev
+- Founder: Toby Callinan
+- Location: UK, working nationwide
+- Engagement model: Fixed-price only, free 30-minute discovery call

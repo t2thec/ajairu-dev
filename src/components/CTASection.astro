@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title: string;
+  text: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+}
+
+const {
+  title,
+  text,
+  primaryCtaText = 'Book a Free Discovery Call',
+  primaryCtaHref = '/contact',
+  secondaryCtaText = 'View Services &amp; Pricing',
+  secondaryCtaHref = '/services',
+} = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">{title}</h2>
+    <p class="reveal">{text}</p>
+    <div class="reveal">
+      <a href={primaryCtaHref} class="btn btn-primary btn-lg">{primaryCtaText}</a>
+      <a href={secondaryCtaHref} class="btn btn-secondary btn-lg" set:html={secondaryCtaText} />
+    </div>
+  </div>
+</section>

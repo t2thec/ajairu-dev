@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL, FOUNDER_NAME } from '../../config';
+
+const title = `Fractional CTO UK | Part-Time Chief Technology Officer | ${SITE_NAME}`;
+const description = 'Fractional CTO UK for SMEs. Senior technology leadership without the full-time salary. Tech strategy, architecture decisions, team mentoring, vendor selection, and board reporting. From £2,000/month. Fixed terms, no lock-in.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Fractional CTO UK', 'item': `${SITE_URL}/services/fractional-cto-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Fractional CTO UK',
+  'serviceType': 'Fractional Chief Technology Officer',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Fractional CTO services for UK SMEs. Senior technology leadership on a part-time basis - strategy, architecture, team mentoring, vendor selection, and board reporting without the full-time salary. From £2,000/month.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Advisory (1 day/week)', 'price': '2000', 'priceCurrency': 'GBP', 'description': 'Technology advisory, strategy input, and ad-hoc guidance. 4-5 days per month.' },
+    { '@type': 'Offer', 'name': 'Hands-On (2 days/week)', 'price': '3500', 'priceCurrency': 'GBP', 'description': 'Active technology leadership, architecture decisions, team mentoring, vendor management. 8-10 days per month.' },
+    { '@type': 'Offer', 'name': 'Strategic (3 days/week)', 'price': '5000', 'priceCurrency': 'GBP', 'description': 'Full technology leadership including board reporting, recruitment, roadmap ownership. 12-15 days per month.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'What does a Fractional CTO do?', answer: 'A Fractional CTO provides senior technology leadership on a part-time basis. This includes setting technology strategy, making architecture decisions, evaluating vendors, mentoring your development team, managing technical risk, and reporting to the board. You get the expertise of a Chief Technology Officer without the £150,000+ full-time salary.' },
+  { question: 'How much does a Fractional CTO cost in the UK?', answer: 'Our fractional CTO engagements start from £2,000 per month for advisory-level input (4-5 days per month). A hands-on engagement with active architecture decisions and team mentoring runs £3,500/month (8-10 days). A strategic engagement with board reporting and roadmap ownership is £5,000/month (12-15 days). All are fixed monthly fees with no hidden costs.' },
+  { question: 'How is this different from a technology consultant?', answer: 'A consultant typically delivers a report and leaves. A Fractional CTO is embedded in your business on an ongoing basis - attending leadership meetings, making real decisions, working with your team, and accountable for outcomes. It is a leadership role, not an advisory engagement. You are getting a CTO who happens to work part-time, not a consultant who writes reports.' },
+  { question: 'Do we need a Fractional CTO or a full-time CTO?', answer: 'If you have 10-250 employees and technology is important to your business but you cannot justify a £150,000+ full-time CTO salary, a fractional CTO is the right fit. Most SMEs need senior technology leadership 2-3 days a week, not 5. A fractional arrangement gives you the expertise you need at a fraction of the cost. Many of our clients eventually transition to a full-time CTO as they grow - we help them hire and hand over.' },
+  { question: 'Can a Fractional CTO also build software for us?', answer: 'Yes. Unlike most fractional CTOs who only advise, we also build. If your technology strategy calls for bespoke software, system integration, or AI automation, the same person leading your technology strategy can scope and oversee the build. This means strategy and execution are aligned - no gap between the person who decides what to build and the person who builds it. See our <a href="/services">software development services</a> for build pricing.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer.replace(/<[^>]*>/g, '').replace(/&pound;/g, '\u00a3') },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Fractional CTO UK: Senior Technology Leadership Without the Full-Time Cost</h1>
+      <p>Part-time Chief Technology Officer for UK SMEs. Technology strategy, architecture decisions, team mentoring, and board reporting - without the &pound;150,000+ salary.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Fractional CTO UK'}]} />
+
+  <section class="section">
+    <div class="container">
+      <div class="split-content">
+        <div class="reveal">
+          <span class="eyebrow">Fractional CTO UK</span>
+          <h2>What Is a Fractional CTO?</h2>
+          <p>A Fractional CTO is a senior technology leader who works with your business on a part-time basis. You get the strategic thinking, technical judgement, and leadership experience of a Chief Technology Officer - typically 2-3 days a week - without the cost of a full-time hire.</p>
+          <p style="margin-top:16px;">This is not a consultant who delivers a report and walks away. A Fractional CTO is embedded in your leadership team. They attend management meetings, make real architecture decisions, work with your developers, evaluate vendors, manage technical risk, and report to the board. It is a leadership role that happens to be part-time.</p>
+          <p style="margin-top:16px;">For most UK SMEs with 10-250 employees, this is the sweet spot. You need senior technology leadership, but you do not need it five days a week. A fractional arrangement gives you exactly the expertise you need, at a cost that makes sense for your size.</p>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:16px;justify-content:center;">
+          <div class="card" style="border-left:4px solid var(--blue);">
+            <h3 style="margin:0 0 8px;font-size:1.05rem;">Strategy</h3>
+            <p style="font-size:0.9rem;margin:0;">Technology roadmap aligned to business goals. Build vs buy decisions. Cloud strategy. AI adoption plan.</p>
+          </div>
+          <div class="card" style="border-left:4px solid var(--blue);">
+            <h3 style="margin:0 0 8px;font-size:1.05rem;">Architecture</h3>
+            <p style="font-size:0.9rem;margin:0;">System design, tech stack selection, integration patterns, security architecture, scalability planning.</p>
+          </div>
+          <div class="card" style="border-left:4px solid var(--blue);">
+            <h3 style="margin:0 0 8px;font-size:1.05rem;">Leadership</h3>
+            <p style="font-size:0.9rem;margin:0;">Mentor developers, manage technical recruitment, vendor evaluation, board reporting, risk management.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY YOU NEED IT -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Need a Fractional CTO</h2>
+      <p class="section-subtitle reveal">Most SMEs have technology at the heart of their business but no one owning it at a senior level. Here is what happens without technology leadership.</p>
+      <div class="problem-list">
+        <div class="problem-item reveal">
+          <div class="pct">No Strategy</div>
+          <div class="pcontent">
+            <h4>Technology decisions are reactive</h4>
+            <p>Without a CTO, technology decisions are made ad hoc - by the loudest voice in the room, by whichever vendor sent the best email, or by whoever is left holding the problem. There is no roadmap, no architecture vision, and no one accountable for whether the technology stack actually supports the business strategy.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">No Owner</div>
+          <div class="pcontent">
+            <h4>Nobody is accountable for tech outcomes</h4>
+            <p>When the website is slow, the CRM does not integrate, or the database keeps crashing, it lands on whoever is nearby. There is no single person who owns the technology landscape end-to-end, understands how it all fits together, and can make decisions with confidence.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">&pound;150k+</div>
+          <div class="pcontent">
+            <h4>Full-time CTO is too expensive</h4>
+            <p>A full-time CTO in the UK costs &pound;120,000-&pound;180,000+ per year plus benefits, equity, and bonuses. For a 30-person business, that is not realistic. But the need for senior technology leadership does not disappear just because you cannot afford a full-time hire.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">Gap</div>
+          <div class="pcontent">
+            <h4>Strategy and execution are disconnected</h4>
+            <p>When a consultant writes your technology strategy and a different team builds it, the strategy gets lost in translation. A Fractional CTO who can both set strategy and oversee execution ensures what gets built matches what was decided.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">What a Fractional CTO Engagement Includes</h2>
+      <p class="section-subtitle reveal">A structured, embedded engagement - not ad-hoc hours. You know what you are getting every month.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <Icon name="map" size={28} />
+            <h3 style="margin:0;">Technology Strategy</h3>
+          </div>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;">
+            <li>Technology roadmap aligned to business goals</li>
+            <li>Build vs buy recommendations</li>
+            <li>Cloud strategy (AWS, Azure, GCP)</li>
+            <li>AI adoption plan and readiness assessment</li>
+            <li>Technical debt audit and remediation plan</li>
+            <li>Budget planning and cost optimisation</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <Icon name="wrench" size={28} />
+            <h3 style="margin:0;">Architecture &amp; Engineering</h3>
+          </div>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;">
+            <li>System design and architecture decisions</li>
+            <li>Tech stack selection and justification</li>
+            <li>Integration patterns and API strategy</li>
+            <li>Security architecture and GDPR compliance</li>
+            <li>Scalability and performance planning</li>
+            <li>Code review and quality standards</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <Icon name="handshake" size={28} />
+            <h3 style="margin:0;">Leadership &amp; Governance</h3>
+          </div>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;">
+            <li>Developer team mentoring and management</li>
+            <li>Technical recruitment and interviewing</li>
+            <li>Vendor evaluation and contract review</li>
+            <li>Board reporting on technology matters</li>
+            <li>Risk management and mitigation</li>
+            <li>Hiring and handover to a full-time CTO when ready</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENT FROM CONSULTANT -->
+  <section class="section bg-grey">
+    <div class="container">
+      <div class="split-content">
+        <div class="reveal">
+          <h2 class="section-title">How This Is Different From a Technology Consultant</h2>
+          <p style="color:var(--grey-600);line-height:1.7;">A technology consultant typically delivers a report, a slide deck, or a set of recommendations. They are not there when the architecture decision needs to be made on a Tuesday morning. They are not in the Slack channel when production goes down. They do not mentor your developers or review their pull requests.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">A Fractional CTO is embedded. They are part of your leadership team. They attend the meetings, make the calls, work with the team, and are accountable for outcomes. They own the technology function - they just do it part-time.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">And unlike most fractional CTOs, we can also build. If your technology strategy calls for <a href="/services/system-integration-uk">system integration</a>, a <a href="/services/bespoke-crm-development-uk">bespoke CRM</a>, or <a href="/services/ai-automation-uk">AI automation</a>, the same person setting the strategy can scope and oversee the build. Strategy and execution in one place.</p>
+        </div>
+        <div class="reveal">
+          <div class="card" style="padding:24px;">
+            <h3 style="margin:0 0 20px;">Consultant vs Fractional CTO</h3>
+            <table style="width:100%;font-size:0.9rem;border-collapse:collapse;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--grey-200);">
+                  <th style="text-align:left;padding:8px;">Aspect</th>
+                  <th style="text-align:left;padding:8px;">Consultant</th>
+                  <th style="text-align:left;padding:8px;color:var(--blue);">Fractional CTO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--grey-100);">
+                  <td style="padding:10px 8px;">Time commitment</td>
+                  <td style="padding:10px 8px;color:var(--grey-500);">Project-based</td>
+                  <td style="padding:10px 8px;font-weight:500;">Ongoing, embedded</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--grey-100);">
+                  <td style="padding:10px 8px;">Output</td>
+                  <td style="padding:10px 8px;color:var(--grey-500);">Report / deck</td>
+                  <td style="padding:10px 8px;font-weight:500;">Real decisions, working systems</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--grey-100);">
+                  <td style="padding:10px 8px;">Accountability</td>
+                  <td style="padding:10px 8px;color:var(--grey-500);">Delivers report, leaves</td>
+                  <td style="padding:10px 8px;font-weight:500;">Owns outcomes over time</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--grey-100);">
+                  <td style="padding:10px 8px;">Team involvement</td>
+                  <td style="padding:10px 8px;color:var(--grey-500);">Interviews, observes</td>
+                  <td style="padding:10px 8px;font-weight:500;">Mentors, manages, reviews</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--grey-100);">
+                  <td style="padding:10px 8px;">Board presence</td>
+                  <td style="padding:10px 8px;color:var(--grey-500);">One-off presentation</td>
+                  <td style="padding:10px 8px;font-weight:500;">Regular reporting</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 8px;">Can also build</td>
+                  <td style="padding:10px 8px;color:var(--grey-500);">Rarely</td>
+                  <td style="padding:10px 8px;font-weight:500;color:var(--blue);">Yes - strategy + execution</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">Fractional CTO UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed monthly fees. No hidden costs. Cancel with 30 days' notice.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="padding:32px 24px;">
+          <h3 style="font-size:1.1rem;">Advisory</h3>
+          <div style="font-size:2.5rem;font-weight:800;color:var(--blue);margin:12px 0;">&pound;2,000<span style="font-size:1rem;font-weight:400;color:var(--grey-400);">/month</span></div>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-bottom:20px;">4-5 days per month</p>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;">
+            <li>Technology strategy input</li>
+            <li>Ad-hoc architecture guidance</li>
+            <li>Vendor evaluation support</li>
+            <li>Monthly check-in meeting</li>
+            <li>Email/Slack access between days</li>
+          </ul>
+          <p style="font-size:0.85rem;color:var(--grey-400);margin-top:16px;">Best for: SMEs that need a sounding board for technology decisions but have an existing dev team.</p>
+        </div>
+        <div class="card reveal" style="padding:32px 24px;border:2px solid var(--blue);position:relative;">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:600;">Most Popular</div>
+          <h3 style="font-size:1.1rem;">Hands-On</h3>
+          <div style="font-size:2.5rem;font-weight:800;color:var(--blue);margin:12px 0;">&pound;3,500<span style="font-size:1rem;font-weight:400;color:var(--grey-400);">/month</span></div>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-bottom:20px;">8-10 days per month</p>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;">
+            <li>Active technology leadership</li>
+            <li>Architecture decisions and documentation</li>
+            <li>Developer team mentoring</li>
+            <li>Vendor management and contract review</li>
+            <li>Bi-weekly leadership meetings</li>
+            <li>Tech stack audit and roadmap</li>
+          </ul>
+          <p style="font-size:0.85rem;color:var(--grey-400);margin-top:16px;">Best for: SMEs building software or managing complex integrations who need ongoing technical leadership.</p>
+        </div>
+        <div class="card reveal" style="padding:32px 24px;">
+          <h3 style="font-size:1.1rem;">Strategic</h3>
+          <div style="font-size:2.5rem;font-weight:800;color:var(--blue);margin:12px 0;">&pound;5,000<span style="font-size:1rem;font-weight:400;color:var(--grey-400);">/month</span></div>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-bottom:20px;">12-15 days per month</p>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;">
+            <li>Full technology leadership</li>
+            <li>Board reporting and presentations</li>
+            <li>Technical recruitment and interviewing</li>
+            <li>Roadmap ownership and delivery</li>
+            <li>Weekly leadership meetings</li>
+            <li>Full team mentoring and code review</li>
+            <li>Hiring plan for full-time CTO replacement</li>
+          </ul>
+          <p style="font-size:0.85rem;color:var(--grey-400);margin-top:16px;">Best for: SMEs scaling rapidly or preparing for investment/acquisition who need a CTO in the room.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All engagements are month-to-month with 30 days' notice. No long-term contracts. No lock-in.</p>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section bg-grey">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin:0 auto;">
+        <h2 class="section-title">Is a Fractional CTO Right for You?</h2>
+        <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">A Fractional CTO makes sense if you can answer yes to two or more of these:</p>
+        <ul style="font-size:1rem;line-height:2;color:var(--grey-600);margin-top:20px;list-style:none;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--grey-100);">✓ Technology is important to your business but you do not have a senior technology leader</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--grey-100);">✓ You have developers but no one is mentoring them or reviewing their architecture decisions</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--grey-100);">✓ You are making technology decisions by committee or by vendor recommendation</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--grey-100);">✓ You are planning a major software project and need someone to own the technical strategy</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--grey-100);">✓ Your board or investors are asking for technology leadership and reporting</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--grey-100);">✓ You are spending &pound;30,000+ a year on SaaS and do not know if you are getting value</li>
+          <li style="padding:8px 0;">✓ A full-time CTO at &pound;150,000+ is not justified for your current size</li>
+        </ul>
+        <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);margin-top:24px;">If you ticked three or more, a Fractional CTO will pay for itself within months - through better vendor decisions alone, never mind the architecture and team improvements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Fractional CTO UK: Frequently Asked Questions</h2>
+      <p class="section-subtitle reveal">Straight answers to the most common questions about part-time CTO engagements.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Need Technology Leadership Without the Full-Time Cost?"
+    text="Book a free 30-minute call. We'll talk through your business, your technology challenges, and whether a Fractional CTO makes sense for you right now."
+    primaryCtaText="Book a Free Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

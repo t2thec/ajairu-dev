@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+import { getCollection } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection('blog');
+  const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return paginate(sortedPosts, { pageSize: 6, params: { page: undefined } });
+}
+
+const { page } = Astro.props;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': `${SITE_URL}/blog` },
+    ...(page.currentPage > 1 ? [{ '@type': 'ListItem', 'position': 3, 'name': `Page ${page.currentPage}`, 'item': `${SITE_URL}/blog/${page.currentPage}` }] : []),
+  ],
+};
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  'name': `${SITE_NAME} Blog`,
+  'description': 'Practical guides on bespoke software development, system integration, and software automation for UK SMEs.',
+  'url': `${SITE_URL}/blog`,
+  'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+};
+
+const title = page.currentPage > 1 ? `Bespoke Software Development UK | Blog Page ${page.currentPage} | ${SITE_NAME}` : `Bespoke Software Development UK | Blog | ${SITE_NAME}`;
+const description = 'Practical guides on bespoke software development, system integration, and software automation for UK SMEs. Learn about build vs buy, ERP replacement, and custom software solutions.';
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, ...(page.currentPage === 1 ? [blogSchema] : [])]}>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span style="color:rgba(255,255,255,0.8)">Blog{page.currentPage > 1 ? ` - Page ${page.currentPage}` : ''}</span>
+      </div>
+      <span class="eyebrow">Blog</span>
+      <h1>Practical Software Development Guidance for UK SMEs</h1>
+      <p>No hype. No jargon. Just practical advice on bespoke software, system integration, and software automation for small businesses, from a team that's built platforms at enterprise scale and adapted it for SME budgets.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+        {page.data.map((post) => (
+          <article class="blog-card reveal">
+            <a href={`/blog/${post.slug}`} style="display:flex;flex-direction:column;height:100%;">
+              <div class="blog-card-image" style={`background:linear-gradient(135deg,#1a2332,#00a88e);`}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">{post.data.pubDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}{post.data.readTime ? ` | ${post.data.readTime}` : ''}</div>
+                {post.data.tags.length > 0 && (
+                  <div class="blog-tags-row">
+                    {post.data.tags.filter(t => t !== 'AI' && t !== 'UK' && t !== 'SME').map(tag => (
+                      <span class="blog-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+                <span class="read-more">Read article &rarr;</span>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <!-- Pagination -->
+      {page.lastPage > 1 && (
+        <div class="pagination">
+          {page.url.prev && <a href={page.url.prev}>&laquo; Previous</a>}
+          {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((pageNum) => (
+            <a href={pageNum === 1 ? '/blog' : `/blog/${pageNum}`} class={pageNum === page.currentPage ? 'current' : ''}>{pageNum}</a>
+          ))}
+          {page.url.next && <a href={page.url.next}>Next &raquo;</a>}
+        </div>
+      )}
+
+      <hr class="divider" style="margin:56px 0;">
+
+      <div class="newsletter-box reveal">
+        <h3 style="margin-bottom:8px;">Get Practical Software Tips for Your SME</h3>
+        <p style="color:var(--grey-500);">One email per month. No spam. Just practical software guidance for UK small businesses.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="your@email.co.uk" required aria-label="Email address" name="email" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-success" style="display:none;font-weight:600;margin-top:12px;"></p>
+        <p style="font-size:0.8rem;color:var(--grey-500);margin-top:12px;">Unsubscribe anytime. We never share your data.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Want Personalised Advice for Your Business?"
+    text="Reading is good. Doing is better. Book a free 30-minute discovery call and we'll talk through your specific situation."
+  />
+</BaseLayout>
+
+<script is:inline>
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const successMsg = form.parentElement.querySelector('.newsletter-success');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (!email) return;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing...';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          successMsg.textContent = data.message || 'Thanks for subscribing!';
+          successMsg.style.color = 'var(--teal-dark)';
+        } else {
+          successMsg.style.display = 'block';
+          successMsg.textContent = data.error || 'Something went wrong. Please try again.';
+          successMsg.style.color = '#c0392b';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Subscribe';
+        }
+      } catch (err) {
+        successMsg.style.display = 'block';
+        successMsg.textContent = 'Network error. Please try again.';
+        successMsg.style.color = '#c0392b';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Subscribe';
+      }
+    });
+  });
+</script>

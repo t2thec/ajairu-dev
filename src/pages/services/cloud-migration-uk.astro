@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Cloud Migration Services UK | AWS Azure GCP | ${SITE_NAME}`;
+const description = 'Cloud migration services UK for SMEs. Move from on-premise to AWS, Azure, or GCP with lift-and-shift or re-architecture strategies. Cost optimisation, security, and zero downtime. From £8,000. Fixed-price, you own the infrastructure.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Cloud Migration Services UK', 'item': `${SITE_URL}/services/cloud-migration-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Cloud Migration Services UK',
+  'serviceType': 'Cloud Migration & Infrastructure Modernisation',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Cloud migration services for UK SMEs. Move from on-premise servers to AWS, Azure, or Google Cloud with lift-and-shift or re-architecture strategies. Cost optimisation, security best practices, and zero-downtime migration. Fixed-price, you own the infrastructure.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single Workload Migration', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Migrate one application or workload to the cloud with lift-and-shift. 3-5 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-Workload Migration', 'price': '18000', 'priceCurrency': 'GBP', 'description': 'Migrate 3-5 workloads with cost optimisation and security hardening. 6-10 weeks.' },
+    { '@type': 'Offer', 'name': 'Full Cloud Transformation', 'price': '35000', 'priceCurrency': 'GBP', 'description': 'Complete cloud migration with re-architecture, CI/CD, and ongoing optimisation. 10-16 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does cloud migration cost in the UK?', answer: 'Migrating a single workload to the cloud starts from £8,000. Migrating 3-5 workloads with cost optimisation and security hardening typically costs £15,000 to £25,000. Full cloud transformations with re-architecture and CI/CD pipelines range from £30,000 to £50,000+. Note that cloud provider usage costs (AWS, Azure, GCP) are separate and billed directly to you - we help you minimise them.' },
+  { question: 'Which cloud provider should we choose: AWS, Azure, or GCP?', answer: 'It depends on your existing systems, team skills, and specific needs. AWS has the largest market share and the broadest service catalogue - a safe default for most SMEs. Azure integrates deeply with Microsoft products (Office 365, Active Directory, Windows Server), making it the natural choice if you are a Microsoft shop. Google Cloud excels in data analytics, machine learning, and containerised workloads. We help you choose based on your actual requirements, not marketing hype.' },
+  { question: 'Will there be downtime during the migration?', answer: 'No. We plan migrations to achieve zero or near-zero downtime. For most workloads, we run the cloud environment in parallel with your on-premise systems, sync data continuously, and cut over during a low-traffic window (often a weekend). For critical systems, we use blue-green deployment - the new environment runs alongside the old one until we verify everything works, then we switch. Your users should not notice the migration happened.' },
+  { question: 'Can you reduce our cloud costs after migration?', answer: 'Yes. Cost optimisation is built into every migration we do. We right-size instances (no over-provisioning), use auto-scaling (pay for what you use, not what you might need), implement reserved instances for predictable workloads, and set up cost alerts. Most UK SMEs see 30-50% cost savings compared to their initial cloud setup. We also provide ongoing cost monitoring as part of our support packages.' },
+  { question: 'How do you secure our systems in the cloud?', answer: 'Every cloud migration includes security best practices: encrypted data at rest and in transit, network security groups and firewalls, IAM (identity and access management) with least-privilege principles, regular security patching, and UK data residency where required. We follow CIS benchmarks and can configure compliance-specific controls for GDPR, PCI-DSS, or ISO 27001. Security is designed in from the start, not bolted on after migration.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Cloud Migration Services UK for SMEs</h1>
+      <p>Move your systems to the cloud without the risk. We plan and execute migrations to AWS, Azure, or Google Cloud - with zero downtime, cost optimisation built in, and security hardening as standard. Whether you need a simple lift-and-shift or a full re-architecture, we get you there safely.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Cloud Migration UK'}]} />
+
+  <!-- WHY MIGRATE TO CLOUD -->
+  <section class="section" id="why-cloud">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">Why Migrate to the Cloud? (In Plain English)</h2>
+      <p class="section-subtitle reveal">If you are running servers in a cupboard, here is why the cloud makes sense for your business.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Running your own servers means buying hardware that sits idle 90% of the time, paying someone to maintain it, and hoping it does not fail over a bank holiday weekend. The cloud changes that model. Instead of buying servers, you rent computing power on demand - pay for what you use, scale up when you are busy, scale down when you are quiet. No hardware to replace every five years, no server room to cool, no 3am phone calls when a disk fails.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">For UK SMEs, the cloud also means better security (cloud providers invest more in security than most businesses can), better reliability (99.9%+ uptime guarantees), and better disaster recovery (your data is replicated across multiple data centres). And if your business grows, you scale by clicking a button - not by ordering, racking, and configuring a new server. Cloud migration is not about following a trend. It is about reducing cost, reducing risk, and giving your business the flexibility to grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWS VS AZURE VS GCP -->
+  <section class="section bg-grey" id="providers">
+    <div class="container">
+      <h2 class="section-title reveal">AWS vs Azure vs GCP: Choosing Your Cloud Provider</h2>
+      <p class="section-subtitle reveal">Three major cloud providers. We help you choose the one that fits your business - not the one with the best marketing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">AWS (Amazon Web Services)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Most SMEs. The largest service catalogue and the biggest community.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">AWS has the largest market share, the broadest range of services, and the most extensive documentation and community support. If you are not sure which provider to choose, AWS is the safe default. It excels in compute, storage, databases, and serverless computing. UK regions (London) available for data residency.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Ideal if:</strong> You want maximum flexibility and the widest range of services.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Microsoft Azure</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Businesses invested in Microsoft - Office 365, Active Directory, Windows Server.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">Azure integrates deeply with Microsoft products. If your team already uses Office 365, Active Directory, or Windows Server, Azure feels familiar and connects seamlessly. Strong enterprise credentials and hybrid cloud capabilities. UK regions (London, Cardiff) available for data residency.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Ideal if:</strong> You are a Microsoft shop or need hybrid cloud (on-premise + cloud).</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Google Cloud (GCP)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Data analytics, machine learning, and containerised workloads.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">GCP excels in data engineering, big data analytics, and machine learning. It has the best Kubernetes (container) support of any provider and competitive pricing with sustained-use discounts. If your business involves large-scale data processing or AI, GCP is worth serious consideration. UK region (London) available.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Ideal if:</strong> Data analytics, ML, or containers are central to your strategy.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Not sure which provider fits your business? The free discovery call will clarify this in 30 minutes. <a href="/contact">Book yours now</a>.</p>
+    </div>
+  </section>
+
+  <!-- MIGRATION STRATEGIES -->
+  <section class="section" id="strategies">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Technical Approach</span>
+      <h2 class="section-title reveal">Migration Strategies: Lift-and-Shift vs Re-Architect</h2>
+      <p class="section-subtitle reveal">Two main approaches to cloud migration. We help you choose the right one for each workload.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Lift-and-Shift (Rehost)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>What it means:</strong> Move your application to the cloud as-is, without changing its architecture. It is the fastest and cheapest way to migrate.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Applications that work fine as-is and where speed is the priority. Legacy systems you want out of your server room quickly. Workloads where the cost of re-architecting does not justify the benefit.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Pros:</strong> Fast (3-5 weeks per workload), low cost, minimal risk. You get the benefits of cloud infrastructure (reliability, security, no hardware) without rewriting your application.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cons:</strong> You miss out on cloud-native features (auto-scaling, serverless). Cost savings are modest until you optimise.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £8,000 per workload</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Re-Architect (Refactor)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>What it means:</strong> Redesign your application to take advantage of cloud-native features - auto-scaling, serverless, managed databases, microservices.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Applications that need better performance, scalability, or cost-efficiency. Systems you are investing in long-term. Workloads with variable traffic that would benefit from auto-scaling.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Pros:</strong> Maximum cloud benefits - auto-scaling, pay-per-use, better performance, lower ongoing costs. Future-proof architecture.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cons:</strong> Slower (8-16 weeks), higher upfront cost. But the long-term savings usually justify the investment.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £15,000 per workload</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Most migrations use a mix of both - lift-and-shift for stable systems, re-architect for systems that need it. We help you decide which is which.</p>
+    </div>
+  </section>
+
+  <!-- COST OPTIMISATION -->
+  <section class="section bg-grey" id="cost-optimisation">
+    <div class="container">
+      <h2 class="section-title reveal">Cloud Cost Optimisation: Stop Overpaying</h2>
+      <p class="section-subtitle reveal">Most businesses waste 30-50% of their cloud spend. We fix that - during migration and ongoing.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3 style="font-size:1.1rem;">Right-Sizing</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">No over-provisioning. We match instance sizes to actual usage patterns. Most workloads need half the capacity they are allocated.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="bolt" /></div>
+          <h3 style="font-size:1.1rem;">Auto-Scaling</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Scale up when busy, scale down when quiet. Pay for what you use, not what you might need at peak. Typically saves 40-60%.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="tag" /></div>
+          <h3 style="font-size:1.1rem;">Reserved Instances</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Commit to predictable workloads and save up to 72% vs on-demand pricing. We identify which workloads qualify.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="bell" /></div>
+          <h3 style="font-size:1.1rem;">Cost Alerts</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Automatic alerts when spending exceeds expected thresholds. No surprise bills. Full visibility into where every pound goes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET AFTER MIGRATION -->
+  <section class="section bg-grey" id="what-you-get">
+    <div class="container">
+      <h2 class="section-title reveal">What Changes After Migration</h2>
+      <p class="section-subtitle reveal">The benefits are not just technical. They are operational, financial, and strategic.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>No More Hardware Headaches</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">No servers to buy, rack, cool, or replace. No 3am calls when a disk fails. No hardware maintenance contracts. No server room. No UPS. Your infrastructure is managed by a cloud provider with a 99.9%+ uptime SLA, redundant power, and global data centres. You focus on your business, not your hardware.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Scale on Demand</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Busy period? Add capacity with a click. Quiet period? Remove it. Auto-scaling handles traffic spikes automatically - your website stays fast during a marketing campaign, your app handles Black Friday, your reporting runs in seconds even with years of data. You never over-provision or under-deliver again.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Better Disaster Recovery</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Your data is replicated across multiple data centres. If one fails, another takes over automatically. Backups are automated and tested. Disaster recovery that would cost tens of thousands to set up on-premise is included in your cloud bill. Your business survives hardware failures, power cuts, and even regional outages.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Faster Innovation</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Cloud providers release new services every week - AI tools, managed databases, serverless computing, analytics. You can use them immediately, without buying hardware or waiting for procurement. Need to add <a href="/services/ai-automation-uk">AI automation</a> to your app? Spin up a managed AI service in minutes. Need a data warehouse? Click a button. The cloud gives you capabilities that would take months to set up on-premise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Assess, Plan, Migrate, Optimise</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that de-risks every cloud migration.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Assess</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We inventory your current infrastructure, map dependencies between systems, and assess each workload for cloud readiness. You get a clear picture of what you have and what it will take to migrate.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Plan</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We create a migration plan - which workloads to move first, which strategy to use for each, timeline, cost estimates, and rollback procedures. You approve the plan before any migration begins.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Migrate</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We execute the migration with zero or near-zero downtime. Parallel running, data sync, and controlled cut-over. You can verify everything works in the cloud before we switch off the old systems.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Optimise</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">After migration, we right-size instances, set up auto-scaling, configure cost alerts, and harden security. 30 days of post-migration support is included. You own the infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section bg-grey" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Cloud Migration Services UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. Cloud provider usage costs are separate and billed directly to you.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single Workload</div>
+          <h3>Lift-and-Shift Migration</h3>
+          <div class="pricing-price">from £8,000</div>
+          <div class="pricing-duration">3-5 weeks</div>
+          <ul class="pricing-features">
+            <li>Migrate one application to the cloud</li>
+            <li>Lift-and-shift strategy</li>
+            <li>Zero-downtime cut-over</li>
+            <li>Basic security hardening</li>
+            <li>Cost right-sizing</li>
+            <li>30-day post-migration support</li>
+            <li>You own the infrastructure</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Multi-Workload</div>
+          <h3>3-5 Workloads + Optimisation</h3>
+          <div class="pricing-price">£15,000 - £25,000</div>
+          <div class="pricing-duration">6-10 weeks</div>
+          <ul class="pricing-features">
+            <li>Migrate 3-5 workloads</li>
+            <li>Mixed lift-and-shift and re-architect</li>
+            <li>Cost optimisation and auto-scaling</li>
+            <li>Security hardening (CIS benchmarks)</li>
+            <li>Monitoring and alerting</li>
+            <li>UK data residency configuration</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full Transformation</div>
+          <h3>Complete Cloud Migration</h3>
+          <div class="pricing-price">£30,000 - £50,000+</div>
+          <div class="pricing-duration">10-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Full infrastructure migration</li>
+            <li>Re-architecture to cloud-native</li>
+            <li>CI/CD pipelines and automation</li>
+            <li>Advanced security and compliance</li>
+            <li>Disaster recovery setup</li>
+            <li>Ongoing cost optimisation</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. Cloud provider costs (AWS/Azure/GCP) are separate. <a href="/services">See all our services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Cloud Migration Services</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Zero-Downtime Migration</h3>
+          <p style="color:var(--grey-600);">Parallel running, data sync, and controlled cut-over mean your users do not notice the migration. We verify everything works in the cloud before switching off the old systems. Rollback procedures are in place if anything goes wrong.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Cost Optimisation Built In</h3>
+          <p style="color:var(--grey-600);">Most businesses waste 30-50% of their cloud spend. We right-size, auto-scale, and configure cost alerts from day one. You start saving money the moment migration is complete, not after an expensive audit months later.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Infrastructure</h3>
+          <p style="color:var(--grey-600);">Your cloud accounts, your billing, your control. We set everything up in your name and hand over full access. No managed service lock-in, no markups on your cloud bill. You can maintain the infrastructure yourself or with any partner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Cloud Migration FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about cloud migration.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Move to the Cloud Safely?"
+    text="Book a free 30-minute discovery call. We will assess your current infrastructure, recommend the right provider and strategy, and give you a fixed-price quote - with honest advice about which workloads should move and which should stay."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

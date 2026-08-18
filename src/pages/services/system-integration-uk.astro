@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `System Integration Services UK | API & Software Integration | ${SITE_NAME}`;
+const description = 'System integration services UK for SMEs. We connect your CRM, accounting, ERP, e-commerce, and job management systems with custom APIs. From £8,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'System Integration UK', 'item': `${SITE_URL}/services/system-integration-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'System Integration Services UK',
+  'serviceType': 'System Integration & API Development',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'System integration services for UK SMEs. Custom API integrations connecting CRM, accounting, ERP, e-commerce, and job management systems. Automated data sync, routing, and AI-powered workflows.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single System Integration', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Custom API integration between two systems (e.g. CRM + accounting). 4-6 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-System Integration', 'price': '15000', 'priceCurrency': 'GBP', 'description': 'Integration of 3+ systems with automated workflows and dashboards. 6-10 weeks.' },
+    { '@type': 'Offer', 'name': 'Enterprise Integration Suite', 'price': '30000', 'priceCurrency': 'GBP', 'description': 'Full integration platform with monitoring, error handling, and AI automation. 8-12 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'What does system integration cost for a UK SME?', answer: 'A single integration between two systems (for example, connecting your CRM to your accounting software) starts from £8,000. Multi-system integrations involving three or more platforms typically range from £15,000 to £30,000. All engagements are fixed-price, so you know the total cost before we start.' },
+  { question: 'How long does a system integration project take?', answer: 'Single integrations take 4-6 weeks. Multi-system integrations take 6-10 weeks. Full integration suites with monitoring and AI automation take 8-12 weeks. AI-accelerated development means we deliver in weeks what traditional agencies take months to build.' },
+  { question: 'Can you integrate with our existing systems?', answer: 'Yes. We work with the systems you already use - Salesforce, HubSpot, Xero, QuickBooks, Sage, Shopify, WooCommerce, and many others. If a system has an API, we can integrate with it. If it does not, we can often build a custom connector or use middleware to bridge the gap.' },
+  { question: 'Do we own the integration code?', answer: 'Yes, entirely. You own the source code, the integration logic, and all intellectual property from day one. No licence fees, no vendor lock-in, no recurring charges for integrations you have already paid for. Your team can extend and maintain the code independently.' },
+  { question: 'What happens if an API changes or breaks?', answer: 'Every integration we build includes error handling, retry logic, and monitoring. If an API changes, we are notified automatically and can fix the integration before it affects your business. Ongoing support is available from £350/month, but you are never locked in - you own the code and can maintain it yourself or with any developer.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>System Integration Services UK for SMEs</h1>
+      <p>Stop copying data between systems manually. We connect your CRM, accounting, ERP, e-commerce, and job management tools with custom APIs and automated workflows - so every system in your business talks to every other system, in real time.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'System Integration UK'}]} />
+
+  <!-- WHAT IS SYSTEM INTEGRATION -->
+  <section class="section" id="what-is-integration">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">What System Integration Means (In Plain English)</h2>
+      <p class="section-subtitle reveal">No jargon. Here is what system integration actually does for your business.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">System integration means making your separate software tools talk to each other automatically. Instead of your team manually copying a customer's details from your CRM into your accounting system, the two systems share that data instantly. Instead of checking three different dashboards to see your sales, inventory, and invoices, you see everything in one place.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">For UK SMEs, system integration is usually the fastest and most affordable way to eliminate manual admin work. You do not need to replace your existing software - you just need to connect it. That is what our system integration services do for businesses across the UK.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON SCENARIOS -->
+  <section class="section bg-grey" id="scenarios">
+    <div class="container">
+      <h2 class="section-title reveal">Common Integration Scenarios for UK SMEs</h2>
+      <p class="section-subtitle reveal">These are the integrations we build most often for UK small and medium-sized businesses.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>CRM + Accounting</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">When a deal closes in your CRM, the customer is automatically created in your accounting system. Invoices sync without manual entry. Payment status flows back to sales. No more double-keying customer data between Salesforce or HubSpot and Xero, QuickBooks, or Sage.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="cart" /></div>
+          <h3>ERP + E-commerce</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Orders from your Shopify or WooCommerce store flow directly into your ERP for fulfilment. Stock levels update in real time across all channels. Pricing changes in the ERP reflect instantly on the website. Your e-commerce platform and back office are always in sync.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Job Management + Invoicing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Completed jobs in your job management system automatically generate invoices in your accounting software. Time sheets sync with payroll. Job costs roll up into financial reports. Your operations team and finance team share the same data without manual reconciliation.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">These are just the most common patterns. If your systems are disconnected, we can integrate them. <a href="/contact">Book a free call</a> to discuss your specific setup.</p>
+    </div>
+  </section>
+
+  <!-- API APPROACHES -->
+  <section class="section" id="api-approaches">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Technical Approach</span>
+      <h2 class="section-title reveal">API Integration Approaches: Custom APIs vs Middleware vs iPaaS</h2>
+      <p class="section-subtitle reveal">Three ways to connect your systems. We help you choose the right one for your business.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Custom APIs</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Systems with good APIs that just need someone to connect them.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">We write custom code that calls each system's API directly. Data flows point-to-point between your tools. This is the most lightweight approach - fast to build, easy to maintain, and you own every line of code. Most single integrations between two systems use this approach.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £8,000</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Middleware</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Systems that do not have APIs, or where you need data transformation between formats.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">We build a lightweight middleware layer that sits between your systems. It handles data transformation, routing, and error handling. This is ideal when your systems speak different languages - for example, when your legacy ERP exports CSV files but your CRM expects JSON.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £12,000</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">iPaaS (Integration Platform)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Businesses with 4+ systems that need a centralised integration platform with monitoring.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">We deploy a custom integration platform that manages all connections from one place. It includes dashboards, alerting, retry logic, and audit trails. This is the enterprise-grade approach, scaled down for SMEs. You get full visibility into every data flow across your business.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £20,000</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Not sure which approach fits your business? The free discovery call will clarify this in 30 minutes. <a href="/contact">Book yours now</a>.</p>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section bg-grey" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Discover, Design, Build, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that de-risks every integration project.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We map your current systems, data flows, and pain points. We identify which integrations will deliver the most value and document the technical requirements. No assumptions - we see exactly how your business operates.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the integration architecture - which approach to use, how data will flow, what happens when things go wrong. You approve the design before any code is written. You see exactly what you are getting.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the integration using AI-accelerated development. You get weekly demos and can test against your real data in a staging environment. Nothing goes live until you have signed off.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production with monitoring, alerting, and rollback procedures. Your team gets documentation and training. 30 days of post-launch support is included. You own all the code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">System Integration Services UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single Integration</div>
+          <h3>Two-System Connection</h3>
+          <div class="pricing-price">from £8,000</div>
+          <div class="pricing-duration">4-6 weeks</div>
+          <ul class="pricing-features">
+            <li>Custom API integration between two systems</li>
+            <li>Bi-directional data sync</li>
+            <li>Error handling and retry logic</li>
+            <li>Documentation and team training</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Multi-System</div>
+          <h3>Three+ System Integration</h3>
+          <div class="pricing-price">£15,000 - £30,000</div>
+          <div class="pricing-duration">6-10 weeks</div>
+          <ul class="pricing-features">
+            <li>Integration of 3+ systems</li>
+            <li>Automated workflows and data routing</li>
+            <li>Real-time dashboards</li>
+            <li>AI-powered automation where applicable</li>
+            <li>Monitoring and alerting</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full Platform</div>
+          <h3>Integration Suite + AI</h3>
+          <div class="pricing-price">£25,000 - £30,000+</div>
+          <div class="pricing-duration">8-12 weeks</div>
+          <ul class="pricing-features">
+            <li>Centralised integration platform</li>
+            <li>Custom middleware and iPaaS</li>
+            <li>AI-powered document processing</li>
+            <li>Full audit trails and compliance logging</li>
+            <li>Enterprise-grade monitoring</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-grey" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our System Integration Services</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, documentation, and deployment rights. No ongoing licence fees, no vendor lock-in. Your team can maintain and extend the integration independently.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Fixed-Price, Always</h3>
+          <p style="color:var(--grey-600);">You know the total cost before we start. No day rates, no open-ended billing. If the scope changes, we agree the new price before proceeding - never a surprise invoice.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Built for UK Businesses</h3>
+          <p style="color:var(--grey-600);">GDPR-compliant, UK data residency, and security best practices built in. We understand the compliance landscape UK SMEs operate in, from financial services to healthcare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">System Integration FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about system integration.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Connect Your Systems?"
+    text="Book a free 30-minute discovery call. We will map your current systems, identify the highest-impact integrations, and give you a fixed-price quote - even if that means telling you an off-the-shelf tool would do the job."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

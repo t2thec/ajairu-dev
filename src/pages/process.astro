@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Software Development Process | How It Works | ${SITE_NAME}`;
+const description = 'Our 4-step software development methodology: Discover, Design, Build, Deploy. A proven process for bespoke software development in UK SMEs. Fixed-price, jargon-free, outcome-focused.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'How It Works', 'item': `${SITE_URL}/process` },
+  ],
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  'name': 'How to Build Bespoke Software for a Small Business',
+  'description': 'A 4-step methodology for bespoke software development in UK SMEs: Discover, Design, Build, Deploy.',
+  'step': [
+    { '@type': 'HowToStep', 'position': 1, 'name': 'Discover', 'text': 'We learn your business, operations, existing systems, team, and goals. We audit your current tech stack, map your workflows, and understand your data landscape.' },
+    { '@type': 'HowToStep', 'position': 2, 'name': 'Design', 'text': 'We architect the solution: system design, API specifications, database schema, integration plan, build-vs-buy decisions for each component, and a delivery roadmap.' },
+    { '@type': 'HowToStep', 'position': 3, 'name': 'Build', 'text': 'We develop the software using AI-accelerated engineering. Regular demos, iterative feedback, and transparent progress. You see working software early and often.' },
+    { '@type': 'HowToStep', 'position': 4, 'name': 'Deploy', 'text': 'We deploy to production, migrate your data, train your team, and provide 30 days of post-launch support. Full documentation and handover. You own everything.' },
+  ],
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, howToSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How Bespoke Software Development Works, Step by Step</h1>
+      <p>Our process has four steps: Discover, Design, Build, and Deploy. Most engagements take 4-16 weeks from start to finish. You can stop at any stage with no obligation to continue.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'How It Works'}]} />
+
+  <!-- PROCESS OVERVIEW -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">The 4D Methodology</h2>
+      <p class="section-subtitle reveal">Discover, Design, Build, Deploy. A methodology refined through enterprise platform projects, adapted for SME timelines and budgets. AI-accelerated delivery at every stage.</p>
+      <ProcessSteps />
+    </div>
+  </section>
+
+  <!-- DETAILED STEPS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <!-- Step 1: Discover -->
+      <div class="split-content reveal" style="margin-bottom:64px;">
+        <div class="split-visual" role="img" aria-label="Discovery phase: learning about the client's business and systems">
+          <img src="/images/process-discover.jpg" alt="Software discovery phase: auditing business systems and workflows" width="1200" height="800" />
+        </div>
+        <div>
+          <span class="eyebrow">Step 1, Week 1</span>
+          <h2>Discover: We Learn Your Business</h2>
+          <p>Every engagement starts with understanding your business, not our technology. We do not walk in with a template, we build the picture from scratch.</p>
+          <ul style="list-style:none;margin-top:16px;">
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Interviews with leadership and key team members</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Audit of your current tech stack and software ecosystem</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Workflow mapping, how work actually gets done (not how it is documented)</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Data landscape review, what data you have, where it lives, quality</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Integration audit, which systems talk to each other and which do not</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Business goals and constraints, what success looks like for you</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9rem;color:var(--grey-500);"><strong>Output:</strong> A baseline understanding document that everything else builds on. You review and approve it before we move to design.</p>
+        </div>
+      </div>
+
+      <!-- Step 2: Design -->
+      <div class="split-content reveal" style="margin-bottom:64px;">
+        <div>
+          <span class="eyebrow">Step 2, Weeks 1-3</span>
+          <h2>Design: We Architect the Solution</h2>
+          <p>Using what we learned in Discover, we design the full solution: system architecture, API specifications, database schema, integration plan, and delivery roadmap.</p>
+          <ul style="list-style:none;margin-top:16px;">
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> System architecture design (cloud, database, APIs, frontend)</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Build vs buy analysis for each component</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Integration architecture, how new software connects to existing systems</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Data flow design, where data moves, how it is protected</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Security and compliance design (GDPR, UK data residency)</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Delivery roadmap with milestones and demo points</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Fixed-price quote for the full build</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9rem;color:var(--grey-500);"><strong>Output:</strong> A complete technical specification and fixed-price quote. This is the core deliverable of the <a href="/services#technical-consultancy">Technical Consultancy</a> engagement.</p>
+        </div>
+        <div class="split-visual" role="img" aria-label="Design phase: architecting the software solution">
+          <img src="/images/process-design.jpg" alt="Software architecture and integration design for UK SMEs" width="1200" height="800" />
+        </div>
+      </div>
+
+      <!-- Step 3: Build -->
+      <div class="split-content reveal" style="margin-bottom:64px;">
+        <div class="split-visual" role="img" aria-label="Build phase: developing the bespoke software">
+          <img src="/images/process-build.jpg" alt="AI-accelerated bespoke software development for UK SMEs" width="1200" height="800" />
+        </div>
+        <div>
+          <span class="eyebrow">Step 3, Weeks 3-14</span>
+          <h2>Build: We Develop the Software</h2>
+          <p>This is where AI-accelerated delivery makes the difference. We build faster, test continuously, and show you working software early and often. No waiting months to see a result.</p>
+          <ul style="list-style:none;margin-top:16px;">
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> AI-accelerated development (60-70% faster than traditional)</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Weekly demos, you see progress every week</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Automated testing built in from day one</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> API integrations with your existing tools</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Security review and penetration testing</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Documentation written alongside the code</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> UAT (user acceptance testing) with your team</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9rem;color:var(--grey-500);"><strong>Output:</strong> Working software, tested and ready for deployment. This is the core of the <a href="/services#bespoke">Bespoke Platform</a> and <a href="/services#erp-replacement">ERP Replacement</a> engagements.</p>
+        </div>
+      </div>
+
+      <!-- Step 4: Deploy -->
+      <div class="split-content reveal">
+        <div>
+          <span class="eyebrow">Step 4, Weeks 14-16</span>
+          <h2>Deploy: We Launch, Train, and Hand Over</h2>
+          <p>This is where most agencies stop. We do not. We deploy to production, migrate your data, train your people, and stay for 30 days after launch to make sure everything works.</p>
+          <ul style="list-style:none;margin-top:16px;">
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Production deployment (AWS, Azure, or GCP)</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Data migration from existing systems</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Team training sessions (group + 1:1)</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Full documentation, system docs, user guides, troubleshooting</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> 30-day post-launch support, we are there when things go live</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Monitoring and alerting setup</li>
+            <li style="padding:8px 0;display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--teal-dark);font-weight:700;flex-shrink:0;">&#x2713;</span> Source code handover, everything is yours</li>
+          </ul>
+          <p style="margin-top:16px;font-size:0.9rem;color:var(--grey-500);"><strong>Output:</strong> Working software in production, trained team, full documentation, and full ownership. You can run it without us.</p>
+        </div>
+        <div class="split-visual" role="img" aria-label="Deployment phase: launching and handing over the software">
+          <img src="/images/process-deploy.jpg" alt="Software deployment and team training for UK SMEs" width="1200" height="1800" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Typical Timeline</h2>
+      <p class="section-subtitle reveal">From first call to working software. Every project is different, but here is what the journey typically looks like.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chat" /></div>
+          <h3>Day 0</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">Free 30-min discovery call. We discuss your business and whether bespoke software makes sense.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="search" /></div>
+          <h3>Weeks 1-2</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">Discover phase. We audit your systems, map workflows, and understand your data landscape.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="map" /></div>
+          <h3>Weeks 2-3</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">Design phase. Architecture, API specs, integration plan, and fixed-price quote for the build.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="wrench" /></div>
+          <h3>Weeks 3-16</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">Build and Deploy. Working software, trained team, 30-day support. You own everything.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">You can stop at any stage. Discovery is self-contained. Design is self-contained. No lock-in.</p>
+    </div>
+  </section>
+
+  <!-- WHY THIS PROCESS WORKS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Why This Process Works for SMEs</h2>
+      <p class="section-subtitle reveal">It is designed around the realities of running a 10-250 person business, not enterprise workflows.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>De-risks Investment</h3>
+          <p>The &pound;2,000 technical consultancy tells you whether bespoke makes sense before you spend &pound;50,000. You make informed decisions at each stage, not blind leaps.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Stoppable at Any Point</h3>
+          <p>Each phase delivers standalone value. If discovery shows bespoke is not right for you yet, you have spent &pound;2,000, not &pound;50,000. No pressure to continue.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3>Built for Real Teams</h3>
+          <p>Your team is not a software development department, and that is fine. The process works with the skills you have and builds the skills you need through training and documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Start with Discover?"
+    text="Book a free 30-minute call. We'll talk through your business and decide together whether bespoke software is the right starting point."
+  />
+</BaseLayout>

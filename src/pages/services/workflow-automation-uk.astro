@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Workflow Automation UK | Business Process Automation | ${SITE_NAME}`;
+const description = 'Workflow automation UK for SMEs. Automate invoice processing, order fulfilment, customer onboarding, and approval workflows. Stop manual admin, save hours every week. From £8,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Workflow Automation UK', 'item': `${SITE_URL}/services/workflow-automation-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Workflow Automation UK',
+  'serviceType': 'Business Process Automation',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Workflow automation services for UK SMEs. Automate manual business processes - invoice processing, order fulfilment, customer onboarding, approval workflows, and document handling. Eliminate admin, reduce errors, and save hours every week. Fixed-price, you own the code.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single Workflow Automation', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Automate one business process end-to-end. 3-5 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-Workflow Suite', 'price': '18000', 'priceCurrency': 'GBP', 'description': 'Automate 3-5 connected workflows with dashboards. 6-10 weeks.' },
+    { '@type': 'Offer', 'name': 'Enterprise Automation Platform', 'price': '35000', 'priceCurrency': 'GBP', 'description': 'Full automation platform with AI, monitoring, and analytics. 10-16 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does workflow automation cost in the UK?', answer: 'Automating a single business process starts from £8,000. Automating 3-5 connected workflows with dashboards typically costs £15,000 to £25,000. Full enterprise automation platforms with AI, monitoring, and analytics range from £30,000 to £50,000+. All projects are fixed-price - you know the total cost before we start. Most UK SMEs recover the cost within 6-12 months through time saved.' },
+  { question: 'What is the difference between workflow automation and system integration?', answer: 'System integration connects your systems so data flows between them automatically (see our <a href="/services/system-integration-uk">system integration services</a>). Workflow automation goes further - it automates entire business processes that may involve multiple systems, human approvals, conditional logic, document generation, and notifications. Integration is about data moving between systems. Automation is about processes running without manual intervention. They overlap, but automation is the bigger picture.' },
+  { question: 'Which processes should we automate first?', answer: 'Start with processes that are repetitive, rule-based, and time-consuming. The best candidates are: invoice processing (data entry from PDFs), order fulfilment (status updates across systems), customer onboarding (welcome sequences, account setup), and approval workflows (purchase orders, leave requests). We help you identify the highest-ROI processes during the discovery call - the ones that save the most hours per week and have the fewest exceptions.' },
+  { question: 'Can automation handle processes that need human judgement?', answer: 'Yes. Most business processes are not fully automatable - they need human judgement at certain points. We design workflows that automate the routine parts and route to a human only when judgement is needed. For example, an invoice processing workflow reads the invoice, extracts the data, checks it against purchase orders, and routes to a human only if there is a discrepancy. Your team handles exceptions, not routine work.' },
+  { question: 'Do we own the automation code?', answer: 'Yes, entirely. You own the source code, the workflow logic, and all configurations from day one. No licence fees, no per-transaction charges, no vendor lock-in. Your team can modify and extend the automation independently, or we can provide ongoing support from £350/month. You are never trapped with a single supplier - the automation is yours.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Workflow Automation UK for SMEs</h1>
+      <p>Stop paying skilled people to do repetitive admin. We automate your manual business processes - invoice processing, order fulfilment, customer onboarding, approval workflows - so your team focuses on work that actually needs a human. Save hours every week, eliminate errors, and scale without hiring.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Workflow Automation UK'}]} />
+
+  <!-- WHAT IS WORKFLOW AUTOMATION -->
+  <section class="section" id="what-is-automation">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">What Workflow Automation Means (In Plain English)</h2>
+      <p class="section-subtitle reveal">If your team does the same sequence of tasks every day, a computer should be doing it instead.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Workflow automation means taking a manual, multi-step business process and making it run automatically, without human intervention at every step. Instead of a person opening an email, reading an invoice, typing the details into your accounting system, checking the purchase order, and sending an approval request - the system does all of that. It reads the invoice, extracts the data, checks it against the PO, routes it for approval if needed, and creates the record in your accounting software. The human only gets involved when something needs judgement.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">For UK SMEs, the impact is significant. A process that takes a person 30 minutes a day takes a computer 30 seconds - and the computer does not make typing errors, forget a step, or take holidays. Multiply that across every repetitive process in your business, and you are saving dozens of hours per week. That is time your team can spend on sales, customer service, or strategic work - the things that actually grow your business. Workflow automation is not about replacing people. It is about freeing them from drudgery so they can do the work they were hired for. It also improves consistency and quality. A computer applies the same rules every time, in the same order, with the same checks. There is no variation based on who is doing the work, how tired they are, or how busy the office is. Your processes become reliable, auditable, and scalable - without the variability that human performance introduces. For regulated industries, that consistency is not just a benefit - it is a compliance requirement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANUAL VS AUTOMATED -->
+  <section class="section bg-grey" id="manual-vs-automated">
+    <div class="container">
+      <h2 class="section-title reveal">Manual vs Automated: The Real Difference</h2>
+      <p class="section-subtitle reveal">Same process, two approaches. The numbers speak for themselves.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--grey-500);">Manual Invoice Processing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Step 1:</strong> Open email, download invoice PDF</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 2:</strong> Open accounting system, type in supplier, date, amounts</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 3:</strong> Find the purchase order, check it matches</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 4:</strong> Email manager for approval</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 5:</strong> Wait for reply, then approve in system</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 6:</strong> File the invoice, update spreadsheet</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Time per invoice:</strong> 15-30 minutes</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Errors:</strong> Typing mistakes, missed steps, lost invoices</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>100 invoices/week:</strong> 25-50 hours of skilled labour</p>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--blue);">
+          <h3 style="color:var(--blue);">Automated Invoice Processing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Step 1:</strong> Email arrives - system reads it automatically</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 2:</strong> AI extracts data from the PDF invoice</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 3:</strong> System checks against purchase order automatically</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 4:</strong> Auto-approves if within threshold, routes to human if not</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 5:</strong> Creates record in accounting system automatically</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Step 6:</strong> Files, logs, and notifies - all automatic</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Time per invoice:</strong> 30 seconds (human: 0 seconds if auto-approved)</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Errors:</strong> Near zero - validated at every step</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>100 invoices/week:</strong> 50 minutes of exception handling only</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">That is 24-49 hours saved per week - over half a full-time employee - on one process alone. <a href="/contact">Book a free call</a> to see what you could automate.</p>
+    </div>
+  </section>
+
+  <!-- COMMON SCENARIOS -->
+  <section class="section" id="scenarios">
+    <div class="container">
+      <h2 class="section-title reveal">Common Automation Scenarios for UK SMEs</h2>
+      <p class="section-subtitle reveal">These are the processes we automate most often. Most pay for themselves within months.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="file" /></div>
+          <h3>Invoice Processing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Invoices arrive by email, are read by AI, data is extracted and validated, checked against purchase orders, and created in your accounting system. Discrepancies route to a human. Approved invoices are filed and logged automatically. Eliminates hours of data entry per week. Integrates with Xero, QuickBooks, and Sage.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="cart" /></div>
+          <h3>Order Fulfilment</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Orders from your e-commerce site flow into your ERP for picking and packing. Shipping labels are generated automatically. Tracking numbers are sent to customers. Stock levels update across all channels. Delivery confirmations trigger follow-up emails. The entire fulfilment process runs without manual intervention.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Customer Onboarding</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">New customers get a welcome email, account setup instructions, and a personalised onboarding sequence automatically. Their details are created in your <a href="/services/bespoke-crm-development-uk">CRM</a>, accounting system, and project management tools. Follow-up emails trigger at the right intervals. Your team is notified when action is needed - not when it is not.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="check" /></div>
+          <h3>Approval Workflows</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Purchase orders, leave requests, expense claims, and contract approvals route to the right person automatically. Thresholds determine who approves what. Reminders chase overdue approvals. Approvals are logged for audit. No more chasing emails, lost forms, or "I did not see your request" - the system handles it all.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">These are just the most common scenarios. If a process is repetitive and rule-based, we can automate it. <a href="/contact">Book a free call</a> to discuss your specific workflows.</p>
+    </div>
+  </section>
+
+  <!-- WHEN NOT TO AUTOMATE -->
+  <section class="section bg-grey" id="when-not-to-automate">
+    <div class="container">
+      <h2 class="section-title reveal">When Automation Is NOT the Right Answer</h2>
+      <p class="section-subtitle reveal">Honest advice: not every process should be automated. Here is when we will tell you not to.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--grey-400);">
+          <h3>Too Many Exceptions</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If a process has more exceptions than rules, automation creates more work than it saves. Every exception needs human handling, and the automation becomes a complex tangle of edge cases. In these cases, a simpler partial automation - handling the common cases and routing everything else to a human - is better than trying to automate everything.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--grey-400);">
+          <h3>Process Changes Frequently</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your process changes every few weeks, automation will be a constant maintenance burden. Wait until the process stabilises before automating. We will tell you this honestly during the discovery call - we would rather you automate the right thing at the right time than waste money automating something that is about to change.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--grey-400);">
+          <h3>Volume Is Too Low</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If a process happens once a month and takes 20 minutes, the ROI of automation is negative - the development cost will never be recovered. Automation pays off when a process is repetitive, frequent, and time-consuming. For low-volume tasks, we recommend better tools or templates instead.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">We will always tell you honestly whether automation is the right investment. <a href="/contact">Book a free call</a> for a straight answer.</p>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Discover, Design, Build, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that ensures automation actually fits your business.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We map your current processes - every step, every system, every exception. We identify which processes have the highest automation ROI and document the rules that govern them. No assumptions - we see exactly how work flows through your business.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the automated workflow - triggers, conditions, actions, human touchpoints, and exception handling. You see the full workflow diagram and approve it before any code is written. You know exactly what will be automated and how exceptions are handled.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the automation using AI-accelerated development. You get weekly demos and can test with real data in a staging environment. Edge cases and exceptions are handled before go-live. Nothing runs on real data until you sign off.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production with monitoring, alerting, and error handling. Your team gets training on handling exceptions and monitoring dashboards. 30 days of post-launch support is included. You own all the code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Workflow Automation UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single Workflow</div>
+          <h3>One Process Automated</h3>
+          <div class="pricing-price">from £8,000</div>
+          <div class="pricing-duration">3-5 weeks</div>
+          <ul class="pricing-features">
+            <li>Automate one business process end-to-end</li>
+            <li>System integration (1-2 systems)</li>
+            <li>Conditional logic and routing</li>
+            <li>Email notifications and alerts</li>
+            <li>Basic dashboard and logging</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Multi-Workflow</div>
+          <h3>3-5 Connected Workflows</h3>
+          <div class="pricing-price">£15,000 - £25,000</div>
+          <div class="pricing-duration">6-10 weeks</div>
+          <ul class="pricing-features">
+            <li>Automate 3-5 connected processes</li>
+            <li>Multi-system integration</li>
+            <li>Approval workflows and human touchpoints</li>
+            <li>Real-time dashboards and reporting</li>
+            <li>Error handling and retry logic</li>
+            <li>AI-powered document processing</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full Platform</div>
+          <h3>Enterprise Automation Suite</h3>
+          <div class="pricing-price">£30,000 - £50,000+</div>
+          <div class="pricing-duration">10-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Full automation platform</li>
+            <li>AI-powered document and email processing</li>
+            <li>Custom workflow builder for your team</li>
+            <li>Advanced analytics and audit trails</li>
+            <li>Compliance logging and reporting</li>
+            <li>Enterprise-grade monitoring</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-grey" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Workflow Automation</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, workflow logic, and configurations. No per-transaction fees, no vendor lock-in. Your team can modify and extend the automation independently, or we can provide ongoing support from £350/month. The automation is your asset, not a rental.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Built Around Your Process</h3>
+          <p style="color:var(--grey-600);">We map your actual processes - every step, every exception, every edge case. The automation matches how your business really works, not a generic template. Human touchpoints are designed in where judgement is needed. Your team handles exceptions, not routine work.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Measurable ROI</h3>
+          <p style="color:var(--grey-600);">Every automation project starts with an ROI analysis. We calculate hours saved, error reduction, and cost avoidance before we build. Most UK SMEs recover the project cost within 6-12 months. You see the numbers upfront - no guesswork about whether the investment will pay off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Workflow Automation FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about business process automation.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Stop Paying for Manual Admin?"
+    text="Book a free 30-minute discovery call. We will map your current processes, identify the highest-ROI automation opportunities, and give you a fixed-price quote - with honest advice about which processes are worth automating and which are not."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

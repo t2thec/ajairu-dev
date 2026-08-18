@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../config';
+---
+
+<BaseLayout title={`Page Not Found | ${SITE_NAME}`} description="The page you are looking for could not be found." noindex>
+  <section class="error-page">
+    <div class="container">
+      <h1>404</h1>
+      <p>Sorry, we couldn't find the page you were looking for. It may have been moved or no longer exists.</p>
+      <div>
+        <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+        <a href="/contact" class="btn btn-secondary btn-lg">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

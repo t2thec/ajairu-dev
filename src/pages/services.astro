@@ -1,0 +1,354 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Bespoke Software Development Services UK | Pricing | ${SITE_NAME}`;
+const description = 'Bespoke software development for UK SMEs. System integration from \u00a38,000, bespoke platforms from \u00a325,000, ERP replacement from \u00a330,000. Custom software development UK with transparent pricing. Fixed-price, you own the source code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services & Pricing', 'item': `${SITE_URL}/services` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Bespoke Software Development Services for UK SMEs',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Bespoke software development including system integration, custom platforms, ERP/SaaS replacement, AI automation, technical consultancy, and ongoing support for UK SMEs. Custom software development UK with transparent pricing.',
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'Bespoke Software Development Services',
+    'itemListElement': [
+      { '@type': 'Offer', 'name': 'System Integration & Automation', 'priceRange': '\u00a38,000-\u00a330,000', 'priceCurrency': 'GBP', 'description': 'Custom API integrations between CRM, accounting, ERP, e-commerce, and job management systems. Automated data sync, routing, and AI-powered workflows.' },
+      { '@type': 'Offer', 'name': 'Bespoke Software Platform', 'priceRange': '\u00a325,000-\u00a380,000+', 'priceCurrency': 'GBP', 'description': 'Custom platform built around your exact business processes. Web, mobile, and API development. Cloud-native architecture. You own the source code.' },
+      { '@type': 'Offer', 'name': 'SaaS / ERP Replacement', 'priceRange': '\u00a330,000-\u00a380,000+', 'priceCurrency': 'GBP', 'description': 'Replace expensive SaaS subscriptions with bespoke software you own outright. Data migration, team training, and zero vendor lock-in.' },
+      { '@type': 'Offer', 'name': 'AI Automation', 'priceRange': '\u00a38,000-\u00a330,000', 'priceCurrency': 'GBP', 'description': 'AI-powered workflow automation built into custom business software. Document processing, data extraction, intelligent routing.' },
+      { '@type': 'Offer', 'name': 'Technical Consultancy', 'priceRange': '\u00a32,000-\u00a310,000', 'priceCurrency': 'GBP', 'description': 'Architecture review, tech stack selection, build-vs-buy analysis, and technical due diligence for software projects.' },
+      { '@type': 'Offer', 'name': 'Ongoing Support', 'priceRange': '\u00a3350-\u00a31,500/month', 'priceCurrency': 'GBP', 'description': 'Monitoring, maintenance, updates, and enhancements for software we have built or inherited.' },
+      { '@type': 'Offer', 'name': 'Fractional CTO', 'priceRange': '\u00a32,000+/month', 'priceCurrency': 'GBP', 'description': 'Part-time senior technology leadership. Strategy, architecture decisions, team mentoring, vendor evaluation, and board reporting.' },
+      { '@type': 'Offer', 'name': 'Code Audit & Technical Due Diligence', 'priceRange': '\u00a32,500-\u00a37,500', 'priceCurrency': 'GBP', 'description': 'Code quality, security, architecture, and documentation audit for inherited or acquired software. Clear risk rating and remediation roadmap.' },
+    ],
+  },
+};
+
+const pricingFaqs = [
+  { question: 'Why are your prices fixed and not day-rate?', answer: 'Day-rate billing creates a perverse incentive: the longer it takes, the more the developer earns. Fixed-price engagements align our interests with yours: we are rewarded for efficiency, not for dragging things out. You know the total cost before we start. AI-accelerated development means we deliver faster, and you benefit from the time savings. Our pricing is transparent - no hidden costs, no surprise invoices.' },
+  { question: 'What determines where I fall within a price range?', answer: 'It depends on your business size, the complexity of your operations, the number of systems involved, and the depth of the integration or build. The free discovery call helps us understand your needs and give you a precise quote before anything starts. Our pricing reflects the scope of work, not an arbitrary number. There are no surprise costs.' },
+  { question: 'How can bespoke software be cheaper than SaaS?', answer: 'The build cost is now roughly equivalent to one year of SaaS subscription fees. If you are spending &pound;50,000/year on software subscriptions, a bespoke replacement costs approximately &pound;50,000 to build. After year one, you own it outright with no more licence fees. The break-even is 12-18 months, and you own the asset forever. Our pricing makes bespoke software development accessible to UK SMEs.' },
+  { question: 'Do we have to migrate all our data?', answer: 'Not necessarily. We can start with integration - connecting your existing systems - before considering a full replacement. Data migration is always included in replacement projects, and we do it carefully with validation and rollback procedures. You never lose data during a transition.' },
+  { question: 'What if we already have an in-house developer?', answer: 'We complement in-house teams, not replace them. We handle the heavy lifting of architecture, complex integrations, and new builds while your in-house team focuses on day-to-day maintenance and feature work. We hand over with full documentation so your team can extend what we build. Our pricing is for the project scope only - no ongoing dependency.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': pricingFaqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Bespoke Software Development Services for UK SMEs</h1>
+      <p>Our bespoke software development services start at &pound;2,000 for technical consultancy and range up to &pound;80,000+ for complete bespoke platform builds. Every engagement is fixed-price, you own the source code, and we tell you when off-the-shelf software is the better answer. Custom software development UK pricing is transparent - no hidden costs.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services & Pricing'}]} />
+
+  <!-- PRICING OVERVIEW -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">Bespoke Software Development Services UK: Pricing Guide</h2>
+      <p class="section-subtitle reveal">Transparent pricing for bespoke software development services. Each engagement is self-contained. You can start with integration and stop there, or continue to a full bespoke platform. No lock-in. Our pricing is fixed - you know the total cost before we start.</p>
+      <div class="cards-grid cards-3">
+        <!-- Tier 1: Integration -->
+        <div class="pricing-card reveal" id="integration">
+          <div class="pricing-tier">Tier 1, Connect Your Systems</div>
+          <h3>System Integration &amp; Automation</h3>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:0;">Stop copying data between systems manually. We connect your CRM, accounting, ERP, e-commerce, and job management tools with custom APIs and automated workflows.</p>
+          <div class="pricing-price">&pound;8,000-&pound;30,000</div>
+          <div class="pricing-duration">4-8 weeks</div>
+          <ul class="pricing-features">
+            <li>Custom API integrations between your systems</li>
+            <li>Automated data sync and routing</li>
+            <li>AI-powered workflow automation</li>
+            <li>Real-time dashboards and reporting</li>
+            <li>Error handling and monitoring built in</li>
+            <li>Documentation and team training</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline">System Integration Services UK</a>
+        </div>
+
+        <!-- Tier 2: Bespoke Platform (Featured) -->
+        <div class="pricing-card featured reveal" id="bespoke">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Tier 2, Build Your Platform</div>
+          <h3>Bespoke Software Platform</h3>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:0;">A custom platform built around your exact business processes. Not forced into a vendor's workflow. Engineered to be stable, scalable, and easy to use.</p>
+          <div class="pricing-price">&pound;25,000-&pound;80,000+</div>
+          <div class="pricing-duration">8-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Built around your processes, not a template</li>
+            <li>Web, mobile, and API development</li>
+            <li>Cloud-native architecture (AWS, Azure, GCP)</li>
+            <li>Database design and data migration</li>
+            <li>Full source code and IP ownership</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Build Your Platform</a>
+        </div>
+
+        <!-- Tier 3: ERP Replacement -->
+        <div class="pricing-card reveal" id="erp-replacement">
+          <div class="pricing-tier">Tier 3, Stop Renting</div>
+          <h3>SaaS / ERP Replacement</h3>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:0;">Replace expensive SaaS subscriptions with bespoke software you own outright. The build cost is now roughly one year of subscription fees. Break-even in 12-18 months.</p>
+          <div class="pricing-price">&pound;30,000-&pound;80,000+</div>
+          <div class="pricing-duration">12-20 weeks</div>
+          <ul class="pricing-features">
+            <li>Replace CRM, ERP, job management, or all three</li>
+            <li>Full data migration from existing systems</li>
+            <li>No more licence fees or vendor lock-in</li>
+            <li>Team training and change management</li>
+            <li>30-day post-launch support included</li>
+            <li>You own the source code outright</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline">ERP Replacement UK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI AUTOMATION SECTION (NEW) -->
+  <section class="section bg-grey" id="ai-automation">
+    <div class="container">
+      <h2 class="section-title reveal">AI Automation Services UK</h2>
+      <p class="section-subtitle reveal">AI-powered workflow automation built into your custom software. Not chatbots - real workflow automation that eliminates manual admin work. Pricing from &pound;8,000 for a single AI workflow.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="color:var(--blue);">Single AI Workflow</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">from &pound;8,000</div>
+          <div class="pricing-duration" style="margin-bottom:16px;">4-6 weeks</div>
+          <p style="color:var(--grey-600);font-size:0.9rem;">One AI-powered automation - invoice processing, document classification, or data extraction. Built into your existing systems with human-in-the-loop exception handling.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="color:var(--blue);">Multi-Workflow Automation</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">&pound;15,000-&pound;30,000</div>
+          <div class="pricing-duration" style="margin-bottom:16px;">6-10 weeks</div>
+          <p style="color:var(--grey-600);font-size:0.9rem;">Multiple AI workflows across your systems. Automated routing, decision-making, and real-time dashboards. The most common engagement for SMEs ready to automate at scale.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="color:var(--blue);">Full AI Platform</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">&pound;25,000-&pound;30,000+</div>
+          <div class="pricing-duration" style="margin-bottom:16px;">8-12 weeks</div>
+          <p style="color:var(--grey-600);font-size:0.9rem;">Comprehensive AI automation platform with custom models, RAG pipelines, and enterprise-grade monitoring. Full GDPR compliance and UK data residency.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/services/ai-automation-uk" class="btn btn-outline">Learn More About AI Automation Services UK</a></p>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL SERVICES -->
+  <section class="section" id="additional-services">
+    <div class="container">
+      <h2 class="section-title reveal">Consultancy &amp; Support Services</h2>
+      <p class="section-subtitle reveal">Beyond project-based work, we offer technical consultancy and ongoing support to keep your software running. Pricing is transparent and fixed.</p>
+      <div class="cards-grid cards-2">
+        <!-- Technical Consultancy -->
+        <div class="card reveal" id="technical-consultancy">
+          <div class="card-icon"><Icon name="briefcase" /></div>
+          <h3>Technical Consultancy</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">&pound;2,000-&pound;10,000</div>
+          <div class="pricing-duration" style="margin-bottom:20px;">1-3 weeks, Fixed scope</div>
+          <p>Not sure whether to build or buy? Need an architecture review or tech stack assessment? We provide honest, vendor-neutral technical advice to help you make the right decision before you commit to a build.</p>
+          <ul>
+            <li>Architecture review and tech stack selection</li>
+            <li>Build vs buy analysis for your specific needs</li>
+            <li>Technical due diligence for software projects</li>
+            <li>Code review and quality assessment</li>
+            <li>Cloud migration strategy</li>
+            <li>API design and integration planning</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline mt-2">Enquire about Consultancy</a>
+        </div>
+
+        <!-- Ongoing Support -->
+        <div class="card reveal" id="support">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3>Ongoing Support &amp; Maintenance</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">from &pound;350<span style="font-size:0.85rem;font-weight:500;color:var(--grey-500);"> /month</span></div>
+          <div class="pricing-duration" style="margin-bottom:20px;">Ongoing, Flexible commitment</div>
+          <p>Software needs maintenance. APIs change, dependencies update, edge cases emerge. Our support retainer keeps your software running smoothly with monitoring, updates, and enhancements as your business evolves.</p>
+          <ul>
+            <li>Monitoring and alerting setup</li>
+            <li>Security patches and dependency updates</li>
+            <li>Bug fixes and performance optimisation</li>
+            <li>Small feature enhancements</li>
+            <li>Monthly health check reports</li>
+            <li>Flexible, scale up or down month to month</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline mt-2">Enquire about Support</a>
+        </div>
+
+        <!-- Fractional CTO -->
+        <div class="card reveal" id="fractional-cto">
+          <div class="card-icon"><Icon name="rocket" /></div>
+          <h3>Fractional CTO</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">from &pound;2,000<span style="font-size:0.85rem;font-weight:500;color:var(--grey-500);"> /month</span></div>
+          <div class="pricing-duration" style="margin-bottom:20px;">Part-time, 4-15 days per month</div>
+          <p>Senior technology leadership without the &pound;150,000+ full-time salary. Strategy, architecture decisions, team mentoring, vendor evaluation, and board reporting. Embedded in your leadership team, not a consultant who delivers a report and leaves.</p>
+          <ul>
+            <li>Technology strategy and roadmap</li>
+            <li>Architecture decisions and tech stack selection</li>
+            <li>Developer team mentoring and management</li>
+            <li>Vendor evaluation and contract review</li>
+            <li>Board reporting and risk management</li>
+            <li>Can also scope and oversee software builds</li>
+          </ul>
+          <a href="/services/fractional-cto-uk" class="btn btn-primary mt-2">Learn about Fractional CTO</a>
+        </div>
+
+        <!-- Code Audit & Technical Due Diligence -->
+        <div class="card reveal" id="code-audit">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Code Audit &amp; Technical Due Diligence</h3>
+          <div class="pricing-price" style="font-size:1.6rem;margin:12px 0;">&pound;2,500-&pound;7,500</div>
+          <div class="pricing-duration" style="margin-bottom:20px;">1-2 weeks, Fixed scope</div>
+          <p>Buying a company with a codebase? Inherited software from a departed developer? Considering open-sourcing or re-platforming? We audit the code, architecture, security, and documentation so you know exactly what you are getting into before you commit.</p>
+          <ul>
+            <li>Code quality and maintainability assessment</li>
+            <li>Security vulnerabilities and GDPR compliance check</li>
+            <li>Architecture review and technical debt inventory</li>
+            <li>Documentation and knowledge transfer gaps</li>
+            <li>Infrastructure and deployment review</li>
+            <li>Clear risk rating and remediation roadmap</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline mt-2">Enquire about Code Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BESPOKE FOR SMEs -->
+  <section class="section bg-grey" id="why-bespoke-smes">
+    <div class="container">
+      <h2 class="section-title reveal">Bespoke Software Development for SMEs</h2>
+      <p class="section-subtitle reveal">Why custom software development UK makes financial sense for small and medium-sized businesses now - and why it did not five years ago.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">The Old Economics</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Five years ago, bespoke software development was only viable for enterprises with six-figure budgets. A custom platform cost &pound;300,000-&pound;700,000 and took 12-18 months to build. SMEs were stuck with off-the-shelf SaaS tools that fit at 60-70% and cost &pound;30,000-&pound;80,000 per year in subscriptions - forever. There was no realistic alternative.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">The pricing gap between bespoke and SaaS was too wide. The build timelines were too long. The risk was too high. So SMEs rented software they would never own, adapted their processes to fit vendor templates, and accepted annual price increases as an unavoidable cost of doing business.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">The New Economics</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">AI-accelerated development has changed everything. Build costs have dropped 60-70%. What cost &pound;300,000 now costs &pound;80,000. What took 12 months now takes 8-16 weeks. The break-even point against SaaS subscriptions has collapsed from 6-14 years to 12-18 months.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">For the first time, bespoke software development for SMEs is a rational financial decision, not a luxury. Our pricing reflects this new reality. A custom platform that replaces &pound;50,000/year in SaaS subscriptions costs roughly &pound;50,000 to build. After year one, you own it outright. The pricing math works.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">This is why SMEs are the fastest-growing segment of the custom software development UK market, growing at 20.15% CAGR - outpacing enterprise for the first time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section" id="whats-included">
+    <div class="container">
+      <h2 class="section-title reveal">What's Different About Our Approach to Bespoke Software Development</h2>
+      <p class="section-subtitle reveal">We are engineers, not a report factory. Every engagement delivers working software you can actually use. As your bespoke software development partner, we focus on outcomes, not slideware. Our pricing includes everything you need - no surprise add-ons.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>ROI in Every Project</h3>
+          <p>Every build includes estimated time saved, cost reduction, or revenue impact. You make decisions based on numbers, not hype. The build-vs-buy calculation is done before we start, and our pricing reflects the expected ROI.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>Your Tech Stack, Enhanced</h3>
+          <p>We start with what you already have. No rip-and-replace, no forcing you onto a platform you do not use. We integrate, extend, and build on top of your existing systems - whether that is <a href="/services/system-integration-uk">system integration</a> or a full <a href="/services/erp-replacement-uk">ERP replacement</a>.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Compliance Built-In</h3>
+          <p>GDPR, UK data residency, and security best practices are part of every build, not an expensive add-on. Your data stays in the UK. No third-party model training on your data. Our pricing includes compliance from day one.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>You Own the Result</h3>
+          <p>Full source code, documentation, and deployment rights. When the engagement ends, your team can run and extend everything independently. No dependency on us. No ongoing licence fees. The pricing is for the build - ownership is included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TRANSPARENCY -->
+  <section class="section bg-grey" id="pricing-transparency">
+    <div class="container">
+      <h2 class="section-title reveal">Pricing Transparency: What You Pay and What You Get</h2>
+      <p class="section-subtitle reveal">We believe in transparent pricing. Here is exactly what our bespoke software development services cost and what is included.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>What Our Pricing Includes</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Discovery and scoping</strong> - we map your requirements before quoting</li>
+            <li><strong>Design and architecture</strong> - you approve the design before building</li>
+            <li><strong>Full development</strong> - AI-accelerated build with weekly demos</li>
+            <li><strong>Data migration</strong> - from existing systems, with validation</li>
+            <li><strong>Testing and QA</strong> - against your real data in staging</li>
+            <li><strong>Deployment</strong> - to production with monitoring and alerting</li>
+            <li><strong>Documentation</strong> - full technical docs and user guides</li>
+            <li><strong>Team training</strong> - your team can run and extend the software</li>
+            <li><strong>30-day post-launch support</strong> - included in every project</li>
+            <li><strong>Source code ownership</strong> - you own everything, outright</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>What Our Pricing Does Not Include</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>No day-rate billing</strong> - fixed prices only, agreed before we start</li>
+            <li><strong>No ongoing licence fees</strong> - you own the software after build</li>
+            <li><strong>No vendor lock-in</strong> - any developer can maintain the code</li>
+            <li><strong>No hidden costs</strong> - the price we quote is the price you pay</li>
+            <li><strong>No surprise scope changes</strong> - we agree scope changes in writing first</li>
+            <li><strong>No per-user pricing</strong> - unlimited users, no per-seat charges</li>
+            <li><strong>No per-transaction fees</strong> - no usage-based pricing, ever</li>
+            <li><strong>No mandatory support contracts</strong> - support is optional from &pound;350/month</li>
+            <li><strong>No IP retention</strong> - your intellectual property, not ours</li>
+            <li><strong>No exit fees</strong> - walk away with everything at any time</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Our pricing is designed to be honest and transparent. If you want a detailed quote for your specific needs, <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- PRICING FAQ -->
+  <section class="section" id="pricing-faq">
+    <div class="container">
+      <h2 class="section-title reveal">Pricing &amp; Engagement FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers about our bespoke software development pricing and engagement model.</p>
+      <FAQ items={pricingFaqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Which Service You Need?"
+    text="That is exactly what the free discovery call is for. We will talk through your situation and recommend the right starting point, even if that is off-the-shelf software instead of a bespoke build. Our pricing is transparent - you will know the cost before we start."
+    secondaryCtaText="See How It Works"
+    secondaryCtaHref="/process"
+  />
+</BaseLayout>

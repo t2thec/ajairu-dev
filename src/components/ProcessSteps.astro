@@ -1,0 +1,19 @@
+---
+const steps = [
+  { num: 1, title: 'Discover', desc: 'We learn your business, systems, workflows, and goals. We audit your tech stack and map your data landscape. No assumptions, no templates.' },
+  { num: 2, title: 'Design', desc: 'We architect the solution: system design, API specs, database schema, integration plan, and build-vs-buy analysis for each component.' },
+  { num: 3, title: 'Build', desc: 'We develop the software using AI-accelerated engineering. Weekly demos, continuous testing, and transparent progress. You see working software early.' },
+  { num: 4, title: 'Deploy', desc: 'We deploy to production, migrate your data, train your team, and stay for 30 days of support. Full source code handover. You own everything.' },
+];
+---
+
+<div class="process-steps">
+  <div class="process-line"></div>
+  {steps.map((step) => (
+    <div class="process-step reveal">
+      <div class="process-step-num">{step.num}</div>
+      <h3>{step.title}</h3>
+      <p>{step.desc}</p>
+    </div>
+  ))}
+</div>

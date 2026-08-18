@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Terms of Service | ${SITE_NAME}`;
+const description = `Terms of Service for ${SITE_NAME}. The terms and conditions governing use of our website and bespoke software development services.`;
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span style="color:rgba(255,255,255,0.8)">Terms of Service</span>
+      </div>
+      <span class="eyebrow">Legal</span>
+      <h1>Terms of Service</h1>
+      <p>The terms governing use of our website and services.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Terms of Service'}]} />
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <p><strong>Last updated:</strong> August 2026</p>
+
+        <p>These Terms of Service ("Terms") govern your use of the {SITE_NAME} website and our bespoke software development services. By using this website or engaging our services, you agree to these Terms.</p>
+
+        <h2>Website Use</h2>
+        <p>You may use this website for personal and commercial research purposes. You may not:</p>
+        <ul>
+          <li>Scrape, copy, or republish our content without permission.</li>
+          <li>Use the website in any way that breaches UK law.</li>
+          <li>Attempt to gain unauthorised access to any part of the website.</li>
+          <li>Introduce viruses, malware, or other harmful code.</li>
+        </ul>
+
+        <h2>Intellectual Property</h2>
+        <p>All content on this website, including text, graphics, logos, and design, is the property of {SITE_NAME} or its licensors and is protected by UK intellectual property law. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+
+        <h2>Consulting Services</h2>
+        <p>Our bespoke software development services are provided under separate engagement agreements. Each engagement has its own scope, deliverables, and pricing, as agreed in writing before work begins. All engagements are fixed-price unless otherwise stated.</p>
+
+        <h2>No Warranty</h2>
+        <p>This website is provided "as is" without warranty of any kind. We do not guarantee that the information on this site is accurate, complete, or current. Software technology is evolving rapidly, and recommendations made on this site or in our blog may become outdated.</p>
+
+        <h2>Service Limitations</h2>
+        <p>Bespoke software is a tool, not a guarantee of outcomes. While we use our best efforts to deliver valuable results, we cannot guarantee specific business outcomes from software development. ROI estimates provided in our reports are estimates based on available information and are not guarantees of future performance.</p>
+
+        <h2>Liability</h2>
+        <p>To the maximum extent permitted by law, {SITE_NAME} shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of this website or our services. Our total liability for any claim arising from a consulting engagement shall not exceed the fees paid for that specific engagement.</p>
+
+        <h2>Confidentiality</h2>
+        <p>We respect the confidentiality of all client information. Details of your business, operations, and data shared during engagements are kept strictly confidential and are covered by separate confidentiality agreements where appropriate.</p>
+
+        <h2>Data Protection</h2>
+        <p>Our use of your personal data is governed by our <a href="/privacy">Privacy Policy</a> and complies with UK GDPR and the Data Protection Act 2018.</p>
+
+        <h2>Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+        <h2>Changes to Terms</h2>
+        <p>We may update these Terms from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the website after changes constitutes acceptance of the new Terms.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions about these Terms, please contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

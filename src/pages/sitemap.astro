@@ -1,0 +1,171 @@
+---
+import { SITE_NAME, SITE_URL, INDUSTRIES } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Sitemap';
+const description = 'Complete index of all pages on ajairu.dev - bespoke software development services, industry guides, blog posts, and company information.';
+
+const mainPages = [
+  { url: '/', label: 'Home' },
+  { url: '/services/', label: 'Services' },
+  { url: '/about/', label: 'About Us' },
+  { url: '/process/', label: 'Our Process' },
+  { url: '/assessment/', label: 'Free Assessment' },
+  { url: '/guide/', label: 'Free Guide' },
+  { url: '/comparison/', label: 'Why Choose Us' },
+  { url: '/best-software-developer-uk/', label: 'Best Software Developer UK' },
+  { url: '/contact/', label: 'Contact' },
+  { url: '/blog/', label: 'Blog' },
+];
+
+const services = [
+  { url: '/services/bespoke-crm-development-uk/', label: 'Bespoke CRM Development' },
+  { url: '/services/custom-web-portal-uk/', label: 'Custom Web Portal Development' },
+  { url: '/services/database-development-uk/', label: 'Database Development' },
+  { url: '/services/custom-api-development-uk/', label: 'Custom API Development' },
+  { url: '/services/system-integration-uk/', label: 'System Integration' },
+  { url: '/services/workflow-automation-uk/', label: 'Workflow Automation' },
+  { url: '/services/ai-automation-uk/', label: 'AI Automation' },
+  { url: '/services/mobile-app-development-uk/', label: 'Mobile App Development' },
+  { url: '/services/erp-replacement-uk/', label: 'ERP Replacement' },
+  { url: '/services/legacy-modernisation-uk/', label: 'Legacy Modernisation' },
+  { url: '/services/cloud-migration-uk/', label: 'Cloud Migration' },
+  { url: '/services/fractional-cto-uk/', label: 'Fractional CTO' },
+];
+
+const industryPages = [
+  ...INDUSTRIES.map(i => ({ url: `/industries/${i.slug}/`, label: i.name })),
+  { url: '/industries/software-for-construction/', label: 'Software for Construction' },
+  { url: '/industries/software-for-hospitality/', label: 'Software for Hospitality' },
+  { url: '/industries/software-for-law-firms/', label: 'Software for Law Firms' },
+  { url: '/industries/software-for-education/', label: 'Software for Education' },
+  { url: '/industries/software-for-marketing-agencies/', label: 'Software for Marketing Agencies' },
+  { url: '/industries/software-for-agriculture-uk/', label: 'Software for Agriculture' },
+  { url: '/industries/software-for-creative-agencies-uk/', label: 'Software for Creative Agencies' },
+  { url: '/industries/software-for-ecommerce/', label: 'Software for E-commerce' },
+  { url: '/industries/software-for-healthcare/', label: 'Software for Healthcare' },
+  { url: '/industries/software-for-financial-services/', label: 'Software for Financial Services' },
+  { url: '/industries/software-for-real-estate/', label: 'Software for Real Estate' },
+  { url: '/industries/software-for-logistics/', label: 'Software for Logistics' },
+  { url: '/industries/software-for-manufacturing/', label: 'Software for Manufacturing' },
+  { url: '/industries/software-for-accountants/', label: 'Software for Accountants' },
+  { url: '/industries/software-for-facilities-management-uk/', label: 'Software for Facilities Management' },
+  { url: '/industries/software-for-insurance-uk/', label: 'Software for Insurance' },
+  { url: '/industries/software-for-nonprofits-uk/', label: 'Software for Nonprofits' },
+  { url: '/industries/software-for-property-management-uk/', label: 'Software for Property Management' },
+  { url: '/industries/software-for-recruitment-uk/', label: 'Software for Recruitment' },
+  { url: '/industries/software-for-retail-uk/', label: 'Software for Retail' },
+  { url: '/industries/software-for-trades-uk/', label: 'Software for Trades' },
+  { url: '/industries/software-for-transport-uk/', label: 'Software for Transport' },
+];
+
+const blogPosts = [
+  { url: '/blog/bespoke-software-for-small-business-uk/', label: 'Bespoke Software for Small Business UK' },
+  { url: '/blog/build-vs-buy-software-uk-sme/', label: 'Build vs Buy Software: UK SME Guide' },
+  { url: '/blog/custom-software-vs-saas-total-cost-ownership/', label: 'Custom Software vs SaaS: Total Cost of Ownership' },
+  { url: '/blog/system-integration-for-uk-smes/', label: 'System Integration for UK SMEs' },
+  { url: '/blog/erp-replacement-uk-sme-guide/', label: 'ERP Replacement UK SME Guide' },
+  { url: '/blog/what-is-technical-consultancy/', label: 'What is Technical Consultancy?' },
+  { url: '/blog/how-ai-accelerates-software-development/', label: 'How AI Accelerates Software Development' },
+  { url: '/blog/ai-automation-for-business-workflows/', label: 'AI Automation for Business Workflows' },
+];
+
+const legalPages = [
+  { url: '/privacy/', label: 'Privacy Policy' },
+  { url: '/terms/', label: 'Terms of Service' },
+];
+---
+
+<BaseLayout title={`${title} | ${SITE_NAME}`} description={description} noindex>
+  <div class="container" style="max-width:900px;margin:0 auto;padding:80px 24px 120px;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--navy);margin-bottom:16px;">Sitemap</h1>
+    <p style="color:var(--grey-500);font-size:1.1rem;margin-bottom:48px;">
+      Complete index of all pages on ajairu.dev.
+    </p>
+
+    <div class="sitemap-grid">
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Main Pages</h2>
+        <ul class="sitemap-list">
+          {mainPages.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Services</h2>
+        <ul class="sitemap-list">
+          {services.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Industries</h2>
+        <ul class="sitemap-list">
+          <li><a href="/industries/">All Industries</a></li>
+          {industryPages.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Blog</h2>
+        <ul class="sitemap-list">
+          {blogPosts.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Legal</h2>
+        <ul class="sitemap-list">
+          {legalPages.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <style>
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+    }
+    .sitemap-section {
+      break-inside: avoid;
+    }
+    .sitemap-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--grey-100);
+    }
+    .sitemap-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sitemap-list li {
+      margin-bottom: 10px;
+    }
+    .sitemap-list a {
+      color: var(--grey-800);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color var(--transition);
+    }
+    .sitemap-list a:hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+  </style>
+</BaseLayout>

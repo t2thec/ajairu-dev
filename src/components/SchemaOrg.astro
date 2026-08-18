@@ -1,0 +1,125 @@
+---
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL, FOUNDER_NAME } from '../config';
+
+export interface Props {
+  type: string;
+  data?: Record<string, any>;
+}
+
+const { type, data = {} } = Astro.props;
+
+const schemas: Record<string, object> = {
+  localBusiness: {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    'name': SITE_NAME,
+    'description': 'Bespoke software development studio building custom platforms, system integrations, and AI automation for UK SMEs. Fixed-price, you own the source code.',
+    'url': SITE_URL,
+    'email': CONTACT_EMAIL,
+    'priceRange': '\u00a3\u00a3',
+    'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+    'founder': { '@type': 'Person', 'name': FOUNDER_NAME, 'jobTitle': 'Software Architect & Engineering Lead' },
+    'address': { '@type': 'PostalAddress', 'addressCountry': 'GB' },
+    'knowsAbout': ['bespoke software development', 'system integration', 'ERP replacement', 'AI automation', 'workflow automation', 'API integration', 'cloud software'],
+  },
+  organization: {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': SITE_NAME,
+    'url': SITE_URL,
+    'email': CONTACT_EMAIL,
+    'founder': { '@type': 'Person', 'name': FOUNDER_NAME },
+    'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+    'description': 'Bespoke software development studio for UK SMEs. Custom platforms, system integration, AI automation, and ERP replacement. Fixed-price, you own everything.',
+  },
+  website: {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': SITE_NAME,
+    'url': SITE_URL,
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': `${SITE_URL}/blog?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  faqPage: {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': (data.questions || []).map((q: any) => ({
+      '@type': 'Question',
+      'name': q.question,
+      'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+    })),
+  },
+  breadcrumb: {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': (data.items || []).map((item: any, i: number) => ({
+      '@type': 'ListItem',
+      'position': i + 1,
+      'name': item.name,
+      'item': item.url,
+    })),
+  },
+  service: {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': data.name || 'Bespoke Software Development Services for UK SMEs',
+    'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+    'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+    'description': data.description || 'Bespoke software development including system integration, custom platforms, ERP/SaaS replacement, technical consultancy, and ongoing support for UK SMEs.',
+    ...(data.offers ? { 'hasOfferCatalog': { '@type': 'OfferCatalog', 'name': 'Bespoke Software Development Services', 'itemListElement': data.offers } } : {}),
+  },
+  person: {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    'name': FOUNDER_NAME,
+    'jobTitle': 'Software Architect & Engineering Lead',
+    'worksFor': { '@type': 'Organization', 'name': SITE_NAME },
+    'description': 'Software architect and engineering lead for UK SMEs. Former CTO at Fabric Fintech, acquired by Aviva. 27+ years in software engineering leadership. Delivered Aviva\'s first customer-facing generative AI product.',
+    'knowsAbout': ['bespoke software development', 'system integration', 'AI automation', 'technology leadership', 'enterprise software', 'SME consulting', 'ERP replacement', 'cloud architecture', 'API design', 'team leadership'],
+    'nationality': 'British',
+    'address': { '@type': 'PostalAddress', 'addressCountry': 'GB' },
+    'award': ['Tech of the Year 2024 (UK Fintech Awards)', 'Pension Innovation Award 2024 (MoneyFacts)'],
+  },
+  howTo: {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    'name': 'How to Build Bespoke Software for a Small Business',
+    'description': 'A 4-step methodology for bespoke software development in UK SMEs: Discover, Design, Build, Deploy.',
+    'step': [
+      { '@type': 'HowToStep', 'position': 1, 'name': 'Discover', 'text': 'We learn your business, operations, existing systems, team, and goals. We audit your current tech stack, map your workflows, and understand your data landscape.' },
+      { '@type': 'HowToStep', 'position': 2, 'name': 'Design', 'text': 'We architect the solution: system design, API specifications, database schema, integration plan, build-vs-buy decisions, and a delivery roadmap.' },
+      { '@type': 'HowToStep', 'position': 3, 'name': 'Build', 'text': 'We develop the software using AI-accelerated engineering. Regular demos, iterative feedback, and transparent progress.' },
+      { '@type': 'HowToStep', 'position': 4, 'name': 'Deploy', 'text': 'We deploy to production, migrate your data, train your team, and provide 30 days of post-launch support. Full documentation and handover.' },
+    ],
+    'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  },
+  blog: {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    'name': `${SITE_NAME} Blog`,
+    'description': 'Practical guides on bespoke software development, system integration, and AI automation for UK SMEs.',
+    'url': `${SITE_URL}/blog`,
+    'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+  },
+  contactPage: {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    'name': `Contact ${SITE_NAME}`,
+    'description': `Book a free 30-minute software discovery call with ${SITE_NAME}, a bespoke software development studio for UK SMEs.`,
+    'url': `${SITE_URL}/contact`,
+    'mainEntity': {
+      '@type': 'LocalBusiness',
+      'name': SITE_NAME,
+      'email': CONTACT_EMAIL,
+      'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+    },
+  },
+};
+
+const schema = schemas[type];
+---
+
+{schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

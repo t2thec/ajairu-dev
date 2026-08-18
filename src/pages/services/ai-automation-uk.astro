@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `AI Automation Services UK | Business Workflow Automation | ${SITE_NAME}`;
+const description = 'AI automation services UK for SMEs. We build AI-powered workflow automation into custom business software - document processing, data extraction, intelligent routing. From £8,000. Fixed-price.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Automation UK', 'item': `${SITE_URL}/services/ai-automation-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Automation Services UK',
+  'serviceType': 'AI-Powered Business Workflow Automation',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI automation services for UK SMEs. We build AI-powered workflow automation into custom business software - document processing, data extraction, intelligent routing, and automated decision-making. Not chatbots - real workflow automation.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single AI Workflow', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'One AI-powered automation workflow (e.g. document processing or data extraction). 4-6 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-Workflow AI Automation', 'price': '15000', 'priceCurrency': 'GBP', 'description': 'Multiple AI workflows integrated across your systems. 6-10 weeks.' },
+    { '@type': 'Offer', 'name': 'Full AI Automation Platform', 'price': '30000', 'priceCurrency': 'GBP', 'description': 'Comprehensive AI automation platform with custom models, monitoring, and multi-system integration. 8-12 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'What does AI automation cost for a UK SME?', answer: 'A single AI workflow - for example, automating invoice processing or document classification - starts from £8,000. Multi-workflow automation across several systems typically ranges from £15,000 to £30,000. All engagements are fixed-price, so you know the total cost before we start.' },
+  { question: 'Is this just a chatbot?', answer: 'No. We do not build chatbots. We build AI-powered workflow automation - software that reads documents, extracts data, makes decisions, and routes work automatically. Think of it as a digital employee that handles repetitive tasks 24/7 without making mistakes. The AI is embedded in your business processes, not sitting in a chat window.' },
+  { question: 'How do you build AI automation into custom software?', answer: 'We integrate AI models (OpenAI, Anthropic, or local LLMs) directly into your business workflows. The AI reads incoming documents, extracts key data, classifies and routes work, and feeds results into your existing systems. It is not a separate tool - it is built into the software your team already uses. You own all the code and the integration logic.' },
+  { question: 'Is our data used to train AI models for other companies?', answer: 'No. We never use your data to train models for anyone else. We use enterprise API tiers with zero data retention policies, or deploy local LLMs on your own infrastructure where data sensitivity requires it. GDPR compliance and UK data residency are built in. Your data stays yours.' },
+  { question: 'How long does an AI automation project take?', answer: 'Single AI workflows take 4-6 weeks. Multi-workflow automation takes 6-10 weeks. Full AI automation platforms take 8-12 weeks. AI-accelerated development means we deliver in weeks what traditional agencies take months to build. You get working automation fast.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Automation Services UK for SMEs</h1>
+      <p>Not chatbots - real workflow automation. We build AI into your custom business software so it reads documents, extracts data, classifies work, and routes tasks automatically. Your team stops doing repetitive admin and starts doing the work that actually matters.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Automation UK'}]} />
+
+  <!-- WHAT AI AUTOMATION MEANS -->
+  <section class="section" id="what-is-ai-automation">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">What AI Automation Means for Business (Not Chatbots)</h2>
+      <p class="section-subtitle reveal">Real workflow automation, not a novelty chat window. Here is what AI automation actually does.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">What It Is</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">AI automation means embedding artificial intelligence directly into your business workflows. Instead of a person reading an incoming invoice, typing the details into your accounting system, and filing the PDF, the AI reads the invoice, extracts the supplier, amount, line items, and due date, creates the record in your accounting software, and files the document - all automatically, in seconds, with no errors.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">It is a digital worker that handles the repetitive, rules-based tasks that eat your team's time. It works 24/7, never gets tired, never makes a typo, and processes thousands of documents or decisions in the time a human does one.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:#e53935;">What It Is Not</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">It is not a chatbot that sits on your website answering customer queries. It is not a generic AI tool that your team has to learn and operate manually. It is not a black box that makes decisions you cannot understand or audit.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">AI automation is built into the software your team already uses. It runs quietly in the background, handling the work that used to be manual. Your team sees the results - clean data, routed work, processed documents - without having to think about the AI at all.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">And because we build it into custom software you own, there are no per-transaction AI fees, no usage limits, and no vendor lock-in. You own the automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 PRACTICAL EXAMPLES -->
+  <section class="section bg-grey" id="examples">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Real Use Cases</span>
+      <h2 class="section-title reveal">5 Practical AI Automation Examples for SMEs</h2>
+      <p class="section-subtitle reveal">These are automations we have built for UK businesses. Each one eliminated hours of manual work per week.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>1. Invoice &amp; Document Processing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">AI reads incoming invoices, purchase orders, and receipts - whether they arrive by email, upload, or post. It extracts supplier details, line items, amounts, tax codes, and due dates. It creates the records in your accounting system, matches them to purchase orders, and flags exceptions for human review. Your finance team reviews edge cases instead of keying in every invoice.</p>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:12px;"><strong>Time saved:</strong> 15-20 hours/week for a typical finance team</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>2. Customer Support Triage</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">AI reads incoming support emails and tickets, classifies them by type (billing, technical, complaint, general), determines urgency, and routes them to the right team member. It suggests responses based on your knowledge base and past resolutions. Your support team handles complex cases instead of triaging and routing tickets manually.</p>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:12px;"><strong>Time saved:</strong> 10-15 hours/week, plus faster response times</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>3. Data Extraction &amp; Entry</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">AI extracts structured data from unstructured sources - application forms, survey responses, PDF reports, email attachments. It populates your CRM, database, or spreadsheet automatically. It validates the data against your business rules and flags anything that needs human verification. Your team reviews instead of types.</p>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:12px;"><strong>Time saved:</strong> 20-30 hours/week for data-heavy businesses</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>4. Intelligent Job Routing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">For field service and job management businesses, AI reads incoming job requests, assesses the type and complexity, checks engineer availability and skills, and automatically assigns the job to the right person. It factors in location, travel time, parts required, and customer priority. Your dispatch team handles exceptions instead of manually planning every job.</p>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:12px;"><strong>Time saved:</strong> 15-25 hours/week, plus improved first-time fix rates</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>5. Compliance &amp; Audit Monitoring</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">AI continuously monitors your transactions, communications, and documents for compliance issues. It flags anomalies, missing documentation, and policy violations in real time. It generates audit trails and compliance reports automatically. Your compliance team proactively manages risk instead of retrospectively reviewing everything.</p>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:12px;"><strong>Time saved:</strong> 10-20 hours/week, plus reduced compliance risk</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">These are starting points. Every business has different automation opportunities. <a href="/contact">Book a free call</a> to identify yours.</p>
+    </div>
+  </section>
+
+  <!-- HOW WE BUILD IT -->
+  <section class="section" id="how-we-build">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Our Approach</span>
+      <h2 class="section-title reveal">How We Build AI Automation Into Custom Software</h2>
+      <p class="section-subtitle reveal">AI is not an add-on. It is built into the software from the ground up.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Identify</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We audit your workflows to find the repetitive, rules-based tasks that AI can automate. We prioritise by time saved and ROI. You see the business case before any code is written.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the automation - which AI models to use, how data flows, where humans review exceptions, and how it integrates with your existing systems. You approve the design before building starts.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the automation using AI-accelerated development. You test it against your real data in a staging environment. We tune the models until accuracy meets your standards. Nothing goes live until you sign off.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production with monitoring, alerting, and human-in-the-loop fallbacks. Your team gets training on handling exceptions. 30 days of post-launch support is included. You own everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section bg-grey" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">AI Automation Services UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single Workflow</div>
+          <h3>One AI Automation</h3>
+          <div class="pricing-price">from £8,000</div>
+          <div class="pricing-duration">4-6 weeks</div>
+          <ul class="pricing-features">
+            <li>One AI-powered workflow (e.g. invoice processing)</li>
+            <li>Integration with one existing system</li>
+            <li>Human-in-the-loop exception handling</li>
+            <li>Monitoring and alerting</li>
+            <li>Documentation and team training</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Multi-Workflow</div>
+          <h3>Multiple AI Automations</h3>
+          <div class="pricing-price">£15,000 - £30,000</div>
+          <div class="pricing-duration">6-10 weeks</div>
+          <ul class="pricing-features">
+            <li>Multiple AI workflows across your systems</li>
+            <li>Integration with 2-3 existing systems</li>
+            <li>Automated routing and decision-making</li>
+            <li>Real-time dashboards and reporting</li>
+            <li>Monitoring, alerting, and audit trails</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full Platform</div>
+          <h3>AI Automation Platform</h3>
+          <div class="pricing-price">£25,000 - £30,000+</div>
+          <div class="pricing-duration">8-12 weeks</div>
+          <ul class="pricing-features">
+            <li>Comprehensive AI automation platform</li>
+            <li>Custom AI models and RAG pipelines</li>
+            <li>Multi-system integration and orchestration</li>
+            <li>Enterprise-grade monitoring and compliance</li>
+            <li>Full audit trails and GDPR compliance</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Read our <a href="/blog/ai-automation-for-business-workflows">AI automation guide for UK businesses</a> or <a href="/services">view all our bespoke software development services</a>.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Automation FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before investing in AI automation.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Automate Your Business Workflows?"
+    text="Book a free 30-minute discovery call. We will identify the repetitive tasks eating your team's time, show you which ones AI can automate, and give you a fixed-price quote - with honest advice about whether AI automation is the right investment for your business right now."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

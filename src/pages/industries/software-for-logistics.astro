@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Logistics",
+  metaTitle: "Bespoke Software for Logistics UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK logistics and haulage firms. Fleet management, route optimisation, warehouse management, and TMS platforms.",
+  h1: "Bespoke Software for Logistics in the UK",
+  lead: "Custom software solutions for UK logistics and haulage firms. Fleet management, route optimisation, warehouse management, and transport management systems.",
+  useCases: [
+    {"title": "Transport Management System", "desc": "A bespoke TMS that manages jobs, allocates vehicles and drivers, tracks deliveries in real-time, and generates POD and invoicing - built around your specific operational workflows."},
+    {"title": "Route Optimisation Software", "desc": "Custom route planning software that optimises multi-stop deliveries based on vehicle capacity, traffic data, delivery windows, and driver hours - reducing fuel costs and improving delivery efficiency."},
+    {"title": "Warehouse Management System", "desc": "Bespoke WMS with barcode scanning, pick-and-pack workflows, stock location management, and real-time inventory - integrated with your accounting and e-commerce platforms."},
+    {"title": "Fleet Management Platform", "desc": "Custom fleet management software that tracks vehicle maintenance, MOT and service schedules, fuel consumption, and driver compliance - with automated alerts for expiring documents and service dates."},
+    {"title": "Driver Mobile App", "desc": "A custom mobile app for drivers that handles job acceptance, satellite navigation, electronic POD capture, and real-time status updates - replacing paper run sheets and phone calls."},
+    {"title": "Customer Tracking Portal", "desc": "A branded tracking portal where customers book collections, track deliveries in real-time, view POD documents, and manage their account - giving your clients the visibility they demand."}
+  ],
+  benefits: [
+    {"title": "TMS & WMS Integration", "desc": "Custom software that integrates with your existing transport management, warehouse, and accounting systems. We build around your current infrastructure - no rip-and-replace."},
+    {"title": "Built for the Road", "desc": "We understand logistics from the warehouse to the delivery point. Software is built for real-world operations - driver-friendly, manager-focused, and customer-facing."},
+    {"title": "You Own the Code", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. No per-vehicle licensing fees, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with our existing TMS?", "answer": "Yes. We build custom modules and integrations that connect with your existing transport management system, accounting software, and telematics providers. We assess your current systems during the consultancy phase and recommend the best integration approach."},
+    {"question": "How is bespoke software different from off-the-shelf logistics software?", "answer": "Off-the-shelf software forces your operations to fit the tool. Bespoke software fits your exact workflows, vehicle types, and customer requirements. It integrates with your specific systems, eliminates manual workarounds, and scales with your fleet. You own the codebase - no per-vehicle licensing fees."},
+    {"question": "Can you build a mobile app for our drivers?", "answer": "Yes. We build custom mobile apps for iOS and Android that handle job management, navigation, electronic POD capture, and real-time status updates. Apps work offline and sync when connectivity returns - essential for rural delivery routes."},
+    {"question": "How long does a logistics software project take?", "answer": "Quick wins like a driver app or customer tracking portal can be built in 6-8 weeks. A full TMS or WMS typically takes 12-20 weeks depending on scope and integrations. We start with the highest-impact features and iterate."}
+  ],
+  slug: "software-for-logistics",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK logistics and haulage firms operate on tight margins in a highly competitive market. Rising fuel costs, driver shortages, and customer demands for real-time visibility all add pressure. Bespoke software can help you optimise routes, manage fleets, and deliver the tracking experience customers now expect - but most operators are still running on a combination of legacy transport management systems, paper proof-of-delivery sheets, and spreadsheet-based planning that can't keep up with real-world complexity.</p>
+<p>Off-the-shelf transport management software was designed for large enterprises and priced accordingly. It handles basic routing but can't account for your specific constraints - driver hours and working time directive compliance, vehicle height and weight restrictions on particular routes, customer-specific delivery windows, or backloading opportunities across your network. Generic fleet management tools track vehicles but don't connect to your job costing or invoicing systems, so finance teams still rekey delivery data. Warehouse management systems built for e-commerce don't understand cross-dock operations or groupage handling.</p>
+<p>We build custom software for UK logistics firms - from transport management systems and route optimisation to warehouse management and driver apps. We understand logistics operations, from the warehouse to the delivery point, and we build systems that integrate with your existing infrastructure. Whether it's a bespoke TMS that plans routes around your specific constraints, a driver mobile app that captures electronic proof of delivery and updates customers in real time, or a warehouse management system that handles your particular goods-in and cross-dock workflows, bespoke software fits the way your operation actually runs.</p>
+<p>Logistics compliance is unforgiving. Driver hours under the Working Time Directive, vehicle roadworthiness under O-licence obligations, and ADR requirements for hazardous goods all demand precise record-keeping. Bespoke software can automate tachograph data analysis, flag potential hours violations before they occur, and maintain digital maintenance records that satisfy DVSA inspections - replacing paper-based systems that are easily lost and impossible to audit quickly.</p>
+<p>A UK regional haulier operating 40 vehicles was losing an estimated £50,000 annually to empty running and inefficient routing. Their off-the-shelf TMS couldn't optimise for backloading opportunities or customer-specific time windows. We built a bespoke route optimisation tool that identified backloading matches across their customer base and planned routes around delivery constraints. Empty running dropped by 18% within six months, fuel costs fell proportionally, and the planning team reduced from three full-time staff to two.</p>
+<p>Logistics is a sector where bespoke software delivers clear ROI. Every mile, every job, and every delivery generates data. The opportunity is building software that turns that data into optimised routes, automated workflows, and real-time visibility across your operation.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your logistics business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

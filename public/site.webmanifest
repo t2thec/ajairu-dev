@@ -1,0 +1,23 @@
+{
+  "name": "ajairu",
+  "short_name": "ajairu",
+  "description": "Bespoke software development for UK SMEs. Custom platforms, system integration, and AI automation. Fixed-price, you own the source code.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

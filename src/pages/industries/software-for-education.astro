@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Education",
+  metaTitle: "Bespoke Software for Education UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK schools, colleges, and training providers. Student management, learning platforms, parent portals, and reporting tools.",
+  h1: "Bespoke Software for Education in the UK",
+  lead: "Custom software solutions for UK education providers. Build student management systems, learning platforms, and parent portals with software built for education.",
+  useCases: [
+    {"title": "Student Information System", "desc": "A bespoke SIS that manages student records, attendance, grades, and pastoral notes - built around your institution's specific reporting requirements and curriculum structure."},
+    {"title": "Learning Management Platform", "desc": "Custom LMS software that delivers course content, tracks student progress, manages assignments, and generates analytics - tailored to your pedagogy and assessment methodology."},
+    {"title": "Parent & Student Portal", "desc": "A secure portal where parents view attendance, grades, reports, and school communications - and where students access assignments, resources, and timetables in one place."},
+    {"title": "Timetable & Scheduling Software", "desc": "Bespoke timetable management software that handles staff availability, room allocation, subject combinations, and clash detection - replacing manual scheduling with an automated, drag-and-drop interface."},
+    {"title": "Assessment & Reporting Tool", "desc": "Custom assessment software that tracks student progress against curriculum objectives, generates report cards, and produces regulatory reports for ISI, Ofsted, or SFE requirements."},
+    {"title": "Fee & Finance Management", "desc": "Bespoke fee management software that handles billing, payment plans, bursary tracking, and parental payment portals - integrated with your accounting system and financial reporting."}
+  ],
+  benefits: [
+    {"title": "MIS & SIS Integration", "desc": "Custom software that integrates with SIMS, Arbor, Bromcom, and your existing management information systems. No rip-and-replace - we build around your current infrastructure."},
+    {"title": "Built for Education Workflows", "desc": "We understand education from the classroom to the admin office. Software is built around real school workflows - safeguarding, reporting, curriculum tracking, and parental engagement."},
+    {"title": "GDPR & Safeguarding Compliant", "desc": "We build with child safety and data protection at the core. Role-based access, audit trails, safeguarding flags, and full GDPR compliance - designed for the sensitive nature of student data."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with SIMS or Arbor?", "answer": "Yes. We build integrations with SIMS, Arbor, Bromcom, and other major UK education MIS platforms. Whether it's syncing student data, pulling attendance records, or pushing grades back, we build reliable integrations that keep data consistent across systems."},
+    {"question": "How is bespoke software different from off-the-shelf school software?", "answer": "Off-the-shelf software is built for the average school. Bespoke software fits your exact curriculum structure, reporting requirements, and pedagogy. It integrates with the specific systems you use, eliminates manual workarounds, and scales with your institution. You own the codebase - no per-student licensing fees."},
+    {"question": "Can you build a parent portal for our school?", "answer": "Yes. We build secure, branded parent portals where parents can view attendance, grades, reports, and school communications, and make fee payments. Portals integrate with your MIS for real-time data sync and include appropriate safeguarding and access controls."},
+    {"question": "How do you handle student data in custom software?", "answer": "Student data is handled with the highest level of security and GDPR compliance. We use encrypted, UK-based hosting, role-based access controls, and comprehensive audit logging. All implementations comply with the Data Protection Act 2018, GDPR, and safeguarding requirements. Data is never shared with third parties."}
+  ],
+  slug: "software-for-education",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK education providers face growing pressure to do more with less. Admin burdens are rising, reporting requirements are increasing, and parents expect digital access to their children's progress. Bespoke software can help you streamline admin, track student data, and deliver the digital experience parents and students now expect - but most schools, colleges, and training providers are still running on legacy MIS platforms that were designed two decades ago and have been patched rather than modernised.</p>
+<p>Off-the-shelf education software consistently disappoints. The dominant MIS platforms are slow, inflexible, and require extensive training to perform basic tasks. Generic learning management systems handle content delivery but can't accommodate your specific curriculum structure, assessment framework, or reporting requirements. Parent portal tools built for generic use don't understand safeguarding protocols, can't differentiate between appropriate information sharing for different family situations, and lack the integration with your existing systems that would make them genuinely useful. The result is teaching staff spending evenings on data entry and parents frustrated by digital systems that offer less functionality than their banking app.</p>
+<p>We build custom software for UK schools, colleges, and training providers - from student information systems and learning platforms to parent portals and timetable management. We understand education workflows, from the classroom to the admin office, and we build systems that integrate with your existing MIS. Whether it's a bespoke assessment tracking system that matches your specific reporting framework, a parent portal that surfaces the right information to the right people with appropriate safeguarding controls, or a timetable management tool that handles your specific room and staff constraints, bespoke software fits how your institution actually works.</p>
+<p>Education compliance is demanding and growing stricter. GDPR requirements for handling children's data, safeguarding obligations under Keeping Children Safe in Education, Ofsted inspection readiness, and DfE census reporting all demand robust data management. Bespoke software can maintain granular consent records for student data, enforce role-based access aligned with safeguarding protocols, automate DfE census submissions, and produce Ofsted-ready evidence packs on demand - capabilities that patched-together legacy systems simply can't match.</p>
+<p>A UK multi-academy trust with six schools was spending two weeks per term producing standardised assessment reports across all sites because each school's MIS produced data in different formats. We built a bespoke assessment aggregation platform that pulled data from each school's MIS, normalised it to a common standard, and produced trust-wide reports automatically. Termly reporting time dropped from two weeks to two hours, the trust identified underperforming cohorts three months earlier than previously possible, and Ofsted specifically commended their data-driven approach during inspection.</p>
+<p>Education is a sector where bespoke software delivers clear value. Every student, every lesson, and every assessment generates data. The opportunity is building software that turns that data into streamlined admin, better student tracking, and stronger parental engagement.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your education institution? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Mobile App Development UK | Cross-Platform Apps | ${SITE_NAME}`;
+const description = 'Mobile app development UK for SMEs. Cross-platform apps in React Native and Expo, offline-first design, app store deployment, and push notifications. From £15,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Mobile App Development UK', 'item': `${SITE_URL}/services/mobile-app-development-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Mobile App Development UK',
+  'serviceType': 'Cross-Platform Mobile App Development',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Mobile app development for UK SMEs. Cross-platform apps built in React Native and Expo, with offline-first design, app store deployment, push notifications, and backend integration. iOS and Android from a single codebase. Fixed-price, you own the code.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Essential Mobile App', 'price': '15000', 'priceCurrency': 'GBP', 'description': 'Cross-platform app with core features, offline support, and app store deployment. 6-8 weeks.' },
+    { '@type': 'Offer', 'name': 'Professional Mobile App', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'App with push notifications, backend integration, and user authentication. 8-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Enterprise Mobile Platform', 'price': '40000', 'priceCurrency': 'GBP', 'description': 'Full mobile platform with real-time sync, complex workflows, and admin dashboard. 10-16 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does mobile app development cost in the UK?', answer: 'A cross-platform mobile app for a UK SME starts from £15,000 for a core app with offline support and app store deployment. A professional app with push notifications, backend integration, and user authentication typically costs £20,000 to £30,000. Full enterprise mobile platforms with real-time sync and complex workflows range from £35,000 to £50,000+. All projects are fixed-price - you know the total cost before we start.' },
+  { question: 'Do we need separate apps for iOS and Android?', answer: 'No. We build cross-platform apps using React Native and Expo, which means a single codebase deploys to both iOS and Android. You get native performance and native UI components on both platforms without maintaining two separate codebases. This halves development time and cost compared to building separate native apps, while still giving users a genuine native experience.' },
+  { question: 'What is the difference between a PWA and a native app?', answer: 'A PWA (Progressive Web App) is a website that behaves like an app - it can be installed on a phone, works offline, and sends push notifications, but runs in the browser. A native app (or cross-platform app via React Native) is installed from the App Store or Google Play and has deeper access to device features. PWAs are faster and cheaper to build and do not require app store approval. Native apps offer better performance, deeper device integration, and are discoverable in app stores. We help you choose based on your needs.' },
+  { question: 'Can the app work without an internet connection?', answer: 'Yes. We build offline-first apps that store data locally on the device and sync automatically when a connection is available. Your team can use the app in the field, on building sites, in warehouses, or anywhere with poor connectivity. When they come back online, changes sync to the server and conflict resolution handles any overlaps. This is essential for field service, delivery, and inspection apps.' },
+  { question: 'Do you handle app store submission and deployment?', answer: 'Yes. We handle the full app store deployment process for both Apple App Store and Google Play - creating developer accounts, preparing store listings, submitting for review, and managing the approval process. We also set up push notification certificates, provisioning profiles, and automated deployment pipelines so future updates are straightforward. You own the developer accounts and the app.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Mobile App Development UK for SMEs</h1>
+      <p>Give your team and customers a proper mobile experience. We build cross-platform apps in React Native and Expo - one codebase, iOS and Android, with offline-first design, push notifications, and seamless backend integration. No separate codebases, no doubled costs.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Mobile App Development UK'}]} />
+
+  <!-- CROSS-PLATFORM EXPLAINED -->
+  <section class="section" id="cross-platform">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">Cross-Platform Apps: One Codebase, Both Platforms</h2>
+      <p class="section-subtitle reveal">React Native and Expo mean you build once and deploy to iOS and Android. No doubled cost, no separate teams.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">In the past, building a mobile app meant building twice - once in Swift for iOS, once in Kotlin for Android. Two codebases, two teams, two sets of bugs, and double the cost. Cross-platform development changes that. We write your app once in React Native, and it compiles to genuine native code for both iOS and Android. Users get a real native experience - native UI components, native performance, native gestures - and you get one codebase to maintain.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">We use Expo, the framework built on top of React Native, which streamlines development, testing, and deployment. Over-the-air updates let you push bug fixes and minor changes without going through app store review. For UK SMEs, this means faster development, lower costs, and easier maintenance - without compromising on the user experience your customers expect. Expo also provides built-in modules for common features - camera, location, notifications, file system, biometric authentication - so we spend less time on plumbing and more time on the features that matter to your business. And because the entire stack is JavaScript-based, your existing web developers can maintain and extend the app without learning a completely new language.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PWA VS NATIVE -->
+  <section class="section bg-grey" id="pwa-vs-native">
+    <div class="container">
+      <h2 class="section-title reveal">PWA vs Native vs Cross-Platform: Which Is Right for You?</h2>
+      <p class="section-subtitle reveal">Three approaches to mobile. We help you choose based on your needs, not hype.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">PWA (Progressive Web App)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Content-driven apps, internal tools, and budget-conscious projects.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">A PWA is a website that behaves like an app. It can be installed on a phone, works offline, and sends push notifications - but runs in the browser, not from an app store. PWAs are fast to build, easy to update (no app store review), and work on any device with a browser. They are ideal when you need something quick and do not require deep device integration.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £8,000</p>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--blue);">
+          <h3 style="color:var(--blue);">Cross-Platform (React Native)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Most business apps - the sweet spot of cost, performance, and capability.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">One codebase deploys to both iOS and Android as genuine native apps. Native UI components, native performance, access to device features (camera, GPS, Bluetooth, biometrics), and distribution through the App Store and Google Play. This is the right choice for most UK SMEs - you get the native experience without doubling your development cost.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £15,000</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Fully Native</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> High-performance games, AR/VR apps, and apps requiring deep hardware integration.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">Separate codebases in Swift (iOS) and Kotlin (Android). Maximum performance and deepest device access, but at roughly double the cost and development time of cross-platform. Rarely necessary for business apps - React Native now handles 95% of use cases with near-native performance.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £30,000 (both platforms)</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Not sure which approach fits your project? The free discovery call will clarify this in 30 minutes. <a href="/contact">Book yours now</a>.</p>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section" id="key-features">
+    <div class="container">
+      <h2 class="section-title reveal">What Our Mobile Apps Include</h2>
+      <p class="section-subtitle reveal">These features are standard in every app we build - not expensive add-ons.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="bolt" /></div>
+          <h3>Offline-First Design</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Apps that work without a connection. Data is stored locally and syncs automatically when you are back online. Essential for field teams, delivery drivers, and anyone working in areas with poor connectivity. No more "the app stopped working because there was no signal."</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="bell" /></div>
+          <h3>Push Notifications</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Send targeted notifications to your users - new orders, appointment reminders, status updates, or marketing messages. Scheduled, segmented, and personalised. Users see your brand on their lock screen, not just when they open the app.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="lock" /></div>
+          <h3>Secure Authentication</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Biometric login (Face ID, fingerprint), PIN codes, or traditional passwords. Single sign-on integration with your existing systems. Role-based access control so users only see what they should. Every session is secured with encrypted tokens.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>Backend Integration</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Your app talks to your existing systems via <a href="/services/custom-api-development-uk">custom APIs</a> - CRM, accounting, inventory, job management. Real-time data sync means the app always shows the latest information. No siloed data, no manual exports.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="cart" /></div>
+          <h3>App Store Deployment</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">We handle the full submission process for Apple App Store and Google Play - developer accounts, store listings, review submission, and approval management. Automated deployment pipelines make future updates straightforward. You own the accounts and the app.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Analytics &amp; Insights</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">See how users interact with your app - which features they use, where they drop off, what crashes. Privacy-compliant analytics (no third-party trackers unless you want them) give you the data to improve the app over time. GDPR-compliant by default.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP TYPES -->
+  <section class="section bg-grey" id="app-types">
+    <div class="container">
+      <h2 class="section-title reveal">Types of Apps We Build for UK SMEs</h2>
+      <p class="section-subtitle reveal">Different businesses need different apps. Here are the most common types we deliver.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Field Service Apps</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">For engineers, technicians, and maintenance teams working on site. Job scheduling, equipment registers, photo capture, signature collection, parts ordering, and offline access. Your engineers arrive with everything they need on their phone or tablet - job details, customer history, manuals, and forms - even with no signal.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Customer Apps</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Give your customers a dedicated app for ordering, tracking, account management, and support. Push notifications keep them engaged. In-app purchases or payment integration drives revenue. Self-service features reduce support calls. Your brand lives on their home screen, not just in their inbox.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Sales &amp; CRM Apps</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Mobile access to your <a href="/services/bespoke-crm-development-uk">CRM</a> for sales reps on the road. View customer details, log calls, update deal stages, generate quotes, and capture leads - all from a phone. Offline access means reps can work anywhere. Sync happens automatically when they are back online.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Inventory &amp; Warehouse Apps</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Barcode scanning, stock counting, pick and pack, and stock transfers - all on a mobile device. Real-time sync with your inventory system eliminates paper and errors. Warehouse staff scan, confirm, and move on. Managers see stock levels update instantly across all locations.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Delivery &amp; Logistics Apps</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Route optimisation, proof of delivery, photo capture, and customer signature collection. Drivers see their route, navigate to each stop, capture proof of delivery, and update status in real time. Customers receive tracking notifications. Your dispatch team sees live delivery status on a dashboard.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Internal Tools &amp; Portals</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Mobile access to your internal systems - <a href="/services/custom-web-portal-uk">staff portals</a>, approval workflows, timesheets, and reporting. Your team checks their rota, submits timesheets, approves purchase orders, and accesses company documents - all from their phone. No more being tied to a desk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Discover, Design, Build, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that de-risks every mobile app project.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We map your requirements, user journeys, and technical constraints. We identify which approach (PWA, cross-platform, or native) fits your needs and budget. No assumptions - we understand what your users actually need.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the app - screens, navigation, offline behaviour, and backend integration. You see clickable prototypes and approve the design before any code is written. You know exactly what you are getting.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the app using AI-accelerated development. Weekly demos let your team test on real devices throughout. Feedback is incorporated immediately. Over-the-air updates push fixes without app store delays.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We handle app store submission, set up monitoring and crash reporting, and train your team. 30 days of post-launch support is included. You own the code, the developer accounts, and the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Mobile App Development UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Essential</div>
+          <h3>Core Mobile App</h3>
+          <div class="pricing-price">from £15,000</div>
+          <div class="pricing-duration">6-8 weeks</div>
+          <ul class="pricing-features">
+            <li>Cross-platform (iOS + Android)</li>
+            <li>Up to 10 screens</li>
+            <li>Offline-first data storage</li>
+            <li>User authentication</li>
+            <li>App store deployment included</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Professional</div>
+          <h3>App + Backend Integration</h3>
+          <div class="pricing-price">£20,000 - £30,000</div>
+          <div class="pricing-duration">8-12 weeks</div>
+          <ul class="pricing-features">
+            <li>Everything in Essential, plus:</li>
+            <li>Push notifications</li>
+            <li>Backend API integration</li>
+            <li>Real-time data sync</li>
+            <li>Biometric authentication</li>
+            <li>Analytics and crash reporting</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Enterprise</div>
+          <h3>Full Mobile Platform</h3>
+          <div class="pricing-price">£35,000 - £50,000+</div>
+          <div class="pricing-duration">10-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Everything in Professional, plus:</li>
+            <li>Complex offline sync and conflict resolution</li>
+            <li>Multi-role workflows and approvals</li>
+            <li>Admin dashboard and management portal</li>
+            <li>Custom integrations (3+ systems)</li>
+            <li>Advanced security and compliance</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-grey" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Mobile App Development</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, developer accounts, and app store listings. No licence fees, no vendor lock-in. Your team can maintain and update the app independently, or we can provide ongoing support from £350/month. The app is yours.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Cross-Platform Efficiency</h3>
+          <p style="color:var(--grey-600);">One codebase for iOS and Android. No doubled development cost, no separate teams, no synchronising two codebases. React Native and Expo give you native performance at cross-platform prices. Over-the-air updates push fixes without app store delays.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Built for Real Users</h3>
+          <p style="color:var(--grey-600);">We design apps around the people who will use them - your field teams, your customers, your delivery drivers. Offline-first means the app works anywhere. Intuitive interfaces mean minimal training. We build apps people actually want to use, not apps they are forced to use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Mobile App Development FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about mobile app development.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Build a Mobile App Your Users Will Love?"
+    text="Book a free 30-minute discovery call. We will map your requirements, recommend the right approach (PWA, cross-platform, or native), and give you a fixed-price quote - with honest advice about whether you even need an app."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

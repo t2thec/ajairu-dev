@@ -1,0 +1,48 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Nonprofits & Charities UK",
+  metaTitle: `Bespoke Software for Nonprofits & Charities UK | Custom Software | ${SITE_NAME}`,
+  description: 'Custom software for UK nonprofits and charities. Donor management, gift aid automation, volunteer scheduling, impact reporting, and event management. Built around your mission, not a generic template.',
+  h1: "Bespoke Software for Nonprofits & Charities in the UK",
+  lead: "Donor management, gift aid automation, volunteer scheduling, and impact reporting - built around your mission, not a generic template that assumes you work like a commercial business.",
+  useCases: [
+    { title: "Donor Management System", desc: "Track every donor, donation, and interaction in one place. Segment donors by giving level, engagement, and interests. Built-in gift aid calculation and HMRC submission reporting." },
+    { title: "Gift Aid Automation", desc: "Automatically calculate, claim, and track gift aid on eligible donations. Generate HMRC-compliant reports. Reduce manual processing from hours to minutes." },
+    { title: "Volunteer Scheduling Platform", desc: "Schedule volunteers for events, shifts, and ongoing roles. Track hours, skills, and availability. Automated reminders and check-in. DBS tracking and renewal alerts." },
+    { title: "Impact Reporting Dashboard", desc: "Real-time dashboards showing outcomes, beneficiaries reached, funds deployed, and target metrics. Generate reports for trustees, funders, and the Charity Commission." },
+    { title: "Event Management System", desc: "Manage fundraising events, ticketing, attendee tracking, and post-event follow-up. Integrated with donor management for seamless relationship building." },
+    { title: "Charity CRM", desc: "A CRM built for charity workflows - track relationships with donors, volunteers, trustees, funders, and partners. Not a commercial CRM retrofitted for nonprofits." },
+  ],
+  benefits: [
+    { title: "Gift Aid Maximised", desc: "Automated gift aid calculation and HMRC reporting means no missed claims and no manual spreadsheet errors." },
+    { title: "Donor Retention Improved", desc: "Proper relationship tracking, timely follow-ups, and personalised communication built into the system, not dependent on someone remembering." },
+    { title: "Fundraising Visibility", desc: "Real-time dashboards show exactly where donations come from, what they fund, and what campaigns are working - no more end-of-month spreadsheet marathons." },
+  ],
+  faqs: [
+    {"question": "Can bespoke software handle Charity Commission reporting requirements?", "answer": "Yes. We build Charity Commission compliance features into the software from the start - annual return data collection, serious incident reporting workflows, trustee management, and financial reporting in the format the Commission expects. We work with your compliance team to ensure the software meets all regulatory requirements specific to your charity's size and activities."},
+    {"question": "How does gift aid automation work?", "answer": "The software automatically identifies eligible donations, calculates the gift aid value (25% of the donation), tracks claim status, and generates HMRC-compliant gift aid claims in the required format. Donor declarations and auditable records are stored automatically. This eliminates manual spreadsheet processing and reduces errors to near zero."},
+    {"question": "We're a small charity - can we afford bespoke software?", "answer": "If you're spending £3,000+ a year on multiple SaaS tools (donor management, event ticketing, volunteer scheduling, accounting) that don't talk to each other, bespoke software can be cost-effective. AI-accelerated development has cut build costs significantly. A focused donor management and gift aid system starts from £15,000 - roughly 3-4 years of subscription fees for most charity tools, but you own it forever."},
+    {"question": "Can you integrate with our existing accounting software?", "answer": "Yes. We integrate with Xero, QuickBooks, Sage, and most charity accounting platforms. Donations flow automatically from your donor management system into your accounting software, with gift aid claimed and tracked separately. No more double entry or manual reconciliation."},
+  ],
+  slug: "software-for-nonprofits-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+  <p>Charities and nonprofits face a unique software challenge. You need the same capabilities as a commercial business - CRM, accounting, reporting, scheduling - but your workflows, terminology, and compliance requirements are completely different. Donor management is not sales pipeline management. Gift aid is not VAT. Impact reporting is not a profit and loss statement.</p>
+
+  <p>Most off-the-shelf nonprofit software treats charities like small businesses with a twist. You get a commercial CRM with a "nonprofit edition" badge on it, which means you are working around features designed for sales teams while missing the features you actually need - like gift aid calculation, donor relationship tracking across years, volunteer coordination, and impact measurement aligned to your theory of change.</p>
+
+  <p>The result is the familiar charity tech stack: a donor database that does not talk to your accounting software, an event platform that does not sync with your volunteer scheduler, and an impact spreadsheet that someone manually updates once a month. Every system is an island, and the bridges between them are copy-paste and hope.</p>
+
+  <p>Bespoke software solves this by starting with your mission, not a template. Your donor management system knows what gift aid is and handles it natively. Your volunteer platform knows that DBS checks expire and alerts you before they do. Your impact reporting pulls data directly from your activities, not from a spreadsheet someone maintains on their desktop. One system, one source of truth, built around how your charity actually works.</p>
+
+  <p>Compliance is built in from day one. Charity Commission reporting requirements, GDPR consent for donor communications, gift aid record-keeping, and data protection for vulnerable beneficiaries are all designed into the software, not bolted on as an afterthought. For UK charities, data residency matters - your donor data stays in UK-based infrastructure, not in a US data centre governed by a different legal framework.</p>
+
+  <p>A UK-based education charity with 15 staff and 200 volunteers was spending £6,500 a year across four separate SaaS tools - a donor database, an event platform, a volunteer management tool, and accounting software. None of them integrated. Gift aid claims took two days a quarter to process manually. We built a single platform that replaced all four tools: donor management with built-in gift aid automation, event management, volunteer scheduling with DBS tracking, and integration with their existing Xero accounting. Build cost: £22,000. Gift aid processing time dropped from two days to two hours. The charity owns the software outright with no ongoing subscription fees - just hosting costs of around £40/month.</p>
+
+  <p>If your charity is spending more than £3,000 a year on software that does not quite fit, <a href="/services">explore our services</a> or <a href="/contact">get in touch</a> to discuss whether bespoke software makes sense for your mission.</p>
+</IndustryPage>

@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Marketing Agencies",
+  metaTitle: "Bespoke Software for Marketing Agencies UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK marketing agencies. Client dashboards, campaign management, reporting automation, and white-label platforms.",
+  h1: "Bespoke Software for Marketing Agencies in the UK",
+  lead: "Custom software solutions for UK marketing agencies. Build client dashboards, automate reporting, and create white-label platforms with software built for agencies.",
+  useCases: [
+    {"title": "Client Reporting Dashboard", "desc": "A bespoke, white-label reporting platform that pulls data from Google Analytics, Meta Ads, Google Ads, and social platforms into a single, branded dashboard - replacing manual report compilation."},
+    {"title": "Campaign Management System", "desc": "Custom campaign management software that tracks deliverables, deadlines, budgets, and assets across all client campaigns - giving account managers a real-time view of workload and profitability."},
+    {"title": "Project & Time Tracking", "desc": "Bespoke project management software with time tracking, resource allocation, and profitability analysis - built for agency workflows with retainer and project-based billing support."},
+    {"title": "White-Label Client Portal", "desc": "A branded client portal where clients view campaign performance, approve creative, submit briefs, and access reports - giving your agency a professional, self-service client experience."},
+    {"title": "Social Media Management Tool", "desc": "Custom social media software that schedules posts across platforms, tracks engagement, and generates content calendars - with client approval workflows and team collaboration features."},
+    {"title": "Lead & CRM Pipeline", "desc": "A bespoke CRM built for agency new business - tracking prospects, proposals, pitches, and win rates with automated follow-up sequences and pipeline forecasting."}
+  ],
+  benefits: [
+    {"title": "Platform Integration", "desc": "Custom software that integrates with Google Analytics, Meta Ads, Google Ads, HubSpot, and your existing marketing tools. No rip-and-replace - we build around your current stack."},
+    {"title": "Built for Agency Workflows", "desc": "We understand agency life - retainers, pitch decks, client approvals, and tight deadlines. Software is built around how your team actually works, not the other way around."},
+    {"title": "White-Label Ready", "desc": "We build software that can be white-labelled to your agency brand. Client portals, dashboards, and reports all carry your branding - strengthening your agency's value proposition."}
+  ],
+  faqs: [
+    {"question": "Can custom software pull data from Google Analytics, Meta Ads, and Google Ads?", "answer": "Yes. We build integrations with Google Analytics, Meta Ads, Google Ads, LinkedIn Ads, and major social platforms via their APIs. Data is pulled into a single, branded dashboard - eliminating manual report compilation and spreadsheet wrangling."},
+    {"question": "How is bespoke software different from agency tools like HubSpot or AgencyAnalytics?", "answer": "Off-the-shelf tools are generic and carry their own branding. Bespoke software is white-labelled to your agency, fits your exact reporting workflows, and integrates with the specific platforms your clients use. You own the codebase - no per-client or per-seat fees."},
+    {"question": "Can you build a white-label client portal for our agency?", "answer": "Yes. We build branded client portals where your clients can view campaign performance, approve creative, submit briefs, and access reports - all under your agency's branding. Portals integrate with your campaign management and reporting systems for real-time data."},
+    {"question": "How long does a marketing agency software project take?", "answer": "Quick wins like a client reporting dashboard can be built in 4-6 weeks. A full campaign management or white-label platform typically takes 8-14 weeks. We start with the highest-impact features and iterate from there."}
+  ],
+  slug: "software-for-marketing-agencies",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK marketing agencies operate in a fast-moving, competitive market. Clients expect real-time reporting, seamless collaboration, and professional digital experiences. Bespoke software can help you deliver all three - while reducing the manual admin that eats into your margins - but most agencies are still pulling campaign data from five different platforms into spreadsheets every month, then formatting it into reports that are already out of date by the time they're sent.</p>
+<p>Off-the-shelf agency software creates friction at every turn. Reporting tools like Google Data Studio handle basic dashboards but can't produce the branded, white-label reports that retain clients and win pitches. Project management tools built for software development don't understand creative workflows, versioning of design assets, or the relationship between campaign deliverables and media spend. Client portal solutions are either too generic to impress or too expensive for mid-size agencies. The result is account managers spending two days a month per client on reporting, creative directors tracking approvals through email chains, and new business teams rebuilding pitch decks from scratch because campaign data is locked in systems that don't talk to each other.</p>
+<p>We build custom software for UK marketing agencies - from client reporting dashboards and campaign management systems to white-label portals and project tracking tools. We understand agency workflows, from pitch to delivery, and we build systems that integrate with the marketing platforms your clients use. Whether it's a bespoke reporting platform that pulls data from Google Ads, Meta, LinkedIn, and your client's CRM into a single white-label dashboard, or a project management system that handles creative approval workflows with version control, bespoke software fits how your agency actually operates.</p>
+<p>Agency compliance is often underestimated. GDPR requirements for handling client customer data, data processing agreements with third-party platforms, and contractual SLAs for reporting frequency all demand robust processes. Bespoke software gives you complete control over how client data is accessed, stored, and reported on - with audit trails, role-based access, and automated data retention policies that satisfy both your clients' legal teams and your own compliance obligations.</p>
+<p>A UK digital marketing agency with 15 staff was spending 40% of account managers' time on monthly client reporting - manually exporting data from six platforms and rebuilding charts in PowerPoint. We built a bespoke white-label reporting platform that connected to each data source via API, generated branded dashboards updated in real time, and allowed clients to filter and explore their own data. Account management reporting time dropped by 85%, the agency won three new retainer clients specifically because of their reporting capability, and client retention improved as transparency eliminated end-of-month surprises.</p>
+<p>Marketing agencies are perfectly placed to benefit from bespoke software. Every campaign generates data across multiple platforms. The opportunity is building software that pulls that data into branded dashboards, automates reporting, and gives clients a professional, self-service experience that sets your agency apart.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your marketing agency? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

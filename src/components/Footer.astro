@@ -1,0 +1,61 @@
+---
+import { SITE_NAME, CONTACT_EMAIL } from '../config';
+import { INDUSTRIES } from '../config';
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.41,2.00C17.10,2.25 23.06,3.84 28.13,6.46C29.65,11.96 29.98,18.12 29.04,23.74C24.29,26.89 18.53,29.10 12.89,29.96C8.43,26.41 4.55,21.61 1.99,16.52C3.99,11.17 7.35,6.00 11.41,2.00ZM21.82,24.31C17.86,24.76 13.60,24.32 9.84,23.08C8.25,19.50 7.41,15.34 7.50,11.40C10.47,8.74 14.22,6.60 18.03,5.41C21.46,7.34 24.61,10.19 26.88,13.39C26.03,17.25 24.23,21.14 21.82,24.31Z" fill="#2563eb"/>
+          </svg>
+          {SITE_NAME}
+        </a>
+        <p>Bespoke software development for UK SMEs. Custom platforms, system integration, and AI automation. Software you own, not rent. Based in the United Kingdom.</p>
+        <p style="margin-top:12px;font-size:0.85rem;color:var(--grey-400);">Looking for <a href="https://ajairu.ai" style="color:var(--blue);text-decoration:underline;">AI consulting and strategy</a>? Visit our sister site ajairu.ai.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services#integration">System Integration &amp; Automation</a></li>
+          <li><a href="/services#bespoke">Bespoke Software Platform</a></li>
+          <li><a href="/services#erp-replacement">SaaS / ERP Replacement</a></li>
+          <li><a href="/services#technical-consultancy">Technical Consultancy</a></li>
+          <li><a href="/services#support">Ongoing Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/process">How It Works</a></li>
+          <li><a href="/assessment">Free Software Readiness Quiz</a></li>
+          <li><a href="/guide">Free Guide</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/comparison">How We Compare</a></li>
+          <li><a href="/best-software-developer-uk">Best Software Developer UK</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+          <li><a href="/contact">Book a discovery call</a></li>
+          <li>United Kingdom</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; <span class="current-year">{year}</span> {SITE_NAME}. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>

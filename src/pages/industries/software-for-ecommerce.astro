@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for E-commerce",
+  metaTitle: "Bespoke Software for E-commerce UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK e-commerce businesses. Custom platforms, inventory sync, order management, and integration with Shopify, WooCommerce, and Magento.",
+  h1: "Bespoke Software for E-commerce in the UK",
+  lead: "Custom software solutions for UK e-commerce businesses. Build custom platforms, sync inventory across channels, and automate order management.",
+  useCases: [
+    {"title": "Multi-Channel Inventory Sync", "desc": "Custom software that synchronises stock levels across Shopify, Amazon, eBay, and your warehouse in real-time - eliminating overselling and manual stock updates across channels."},
+    {"title": "Order Management System", "desc": "A bespoke OMS that centralises orders from all sales channels, automates fulfilment routing, and tracks shipments - giving you a single view of every order from purchase to delivery."},
+    {"title": "Custom Product Configurator", "desc": "Interactive product configurators that let customers personalise products on your storefront - with real-time pricing, visual previews, and automated production-ready output."},
+    {"title": "Subscription Management Platform", "desc": "Custom subscription software that handles recurring billing, customer self-service, renewal management, and churn tracking - built to fit your specific subscription model."},
+    {"title": "Returns & RMA Automation", "desc": "A bespoke returns management system that automates RMA processing, tracks return shipments, issues refunds, and analyses return reasons - reducing manual admin and improving customer experience."},
+    {"title": "B2B Trade Portal", "desc": "A custom B2B ordering portal with customer-specific pricing, bulk ordering, account management, and ERP integration - giving trade customers a dedicated, self-service ordering experience."}
+  ],
+  benefits: [
+    {"title": "Platform Integration", "desc": "Custom software that integrates with Shopify, WooCommerce, Magento, BigCommerce, and your existing e-commerce platform. No platform migration required."},
+    {"title": "Fast ROI", "desc": "E-commerce software typically delivers measurable ROI within 30-60 days. Inventory sync and order automation pay for themselves quickly by reducing overselling and manual admin."},
+    {"title": "GDPR Compliant", "desc": "Customer data is handled in compliance with GDPR and UK data protection law. We build with data protection by design and use UK data residency where possible."}
+  ],
+  faqs: [
+    {"question": "Do I need a large e-commerce business to benefit from custom software?", "answer": "No. Even small e-commerce businesses benefit from custom inventory sync, order management, and returns automation. The key is starting with the highest-impact features. Our consultancy engagement identifies those priorities."},
+    {"question": "Will custom software work with my existing e-commerce platform?", "answer": "Almost certainly. We build custom software that integrates with Shopify, WooCommerce, Magento, BigCommerce, and custom platforms via their APIs. We prefer building integrations on top of your existing platform rather than replacing it."},
+    {"question": "How is bespoke software different from e-commerce apps and plugins?", "answer": "Off-the-shelf plugins are generic and often don't fit your exact workflows. Bespoke software fits your specific processes, integrates with your specific systems, and eliminates the manual workarounds that plugins can't handle. You also own the codebase - no monthly per-seat fees."},
+    {"question": "Is customer data safe with custom software?", "answer": "Yes, when built correctly. We build with GDPR compliance, data encryption, and UK or EU data residency where possible. All implementations include appropriate data protection measures and access controls."}
+  ],
+  slug: "software-for-ecommerce",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>E-commerce is competitive. Margins are tight, customer expectations are high, and the difference between winning and losing often comes down to operational efficiency and customer experience. Bespoke software can help on both fronts - but most UK e-commerce businesses are running on a tangle of Shopify apps, spreadsheets, and manual processes that crack under pressure during peak trading periods.</p>
+<p>Off-the-shelf e-commerce platforms are designed for the average seller, not your specific operation. They can't handle complex multi-warehouse inventory rules, bespoke bundling logic, or the specific fulfilment workflow your 3PL partner requires. Generic inventory sync tools work until you sell across eBay, Amazon, Shopify, and wholesale channels simultaneously - then overselling starts, stock figures drift, and customer service spends hours reconciling discrepancies. Marketing automation tools promise personalisation but can't act on the specific behavioural triggers that matter to your product range.</p>
+<p>We build custom software for UK e-commerce businesses that delivers measurable ROI. From multi-channel inventory sync that eliminates overselling to order management systems that centralise fulfilment, we focus on software that pays for itself. Bespoke systems connect your storefronts, warehouse, accounting platform, and shipping providers into a single automated pipeline - so an order placed on eBay at midnight flows through pick, pack, ship, and invoice without a single manual touch.</p>
+<p>E-commerce also carries specific compliance obligations. UK Consumer Rights Act requirements, GDPR data protection, and PCI-DSS payment security all demand robust handling of customer data. Bespoke software gives you complete control over how personal data is stored, processed, and retained - with audit trails and role-based access built in from the start, rather than bolted on through a third-party app.</p>
+<p>A UK specialist retailer selling across Shopify, eBay, and Amazon was losing £15,000 a month to overselling and manual stock reconciliation. We built a bespoke multi-channel inventory sync system with real-time stock buffers and automated reorder alerts. Within two months, overselling incidents dropped to zero, the dedicated stock reconciliation role was redeployed to customer service, and the business expanded to two additional sales channels without adding headcount.</p>
+<p>E-commerce is a sector where bespoke software delivers clear, fast returns. The data is already there: customer behaviour, purchase history, product data, and logistics. The opportunity is building software that turns that data into automated workflows that improve the customer experience and the bottom line.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your e-commerce business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

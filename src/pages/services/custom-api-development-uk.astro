@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Custom API Development UK | API Integration Services | ${SITE_NAME}`;
+const description = 'Custom API development UK for SMEs. REST and GraphQL APIs built for security, performance, and clear documentation. Connect systems, enable integrations, and scale your platform. From £5,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Custom API Development UK', 'item': `${SITE_URL}/services/custom-api-development-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Custom API Development UK',
+  'serviceType': 'API Development & Integration Services',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Custom API development for UK SMEs. REST and GraphQL APIs built with security, rate limiting, authentication, and comprehensive documentation. Connect systems, enable third-party integrations, and scale your platform. Fixed-price, you own the code.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single API Development', 'price': '5000', 'priceCurrency': 'GBP', 'description': 'Custom REST or GraphQL API with authentication and documentation. 2-4 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-Endpoint API Suite', 'price': '12000', 'priceCurrency': 'GBP', 'description': 'Full API platform with multiple endpoints, rate limiting, and integration support. 4-8 weeks.' },
+    { '@type': 'Offer', 'name': 'Enterprise API Platform', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'API gateway, developer portal, OAuth, and monitoring. 6-12 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does custom API development cost in the UK?', answer: 'A single custom API with authentication and documentation starts from £5,000. A multi-endpoint API suite with rate limiting and integration support typically costs £10,000 to £18,000. Full enterprise API platforms with developer portals, OAuth, and monitoring range from £20,000 to £35,000+. All projects are fixed-price - you know the total cost before we start.' },
+  { question: 'What is an API, in plain English?', answer: 'An API (Application Programming Interface) is a way for two pieces of software to talk to each other. Think of it as a waiter in a restaurant - you (the customer) tell the waiter what you want, the waiter takes your order to the kitchen (the system), and brings back your food (the data). You do not need to know how the kitchen works - you just need to know what to ask for. APIs let your website talk to your payment processor, your CRM talk to your accounting software, or your mobile app talk to your database.' },
+  { question: 'Should we use REST or GraphQL for our API?', answer: 'It depends on your use case. REST is the industry standard - well-understood, widely supported, and ideal for most business applications. It uses standard HTTP methods (GET, POST, PUT, DELETE) and is easy to cache and scale. GraphQL is better when you have complex data relationships and clients that need flexible queries - for example, a mobile app that needs different data shapes on different screens. We help you choose based on your specific requirements, not fashion.' },
+  { question: 'How do you secure the APIs you build?', answer: 'Every API we build includes authentication (API keys, OAuth 2.0, or JWT tokens), rate limiting to prevent abuse, input validation to prevent injection attacks, HTTPS encryption, and CORS policies. We follow OWASP security guidelines and can add IP allow-listing, request signing, and audit logging for sensitive applications. Security is built in from the start, not bolted on.' },
+  { question: 'Do we own the API code and documentation?', answer: 'Yes, entirely. You own the source code, the API specification, and all documentation from day one. No licence fees, no vendor lock-in. Your developers can extend and maintain the API independently, or we can provide ongoing support from £350/month. You are never trapped with a single supplier - the API is yours.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Custom API Development UK for SMEs</h1>
+      <p>Connect your systems, enable third-party integrations, and build platforms that scale. We design and build secure, well-documented custom APIs in REST or GraphQL - with authentication, rate limiting, and developer documentation that actually makes sense.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Custom API Development UK'}]} />
+
+  <!-- WHAT IS AN API -->
+  <section class="section" id="what-is-an-api">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">What an API Is (In Plain English)</h2>
+      <p class="section-subtitle reveal">No jargon. Here is what an API actually does and why your business probably needs one.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">An API (Application Programming Interface) is a way for two pieces of software to talk to each other. Think of it as a waiter in a restaurant. You (the customer) tell the waiter what you want. The waiter takes your order to the kitchen (the system) and brings back your food (the data). You do not need to know how the kitchen works - you just need to know what to ask for.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">In business terms, an API lets your website talk to your payment processor, your CRM talk to your accounting software, or your mobile app talk to your database - automatically, without a human in the middle. When you see "Login with Google" or "Pay with PayPal," that is an API at work. For UK SMEs, a custom API means your systems can share data with each other and with your partners, suppliers, and customers - on your terms, with your rules. It also means you are not dependent on third-party integration platforms that charge per-transaction fees, store your data on their servers, and disappear when they go out of business. Your API is your infrastructure, under your control, built for your specific needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CUSTOM APIS MATTER -->
+  <section class="section bg-grey" id="why-custom-apis">
+    <div class="container">
+      <h2 class="section-title reveal">Why Custom APIs Matter for UK SMEs</h2>
+      <p class="section-subtitle reveal">Off-the-shelf integrations only get you so far. A custom API gives you control, security, and flexibility.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>Connect Anything to Anything</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Off-the-shelf integration tools like Zapier only connect systems that have pre-built connectors. A custom API lets you connect any system to any other system - even legacy software with no public API. If data exists in a machine-readable format, we can build an API to share it.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="lock" /></div>
+          <h3>Control Your Data</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">When you use third-party integration platforms, your data flows through someone else's servers. A custom API keeps your data on infrastructure you control, with security policies you define. For UK SMEs handling customer data under GDPR, that level of control matters.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="bolt" /></div>
+          <h3>Enable a Platform Play</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your customers or partners want to integrate with your system, a public API turns your software into a platform. That means stickier customers, new revenue streams, and a competitive moat. We build APIs that developers actually want to use - with clear documentation and predictable behaviour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REST VS GRAPHQL -->
+  <section class="section" id="rest-vs-graphql">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Technical Approach</span>
+      <h2 class="section-title reveal">REST vs GraphQL: Choosing the Right API Architecture</h2>
+      <p class="section-subtitle reveal">Two approaches to building APIs. We help you choose the one that fits your business - not the one that is trendy.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">REST API</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Most business applications, public APIs, and systems that need broad compatibility.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">REST is the industry standard for APIs. It uses standard HTTP methods - GET to retrieve data, POST to create, PUT to update, DELETE to remove. Each endpoint (URL) represents a resource (a customer, an order, an invoice). REST is simple, well-understood, easy to cache, and supported by every programming language and integration tool on the planet.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>When to choose REST:</strong> You are building a public API, connecting standard business systems, or want maximum compatibility with third-party tools. This is the right choice for 90% of UK SMEs.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £5,000</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">GraphQL API</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Mobile apps, complex data relationships, and clients that need flexible queries.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;">GraphQL lets the client ask for exactly the data it needs - no more, no less. Instead of calling three endpoints to get a customer's details, orders, and invoices, you make one request that asks for all three. This reduces network traffic and gives front-end developers precise control over data fetching.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>When to choose GraphQL:</strong> You are building a mobile app, have complex data relationships, or your front-end needs different data shapes on different screens. Not necessary for most standard business integrations.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £7,000</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Not sure which architecture fits your project? The free discovery call will clarify this in 30 minutes. <a href="/contact">Book yours now</a>.</p>
+    </div>
+  </section>
+
+  <!-- API SECURITY -->
+  <section class="section bg-grey" id="api-security">
+    <div class="container">
+      <h2 class="section-title reveal">API Security: Built In From the Start</h2>
+      <p class="section-subtitle reveal">Security is not an add-on. Every API we build includes these protections as standard.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="lock" /></div>
+          <h3 style="font-size:1.1rem;">Authentication</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">API keys, OAuth 2.0, or JWT tokens. Every request is verified - no anonymous access unless you specifically allow it.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3 style="font-size:1.1rem;">Rate Limiting</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Prevent abuse and protect your servers. Requests are limited per client, per time window. Customisable thresholds for different users.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3 style="font-size:1.1rem;">Input Validation</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Every input is validated against strict schemas. No SQL injection, no XSS, no malformed data reaching your database. OWASP guidelines followed.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3 style="font-size:1.1rem;">Audit Logging</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Every request is logged - who called what, when, and what happened. Essential for compliance, debugging, and security investigations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API DOCUMENTATION -->
+  <section class="section bg-grey" id="documentation">
+    <div class="container">
+      <h2 class="section-title reveal">API Documentation: The Part Most Agencies Get Wrong</h2>
+      <p class="section-subtitle reveal">An API without documentation is like a door without a handle. We make sure your API is usable from day one.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Most API development projects fail not because the API is bad, but because the documentation is. Developers cannot figure out how to use it, integration takes weeks instead of hours, and the API sits unused while your team works around it. We treat documentation as a first-class deliverable, not an afterthought.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">Every API we build ships with interactive OpenAPI (Swagger) documentation that lets developers test endpoints directly in the browser. Code examples in JavaScript, Python, PHP, and cURL. A getting-started guide that walks through authentication and the first API call. Error code reference with explanations and resolution steps. Rate limit documentation. And because the documentation is generated from the API specification, it is always in sync with the code - never out of date.</p>
+      </div>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Interactive Docs</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Swagger UI lets developers send real requests and see real responses in the browser. No Postman setup, no guessing. Try an endpoint, see the result, copy the code. Documentation that developers actually want to use.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Code Examples</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Copy-paste code examples in JavaScript, Python, PHP, and cURL for every endpoint. Developers integrate in minutes, not days. Whether your consumer is a front-end developer, a data scientist, or a third-party partner, they have what they need.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Always In Sync</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Documentation is generated from the OpenAPI specification, so it is always current. When the API changes, the docs update automatically. No stale documentation, no "the docs say one thing but the API does another" - a common problem that wastes hours of developer time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Discover, Design, Build, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that de-risks every API project.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We map your systems, data flows, and integration requirements. We identify what the API needs to do, who will consume it, and what security constraints apply. No assumptions - we understand your exact needs.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the API contract - endpoints, request/response formats, authentication, and error handling. You see the full specification before any code is written. Developers know exactly what they are building against.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the API using AI-accelerated development. You get weekly demos, automated tests, and interactive documentation (Swagger/OpenAPI). Test against real data in a staging environment throughout.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production with monitoring, alerting, and rollback procedures. Your team gets full documentation, SDK examples, and 30 days of post-launch support. You own all the code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section bg-grey" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Custom API Development UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single API</div>
+          <h3>Core API Build</h3>
+          <div class="pricing-price">from £5,000</div>
+          <div class="pricing-duration">2-4 weeks</div>
+          <ul class="pricing-features">
+            <li>Custom REST or GraphQL API</li>
+            <li>Up to 10 endpoints</li>
+            <li>Authentication (API keys or JWT)</li>
+            <li>Input validation and error handling</li>
+            <li>OpenAPI/Swagger documentation</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">API Suite</div>
+          <h3>Multi-Endpoint Platform</h3>
+          <div class="pricing-price">£10,000 - £18,000</div>
+          <div class="pricing-duration">4-8 weeks</div>
+          <ul class="pricing-features">
+            <li>Full API with 10-30 endpoints</li>
+            <li>OAuth 2.0 authentication</li>
+            <li>Rate limiting and audit logging</li>
+            <li>Automated test suite</li>
+            <li>Developer documentation and SDK examples</li>
+            <li>Integration with 1-2 existing systems</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Enterprise</div>
+          <h3>API Platform + Portal</h3>
+          <div class="pricing-price">£20,000 - £35,000+</div>
+          <div class="pricing-duration">6-12 weeks</div>
+          <ul class="pricing-features">
+            <li>API gateway and management</li>
+            <li>Developer portal with self-service keys</li>
+            <li>OAuth 2.0, SSO, and IP allow-listing</li>
+            <li>Monitoring, alerting, and analytics</li>
+            <li>Versioning and backwards compatibility</li>
+            <li>Multiple system integrations</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Custom API Development</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, API specification, and documentation. No licence fees, no vendor lock-in. Your developers can extend and maintain the API independently. The API is an asset you own, not a service you rent.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Documentation That Works</h3>
+          <p style="color:var(--grey-600);">Every API ships with interactive OpenAPI/Swagger documentation, code examples in multiple languages, and a getting-started guide. Developers can test endpoints in the browser. No more guessing how the API works - it is all there, clearly written.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Security First</h3>
+          <p style="color:var(--grey-600);">Authentication, rate limiting, input validation, and audit logging are built in from day one. We follow OWASP guidelines and can add IP allow-listing, request signing, and GDPR-compliant data handling. Security is not an afterthought.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Custom API Development FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about API development.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Build an API That Connects Your Business?"
+    text="Book a free 30-minute discovery call. We will map your systems, identify the integrations that will deliver the most value, and give you a fixed-price quote - whether you need a single endpoint or a full API platform."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

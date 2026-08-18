@@ -1,0 +1,204 @@
+---
+import { SITE_NAME, SITE_URL } from '../config';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: string;
+  ogImage?: string;
+  schema?: object[];
+  noindex?: boolean;
+}
+
+const { title, description, canonical, ogType = 'website', ogImage: ogImageProp, schema = [], noindex = false } = Astro.props;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, SITE_URL).toString();
+const ogImagePath = ogImageProp || '/images/og-default.jpg';
+const ogImage = new URL(ogImagePath, SITE_URL).toString();
+---
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={title} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Schema.org structured data -->
+  {schema.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+</head>
+<body>
+  <Navigation />
+  <slot />
+  <Footer />
+
+  <!-- Client-side interactions: nav toggle, dropdown, scroll reveal, FAQ accordion -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      // --- Mobile Nav Toggle ---
+      var navToggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelector('.nav-links');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function () {
+          navToggle.classList.toggle('open');
+          navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a:not(.nav-dropdown-toggle)').forEach(function (link) {
+          link.addEventListener('click', function () {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+          });
+        });
+      }
+
+      // --- Industries Dropdown (click + keyboard) ---
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function (dd) {
+        var toggle = dd.querySelector('.nav-dropdown-toggle');
+        if (!toggle) return;
+
+        function toggleDropdown(open) {
+          if (typeof open === 'boolean') {
+            if (open) dd.classList.add('open'); else dd.classList.remove('open');
+          } else {
+            dd.classList.toggle('open');
+          }
+          toggle.setAttribute('aria-expanded', dd.classList.contains('open'));
+        }
+
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          // close other dropdowns
+          dropdowns.forEach(function (other) { if (other !== dd) other.classList.remove('open'); });
+          toggleDropdown();
+        });
+
+        toggle.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleDropdown();
+          }
+          if (e.key === 'Escape') {
+            toggleDropdown(false);
+          }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!dd.contains(e.target)) toggleDropdown(false);
+        });
+      });
+
+      // --- Smooth Scroll for in-page anchors ---
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#' || targetId === '#!') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var headerOffset = 80;
+            var elementPosition = target.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // --- Scroll Reveal Animation ---
+      var revealElements = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window && revealElements.length > 0) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        revealElements.forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
+
+      // --- FAQ Accordion ---
+      var faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(function (item) {
+        var question = item.querySelector('.faq-question');
+        if (question) {
+          question.addEventListener('click', function () {
+            var isOpen = item.classList.contains('open');
+            faqItems.forEach(function (other) {
+              other.classList.remove('open');
+            });
+            if (!isOpen) {
+              item.classList.add('open');
+            }
+          });
+          question.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              question.click();
+            }
+          });
+        }
+      });
+
+      // --- Update footer year ---
+      var yearEls = document.querySelectorAll('.current-year');
+      if (yearEls.length > 0) {
+        var year = new Date().getFullYear();
+        yearEls.forEach(function (el) { el.textContent = year; });
+      }
+    });
+  </script>
+</body>
+</html>

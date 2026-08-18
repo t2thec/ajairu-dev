@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Insurance",
+  metaTitle: "Bespoke Software for Insurance UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK insurance brokers and providers. Quote management, policy administration, claims tracking, client portals, and compliance reporting.",
+  h1: "Bespoke Software for Insurance in the UK",
+  lead: "Custom software solutions for UK insurance businesses. Manage quotes, policies, claims, and client relationships with software built for the UK insurance market.",
+  useCases: [
+    {"title": "Quote Management System", "desc": "A bespoke quoting platform that pulls rates from multiple insurers, applies your commission and pricing rules, and generates branded quotes for clients - with comparison views, renewal alerts, and conversion tracking in one place."},
+    {"title": "Policy Administration Platform", "desc": "Custom policy management software that handles renewals, mid-term adjustments, cancellations, and document generation - with automated renewal workflows and client communication built in."},
+    {"title": "Claims Tracking System", "desc": "A bespoke claims management platform that tracks every claim from first notification to settlement, manages adjuster assignments, documents evidence, and provides clients with real-time claim status updates."},
+    {"title": "Client Portal", "desc": "A bespoke client portal where policyholders can view their cover, download documents, report claims, request changes, and message their broker - giving clients 24/7 self-service access and reducing broker admin."},
+    {"title": "Compliance Reporting", "desc": "Custom compliance software that tracks FCA reporting requirements, training certifications, client money handling records, and GDPR consent - generating audit-ready reports and automated alerts for expiring requirements."},
+    {"title": "Insurer Integration", "desc": "Custom middleware that connects your systems with insurer APIs and rating engines, automating quote retrieval, policy issuance, and claims notification - eliminating manual data entry and reducing errors."}
+  ],
+  benefits: [
+    {"title": "FCA-Compliant by Design", "desc": "We understand the UK regulatory landscape for insurance - FCA rules, client money, ICOBS, and GDPR. Software is built with compliance in mind from the start, with audit trails, consent tracking, and reporting built in."},
+    {"title": "Insurer Integration", "desc": "Custom software that integrates with insurer APIs, rating engines, and your existing back-office systems. No rip-and-replace - we build around what you have, automating quote retrieval and policy issuance."},
+    {"title": "Built to Last", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. You own everything we build - no per-policy licensing, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with our existing insurance software?", "answer": "Yes. We can build integrations with existing policy management systems, insurer APIs, and rating engines - extending their functionality with custom client portals, compliance reporting, or claims tracking. Alternatively, if your current system is holding you back, we can build a bespoke replacement. We assess your current systems during the consultancy phase and recommend the best approach."},
+    {"question": "How is bespoke software different from off-the-shelf insurance software?", "answer": "Off-the-shelf insurance software is built for the average broker, not your specific model. It can't handle your unique commission structures, your specific insurer relationships, or the way you manage renewals and mid-term adjustments. Bespoke software fits your exact processes, integrates with your specific systems, and eliminates the manual workarounds. You also own the codebase - no per-policy or per-user licensing fees."},
+    {"question": "Can the software handle FCA compliance requirements?", "answer": "Yes. We build FCA compliance into the system from the start - client money handling records, ICOBS requirements, training certifications, and GDPR consent tracking. The software generates audit-ready reports and sends automated alerts for expiring compliance requirements, so you're always prepared for an FCA visit."},
+    {"question": "How long does an insurance software project take?", "answer": "Quick wins like a client portal or compliance reporting dashboard can be built in 8-10 weeks. A full quote and policy management platform with insurer integration typically takes 14-22 weeks. We start with the highest-impact features and iterate."}
+  ],
+  slug: "software-for-insurance-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK insurance brokers and providers operate in a heavily regulated, competitive market where efficiency and compliance are paramount. The brokers winning right now are the ones using technology to quote faster, serve clients better, and stay ahead of regulatory requirements. Yet many UK insurance businesses still rely on a tangle of legacy policy management systems, spreadsheets for renewals, and manual processes for insurer communication that slow the team down and create compliance gaps.</p>
+<p>Off-the-shelf insurance software is built for the average broker, not your specific model. Generic policy management packages don't understand your unique commission structures, your specific insurer panel arrangements, or the way your renewal process actually works. Quote comparison tools work for standard products but can't handle the niche schemes and specialist lines that differentiate your business. Client portals, where they exist, are rigid templates that don't match your branding or the specific self-service tasks your clients want. Compliance reporting is often a manual export-and-reformat exercise that eats days before every FCA deadline.</p>
+<p>We build custom software for UK insurance businesses that streamlines the entire policy lifecycle. From quote management and policy administration to claims tracking and client portals, we build systems that fit your exact workflows. We understand the UK insurance market - from the broker's desk to the compliance office - and we build software that integrates with your existing insurer APIs, rating engines, and back-office systems. Whether it's a bespoke quoting platform that pulls rates from multiple insurers and applies your pricing rules, or a client portal that lets policyholders self-serve document downloads and claim notifications, bespoke software fits your processes.</p>
+<p>Insurance compliance carries serious consequences. FCA rules, client money handling (CASS 5), ICOBS requirements, and GDPR consent management all demand meticulous record-keeping and audit trails. A missed renewal notification or an unrecorded client money transaction isn't just a process gap - it's a regulatory breach. Bespoke software tracks every client interaction, every consent, every client money movement, and every compliance certification - with automated alerts for expiring requirements and audit-ready reports generated on demand, replacing manual systems that crumble under regulatory scrutiny.</p>
+<p>A UK commercial insurance broker with 4,000 active policies was spending a full week each month preparing FCA compliance reports from data scattered across three systems. We built a bespoke compliance reporting platform that aggregated data from their policy management system, client money records, and training logs, generating FCA-ready reports automatically. Monthly compliance reporting dropped from five days to four hours, renewal retention improved by 8% thanks to automated client reminders, and the broker identified three unrecorded client money transactions that would have failed an FCA audit.</p>
+<p>Insurance is a sector where bespoke software delivers clear ROI. Every quote, every policy, and every claim generates data. The opportunity is building software that turns that data into faster quotes, automated compliance, and real-time visibility across every client, insurer, and line of business.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your insurance business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

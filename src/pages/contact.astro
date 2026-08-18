@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Contact | Book a Free Software Discovery Call | ${SITE_NAME}`;
+const description = `Book a free 30-minute software discovery call with ${SITE_NAME}. Bespoke software development for UK SMEs. No pitch, no pressure, just honest advice about bespoke software for your business.`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Contact', 'item': `${SITE_URL}/contact` },
+  ],
+};
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  'name': `Contact ${SITE_NAME}`,
+  'description': `Book a free 30-minute software discovery call with ${SITE_NAME}, a bespoke software development studio for UK SMEs.`,
+  'url': `${SITE_URL}/contact`,
+  'mainEntity': {
+    '@type': 'LocalBusiness',
+    'name': SITE_NAME,
+    'email': CONTACT_EMAIL,
+    'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  },
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, contactSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Book Your Free Software Discovery Call</h1>
+      <p>30 minutes. No pitch. No pressure. Just an honest conversation about whether bespoke software makes sense for your business right now.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Contact'}]} />
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info-card reveal">
+          <h3>Get in Touch</h3>
+          <div class="info-row">
+            <div class="icon"><Icon name="email" /></div>
+            <div class="text">
+              <strong>Email</strong><br>
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon"><Icon name="phone" /></div>
+            <div class="text">
+              <strong>Discovery Call</strong><br>
+              Free 30 minutes, Remote (UK)
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon"><Icon name="compass" /></div>
+            <div class="text">
+              <strong>Response Time</strong><br>
+              Within 1 business day
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="icon"><Icon name="pin" /></div>
+            <div class="text">
+              <strong>Location</strong><br>
+              United Kingdom<br>
+              Serving UK SMEs nationwide
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0;">
+
+          <h4 style="color:var(--teal);font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">What happens next?</h4>
+          <ol style="padding-left:20px;color:rgba(255,255,255,0.8);font-size:0.9rem;line-height:1.8;">
+            <li>You send the form or email</li>
+            <li>We reply within 1 business day to schedule</li>
+            <li>We have a 30-minute call (no pitch)</li>
+            <li>If it's a fit, we discuss next steps</li>
+            <li>If it's not, you've lost nothing</li>
+          </ol>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form reveal">
+          <h3 style="margin-bottom:8px;">Tell us about your business</h3>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:24px;">Fill in the form below and we'll get back to you within one business day to schedule your free discovery call.</p>
+          <form id="contact-form" action="/api/submit" method="POST">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="jane@company.co.uk" />
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="company">Company Name *</label>
+                <input type="text" id="company" name="company" required placeholder="Your Company Ltd" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="07xxx xxx xxx (optional)" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="employees">Company Size</label>
+              <select id="employees" name="employees">
+                <option value="">Select...</option>
+                <option value="1-9">1-9 employees</option>
+                <option value="10-49">10-49 employees</option>
+                <option value="50-99">50-99 employees</option>
+                <option value="100-250">100-250 employees</option>
+                <option value="250+">250+ employees</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service">What are you interested in?</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="audit">Technical Consultancy (from &pound;2,000)</option>
+                <option value="strategy">System Integration &amp; Automation (from &pound;8,000)</option>
+                <option value="implementation">Bespoke Software Platform (from &pound;25,000)</option>
+                <option value="fractional-caio">SaaS / ERP Replacement (from &pound;30,000)</option>
+                <option value="training">Ongoing Support (from &pound;350/mo)</option>
+                <option value="not-sure">Not sure yet, just want to talk</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your situation *</label>
+              <textarea id="message" name="message" required placeholder="What's prompting you to explore bespoke software? What business challenges are you facing? What tools do you currently use? Any context helps us prepare for our call."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message &amp; Book My Call</button>
+            <p class="form-note">By submitting this form, your details are sent securely to our team. We never share your data with third parties. GDPR compliant. See our <a href="/privacy">Privacy Policy</a>.</p>
+          </form>
+          <div id="form-success" class="form-success" style="display:none;">
+            Thank you for getting in touch. We'll respond within one business day to schedule your discovery call.
+          </div>
+          <div id="form-error" class="form-error" style="display:none;">
+            Something went wrong. Please try again or email us directly at {CONTACT_EMAIL}.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What to Expect on the Discovery Call</h2>
+      <p class="section-subtitle reveal">No slides. No sales script. Just a practical conversation.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3>We Listen First</h3>
+          <p>The first 20 minutes are about your business, your operations, your team, your challenges, and what's driving you to explore bespoke software. We ask questions, you talk.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Honest Assessment</h3>
+          <p>In the last 10 minutes, we'll share our initial thoughts: whether bespoke software makes sense for you, what stage you're at, and what we'd recommend as a next step. Even if that's "not yet."</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="handshake" /></div>
+          <h3>No Pressure</h3>
+          <p>If it's a fit, we'll discuss next steps. If it's not, we'll point you to free resources or alternative approaches. There's zero obligation. The call is genuinely free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Prefer Email? That Works Too."
+    text={`Drop us a line directly. We read every message and respond within one business day.`}
+    primaryCtaText={`Email ${CONTACT_EMAIL}`}
+    primaryCtaHref={`mailto:${CONTACT_EMAIL}`}
+  />
+
+  <!-- Contact form JS -->
+  <script is:inline>
+    function getUserId() {
+      let userId = localStorage.getItem('ajairu_dev_user_id');
+      if (!userId) {
+        userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('ajairu_dev_user_id', userId);
+      }
+      return userId;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.querySelector('#contact-form');
+      var successDiv = document.querySelector('#form-success');
+      var errorDiv = document.querySelector('#form-error');
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var formData = new FormData(form);
+          var data = {};
+          formData.forEach(function(v, k) { data[k] = v; });
+          data.userId = getUserId();
+          data.action = 'contact';
+          try {
+            var response = await fetch('/api/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            });
+            if (response.ok) {
+              form.style.display = 'none';
+              successDiv.style.display = 'block';
+            } else {
+              errorDiv.style.display = 'block';
+            }
+          } catch (err) {
+            errorDiv.style.display = 'block';
+          }
+        });
+      }
+    });
+  </script>
+</BaseLayout>

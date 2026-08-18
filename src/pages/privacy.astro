@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Privacy Policy | ${SITE_NAME}`;
+const description = `Privacy Policy for ${SITE_NAME}. How we collect, use, and protect your data in accordance with GDPR and UK data protection law.`;
+
+// Bespoke software development - privacy policy rebranded from AI consulting
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span> <span style="color:rgba(255,255,255,0.8)">Privacy Policy</span>
+      </div>
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p>How we collect, use, and protect your data.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Privacy Policy'}]} />
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <p><strong>Last updated:</strong> August 2026</p>
+
+        <p>{SITE_NAME} ("we", "our", "us") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+
+        <h2>Data We Collect</h2>
+        <p>We collect the following personal data when you use our website, tools, or forms:</p>
+        <ul>
+          <li><strong>Software Readiness Quiz data:</strong> Your quiz answers, overall score, category scores (data, processes, team, strategy), and if you choose to provide them, your email address, phone number, and company name.</li>
+          <li><strong>Guide download data:</strong> Your email address when you request our free guide.</li>
+          <li><strong>Contact form data:</strong> Your name, email address, phone number (optional), company name, company size, service interest, and message.</li>
+          <li><strong>Communication data:</strong> Any information you share via email or during discovery calls.</li>
+          <li><strong>Local storage identifier:</strong> We generate a random anonymous ID stored in your browser's local storage to link your activity across the quiz, guide, and contact form. This is not a cookie and does not track you across other websites.</li>
+          <li><strong>Technical data:</strong> Basic server log data such as IP address (for rate limiting and security) and pages visited. We do not use tracking cookies or analytics tools.</li>
+        </ul>
+
+        <h2>How We Use Your Data</h2>
+        <p>We use your personal data for the following purposes:</p>
+        <ul>
+          <li>Sending you your quiz results and recommendations by email.</li>
+          <li>Sending you the free guide you requested.</li>
+          <li>Responding to your enquiry and scheduling discovery calls.</li>
+          <li>Providing bespoke software development services to you.</li>
+          <li>Internal analysis of quiz results to understand common software readiness trends and improve our services.</li>
+          <li>Improving our website and services.</li>
+        </ul>
+
+        <h2>Legal Basis for Processing</h2>
+        <p>We process your personal data under the following legal bases:</p>
+        <ul>
+          <li><strong>Consent:</strong> When you submit our contact form, you consent to us using your data to respond to your enquiry.</li>
+          <li><strong>Legitimate interest:</strong> To respond to your communications and provide our services.</li>
+          <li><strong>Contract:</strong> When we have a consulting agreement with you, we process data necessary to fulfil that contract.</li>
+        </ul>
+
+        <h2>Data Storage and Security</h2>
+        <p>Your data is stored in a secure database on our server and is only accessible to our team. We do not share or sell your data with third parties. All data is encrypted in transit using HTTPS. Quiz answers and scores are stored without requiring an email address, so you can take the quiz anonymously. Email, phone, and company name are only stored if you choose to provide them.</p>
+
+        <h2>Data Retention</h2>
+        <p>We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected:</p>
+        <ul>
+          <li>Quiz responses (anonymous, no email): 24 months.</li>
+          <li>Quiz responses (with email): 24 months, or until you request deletion.</li>
+          <li>Guide download requests: 12 months.</li>
+          <li>Contact form enquiries: 12 months after last contact, unless you become a client.</li>
+          <li>Client data: For the duration of the engagement plus 6 years for accounting and legal compliance.</li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <p>Under UK GDPR, you have the following rights:</p>
+        <ul>
+          <li>The right to be informed about how we use your data.</li>
+          <li>The right of access to your personal data.</li>
+          <li>The right to rectification of inaccurate data.</li>
+          <li>The right to erasure ("right to be forgotten").</li>
+          <li>The right to restrict processing.</li>
+          <li>The right to data portability.</li>
+          <li>The right to object to processing.</li>
+          <li>The right to withdraw consent at any time.</li>
+        </ul>
+        <p>To exercise any of these rights, email us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+
+        <h2>Cookies</h2>
+        <p>Our website does not use tracking cookies. We do not use advertising cookies, analytics tracking cookies, or social media cookies. We use browser local storage to generate a random anonymous identifier that links your activity across our quiz, guide, and contact form. This stays on your device and is not shared with any third party. You can clear it at any time in your browser settings.</p>
+
+        <h2>Third-Party Services</h2>
+        <p>We use the following third-party services:</p>
+        <ul>
+          <li><strong>Google Fonts:</strong> Loaded via CDN for typography. Google may receive your IP address as part of the request.</li>
+          <li><strong>Gmail SMTP:</strong> Used to send you emails (quiz results, guide, contact form responses). Your email address is passed to Google's email service for delivery. Google's privacy policy applies to data processed by their service.</li>
+        </ul>
+        <p>We do not use Google Analytics, advertising pixels, social media tracking, or third-party chat widgets on this site.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

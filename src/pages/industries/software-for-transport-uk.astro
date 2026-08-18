@@ -1,0 +1,48 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Transport & Haulage UK",
+  metaTitle: `Bespoke Software for Transport & Haulage UK | Custom Software | ${SITE_NAME}`,
+  description: 'Custom software for UK transport and haulage companies. Fleet management, route planning, tachograph compliance, job tracking, customer portals, and fuel management. Built for the road.',
+  h1: "Bespoke Software for Transport & Haulage in the UK",
+  lead: "Fleet management, route planning, tachograph compliance, and customer tracking - built for the road, not a generic logistics template that ignores driver hours regulations and tachograph analysis.",
+  useCases: [
+    { title: "Fleet Management System", desc: "Track every vehicle - MOT, service schedules, insurance, O-licence details, and driver assignments. Automated alerts for expiring documents. Real-time vehicle status and availability." },
+    { title: "Route Planning & Optimisation", desc: "Plan multi-drop routes with traffic awareness, delivery windows, and vehicle constraints. Optimise for fuel efficiency, driver hours, and customer commitments. Reduce empty running." },
+    { title: "Driver Compliance (Tachograph)", desc: "Digital tachograph analysis, driver hours tracking, WTD compliance, and automated breach alerts. Generate DVSA-compliant reports. No more manual tacho analysis." },
+    { title: "Job Tracking & Dispatch", desc: "Assign jobs to drivers, track progress in real-time, and capture proof of delivery electronically. Drivers update status from a mobile app. Dispatchers see the whole fleet on one screen." },
+    { title: "Customer Portal", desc: "Customers book jobs, track deliveries in real-time, download proof of delivery documents, and view their history. Self-service reduces phone calls and improves customer satisfaction." },
+    { title: "Fuel Management", desc: "Track fuel consumption by vehicle and driver. Identify inefficient routes and vehicles. Monitor fuel card usage. Spot anomalies that could indicate fuel theft or mechanical issues." },
+  ],
+  benefits: [
+    { title: "Compliance Automated", desc: "Tachograph analysis, driver hours, O-licence management, and DVSA reporting handled automatically. Compliance breaches flagged before they happen, not after." },
+    { title: "Optimised Routes", desc: "AI-assisted route planning reduces mileage, fuel costs, and empty running. Drivers spend less time on the road and more time delivering." },
+    { title: "Real-Time Customer Updates", desc: "Customers track their deliveries without calling. POD documents available instantly. Fewer phone calls, happier customers, less admin for your dispatch team." },
+  ],
+  faqs: [
+    {"question": "Can bespoke software handle tachograph and driver hours compliance?", "answer": "Yes. We build digital tachograph analysis into the software from the start - automatic download and analysis of driver data, EU drivers' hours rules compliance, Working Time Directive tracking, and automated alerts when a driver is approaching a limit. We generate DVSA-compliant reports and infringement records. This eliminates manual tacho analysis and significantly reduces compliance risk."},
+    {"question": "Can the software integrate with our existing telematics?", "answer": "Yes. We integrate with major telematics providers including Microlise, Webfleet, Samsara, Quartix, and Verizon Connect. Vehicle data flows directly into your fleet management system. No need to replace your existing telematics hardware - we build the software layer on top of it."},
+    {"question": "Does the driver app work offline?", "answer": "Yes. The driver mobile app is designed for areas with poor signal - motorway corridors, rural delivery routes, port areas. Job details, route information, and POD capture all work offline. Data syncs automatically when connectivity returns. This is critical for UK transport operations where signal coverage is not guaranteed."},
+    {"question": "What does bespoke transport software cost?", "answer": "A focused fleet management and job tracking system starts from £15,000. A full platform with route optimisation, tachograph compliance, customer portal, and telematics integration typically runs £25,000-£60,000 depending on fleet size and complexity. Most operators recover the cost within 12-18 months through fuel savings, reduced empty running, and compliance breach avoidance."},
+  ],
+  slug: "software-for-transport-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+  <p>Transport and haulage companies operate in one of the most regulated industries in the UK. Driver hours, tachograph analysis, O-licence compliance, vehicle maintenance, and DVSA reporting are non-negotiable - get them wrong and you face fines, licence suspension, or worse. Yet most SME haulage operators manage this complexity with a patchwork of generic software, spreadsheets, and paper.</p>
+
+  <p>The typical transport tech stack is a generic fleet tracking tool, a separate accounting system, a tachograph analysis tool that nobody enjoys using, and a job management process that lives in WhatsApp groups and whiteboards. Nothing connects. Route planning is done by the transport manager's gut feel. Proof of delivery is paper slips that get lost. Customer queries about delivery status are answered by phone calls that take the dispatcher away from actually managing the fleet.</p>
+
+  <p>Off-the-shelf transport software exists, but it is built for large operators with dedicated IT teams. SMEs get the "lite" version - fewer features, no customisation, and a per-vehicle subscription that adds up fast. A 20-vehicle fleet can easily spend £15,000-£25,000 a year on SaaS subscriptions that almost fit. And none of it integrates with your accounting, your telematics, or your customer communication.</p>
+
+  <p>Bespoke software solves this by starting with your operation. Your fleet management system knows what an O-licence is and tracks it. Your tachograph compliance is built in, not bolted on - driver hours are tracked in real-time, breaches are flagged before they happen, and DVSA reports are generated with one click. Route planning considers your actual constraints - vehicle types, driver hours, delivery windows, and customer priorities - not generic algorithms that ignore the realities of UK roads.</p>
+
+  <p>The driver app is where the day-to-day impact is biggest. Drivers get job details, routes, and delivery instructions on their phone. They capture proof of delivery with a photo and signature. They update job status with one tap. No paper, no phone calls to base, no lost POD slips. And when signal drops on a rural delivery route, the app keeps working - syncing data when connectivity returns.</p>
+
+  <p>A UK haulage operator with 18 vehicles was spending £18,000 a year across three SaaS tools - fleet tracking, tachograph analysis, and a basic job management system. None integrated. Tacho analysis took the transport manager half a day a week. We built a single platform covering fleet management, tacho compliance, job tracking, driver app, and customer portal with telematics integration. Build cost: £35,000. Tacho processing dropped from 4 hours a week to 20 minutes. Empty running reduced by 12% through better route planning. The operator owns the software outright - hosting costs £60/month.</p>
+
+  <p>If your transport operation is spending more than £10,000 a year on software that does not quite fit, <a href="/services">explore our services</a> or <a href="/contact">get in touch</a> to discuss whether bespoke software makes sense for your fleet.</p>
+</IndustryPage>

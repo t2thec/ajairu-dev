@@ -1,0 +1,120 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+export interface Props {
+  title: string;
+  metaTitle: string;
+  description: string;
+  h1: string;
+  lead: string;
+  useCases: { title: string; desc: string }[];
+  benefits: { title: string; desc: string }[];
+  faqs: { question: string; answer: string }[];
+  slug: string;
+}
+
+const { title, metaTitle, description, h1, lead, useCases, benefits, faqs, slug } = Astro.props;
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': title,
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': description,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': `${SITE_URL}/industries` },
+    { '@type': 'ListItem', 'position': 3, 'name': title, 'item': `${SITE_URL}/industries/${slug}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((f) => ({
+    '@type': 'Question',
+    'name': f.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title={metaTitle}
+  description={description}
+  schema={[serviceSchema, breadcrumbSchema, faqSchema]}
+>
+  <section class="industry-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span> <a href="/industries" style="color:rgba(255,255,255,0.6)">Industries</a> <span>&rsaquo;</span> <span style="color:rgba(255,255,255,0.8)">{title}</span>
+      </div>
+      <span class="eyebrow">Industry</span>
+      <h1>{h1}</h1>
+      <p>{lead}</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Industries',href:'/industries'},{name:title}]} />
+
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <slot />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Software Use Cases for {title}</h2>
+      <p class="section-subtitle reveal">Practical, proven custom software solutions that deliver measurable ROI for {title.toLowerCase()} businesses.</p>
+      <div class="use-case-list">
+        {useCases.map((uc) => (
+          <div class="use-case-item reveal">
+            <h4>{uc.title}</h4>
+            <p>{uc.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Why {title} Choose {SITE_NAME}</h2>
+      <p class="section-subtitle reveal">Industry-specific expertise, combined with our proven 4-step methodology.</p>
+      <div class="cards-grid cards-3">
+        {benefits.map((b) => (
+          <div class="card reveal">
+            <h3>{b.title}</h3>
+            <p>{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">{title} Software FAQ</h2>
+      <p class="section-subtitle reveal">Common questions about bespoke software development in the {title.toLowerCase()} sector.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title={`Ready to Explore Software for ${title}?`}
+    text="Book a free 30-minute discovery call. We'll talk through your specific challenges and whether bespoke software makes sense for you right now."
+  />
+</BaseLayout>

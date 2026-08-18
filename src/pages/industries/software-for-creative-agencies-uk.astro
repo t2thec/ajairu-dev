@@ -1,0 +1,48 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Creative Agencies UK",
+  metaTitle: `Bespoke Software for Creative Agencies UK | Custom Software | ${SITE_NAME}`,
+  description: 'Custom software for UK creative agencies. Project management, time tracking, resource planning, client approval workflows, invoicing, and asset management. Built around your creative process.',
+  h1: "Bespoke Software for Creative Agencies in the UK",
+  lead: "Project management, time tracking, resource planning, and client approval workflows - built around your creative process, not a generic PM tool that assumes you work like a construction company.",
+  useCases: [
+    { title: "Project Management Platform", desc: "Track creative projects from brief to delivery. Briefs, scopes, milestones, deadlines, and deliverables in one place. Built around creative workflows - design rounds, revisions, client feedback - not generic task lists." },
+    { title: "Time Tracking & Billing", desc: "Track time against projects and clients automatically. Generate accurate timesheets for client billing and internal profitability analysis. No more manual timesheet entry at the end of the week." },
+    { title: "Resource Planning", desc: "See who is working on what, when. Plan capacity across designers, developers, writers, and freelancers. Spot bottlenecks before they delay projects. Balance workload across the team." },
+    { title: "Client Approval Workflows", desc: "Send creative work to clients for review and approval. Track comments, revisions, and sign-offs in one place. No more chasing email threads for approval confirmation." },
+    { title: "Invoicing & Financial Integration", desc: "Generate invoices from tracked time and project milestones. Integrate with Xero, QuickBooks, or Sage. Automated chase emails for overdue invoices. Real-time view of agency financial health." },
+    { title: "Digital Asset Management", desc: "Store, organise, and share creative assets - designs, videos, copy, brand guidelines. Version control, client access portals, and approval tracking on every asset." },
+  ],
+  benefits: [
+    { title: "On-Time, On-Budget Delivery", desc: "Proper scoping, time tracking, and milestone management means projects deliver when you said they would, at the cost you quoted." },
+    { title: "Profitable Projects", desc: "Real-time profitability tracking shows you which projects are making money and which are quietly bleeding hours. No more discovering a project lost money at month-end." },
+    { title: "Streamlined Client Approvals", desc: "Clients review and approve work in a branded portal. Every comment, revision, and sign-off is tracked. No more ambiguity about what was approved and when." },
+  ],
+  faqs: [
+    {"question": "Can bespoke software integrate with our existing design tools?", "answer": "Yes. We can integrate with Figma, Adobe Creative Cloud, Frame.io, and other design tools. Assets, versions, and comments can flow automatically between your design tools and your project management platform. No more manual uploads or version confusion."},
+    {"question": "How is this different from using Monday.com or Asana?", "answer": "Generic PM tools are built for everyone, which means they fit nobody perfectly. They do not understand creative workflows - design rounds, revision cycles, client feedback loops, or asset versioning. Bespoke software is built around your exact process, your terminology, and your client interaction model. It also integrates with your accounting and asset management, which generic tools cannot do without expensive third-party connectors."},
+    {"question": "Can the client portal be branded with our agency identity?", "answer": "Yes. The client portal is fully branded with your agency's logo, colours, and domain. Clients see a seamless extension of your agency, not a third-party tool with your logo stuck on top. This reinforces your brand throughout the approval process."},
+    {"question": "What does bespoke agency software cost?", "answer": "A focused project management and time tracking system starts from £15,000. A full platform with client portal, resource planning, invoicing integration, and asset management typically runs £25,000-£50,000 depending on complexity. Most agencies recover the cost within 12-18 months through better time tracking, reduced admin, and more accurate client billing."},
+  ],
+  slug: "software-for-creative-agencies-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+  <p>Creative agencies have a software problem that nobody talks about. Your work is visual, iterative, and client-driven - but most project management tools were built for software development or construction. So you end up with a PM tool that does not understand design rounds, a time tracker that nobody uses because it takes too long, and a client feedback process that lives in email threads nobody can find three months later.</p>
+
+  <p>The typical agency tech stack is three or four SaaS tools loosely held together with hope. Monday.com for project tracking. Harvest for time tracking. A separate invoicing tool. Google Drive for assets. Nothing talks to anything else. Project profitability is a spreadsheet someone updates when they have time, which means never. Client approvals are buried in email, and scope creep goes unnoticed until the project is two weeks overdue and losing money.</p>
+
+  <p>Bespoke software solves this by starting with your agency's actual workflow. Your project management tool understands that a creative project has briefs, design rounds, client feedback, revisions, and final delivery - not just a list of tasks. Your time tracker is integrated into the project workflow, so tracking time is a one-click action, not a separate tool to remember at the end of the day. Your client portal is branded with your identity and tracks every comment, revision, and approval - creating an auditable record of what was agreed and when.</p>
+
+  <p>The biggest impact is usually on profitability. Generic PM tools tell you a project is in progress. Bespoke software tells you a project has consumed 40 hours against a 60-hour budget, that the client has requested two extra revision rounds, and that at the current rate you will lose £2,000 on it. That visibility - real-time, not retrospective - is the difference between profitable agencies and busy agencies.</p>
+
+  <p>Integration with accounting is where the real efficiency lives. Time tracked against projects automatically generates draft invoices. Approved work flows into Xero or QuickBooks without manual entry. Overdue invoices trigger automated chase emails. Month-end reporting takes minutes, not days. One system, from brief to invoice, with no manual data transfer in between.</p>
+
+  <p>A UK digital agency with 12 staff was using four separate tools - Monday.com, Harvest, Xero, and Google Drive - costing £8,400 a year in subscriptions. Project profitability was calculated manually in spreadsheets, usually a month after projects finished. We built a single platform that handled project management, time tracking, client approvals, asset management, and Xero integration. Build cost: £28,000. The agency identified two consistently unprofitable client retainers within the first month of using the real-time profitability dashboard, saving £24,000 a year. They own the software outright - no more subscription fees.</p>
+
+  <p>If your agency is spending more than £5,000 a year on software that does not quite fit, <a href="/services">explore our services</a> or <a href="/contact">get in touch</a> to discuss whether bespoke software makes sense for your workflow.</p>
+</IndustryPage>

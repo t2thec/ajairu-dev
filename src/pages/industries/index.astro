@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTASection from '../../components/CTASection.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, INDUSTRIES } from '../../config';
+
+const title = `Bespoke Software by Industry UK | Custom Software for UK SMEs | ${SITE_NAME}`;
+const description = 'Bespoke software development for every industry. Custom software for UK manufacturers, accountants, healthcare, construction, logistics, legal, education, and more. Industry-specific solutions you own.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': `${SITE_URL}/industries` },
+  ],
+};
+
+const collectionPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  'name': 'Bespoke Software by Industry UK',
+  'description': 'Bespoke software development services for UK SMEs across 12 industries. Industry-specific custom software solutions.',
+  'url': `${SITE_URL}/industries`,
+  'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, collectionPageSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Bespoke Software Development for Every Industry</h1>
+      <p>Every industry has unique workflows, compliance requirements, and software challenges. Off-the-shelf tools force your business to fit a generic mould. We build bespoke software that fits your industry - your processes, your regulations, your terminology. Explore the sectors we serve below.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Industries'}]} />
+
+  <!-- INTRO -->
+  <section class="section" id="intro">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin:0 auto;">
+        <h2 class="section-title" style="text-align:center;">Industry-Specific Custom Software for UK SMEs</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);text-align:center;">Generic software does not understand your industry. A manufacturing business needs MES integration and production scheduling. An accounting firm needs practice management and client portals. A healthcare provider needs GDPR-compliant patient records. A construction company needs job costing and site management. Each sector has its own language, its own regulations, and its own workflows - and off-the-shelf software treats them all the same.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;text-align:center;">We build bespoke software that speaks your industry's language. Our custom software development for UK SMEs is tailored to the specific challenges, compliance requirements, and operational workflows of your sector. Whether you need system integration, ERP replacement, or a completely new platform, we build software that fits how your industry actually works - not how a software vendor thinks it should.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;text-align:center;">Explore the industries below to see how bespoke software can transform your sector. Each page includes industry-specific use cases, benefits, and examples of the software we build.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY GRID -->
+  <section class="section bg-grey" id="industry-grid">
+    <div class="container">
+      <h2 class="section-title reveal">Sectors We Serve</h2>
+      <p class="section-subtitle reveal">Click any industry to see bespoke software use cases, benefits, and FAQs for your sector.</p>
+      <div class="cards-grid cards-4">
+        {INDUSTRIES.map((ind) => (
+          <a href={`/industries/${ind.slug}`} class="card reveal industry-card" style="text-align:center;padding:24px 16px;display:block;">
+            <div class="card-icon"><Icon name={ind.icon} /></div>
+            <h3 style="font-size:1rem;margin-bottom:8px;">{ind.name}</h3>
+            <p style="font-size:0.85rem;">Bespoke software solutions tailored to your sector.</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Don't See Your Industry?"
+    text="We work with UK SMEs across all sectors. If your industry is not listed above, we can still help - the principles of bespoke software development apply everywhere. Book a free discovery call to discuss your specific needs."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

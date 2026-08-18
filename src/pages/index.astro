@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL, FOUNDER_NAME, INDUSTRIES } from '../config';
+import Icon from '../components/Icon.astro';
+
+const title = `Bespoke Software Development UK | ${SITE_NAME}, Custom Software for UK SMEs`;
+const description = 'Bespoke software development UK for SMEs. Custom platforms, system integration, ERP replacement, and AI workflow automation. Built in weeks, owned by you. Fixed-price engagements.';
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#localbusiness`,
+  'name': SITE_NAME,
+  'description': 'Bespoke software development studio building custom platforms, system integrations, and AI automation for UK SMEs. Fixed-price, you own the source code.',
+  'url': SITE_URL,
+  'email': CONTACT_EMAIL,
+  'priceRange': '\u00a3\u00a3',
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'founder': { '@type': 'Person', 'name': FOUNDER_NAME, 'jobTitle': 'Software Architect & Engineering Lead' },
+  'address': { '@type': 'PostalAddress', 'addressCountry': 'GB' },
+  'knowsAbout': ['bespoke software development', 'custom software', 'system integration', 'ERP replacement', 'AI automation', 'workflow automation', 'API integration', 'cloud software'],
+  'sameAs': ['https://www.linkedin.com/in/tobycallinan', 'https://github.com/t2thec'],
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE_URL}/#organization`,
+  'name': SITE_NAME,
+  'url': SITE_URL,
+  'email': CONTACT_EMAIL,
+  'founder': { '@type': 'Person', 'name': FOUNDER_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Bespoke software development studio for UK SMEs. Custom platforms, system integration, AI automation, and ERP replacement. Fixed-price, you own everything.',
+  'sameAs': ['https://www.linkedin.com/in/tobycallinan', 'https://github.com/t2thec'],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  'name': SITE_NAME,
+  'url': SITE_URL,
+  'publisher': { '@id': `${SITE_URL}/#organization` },
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': `${SITE_URL}/blog?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Bespoke Software Development',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Custom software development including bespoke business platforms, system integration, AI automation, and ERP replacement for UK SMEs.',
+  'offers': { '@type': 'Offer', 'priceRange': '\u00a32,000-\u00a380,000+', 'priceCurrency': 'GBP' },
+};
+
+const faqQuestions = [
+  { question: 'How much does bespoke software cost for a small business?', answer: 'Our focused automation projects start at &pound;2,000. Multi-system integrations run &pound;8,000-&pound;30,000, and full bespoke platform or ERP replacement builds typically range from &pound;25,000 to &pound;80,000+. All engagements are fixed-price with no open-ended billing. The build cost is now roughly equivalent to one year of SaaS subscription fees for the tools you are replacing.' },
+  { question: 'Is bespoke software really affordable for an SME?', answer: 'Yes. AI-accelerated development has changed the economics. Build costs have dropped 60-70% over the past two years. What used to cost &pound;300,000 and take 12 months now costs &pound;80,000 and takes 8-16 weeks. The break-even point against SaaS subscriptions is now 12-18 months, not 6-14 years.' },
+  { question: 'Do we own the software you build for us?', answer: 'Yes, entirely. You own the source code, the database schema, and all intellectual property from day one. No licence fees, no vendor lock-in, no recurring charges for software you have already paid for.' },
+  { question: 'How long does a bespoke software project take?', answer: 'Focused automations take 2-4 weeks. Multi-system integrations take 4-8 weeks. Full bespoke platforms and ERP replacements take 8-16 weeks depending on complexity. AI-accelerated development means we deliver in weeks what traditional agencies take months to build.' },
+  { question: 'What size businesses do you work with?', answer: 'We specialise in UK SMEs with 10-250 employees. This is where bespoke software delivers the biggest impact: businesses spending &pound;30,000+ a year on SaaS tools that force them to work the vendor\'s way instead of their own.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqQuestions.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer.replace(/&pound;/g, '\u00a3').replace(/<[^>]*>/g, '') },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[localBusinessSchema, organizationSchema, websiteSchema, serviceSchema, faqSchema]}>
+  <Hero
+    badge="We Build Software. You Own It."
+    title={`Bespoke <span class="accent">Software Development UK</span> for SMEs That Work the Way You Do`}
+    lead="Bespoke software development UK for SMEs who want to stop renting software that forces their business to work the vendor's way. We build custom platforms, connect your systems, and replace expensive SaaS subscriptions with software you own outright. AI-accelerated delivery means what took months now takes weeks."
+    secondaryCtaText="Take the Free Software Readiness Quiz"
+    secondaryCtaHref="/assessment"
+  />
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-grid">
+        <div class="trust-item">
+          <div class="num">27+</div>
+          <div class="label">Years in Software Engineering</div>
+        </div>
+        <div class="trust-item">
+          <div class="num">Fixed</div>
+          <div class="label">Price Engagements</div>
+        </div>
+        <div class="trust-item">
+          <div class="num">100%</div>
+          <div class="label">Source Code Ownership</div>
+        </div>
+        <div class="trust-item">
+          <div class="num">8-16</div>
+          <div class="label">Weeks to Working Software</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT BESPOKE SOFTWARE ACTUALLY MEANS (NEW SECTION - different from ajairu.ai) -->
+  <section class="section" id="what-is-bespoke">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">What We Actually Do</span>
+      <h2 class="section-title reveal">What Bespoke Software Development UK Actually Means</h2>
+      <p class="section-subtitle reveal">No jargon. No buzzwords. Here is what happens when you work with us, in plain English.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;">The Problem With Off-the-Shelf</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You buy a CRM. It works at 60%. You buy an accounting tool. It does not talk to the CRM. You buy a job management system. It has its own database that nobody else can access. You buy an ERP. It forces your team to work in a way that makes no sense for your business.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Every year you pay &pound;30,000-&pound;80,000 in subscription fees for software that almost fits. Every year the prices go up. Every year you add another tool to plug the gaps. Your team spends hours copying data between systems that should talk to each other but do not.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">And you never own any of it. Stop paying, and it all disappears.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">What Bespoke Looks Like</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">We build software that works the way your business works. Your processes, your terminology, your workflows. Not a template, not a configuration of someone else's idea of how a business should run. This is what bespoke software development UK means in practice.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Your CRM talks to your accounting system. Your job management tool shares data with your inventory. Your dashboard pulls from everything in real time. One system, one source of truth, built around how your team actually works. Our <a href="/services/system-integration-uk">system integration services UK</a> connect your existing tools, and our bespoke platform builds create a unified system from scratch.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">And you own it. Source code, database, infrastructure. No subscription fees, no vendor lock-in, no price increases. It is yours, the same way a building you bought is yours. That is the fundamental difference between bespoke software development and renting SaaS tools.</p>
+        </div>
+      </div>
+
+      <!-- Build vs Buy comparison -->
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">SaaS Subscription</h3>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;margin-top:12px;">
+            <li>&pound;30k-&pound;80k/year, forever</li>
+            <li>Fits at 60-70%</li>
+            <li>Price increases every year</li>
+            <li>AI features sold as add-ons</li>
+            <li>Vendor lock-in, you never own it</li>
+            <li>Your data lives in their system</li>
+            <li>Forced into their workflow</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Bespoke Build</h3>
+          <ul style="font-size:0.9rem;color:var(--grey-600);line-height:1.8;margin-top:12px;">
+            <li>&pound;25k-&pound;80k one-time build cost</li>
+            <li>Fits at 100%, built around your processes</li>
+            <li>No subscription fees after build</li>
+            <li>AI features built in from day one</li>
+            <li>You own the source code outright</li>
+            <li>Your data stays in your infrastructure</li>
+            <li>Your workflow, your software</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--grey-300);background:var(--grey-50);">
+          <h3 style="font-size:1.1rem;">5-Year Cost</h3>
+          <div style="font-size:2rem;font-weight:800;color:#e53935;margin:12px 0;">&pound;150k-&pound;400k</div>
+          <p style="font-size:0.85rem;color:var(--grey-500);">SaaS subscriptions over 5 years (with annual price increases)</p>
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);margin:16px 0;">&pound;35k-&pound;90k</div>
+          <p style="font-size:0.85rem;color:var(--grey-500);">Bespoke build + 5 years maintenance. You own it forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="section bg-grey" id="problem">
+    <div class="container">
+      <h2 class="section-title reveal">The Economics Have Changed</h2>
+      <div class="reveal" style="max-width:760px;margin:0 auto 48px;">
+        <p style="font-size:1.15rem;line-height:1.7;color:var(--grey-600);">AI-accelerated development has cut build costs by 60-70% and compressed timelines from months to weeks. For the first time, bespoke software development UK is a rational financial decision for UK SMEs, not just enterprises. Our <a href="/services/ai-automation-uk">AI automation services</a> are built into every platform we deliver.</p>
+      </div>
+      <div class="problem-list">
+        <div class="problem-item reveal">
+          <div class="pct">60-70%</div>
+          <div class="pcontent">
+            <h4>Lower build costs</h4>
+            <p>AI-accelerated development has cut build costs by 60-70%. What cost &pound;300k-&pound;700k now costs &pound;80k-&pound;200k.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">12-18mo</div>
+          <div class="pcontent">
+            <h4>Break-even vs SaaS</h4>
+            <p>Build cost is now roughly one year of SaaS subscription fees. After that, you own it outright with no more licence fees.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">8-16</div>
+          <div class="pcontent">
+            <h4>Weeks to working software</h4>
+            <p>Build times compressed from 30-58 weeks to 8-16 weeks. You get working software in weeks, not quarters.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">20%</div>
+          <div class="pcontent">
+            <h4>SME segment growth</h4>
+            <p>SMEs are the fastest-growing segment of the custom software market at 20.15% CAGR, outpacing enterprise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (reordered - different from ajairu.ai) -->
+  <section class="section" id="solutions">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">What We Build</span>
+      <h2 class="section-title reveal">Bespoke Software Development Services for UK SMEs</h2>
+      <p class="section-subtitle reveal">From connecting your existing systems to building a full bespoke platform that replaces your SaaS stack. Our bespoke software development services cover <a href="/services/system-integration-uk">system integration</a>, <a href="/services/erp-replacement-uk">ERP replacement</a>, and <a href="/services/ai-automation-uk">AI automation</a>. Start at whichever stage fits.</p>
+      <div class="cards-grid cards-3">
+        <ServiceCard
+          icon="wrench"
+          title="System Integration &amp; Automation"
+          description="We connect your existing tools with custom APIs and automated workflows. Stop copying data between systems manually."
+          features={['Custom API integrations', 'Automated data sync and routing', 'AI-powered workflow automation', '4-8 weeks, from \u00a38,000']}
+          linkText="System Integration Services UK"
+          linkHref="/services/system-integration-uk"
+        />
+        <ServiceCard
+          icon="map"
+          title="Bespoke Software Platform"
+          description="A custom platform built around your exact business processes. Not forced into a vendor's workflow. You own the source code."
+          features={['Built around your processes', 'Web, mobile, and API development', 'Cloud-native architecture', '8-16 weeks, from \u00a325,000']}
+          linkText="Learn about Bespoke Builds"
+          linkHref="/services#bespoke"
+        />
+        <ServiceCard
+          icon="rocket"
+          title="SaaS / ERP Replacement"
+          description="Replace expensive SaaS subscriptions with bespoke software you own outright. Break-even in 12-18 months."
+          features={['Replace CRM, ERP, job management', 'Data migration from existing systems', 'No more licence fees or lock-in', '12-20 weeks, from \u00a330,000']}
+          linkText="ERP Replacement UK"
+          linkHref="/services/erp-replacement-uk"
+        />
+      </div>
+      <p class="text-center mt-3 reveal">Also available: <a href="/services#technical-consultancy">Technical Consultancy</a> (from &pound;2,000) and <a href="/services#support">Ongoing Support</a> from &pound;350/month. See our full <a href="/services">bespoke software development services and pricing</a> for details.</p>
+    </div>
+  </section>
+
+  <!-- TECH STACK SECTION (NEW - not on ajairu.ai) -->
+  <section class="section bg-grey" id="tech-stack">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Technologies We Work With</span>
+      <h2 class="section-title reveal">Our Tech Stack</h2>
+      <p class="section-subtitle reveal">We use modern, proven technologies. No experimental frameworks, no trendy tools that will be unmaintained in two years. Just solid engineering that lasts.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Frontend</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">React, Vue, Astro, TypeScript, Tailwind CSS, Progressive Web Apps</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Backend</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">Node.js, Python, Go, REST APIs, GraphQL, WebSockets, microservices</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Database</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">PostgreSQL, MySQL, SQLite, Redis, MongoDB, Supabase, PlanetScale</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Cloud &amp; DevOps</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">AWS, Azure, GCP, Docker, Kubernetes, CI/CD, Terraform, Cloudflare</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Integrations</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">Salesforce, HubSpot, Xero, QuickBooks, Sage, Stripe, Shopify, WooCommerce</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">AI &amp; Automation</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">OpenAI, Anthropic, local LLMs, RAG pipelines, document processing, AI agents</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Mobile</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">React Native, Expo, PWA, native iOS/Android bridges</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:24px 16px;">
+          <h3 style="font-size:1rem;">Monitoring</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);margin-top:8px;">Grafana, Datadog, Sentry, Logflare, uptime monitoring, alerting</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">Don't see your stack? We work with legacy systems too. <a href="/contact">Get in touch</a> to discuss your specific setup.</p>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your business, your systems, and whether bespoke software makes sense for you right now."
+    primaryCtaText="Book a Free Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+
+  <!-- WHAT WE DON'T DO -->
+  <section class="section bg-grey" id="what-we-dont-do">
+    <div class="container">
+      <div class="split-content">
+        <div class="reveal">
+          <span class="eyebrow">Boundaries</span>
+          <h2>What We Don't Do</h2>
+          <p>Being clear about what we don't do is as important as what we do. It saves both of us time, and it's why our clients trust us with their bespoke software development projects.</p>
+          <ul style="list-style:none;margin-top:20px;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No vendor lock-in.</strong> You own the source code, the database schema, and all IP from day one.</span>
+            </li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No day-rate billing.</strong> Fixed prices only. You know the total cost before we start.</span>
+            </li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No off-the-shelf reselling.</strong> We are engineers, not salespeople. If SaaS solves your problem better, we will tell you to buy it.</span>
+            </li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No tech jargon.</strong> Plain English, always. If we use a technical term, we explain it.</span>
+            </li>
+            <li style="padding:10px 0;display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No software for software's sake.</strong> Every line of code serves a business purpose.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:16px;justify-content:center;">
+          <div class="card" style="border-left:4px solid var(--blue);">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+              <Icon name="target" size={28} />
+              <h3 style="margin:0;">Built Around Your Processes</h3>
+            </div>
+            <p style="font-size:0.9rem;margin:0;">Your software should work the way your business works, not the way a vendor decided it should.</p>
+          </div>
+          <div class="card" style="border-left:4px solid var(--blue);">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+              <Icon name="shield" size={28} />
+              <h3 style="margin:0;">Compliance Built In</h3>
+            </div>
+            <p style="font-size:0.9rem;margin:0;">GDPR, UK data residency, and security best practices are part of every build.</p>
+          </div>
+          <div class="card" style="border-left:4px solid var(--blue);">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+              <Icon name="handshake" size={28} />
+              <h3 style="margin:0;">You Own Everything</h3>
+            </div>
+            <p style="font-size:0.9rem;margin:0;">Full source code, documentation, and deployment rights. No dependency on us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES SECTION -->
+  <section class="section" id="industries">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Sectors We Serve</span>
+      <h2 class="section-title reveal">Bespoke Software Development for Every Industry</h2>
+      <p class="section-subtitle reveal">We build and integrate bespoke software across sectors, bringing enterprise-grade engineering to each. Explore our <a href="/industries">industry-specific software solutions</a>.</p>
+      <div class="cards-grid cards-4">
+        {INDUSTRIES.map((ind) => (
+          <a href={`/industries/${ind.slug}`} class="card reveal industry-card" style="text-align:center;padding:24px 16px;display:block;">
+            <div class="card-icon"><Icon name={ind.icon} /></div>
+            <h3 style="font-size:1rem;margin-bottom:8px;">{ind.name}</h3>
+            <p style="font-size:0.85rem;">Custom software solutions tailored to your sector.</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section bg-grey" id="process">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How It Works</span>
+      <h2 class="section-title reveal">A 4-Step Process That De-risks Bespoke Software Development</h2>
+      <p class="section-subtitle reveal">No black boxes. No surprise bills. A proven methodology from system assessment to working software.</p>
+      <ProcessSteps />
+      <p class="text-center mt-3 reveal"><a href="/process">See the full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section class="section" id="free-guide">
+    <div class="container">
+      <div class="reveal" style="max-width:680px;margin:0 auto;text-align:center;">
+        <h2 class="section-title">Free Guide: 5 Custom Software Projects That Pay for Themselves in 12 Months</h2>
+        <p class="section-subtitle">Practical projects with real numbers. Cost estimates, build timelines, and ROI calculations.</p>
+        <a href="/guide" class="btn btn-primary btn-lg" style="margin-top:16px;">Get the Free Guide</a>
+        <p style="font-size:0.85rem;color:var(--grey-400);margin-top:12px;">No spam. One email with the PDF.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Questions UK SMEs Ask Us About Bespoke Software Development</h2>
+      <p class="section-subtitle reveal">Straight answers to the most common concerns about bespoke software development.</p>
+      <FAQ items={faqQuestions} />
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <CTASection
+    title="Ready to Build Software That Fits?"
+    text="Book a free, no-obligation 30-minute discovery call. We'll talk through your business, your systems, and whether bespoke software makes sense for you right now."
+  />
+</BaseLayout>

@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `How We Compare | Bespoke Software Development UK | ${SITE_NAME} vs Big Four, Freelancers & DIY`;
+const description = 'A detailed comparison of bespoke software development UK options for SMEs: fixed-price development studio vs Big Four, freelancers, and DIY. Compare on price, delivery time, governance, IP ownership, and more.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'How We Compare', 'item': `${SITE_URL}/comparison` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Bespoke Software Development UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Bespoke software development UK for SMEs. Fixed-price engagements from £2,000 to £80,000+. System integration, custom platforms, ERP replacement, AI automation, technical consultancy, and ongoing support.',
+  'offers': { '@type': 'Offer', 'priceRange': '£2,000-£80,000+', 'priceCurrency': 'GBP' },
+};
+
+const faqs = [
+  { question: 'Why not just hire a freelancer for software development?', answer: 'Freelancers can be cheaper day-to-day, but they carry single-person risk: no cover when they are ill or unavailable, no engineering depth, and no compliance infrastructure. If your freelancer leaves, you may have no documentation and no one who understands the system. A structured development studio with a specialist network provides continuity and accountability.' },
+  { question: 'Why not go DIY with off-the-shelf software tools?', answer: 'DIY is free to start but expensive in time. Without external guidance, most SMEs spend 6+ months on trial and error with software tools, face team resistance, and have no governance or compliance framework. The hidden cost is the time your team spends experimenting instead of running the business. A structured engagement gets you to working bespoke software in weeks, not months.' },
+  { question: 'Why not use a Big Four consultancy?', answer: 'Big Four firms have excellent expertise, but their engagement model is built for enterprise: £100,000+ minimums, slide-deck deliverables, subcontracted delivery, and timelines measured in quarters. For an SME, this is too expensive, too slow, and often results in strategy you cannot afford to implement. A mid-market specialist delivers the same thinking at SME-appropriate pricing.' },
+  { question: 'What makes the "middle ground" better for SMEs?', answer: 'The middle ground combines enterprise-grade expertise with SME-appropriate pricing, timelines, and engagement models. You get fixed prices, working systems (not just decks), team training, compliance built in, and the ability to stop at any stage. This is specifically designed for businesses with 10-250 employees.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+
+const comparisonData = [
+  { criteria: 'Price Range', us: '£2,000 - £80,000+ (fixed)', bigFour: '£100,000+ (open-ended)', freelancer: '£300-£800/day (open-ended)', diy: 'Free (but time-intensive)' },
+  { criteria: 'Delivery Time', us: '4-12 weeks', bigFour: '3-9 months', freelancer: 'Variable, person-dependent', diy: '6+ months of trial and error' },
+  { criteria: 'Governance Framework', us: 'Built in, GDPR-compliant', bigFour: 'Yes, enterprise-grade', freelancer: 'No, ad hoc', diy: 'None' },
+  { criteria: 'Team Size Risk', us: 'Low: founder-led + specialist network', bigFour: 'Low: large organisation', freelancer: 'High: single person', diy: 'N/A: your own team' },
+  { criteria: 'IP Ownership', us: 'You own everything', bigFour: 'Often retained by consultancy', freelancer: 'Varies, often unclear', diy: 'You own it (if it works)' },
+  { criteria: 'Compliance (GDPR, UK Data)', us: 'Designed in from day one', bigFour: 'Yes, enterprise-grade', freelancer: 'Varies, often absent', diy: 'Your responsibility' },
+  { criteria: 'Ongoing Support', us: '30 days post-launch included', bigFour: 'Available at extra cost', freelancer: 'Depends on availability', diy: 'None' },
+  { criteria: 'Team Training & Handover', us: 'Included as standard', bigFour: 'Often extra cost', freelancer: 'Inconsistent', diy: 'Self-taught' },
+  { criteria: 'Strategy vs Implementation', us: 'Both: strategy AND working software', bigFour: 'Often strategy only', freelancer: 'Implementation only', diy: 'Neither formally' },
+  { criteria: 'Stop Anytime', us: 'Yes, each stage is self-contained', bigFour: 'Locked into long contracts', freelancer: 'Yes, but work may be incomplete', diy: 'Yes, but no structured progress' },
+];
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Bespoke Software Development UK: How We Compare</h1>
+      <p>Big Four consultancies are too expensive. Freelancers are too risky. DIY takes too long. We sit in the gap, and here is the evidence.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'How We Compare'}]} />
+
+  <!-- DIRECT ANSWER -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">If you are a UK SME with 10-250 employees, your options for bespoke software development are: a Big Four consultancy (too big, too expensive, too slow), a freelancer (cheap but single-person risk with no engineering depth), or DIY (free but months of trial and error with no compliance framework). The fourth option is a mid-market specialist like {SITE_NAME}: enterprise experience, SME pricing, fixed scope, and you own the result.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED COMPARISON TABLE -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Detailed Comparison Table</h2>
+      <p class="section-subtitle reveal">{SITE_NAME} vs Big Four vs Freelancer vs DIY, across 10 criteria that matter for SMEs.</p>
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Criteria</th>
+              <th class="us-col">{SITE_NAME}</th>
+              <th>Big Four</th>
+              <th>Freelancer</th>
+              <th>DIY</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonData.map((row) => (
+              <tr>
+                <td class="col-label">{row.criteria}</td>
+                <td class="us-col"><span class="check">&#x2713;</span> {row.us}</td>
+                <td>{row.bigFour}</td>
+                <td>{row.freelancer}</td>
+                <td>{row.diy}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EACH OPTION FALLS SHORT -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Why Each Option Falls Short for SMEs</h2>
+      <p class="section-subtitle reveal">Three common paths, three common problems. Here is where each one breaks down.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="building" /></div>
+          <h3>Big Four Consultancy</h3>
+          <p><strong>&pound;100k+ engagements.</strong> Slide decks as the primary deliverable. Delivery often subcontracted. Timelines measured in quarters, not weeks. Built for FTSE 100 budgets, not SME realities. You pay for the brand, not just the work.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="user" /></div>
+          <h3>Freelancer</h3>
+          <p><strong>Cheap but high risk.</strong> Single-person dependency: no cover when they are ill or unavailable. No engineering depth, no compliance infrastructure, no team to scale up. You may get working code but no documentation, no training, and no one to call when something breaks.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>DIY</h3>
+          <p><strong>Free but expensive in time.</strong> Six months of trial and error with software tools. No governance, no compliance framework, no clear path. Team resistance to self-driven change. Likely to stall or fail without external guidance. The hidden cost is months of your team's time.</p>
+        </div>
+      </div>
+
+      <div class="comparison-us-banner reveal" style="margin-top:40px;background:var(--navy);color:var(--white);border-radius:12px;padding:40px 48px;">
+        <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+          <div style="flex-shrink:0;">
+            <div style="width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;">
+              <Icon name="target" size={28} />
+            </div>
+          </div>
+          <div style="flex:1;min-width:280px;">
+            <h3 style="color:var(--white);font-size:1.4rem;margin-bottom:12px;">Where {SITE_NAME} Fits</h3>
+            <p style="color:rgba(255,255,255,0.9);font-size:1.05rem;line-height:1.7;margin-bottom:20px;">Enterprise experience from Aviva, Jaguar Land Rover, and NHS Digital. SME pricing with fixed scope. Working systems, not just strategy. Your team owns everything. Compliance built in. Stop anytime with no lock-in.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:24px;">
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">Fixed</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Price, no surprises</div>
+              </div>
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">30 days</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Post-launch support</div>
+              </div>
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">100%</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">IP ownership, yours</div>
+              </div>
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">GDPR</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Built in from day one</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Comparison FAQs</h2>
+      <div class="prose" style="max-width:800px;">
+        {faqs.map((f) => (
+          <div style="margin-bottom:24px;">
+            <h3 style="font-size:1.1rem;margin-bottom:8px;">{f.question}</h3>
+            <p style="color:var(--grey-600);line-height:1.6;">{f.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="See If We're the Right Fit"
+    text="Book a free 30-minute discovery call. We'll talk through your business, your goals, and whether we're the right option for you. If we're not, we'll tell you who is."
+    secondaryCtaText="View Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

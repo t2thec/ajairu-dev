@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Construction",
+  metaTitle: "Bespoke Software for Construction UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK construction firms. Project management, site reporting, subcontractor management, and health and safety platforms.",
+  h1: "Bespoke Software for Construction in the UK",
+  lead: "Custom software solutions for UK construction firms. Manage projects, track site progress, and handle subcontractors and health and safety with software built for construction.",
+  useCases: [
+    {"title": "Project Management Platform", "desc": "Custom project management software that tracks programmes, budgets, milestones, and deliverables - giving project managers and directors a real-time view across all live contracts."},
+    {"title": "Site Reporting & Daily Logs", "desc": "A bespoke site reporting app that lets site managers capture daily logs, photos, weather conditions, and progress reports from their phone - replacing paper forms and PDF attachments."},
+    {"title": "Subcontractor Management System", "desc": "Custom software for managing subcontractor onboarding, CIS compliance, RAMS submissions, and payment applications - with automated verification and approval workflows."},
+    {"title": "Snagging & Defects Tracker", "desc": "A bespoke snagging platform that captures defects with photos, assigns responsibility, tracks resolution, and generates completion reports - streamlining the handover process."},
+    {"title": "Health & Safety Management", "desc": "Custom H&S software that manages risk assessments, method statements, incident reporting, and compliance tracking - with automated reminders for expiring assessments and training certifications."},
+    {"title": "Quantity & Materials Tracking", "desc": "Bespoke materials management software that tracks quantities ordered, delivered, and installed - linking to project budgets and flagging variances in real-time."}
+  ],
+  benefits: [
+    {"title": "Built for Construction Workflows", "desc": "We understand construction from site to boardroom. Software is built around how your teams actually work - JCT contracts, CIS, CDM compliance, and real site conditions."},
+    {"title": "Accounting & ERP Integration", "desc": "Custom software that integrates with Sage, Xero, COINS, and your existing accounting and job costing systems. No rip-and-replace - we build around what you have."},
+    {"title": "Mobile-First for Site Teams", "desc": "Site teams need software that works on a phone, offline, in all weather. We build mobile-first apps that sync when connectivity returns - built for real site conditions."}
+  ],
+  faqs: [
+    {"question": "Can custom software handle CIS and construction compliance?", "answer": "Yes. We build CIS compliance, CDM requirements, and construction-specific workflows into the software from the start. We work with your compliance team to ensure the software handles subcontractor verification, tax deductions, and reporting requirements correctly."},
+    {"question": "Will the software work on site with poor internet?", "answer": "Yes. We build mobile apps with offline-first design - site managers can capture logs, photos, and reports without connectivity, and the app syncs automatically when signal returns. This is essential for construction sites where connectivity is often unreliable."},
+    {"question": "Can custom software integrate with Sage or COINS?", "answer": "Yes. We build integrations with Sage, Xero, COINS, and other construction accounting and job costing systems. We assess your current systems during the consultancy phase and recommend the best integration approach."},
+    {"question": "How long does a construction software project take?", "answer": "Quick wins like a site reporting app or snagging tracker can be built in 4-6 weeks. A full project management or subcontractor management platform typically takes 10-16 weeks. We start with the highest-impact features and iterate."}
+  ],
+  slug: "software-for-construction",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK construction firms manage complex projects across multiple sites, with subcontractors, suppliers, and compliance requirements all demanding attention. Bespoke software can help you track projects in real-time, manage compliance, and give directors the visibility they need to make informed decisions - but most firms are still relying on spreadsheets, paper site reports, and accounting software that wasn't built for construction project management.</p>
+<p>Off-the-shelf construction software rarely matches how UK contractors actually work. Generic project management tools don't understand construction programmes, dependencies, or the relationship between design, procurement, and build phases. Accounting software handles invoicing but can't track costs against specific work packages or manage retention payments across long contracts. Site reporting apps built for general use can't capture the specific data your contracts require - whether that's RIDDOR reportable incidents, daily plant utilisation, or subcontractor CIS verification. The result is project managers spending evenings reconciling spreadsheets instead of managing projects.</p>
+<p>We build custom software for UK construction firms - from project management platforms and site reporting apps to subcontractor management and health and safety systems. We understand construction workflows, from the site office to the boardroom, and we build systems that integrate with your existing accounting and job costing tools. Whether it's a bespoke site reporting app that captures photos, progress, and issues against specific plot numbers, or a subcontractor management system that handles CIS verification and payment applications automatically, bespoke software fits your exact processes.</p>
+<p>Construction compliance carries serious consequences. CDM 2015 regulations, RIDDOR reporting, CIS compliance, and health and safety audits all demand meticulous record-keeping. Bespoke software can automate CDM duty-holder tracking, maintain digital health and safety files per project, flag subcontractor CIS status changes, and generate HSE-ready incident reports - replacing paper-based systems that are easily lost on site and impossible to search during an audit.</p>
+<p>A UK main contractor managing £30 million of projects across five live sites was struggling to produce accurate month-end cost reports. Their accounting software couldn't track committed costs against work packages, and project managers maintained separate spreadsheets that never reconciled. We built a bespoke project cost tracking system that integrated with their existing Sage setup and captured committed costs in real time. Month-end cost reports that previously took five days to produce were available on the first of every month, and the firm identified £180,000 of unbilled variations within three months of going live.</p>
+<p>Construction is a sector where bespoke software delivers clear ROI. Projects generate vast amounts of data - budgets, programmes, site reports, compliance records. The opportunity is building software that turns that data into real-time project visibility, automated compliance, and better decision-making.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your construction business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

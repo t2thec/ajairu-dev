@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Law Firms",
+  metaTitle: "Bespoke Software for Law Firms UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK law firms. Case management, document automation, client portals, and SRA-compliant platforms.",
+  h1: "Bespoke Software for Law Firms in the UK",
+  lead: "Custom software solutions for UK law firms. Build case management systems, automate documents, and create secure client portals with SRA-compliant software.",
+  useCases: [
+    {"title": "Case Management System", "desc": "A bespoke case management platform that tracks matters, deadlines, documents, and communications - built around your firm's practice areas and workflow methodology."},
+    {"title": "Document Automation Platform", "desc": "Custom document assembly software that generates contracts, letters, and legal documents from templates and matter data - reducing drafting time by up to 70% and eliminating version control issues."},
+    {"title": "Client Portal", "desc": "A secure, SRA-compliant client portal where clients view case progress, share documents, sign forms, and communicate with their solicitor - replacing email chains with a professional, branded hub."},
+    {"title": "Time Recording & Billing", "desc": "Bespoke time recording and billing software that captures billable hours, manages WIP, generates invoices, and integrates with your accounting system - built for your specific fee structures and billing rules."},
+    {"title": "Conveyancing Pipeline Tracker", "desc": "Custom conveyancing software that tracks transactions from instruction to completion, manages chain details, and generates automated progress reports for clients and estate agents."},
+    {"title": "Compliance & AML Management", "desc": "A bespoke compliance platform that manages AML checks, conflict searches, SRA reporting, and risk assessments - with automated reminders and audit-ready documentation."}
+  ],
+  benefits: [
+    {"title": "SRA Compliant by Design", "desc": "We understand SRA regulation, AML requirements, and legal compliance. Software is built with audit trails, access controls, and compliance reporting built in from the start."},
+    {"title": "Practice Management Integration", "desc": "Custom software that integrates with LexisNexis, Proclaim, Clio, and your existing practice management systems. No rip-and-replace - we build around your current stack."},
+    {"title": "You Own the Code", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. No per-user licensing fees, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software handle SRA compliance requirements?", "answer": "Yes. We build SRA compliance features into the software from the start - audit trails, access controls, conflict checks, and AML verification. We work with your compliance team to ensure the software meets SRA Accounts Rules, MLR 2017, and data protection requirements specific to your practice areas."},
+    {"question": "Will bespoke software integrate with our existing practice management system?", "answer": "Yes. We build integrations with major legal practice management systems including LexisNexis, Proclaim, Clio, and Elite 3E. We assess your current systems during the consultancy phase and recommend whether to integrate or build a replacement."},
+    {"question": "Can you build a secure client portal for our firm?", "answer": "Yes. We build secure, branded client portals with end-to-end encryption, two-factor authentication, and audit logging. Clients can view case progress, share documents, sign forms, and communicate securely - all SRA-compliant and integrated with your case management system."},
+    {"question": "How long does a law firm software project take?", "answer": "An initial consultancy engagement takes 1-2 weeks. Development projects typically run 8-16 weeks depending on scope, integrations, and compliance requirements. We start with the highest-impact features - like document automation or a client portal - and iterate."}
+  ],
+  slug: "software-for-law-firms",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK law firms face growing pressure to deliver more for less. Client expectations are rising, compliance burdens are increasing, and competitors are investing in technology. Bespoke software can help you streamline case management, automate document drafting, and deliver the digital experience clients now expect - but many firms are still running on practice management systems that haven't fundamentally changed in a decade, supplemented by whatever document automation their IT team can cobble together.</p>
+<p>Off-the-shelf legal software consistently frustrates practitioners. Generic case management systems impose workflows that don't match how your fee-earners actually handle matters - particularly in niche practice areas where standard conveyancing or litigation templates don't apply. Document automation tools handle simple templates but can't cope with conditional clauses, multi-party drafting, or the specific precedents your partners have built over decades. Client portals built for general professional services don't understand legal privilege, matter-level confidentiality, or the need for granular access control. The result is fee-earners doing admin that should be automated, and clients wondering why their lawyer can't offer the digital experience they get from their bank.</p>
+<p>We build custom software for UK law firms that's secure, compliant, and practical. We understand SRA regulation, AML requirements, and the compliance landscape, and we build systems that integrate with your existing practice management infrastructure. Whether it's a bespoke matter management system that handles your specific practice area workflows, a document automation platform that generates complex precedent-based documents from matter data, or a secure client portal with matter-level access control, bespoke software fits how your firm actually works.</p>
+<p>Legal compliance is unforgiving. SRA Accounts Rules, AML regulations under the Money Laundering Regulations 2017, GDPR subject access requests, and legal privilege protections all demand systems that are designed correctly from the ground up. Bespoke software can automate client money reconciliation, maintain complete audit trails of every document access, enforce matter-level confidentiality through role-based permissions, and generate SRA-ready compliance reports - capabilities that off-the-shelf systems rarely offer without expensive customisation.</p>
+<p>A UK mid-size commercial law firm was losing an estimated 15% of billable time to document drafting that their generic template system couldn't automate. We built a bespoke document automation platform that generated complex commercial agreements from matter data, with conditional clauses that adapted to deal structure. Fee-earner drafting time on standard agreements dropped by 60%, the firm took on two new practice areas without increasing headcount, and client turnaround times on standard contracts improved from days to hours.</p>
+<p>From case management platforms and document automation to secure client portals and compliance tracking, bespoke software is already delivering real ROI for forward-thinking UK law firms. The opportunity is building software that turns legal expertise into scalable, efficient service delivery.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your law firm? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

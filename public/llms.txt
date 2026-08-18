@@ -1,0 +1,95 @@
+# ajairu
+
+> Bespoke software development for UK small and medium businesses (10-250 employees). We build custom platforms, connect systems, and replace expensive SaaS subscriptions with software you own outright.
+
+## What We Do
+
+ajairu is a UK-based bespoke software development studio founded by Toby Callinan, former CTO at Fabric Fintech (acquired by Aviva). With 27+ years in software engineering, we deliver enterprise-grade bespoke software at SME-appropriate pricing.
+
+Our approach: discover first, design second, build third, hand over everything. We tell you when bespoke software will help and when off-the-shelf is the better answer. Every engagement is fixed-price. You own the source code.
+
+## Services
+
+- **System Integration & Automation** (£8,000-£30,000, 4-8 weeks): Custom API integrations between CRM, accounting, ERP, e-commerce, and job management systems. Automated data sync and AI-powered workflows.
+  - [System Integration UK](/services/system-integration-uk)
+- **Bespoke Software Platform** (£25,000-£80,000+, 8-16 weeks): Custom platform built around your exact business processes. Web, mobile, and API development. Cloud-native architecture. You own the source code.
+- **SaaS / ERP Replacement** (£30,000-£80,000+, 12-20 weeks): Replace expensive SaaS subscriptions with bespoke software you own outright. Data migration, team training, and zero vendor lock-in.
+  - [ERP Replacement UK](/services/erp-replacement-uk)
+- **AI Automation** (£8,000-£30,000, 4-8 weeks): AI-powered automation workflows built into your custom software - eliminating manual tasks and improving data quality.
+  - [AI Automation UK](/services/ai-automation-uk)
+- **Technical Consultancy** (£2,000-£10,000, 1-3 weeks): Architecture review, tech stack selection, build-vs-buy analysis, and technical due diligence.
+- **Ongoing Support** (from £350/month): Monitoring, maintenance, updates, and enhancements for software we have built or inherited.
+
+## Key Differentiators
+
+- Enterprise experience: Delivered Aviva's first customer-facing generative AI product, led 45-person team, Tech of the Year 2024, Pension Innovation Award 2024.
+- Fixed-price engagements only. No day rates, no open-ended billing.
+- AI-accelerated development: 60-70% lower build costs, 8-16 week delivery timelines.
+- Full ownership: source code, documentation, training. Your team owns everything.
+- UK GDPR compliant, security best practices built in.
+- We tell you when off-the-shelf software is the better answer.
+
+## Target Clients
+
+UK businesses with 10-250 employees across: manufacturing, accountants, e-commerce, healthcare, financial services, real estate, logistics, construction, hospitality, law firms, education, and marketing agencies.
+
+## Key Pages
+
+- [Homepage](/)
+- [Services & Pricing](/services)
+- [System Integration UK](/services/system-integration-uk)
+- [ERP Replacement UK](/services/erp-replacement-uk)
+- [AI Automation UK](/services/ai-automation-uk)
+- [How It Works](/process)
+- [About Us](/about)
+- [Blog](/blog)
+- [Contact](/contact)
+- [Software Readiness Quiz](/assessment)
+- [How We Compare](/comparison)
+- [Free Guide](/guide)
+- [Best Software Developer UK Comparison](/best-software-developer-uk)
+
+## Industries
+
+- [Industries Hub](/industries)
+- [Software for Manufacturing](/industries/software-for-manufacturing)
+- [Software for Accountants](/industries/software-for-accountants)
+- [Software for E-commerce](/industries/software-for-ecommerce)
+- [Software for Healthcare](/industries/software-for-healthcare)
+- [Software for Financial Services](/industries/software-for-financial-services)
+- [Software for Real Estate](/industries/software-for-real-estate)
+- [Software for Logistics](/industries/software-for-logistics)
+- [Software for Construction](/industries/software-for-construction)
+- [Software for Hospitality](/industries/software-for-hospitality)
+- [Software for Law Firms](/industries/software-for-law-firms)
+- [Software for Education](/industries/software-for-education)
+- [Software for Marketing Agencies](/industries/software-for-marketing-agencies)
+
+## Blog
+
+- [AI Automation for UK Businesses: 5 Workflows You Can Build Today](/blog/ai-automation-for-business-workflows)
+- [Bespoke Software for Small Business UK: A Practical Guide](/blog/bespoke-software-for-small-business-uk)
+- [Build vs Buy: When Bespoke Software Beats SaaS for UK SMEs](/blog/build-vs-buy-software-uk-sme)
+- [Custom Software vs SaaS: The True 5-Year Cost Comparison](/blog/custom-software-vs-saas-total-cost-ownership)
+- [ERP Replacement UK: A Guide for SMEs](/blog/erp-replacement-uk-sme-guide)
+- [How AI Is Accelerating Bespoke Software Development in 2026](/blog/how-ai-accelerates-software-development)
+- [System Integration for UK SMEs](/blog/system-integration-for-uk-smes)
+- [What Is a Technical Consultancy and When Do You Need One?](/blog/what-is-technical-consultancy)
+
+## Founder
+
+Toby Callinan, CTO at Fabric Fintech (acquired by Aviva late 2023). 27+ years in software engineering. Delivered Aviva's first customer-facing generative AI product, Tech of the Year 2024. Based in the UK, working nationwide.
+
+## Sister Site
+
+- [ajairu.ai](https://ajairu.ai) - AI consulting and strategy for UK SMEs. AI Opportunity Audits, AI Strategy & Roadmaps, AI Implementation, Fractional CAIO, and AI Training Workshops.
+
+## Additional Resources
+
+- [llms-full.txt](/llms-full.txt) - Comprehensive site information for AI models
+- [agent.md](/agent.md) - AI agent discovery file
+
+## Contact
+
+- Email: hello@ajairu.dev
+- Website: https://ajairu.dev

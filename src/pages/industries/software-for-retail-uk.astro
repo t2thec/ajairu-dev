@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Retail",
+  metaTitle: "Bespoke Software for Retail UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK retailers. POS integration, inventory management, customer loyalty programmes, staff scheduling, supplier management, and sales analytics.",
+  h1: "Bespoke Software for Retail in the UK",
+  lead: "Custom software solutions for UK retailers. Connect POS, inventory, loyalty, and staff scheduling into one system built for your operation.",
+  useCases: [
+    {"title": "POS Integration", "desc": "Custom middleware that connects your point-of-sale systems across multiple stores with your accounting, inventory, and CRM - giving you real-time sales data and stock visibility from a single dashboard."},
+    {"title": "Inventory Management System", "desc": "Bespoke inventory software with real-time stock tracking across stores and warehouse, automated reorder points, and size/colour variant management - integrated with your POS and supplier ordering."},
+    {"title": "Customer Loyalty Programme", "desc": "A custom loyalty platform that tracks points, tiers, and rewards across in-store and online channels - with personalised offers, birthday rewards, and customer behaviour analytics built in."},
+    {"title": "Staff Scheduling Software", "desc": "Bespoke rotas and shift management that accounts for footfall patterns, staff availability, and holiday requests - with mobile self-service for staff and labour cost forecasting for managers."},
+    {"title": "Supplier Management Portal", "desc": "A bespoke supplier portal that automates purchase orders, tracks deliveries, manages supplier performance, and handles range changes - streamlining your buying and replenishment process."},
+    {"title": "Sales Analytics Dashboard", "desc": "Custom dashboards that pull data from every sales channel, giving you real-time performance by store, category, hour, and staff member - with margin analysis and stock turn reporting in one place."}
+  ],
+  benefits: [
+    {"title": "POS & ERP Integration", "desc": "Custom software that integrates with your existing POS, accounting, and ERP systems. No rip-and-replace - we build around what you already have, whether that's Vend, Lightspeed, Shopify POS, or a legacy system."},
+    {"title": "Omnichannel by Design", "desc": "We understand retail across in-store, online, and mobile. Software is built to give customers a consistent experience and give you a single view of stock, sales, and customer data across every channel."},
+    {"title": "Built to Last", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. You own everything we build - no per-till licensing, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with our existing POS system?", "answer": "Yes. Most of our retail projects involve integrating with existing POS systems like Vend, Lightspeed, Shopify POS, or legacy on-premise systems. We build custom middleware and APIs that connect your POS to your accounting, inventory, and CRM systems without requiring a full rip-and-replace. We work with what you have."},
+    {"question": "How is bespoke retail software different from off-the-shelf POS and ERP packages?", "answer": "Off-the-shelf software forces your retail processes to fit the tool - your product taxonomy, your pricing rules, your loyalty structure. Bespoke software fits your exact workflows, integrates with your specific systems, and eliminates the manual workarounds that generic packages can't handle. You also own the codebase - no per-till or per-store licensing fees."},
+    {"question": "Can you build software that works across multiple stores?", "answer": "Yes. We build multi-site retail systems with centralised reporting and per-store configuration. Stock, sales, staff, and customer data roll up to a single dashboard while each store retains its own settings, pricing, and operating parameters."},
+    {"question": "How long does a retail software project take?", "answer": "Quick wins like a loyalty programme dashboard or staff scheduling tool can be built in 6-8 weeks. A full inventory and POS integration platform typically takes 12-18 weeks. We start with the highest-impact features and iterate from there."}
+  ],
+  slug: "software-for-retail-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK retail is under pressure from every direction - rising costs, changing customer expectations, and competition from global e-commerce giants. The retailers winning right now are the ones using data and automation to operate leaner and serve customers better. Yet many UK retailers still run on a patchwork of legacy POS systems, disconnected spreadsheets, and accounting software that wasn't built for multi-site retail operations.</p>
+<p>Off-the-shelf retail software compounds the problem. Generic POS packages force you to adapt your product taxonomy, pricing rules, and promotions to their structure. Inventory tools handle simple stock counts but choke on size, colour, and style variants across multiple stores. Loyalty programmes built into POS systems are rigid - one structure fits all, with no scope for tiered rewards, personalised offers, or integration with your e-commerce platform. Staff scheduling add-ons don't account for your footfall patterns or the specific skills each shift requires. The result is store managers spending hours reconciling spreadsheets and buyers making replenishment decisions on stale data.</p>
+<p>We build custom software for UK retailers that connects your POS, inventory, loyalty, staff scheduling, and supplier management into a single, coherent system. We understand retail operations - from the shop floor to the buying office - and we build software that integrates with your existing POS, accounting, and e-commerce platforms. Whether it's a bespoke loyalty programme that rewards customers across in-store and online channels, or an inventory system that tracks stock by variant across every store in real time, bespoke software fits your exact processes.</p>
+<p>Retail compliance adds another layer of complexity. PCI-DSS payment security, GDPR data protection for customer loyalty data, and age-restricted sales verification all demand robust systems. Bespoke software gives you complete control over how customer data is stored, processed, and retained - with audit trails, role-based access, and age verification prompts built in from the start rather than bolted on through a third-party plugin.</p>
+<p>A UK fashion retailer with twelve stores was struggling to maintain accurate stock levels across locations, leading to lost sales when online orders referenced stock that had already sold in-store. We built a bespoke inventory sync system that updated stock across all stores and the e-commerce site in real time, with automated reorder alerts based on sell-through rates per store. Within four months, stock accuracy improved from 78% to 99%, online order fulfilment rates increased by 15%, and the buying team reduced overstock on slow-moving lines by 22%.</p>
+<p>Retail is a sector where bespoke software delivers clear, measurable ROI. The data is already being generated by your POS, your inventory, and your customer transactions. The opportunity is building software that turns that data into automated replenishment, personalised customer experiences, and real-time visibility across every store and channel.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your retail business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

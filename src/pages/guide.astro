@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Free Guide: 5 Custom Software Projects That Pay for Themselves in 12 Months | ${SITE_NAME}`;
+const description = 'Download our free practical guide for UK SMEs. 5 custom software projects with real ROI, implementation steps, and cost estimates. No jargon, no hype.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Free Guide', 'item': `${SITE_URL}/guide` },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>5 Custom Software Projects That Pay for Themselves in 12 Months</h1>
+      <p>A free practical guide for UK SMEs. No jargon, no hype, just projects with real numbers.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Free Guide'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <div class="guide-intro reveal">
+        <h2 class="section-title" style="text-align:left;">What is in the guide</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Most UK SMEs do not need a 200-page software strategy. They need 3 or 4 practical bespoke software projects that save real time and money, built in weeks not months.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">This guide covers 5 custom software projects that consistently deliver ROI within 12 months for businesses with 10 to 250 employees. Each one includes:</p>
+        <ul style="margin-top:16px;font-size:1.05rem;color:var(--grey-600);line-height:1.8;">
+          <li>The problem it solves and who it is for</li>
+          <li>How it works in plain English</li>
+          <li>Typical cost to build</li>
+          <li>Expected time savings and payback period</li>
+          <li>What your team needs to know to run it</li>
+        </ul>
+      </div>
+
+      <div class="guide-uses reveal">
+        <h2 class="section-title" style="text-align:left;">The 5 projects</h2>
+        <div class="guide-use-card">
+          <span class="guide-use-num">1</span>
+          <div>
+            <h3>Custom CRM That Fits Your Sales Process</h3>
+            <p>A bespoke CRM built around your actual sales pipeline, not a generic template. Tracks every lead, deal, and customer interaction exactly the way your team works. Typical result: 40-60% reduction in admin time, no more lost leads, and full visibility of your sales pipeline in real time.</p>
+          </div>
+        </div>
+        <div class="guide-use-card">
+          <span class="guide-use-num">2</span>
+          <div>
+            <h3>Automated Invoice Processing System</h3>
+            <p>A custom system that captures, validates, and routes invoices automatically. Integrates with your accounting software and approval workflow. No more manual data entry. Typical result: 70% reduction in processing time, fewer errors, faster approval cycles.</p>
+          </div>
+        </div>
+        <div class="guide-use-card">
+          <span class="guide-use-num">3</span>
+          <div>
+            <h3>Integrated Job Management Platform</h3>
+            <p>A single platform that manages jobs from quote to invoice: scheduling, time tracking, job cards, and billing all in one place. Built for your specific trade or service. Typical result: 3-5 hours saved per person per week, and nothing falls through the cracks.</p>
+          </div>
+        </div>
+        <div class="guide-use-card">
+          <span class="guide-use-num">4</span>
+          <div>
+            <h3>Bespoke Client Portal</h3>
+            <p>A custom-branded portal where your clients can log in, view project status, download documents, approve work, and communicate with your team. Replaces endless email chains and spreadsheets. Typical result: 50-70% reduction in client communication overhead and a more professional client experience.</p>
+          </div>
+        </div>
+        <div class="guide-use-card">
+          <span class="guide-use-num">5</span>
+          <div>
+            <h3>System Integration Layer (CRM + Accounting + ERP)</h3>
+            <p>A custom integration layer that connects your existing systems so data flows automatically between them. No more double entry, no more reconciling spreadsheets. Typical result: 50% reduction in time spent on data admin and a single source of truth across your business.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-download reveal">
+        <h2>Get the full guide</h2>
+        <p>Enter your email and we will send you the PDF. One email, no sequence, no spam. We will not share your address with anyone.</p>
+        <form id="guide-download-form" class="guide-form">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+          <input type="email" id="guide-email" placeholder="your@email.co.uk" required />
+          <button type="submit" class="btn btn-primary btn-lg">Send Me the Guide</button>
+        </form>
+        <p id="guide-success" style="display:none;color:var(--teal-dark);font-weight:600;margin-top:16px;font-size:1.05rem;">The guide is on its way. Check your inbox in the next few minutes.</p>
+        <p style="font-size:0.82rem;color:var(--grey-400);margin-top:16px;">By downloading, you agree to our <a href="/privacy">privacy policy</a>. We will only use your email to send you the guide. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="guide-about reveal">
+        <h2 class="section-title" style="text-align:left;">Who wrote this</h2>
+        <p style="font-size:1rem;line-height:1.7;color:var(--grey-600);">{SITE_NAME} is a software development studio for UK SMEs. Founded by Toby Callinan, 27+ years in technology leadership, former CTO at Fabric Fintech (acquired by Aviva). At Aviva, he led the team that delivered Aviva's first customer-facing generative AI product. Now helping businesses with 10 to 250 employees build bespoke software, at a fraction of the cost.</p>
+        <p style="margin-top:16px;"><a href="/about">Learn more about us</a> or <a href="/contact">book a free discovery call</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Find Your Software Opportunities?"
+    text="Book a free, no-obligation 30-minute discovery call. We will talk through your business, your goals, and whether bespoke software makes sense for you right now."
+  />
+</BaseLayout>
+
+<script is:inline>
+  function getUserId() {
+    let userId = localStorage.getItem('ajairu_dev_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ajairu_dev_user_id', userId);
+    }
+    return userId;
+  }
+
+  document.getElementById('guide-download-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get('email') || document.getElementById('guide-email').value;
+    const honeypot = formData.get('website') || '';
+    const userId = getUserId();
+
+    fetch('http://' + window.location.hostname + ':8092/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'guide',
+        userId: userId,
+        email: email,
+        website: honeypot,
+      }),
+    }).catch(err => console.error('Save failed:', err));
+
+    document.getElementById('guide-success').style.display = 'block';
+    document.getElementById('guide-download-form').style.display = 'none';
+  });
+</script>
+
+<style>
+  .guide-intro { margin-bottom: 48px; }
+  .guide-uses { margin-bottom: 48px; }
+  .guide-use-card {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 20px; background: var(--grey-50); border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  .guide-use-num {
+    flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--navy); color: var(--white); display: flex;
+    align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;
+  }
+  .guide-use-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 6px; }
+  .guide-use-card p { font-size: 0.95rem; color: var(--grey-600); line-height: 1.6; }
+  .guide-download {
+    text-align: center; padding: 40px; background: var(--navy);
+    border-radius: 12px; margin-bottom: 48px;
+  }
+  .guide-download h2 { color: var(--white); margin-bottom: 12px; }
+  .guide-download p { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 24px; }
+  .guide-form { display: flex; gap: 12px; max-width: 500px; margin: 0 auto; }
+  .guide-form input {
+    flex: 1; padding: 14px 18px; border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 8px; font-size: 1rem; background: rgba(255,255,255,0.08);
+    color: var(--white); font-family: inherit;
+  }
+  .guide-form input::placeholder { color: rgba(255,255,255,0.4); }
+  .guide-form input:focus { outline: none; border-color: var(--teal); }
+  .guide-about { padding: 24px; background: var(--grey-50); border-radius: 10px; }
+  @media (max-width: 640px) {
+    .guide-form { flex-direction: column; }
+    .guide-download { padding: 24px; }
+  }
+</style>

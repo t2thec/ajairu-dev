@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Hospitality",
+  metaTitle: "Bespoke Software for Hospitality UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK hospitality businesses. Booking systems, venue management, staff scheduling, and guest experience platforms.",
+  h1: "Bespoke Software for Hospitality in the UK",
+  lead: "Custom software solutions for UK hospitality businesses. Build booking systems, manage venues, and create guest experience platforms with software built for hospitality.",
+  useCases: [
+    {"title": "Reservation & Booking System", "desc": "A bespoke booking platform that handles table reservations, room bookings, and event enquiries - with real-time availability, automated confirmations, and integration with your EPOS and channel manager."},
+    {"title": "Venue & Event Management", "desc": "Custom event management software that tracks bookings, function sheets, catering requirements, and staffing - giving venue managers a single view of every event from enquiry to invoice."},
+    {"title": "Staff Scheduling & Rota", "desc": "Bespoke rota management software that handles shift scheduling, timesheet approval, holiday requests, and labour cost tracking - built around hospitality shift patterns and demand forecasting."},
+    {"title": "Guest Experience Portal", "desc": "A custom guest portal where customers book, order, leave feedback, and manage loyalty rewards - branded to your business and integrated with your EPOS and CRM."},
+    {"title": "Stock & Inventory Management", "desc": "Bespoke stock control software that tracks bar and kitchen inventory, automates reorder points, and integrates with EPOS sales data - reducing waste and preventing stockouts."},
+    {"title": "Loyalty & Marketing Platform", "desc": "A custom loyalty and marketing system that tracks customer visits, manages rewards, sends targeted offers, and integrates with your booking and EPOS systems - built to fit your specific loyalty model."}
+  ],
+  benefits: [
+    {"title": "EPOS & PMS Integration", "desc": "Custom software that integrates with your EPOS, property management system, and booking platforms. No rip-and-replace - we build around your existing tech stack."},
+    {"title": "Built for Hospitality Workflows", "desc": "We understand hospitality from the kitchen to the front desk. Software is built around real service workflows - fast, intuitive, and designed for busy teams."},
+    {"title": "You Own the Code", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. No per-site licensing fees, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with our EPOS system?", "answer": "Yes. We build integrations with major EPOS systems including Lightspeed, Square, Toast, and custom platforms. Whether it's pulling sales data into stock management or syncing bookings with table availability, we build reliable integrations that keep data in sync."},
+    {"question": "How is bespoke software different from hospitality platforms like OpenTable or Eventbrite?", "answer": "Off-the-shelf platforms are generic and take a cut of every booking. Bespoke software is branded to your business, fits your exact service workflows, and eliminates per-booking fees. You own the codebase and the customer relationship - no third-party branding or commission."},
+    {"question": "Can you build a booking system for both restaurants and rooms?", "answer": "Yes. We build bespoke booking platforms that handle multiple service types - table reservations, room bookings, event enquiries, and spa appointments - in a single system. The platform is tailored to your specific venue and service mix."},
+    {"question": "How long does a hospitality software project take?", "answer": "Quick wins like a booking system or staff scheduling tool can be built in 4-6 weeks. A full venue management or guest experience platform typically takes 8-14 weeks. We start with the highest-impact features and iterate."}
+  ],
+  slug: "software-for-hospitality",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>The UK hospitality sector is under immense pressure. Rising costs, staff shortages, and changing customer expectations all demand more efficient operations. Bespoke software can help you streamline bookings, manage staff, and deliver the guest experience that keeps customers coming back - but most hospitality businesses are running on a fragmented mix of booking platforms, EPOS systems, and spreadsheet-based staff scheduling that doesn't connect.</p>
+<p>Off-the-shelf hospitality software wasn't built for your specific operation. Generic reservation systems handle individual bookings but can't manage the complexities of function planning, room hire, and event catering that a venue needs. EPOS systems process transactions but don't connect to your stock management in real time, so kitchen waste is tracked on paper if at all. Staff scheduling tools built for offices don't understand split shifts, rolling rotas, or the need to match staffing levels to expected covers. The result is managers spending their evenings on admin rather than being present on the floor.</p>
+<p>We build custom software for UK hospitality businesses - from reservation systems and venue management platforms to staff scheduling and guest experience portals. We understand hospitality workflows, from the kitchen to the front desk, and we build systems that integrate with your existing EPOS and booking platforms. Whether it's a bespoke function management system that handles enquiries, quotes, contracts, and event delivery in one place, or a staff scheduling tool that auto-generates rotas based on projected covers, bespoke software fits the way your venue actually operates.</p>
+<p>Hospitality compliance is often overlooked but carries real consequences. Allergen information under Natasha's Law, food safety management under HACCP, fire safety documentation, and GDPR-compliant handling of guest data all demand robust processes. Bespoke software can maintain digital allergen matrices, automate HACCP temperature logging from integrated sensors, and manage guest data retention policies automatically - replacing paper-based systems that are easily lost and fail during environmental health inspections.</p>
+<p>A UK hotel and events venue with 60 bedrooms and five function spaces was losing function enquiries because their generic booking system couldn't handle the complexity of multi-room events with bespoke catering packages. We built a bespoke venue management platform that managed enquiry-to-contract workflows, room scheduling, and catering coordination in a single system. Enquiry-to-booking conversion increased by 34%, the sales team reduced from three to two, and the venue won a regional hospitality award partly on the strength of their streamlined event delivery.</p>
+<p>Hospitality is a sector where bespoke software delivers clear ROI. Every booking, every service, and every guest interaction generates data. The opportunity is building software that turns that data into streamlined operations, better guest experiences, and stronger customer loyalty.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your hospitality business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

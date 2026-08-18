@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Agriculture",
+  metaTitle: "Bespoke Software for Agriculture UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK farms and agricultural businesses. Livestock tracking, crop management, supply chain, equipment maintenance, and compliance recording.",
+  h1: "Bespoke Software for Agriculture in the UK",
+  lead: "Custom software solutions for UK farms and agricultural businesses. Track livestock, manage crops, monitor equipment, and automate compliance - all built to fit your operation.",
+  useCases: [
+    {"title": "Livestock Tracking System", "desc": "Custom livestock management software that tracks individual animals by ear tag, records medical treatments, movements, and breeding history - generating DEFRA-compliant records and automated medication withdrawal alerts."},
+    {"title": "Crop Management Platform", "desc": "A bespoke crop management system that tracks field activity, planting, spraying, and harvest records - with spray records, input tracking, and yield mapping integrated with your field boundaries and machinery data."},
+    {"title": "Supply Chain Management", "desc": "Custom software that manages supplier orders, tracks deliveries, records batch numbers, and traces produce from field to customer - giving you full traceability for audits and customer assurance schemes."},
+    {"title": "Equipment Maintenance Tracker", "desc": "A bespoke maintenance system that tracks service intervals, MOT and insurance dates, repair history, and parts inventory for every tractor, harvester, and implement - with automated service reminders and cost tracking per machine."},
+    {"title": "Compliance Recording", "desc": "Custom compliance software that records pesticide use, fertiliser applications, water abstraction, and cross-compliance evidence - generating Red Tractor, RPA, and DEFRA-ready reports automatically from your daily activity data."},
+    {"title": "Weather Integration Dashboard", "desc": "Custom dashboards that pull data from on-farm weather stations and Met Office feeds, giving you real-time conditions, spraying and harvesting windows, frost alerts, and irrigation scheduling - all in one place."}
+  ],
+  benefits: [
+    {"title": "Compliance Built In", "desc": "We understand UK agricultural compliance - Red Tractor, DEFRA, RPA, cross-compliance, and sector-specific assurance schemes. Software records the right data automatically and generates audit-ready reports on demand."},
+    {"title": "Works in the Field", "desc": "Farms need software that works on a phone, offline, in all weather. We build mobile-first apps that sync when connectivity returns - built for real field conditions, not office environments."},
+    {"title": "Built to Last", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. You own everything we build - no per-acre licensing, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Do I need IoT sensors for custom agricultural software?", "answer": "Not necessarily. Many agricultural software projects work with data you already record - livestock movements, spray records, equipment service history. Soil moisture sensors, weather stations, and machinery telematics can enhance the system, but we assess your current data sources during the consultancy phase and recommend only what's genuinely needed."},
+    {"question": "Can custom software handle Red Tractor and DEFRA compliance?", "answer": "Yes. We build compliance recording into the system from the start - pesticide records, fertiliser applications, livestock movements, medication records, and cross-compliance evidence. The software generates Red Tractor, RPA, and DEFRA-ready reports automatically from your daily activity data, so you're always audit-ready."},
+    {"question": "Will the software work in the field with poor internet?", "answer": "Yes. We build mobile apps with offline-first design - you can record field activity, spray applications, and livestock treatments without connectivity, and the app syncs automatically when signal returns. This is essential for rural areas where connectivity is often unreliable."},
+    {"question": "How long does an agricultural software project take?", "answer": "Quick wins like a livestock tracking app or equipment maintenance tracker can be built in 6-8 weeks. A full farm management platform with crop, livestock, and compliance modules typically takes 12-18 weeks. We start with the highest-impact features and iterate."}
+  ],
+  slug: "software-for-agriculture-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK agriculture is navigating a period of unprecedented change - new subsidy schemes, tightening environmental requirements, and the pressure to produce more with less. The farms thriving in this environment are the ones using data to make better decisions about inputs, yields, and compliance. Yet many UK farms still rely on paper records, spreadsheets, and disconnected apps that make it impossible to see the whole operation in one place.</p>
+<p>Off-the-shelf agricultural software rarely matches how UK farms actually work. Generic farm management packages force you to adapt your field naming, your livestock grouping, and your spraying workflow to their structure. They can't handle the specific compliance requirements of your assurance scheme, the way you batch your livestock movements, or the equipment service intervals specific to your machinery fleet. Compliance tools generate reports in their format, not the format your inspector wants. The result is farmers maintaining shadow spreadsheets because the official system can't capture the realities of their operation.</p>
+<p>We build custom software for UK farms and agricultural businesses that fits your exact operation. From livestock tracking and crop management to supply chain and equipment maintenance, we build systems that work the way you work. We understand UK agriculture - from the field to the farm office - and we build software that records the right data automatically and generates compliance reports without the scramble. Whether it's a bespoke livestock tracker that handles ear tags, medications, and movement notifications, or a crop management system that links spray records to field boundaries and yield data, bespoke software fits your farm.</p>
+<p>Agricultural compliance carries real consequences. Red Tractor assurance, DEFRA movement regulations, cross-compliance rules, and RPA subsidy claims all demand meticulous record-keeping. A missed spray record or an unrecorded livestock movement isn't just a paperwork gap - it's a potential subsidy penalty or assurance suspension. Bespoke software records pesticide use, fertiliser applications, and livestock movements as they happen, with automated alerts for medication withdrawal periods and movement notifications - replacing paper-based systems that are easily lost and impossible to search during an inspection.</p>
+<p>A UK mixed farm with 400 head of cattle and 800 acres of arable was struggling to produce accurate Red Tractor compliance records during annual inspections. Their paper-based system meant days of preparation and occasional gaps that put their assurance at risk. We built a bespoke farm management system with a mobile app for field and livestock recording, automated compliance report generation, and equipment maintenance tracking. Inspection preparation dropped from three days to two hours, medication withdrawal alerts eliminated a near-miss on a calf sold too soon after treatment, and the farm identified £12,000 in unrecovered equipment maintenance costs within the first year.</p>
+<p>Agriculture is a sector where bespoke software delivers clear value. Every field, every animal, and every input generates data. The opportunity is building software that turns that data into better decisions, automated compliance, and a clear picture of your whole operation - from the field to the farm gate.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your farm or agricultural business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

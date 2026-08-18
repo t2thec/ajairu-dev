@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Manufacturing",
+  metaTitle: "Bespoke Software for Manufacturing UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK manufacturers. MES integration, production scheduling, inventory management, and quality tracking systems.",
+  h1: "Bespoke Software for Manufacturing in the UK",
+  lead: "Custom software solutions for UK manufacturers. MES integration, production scheduling, inventory management, and quality tracking built to fit your operation.",
+  useCases: [
+    {"title": "MES Integration", "desc": "Custom middleware that connects your manufacturing execution system with ERP, SCADA, and shop floor equipment - giving you real-time visibility across the entire production line."},
+    {"title": "Production Scheduling Software", "desc": "Bespoke scheduling tools that account for machine availability, staff shifts, material supply, and order priority - replacing spreadsheets with an automated, drag-and-drop planning board."},
+    {"title": "Inventory Management System", "desc": "Custom inventory software with real-time stock tracking, automated reorder points, and multi-site warehouse management - integrated directly with your accounting and procurement systems."},
+    {"title": "Quality Tracking Platform", "desc": "Digital quality management system that records inspections, tracks defects by batch and machine, and generates compliance reports automatically - replacing paper-based QA processes."},
+    {"title": "Equipment Monitoring Dashboard", "desc": "Custom dashboards that pull data from sensors and machinery across the factory floor, giving managers real-time OEE, downtime tracking, and performance alerts in one place."},
+    {"title": "Supplier Portal & Procurement", "desc": "A bespoke supplier portal that automates purchase orders, tracks deliveries, and manages supplier performance - streamlining your supply chain communication and reducing manual procurement admin."}
+  ],
+  benefits: [
+    {"title": "ERP & MES Integration", "desc": "Custom software that integrates with SAP, Oracle, Sage, and your existing ERP and manufacturing execution systems. No rip-and-replace - we build around what you already have."},
+    {"title": "Shop Floor to Boardroom", "desc": "We understand manufacturing from the shop floor to the boardroom. Software solutions that deliver value at every level, from operators to directors."},
+    {"title": "Built to Last", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. You own everything we build - no licensing lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Do I need IoT sensors for custom manufacturing software?", "answer": "Not necessarily. Many manufacturing software projects work with data from your existing ERP, MES, or accounting systems. Equipment monitoring and predictive maintenance may benefit from sensor data, but we assess your current data sources during the consultancy phase and recommend what's needed."},
+    {"question": "Can custom software integrate with our existing ERP?", "answer": "Yes. Most of our manufacturing projects involve integrating with existing ERP systems like SAP, Oracle, or Sage. We build custom middleware and APIs that connect your systems without requiring a full rip-and-replace. We work with what you have."},
+    {"question": "How is bespoke software different from off-the-shelf manufacturing software?", "answer": "Off-the-shelf software forces your processes to fit the tool. Bespoke software fits your exact workflows, terminology, and reporting needs. It integrates with your specific systems, eliminates manual workarounds, and scales with your business. You also own the codebase - no per-seat licensing or vendor lock-in."},
+    {"question": "How long does a manufacturing software project take?", "answer": "Quick wins like a quality tracking dashboard or supplier portal can be built in 6-8 weeks. Larger projects with MES integration and multi-site deployment typically take 12-20 weeks. We start with the highest-impact features and iterate from there."}
+  ],
+  slug: "software-for-manufacturing",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK manufacturing is embracing Industry 4.0, and bespoke software is at the heart of it. From MES integration that connects your shop floor to your boardroom, to custom production scheduling that replaces brittle spreadsheets, the right software transforms how manufacturers operate. Yet many UK manufacturers still rely on a patchwork of legacy ERP modules, disconnected spreadsheets, and paper-based QA records that make it impossible to see what's happening on the line in real time.</p>
+<p>Off-the-shelf manufacturing software compounds the problem. Generic MES packages force you to adapt your processes to their workflow - renaming your work centres, reorganising your bill of materials, and changing how operators log downtime. They rarely integrate cleanly with older machinery or niche quality standards, and per-seat licensing punishes you for adding shop-floor users. We've seen factories where operators maintain shadow spreadsheets because the official system can't capture the nuances of a specific production line.</p>
+<p>We build custom software for UK manufacturers that improves efficiency, reduces costs, and enhances quality. We understand manufacturing environments - from the production line to the supply chain - and we build systems that integrate with your existing ERP, MES, and accounting platforms. Bespoke software fits your exact workflows, terminology, and reporting needs, connecting machines, sensors, and people in a single source of truth.</p>
+<p>Manufacturing compliance adds another layer of complexity. Whether you're working to ISO 9001, AS9100, or sector-specific standards like BRCGS for food production, bespoke software can automate batch traceability, manage digital sign-offs, and generate audit-ready reports on demand - eliminating the scramble when an inspector arrives unannounced.</p>
+<p>A UK precision engineering firm approached us after their off-the-shelf scheduling system repeatedly double-booked critical CNC machines. We built a bespoke scheduling tool that accounted for machine capabilities, tooling availability, and operator skill levels - reducing machine idle time by 23% within three months and cutting late deliveries by nearly half. The system integrated with their existing Sage ERP, so no data entry was duplicated.</p>
+<p>Manufacturing is a sector where bespoke software delivers clear ROI. The data is already being generated by machines, sensors, and ERP systems. The opportunity is building software that turns that data into actionable workflows, automated processes, and real-time visibility across your operation.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your manufacturing business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

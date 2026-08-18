@@ -1,0 +1,133 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { SITE_NAME, SITE_URL, FOUNDER_NAME } from '../config';
+import SchemaOrg from '../components/SchemaOrg.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags: string[];
+  keywords: string[];
+  author?: string;
+  readTime?: string;
+  slug: string;
+}
+
+const { title, description, pubDate, tags, keywords, author = FOUNDER_NAME, readTime, slug } = Astro.props;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  'headline': title,
+  'description': description,
+  'datePublished': pubDate.toISOString(),
+  'author': { '@type': 'Person', 'name': author },
+  'publisher': { '@type': 'Organization', 'name': SITE_NAME },
+  'mainEntityOfPage': `${SITE_URL}/blog/${slug}`,
+  'keywords': keywords.join(', '),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': `${SITE_URL}/blog` },
+    { '@type': 'ListItem', 'position': 3, 'name': title, 'item': `${SITE_URL}/blog/${slug}` },
+  ],
+};
+
+const formattedDate = pubDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title={`${title} | ${SITE_NAME} Blog`}
+  description={description}
+  ogType="article"
+  schema={[articleSchema, breadcrumbSchema]}
+>
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog">Blog</a> <span>&rsaquo;</span> <span style="color:rgba(255,255,255,0.8)">{title}</span>
+      </div>
+      <span class="eyebrow">Article</span>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <div style="margin-top:16px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+        By {author} | {formattedDate}{readTime ? ` | ${readTime}` : ''}
+      </div>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Blog',href:'/blog'},{name:title}]} />
+
+  <section class="section">
+    <div class="container">
+      <article class="prose">
+        <slot />
+      </article>
+
+      <div style="max-width:720px;margin:40px auto 0;">
+        <div class="blog-tags-row" style="margin-bottom:32px;">
+          {tags.filter(t => t !== 'AI' && t !== 'UK' && t !== 'SME').map((tag) => (
+            <span class="blog-tag">{tag}</span>
+          ))}
+        </div>
+
+        <div class="newsletter-box">
+          <h3 style="margin-bottom:8px;">Get Practical Software Tips for Your SME</h3>
+          <p style="color:var(--grey-500);">One email per month. No spam. Just practical software development guidance for UK small businesses, new articles, and lessons from real projects.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="your@email.co.uk" required aria-label="Email address" name="email" />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="newsletter-success" style="display:none;font-weight:600;margin-top:12px;"></p>
+          <p style="font-size:0.8rem;color:var(--grey-500);margin-top:12px;">Unsubscribe anytime. We never share your data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const successMsg = form.parentElement.querySelector('.newsletter-success');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (!email) return;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing...';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          successMsg.textContent = data.message || 'Thanks for subscribing!';
+          successMsg.style.color = 'var(--teal-dark)';
+        } else {
+          successMsg.style.display = 'block';
+          successMsg.textContent = data.error || 'Something went wrong. Please try again.';
+          successMsg.style.color = '#c0392b';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Subscribe';
+        }
+      } catch (err) {
+        successMsg.style.display = 'block';
+        successMsg.textContent = 'Network error. Please try again.';
+        successMsg.style.color = '#c0392b';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Subscribe';
+      }
+    });
+  });
+</script>

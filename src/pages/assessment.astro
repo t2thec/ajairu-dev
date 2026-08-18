@@ -1,0 +1,387 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Free Custom Software UK Readiness Quiz | Is Your Business Ready for Bespoke Software? | ${SITE_NAME}`;
+const description = 'Take our free 2-minute custom software UK readiness quiz. 15 questions, instant results, no email required. Find out if your business is ready for bespoke software and what to do next.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Software Readiness Quiz', 'item': `${SITE_URL}/assessment` },
+  ],
+};
+
+const quizSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is the software readiness quiz free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No email required to see your results.' } },
+    { '@type': 'Question', 'name': 'How long does the quiz take?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'About 2 minutes. 15 questions covering your data, processes, team, and goals.' } },
+    { '@type': 'Question', 'name': 'What do I get at the end?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'A readiness score out of 100, a breakdown by category, and specific recommendations for your next steps.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, quizSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Free Custom Software UK Readiness Quiz</h1>
+      <p>15 questions. 2 minutes. Instant results. No email required.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Software Readiness Quiz'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Quiz intro -->
+      <div id="quiz-intro" class="quiz-intro">
+        <h2 class="section-title" style="text-align:left;">Is your business ready for bespoke software?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-bottom:32px;">Answer 15 quick questions about your business and get an instant software readiness score. You will see how you compare across four areas: data, processes, team readiness, and strategy. No email required to see your results.</p>
+        <button id="quiz-start-btn" class="btn btn-primary btn-lg">Start the Quiz</button>
+      </div>
+
+      <!-- Quiz container -->
+      <div id="quiz-container" class="quiz-container" style="display:none;">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="quiz-progress-fill" class="quiz-progress-fill"></div></div>
+          <span id="quiz-progress-text" class="quiz-progress-text">Question 1 of 15</span>
+        </div>
+        <div id="quiz-question" class="quiz-question"></div>
+        <div id="quiz-options" class="quiz-options"></div>
+        <div class="quiz-nav">
+          <button id="quiz-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="quiz-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results container -->
+      <div id="quiz-results" class="quiz-results" style="display:none;">
+        <div class="quiz-score-card">
+          <div class="quiz-score-label">Your Software Readiness Score</div>
+          <div id="quiz-score" class="quiz-score-num">0<span class="quiz-score-total">/100</span></div>
+          <div id="quiz-score-label" class="quiz-score-verdict"></div>
+        </div>
+
+        <div id="quiz-breakdown" class="quiz-breakdown"></div>
+
+        <div id="quiz-recommendations" class="quiz-recommendations"></div>
+
+        <div class="quiz-email-capture quiz-email-prominent">
+          <h3>📄 Get your full results by email</h3>
+          <p>Enter your details and we will send you a copy of your score, breakdown, and personalised recommendations. We will also follow up with a free 15-minute call to discuss your results, no pressure.</p>
+          <form id="quiz-email-form" class="quiz-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="quiz-form-stacked">
+              <input type="email" id="quiz-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="quiz-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="quiz-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Send My Results &rarr;</button>
+            </div>
+          </form>
+          <p id="quiz-email-success" style="display:none;color:var(--teal-dark);font-weight:600;margin-top:12px;">Results saved and sent. Check your inbox.</p>
+        </div>
+
+        <div class="quiz-cta">
+          <h3>Want the full picture?</h3>
+          <p>Our &pound;2,000 Technical Consultancy goes much deeper than this quiz. We examine your actual operations, talk to your team, and give you a prioritised report with ROI estimates for your top opportunities. Walk-away protection: you keep the report whether you work with us or not.</p>
+          <div class="quiz-cta-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="/services" class="btn btn-outline btn-lg">View Services &amp; Pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your business and point you to the right service, even if that is none of them yet."
+  />
+</BaseLayout>
+
+<script is:inline define:vars={{ SITE_NAME }}>
+  const questions = [
+    { category: 'data', q: 'How would you describe your business data?', options: [
+      { text: 'Mostly on paper or in our heads', score: 0 },
+      { text: 'Some digital records, but scattered across systems', score: 1 },
+      { text: 'Mostly digital, stored in a few core systems', score: 2 },
+      { text: 'Well organised, centralised, and accessible', score: 3 },
+    ]},
+    { category: 'data', q: 'Can you easily pull a report showing key business metrics?', options: [
+      { text: 'No, it would take days or is not possible', score: 0 },
+      { text: 'Sometimes, but it requires manual effort', score: 1 },
+      { text: 'Yes, but it takes a few hours', score: 2 },
+      { text: 'Yes, we have dashboards or reports ready to go', score: 3 },
+    ]},
+    { category: 'data', q: 'Is your customer or operational data stored in a structured format (database, CRM, ERP)?', options: [
+      { text: 'No, it is mostly documents and spreadsheets', score: 0 },
+      { text: 'Partially, some is structured and some is not', score: 1 },
+      { text: 'Yes, most of it is in structured systems', score: 2 },
+      { text: 'Yes, fully structured and well maintained', score: 3 },
+    ]},
+    { category: 'processes', q: 'How much of your daily work involves repetitive, manual tasks?', options: [
+      { text: 'A lot, most of what we do is manual', score: 0 },
+      { text: 'Quite a bit, maybe half our time', score: 1 },
+      { text: 'Some, but we have automated a few things', score: 2 },
+      { text: 'Very little, most repetitive work is automated', score: 3 },
+    ]},
+    { category: 'processes', q: 'Do you have documented processes for your key business workflows?', options: [
+      { text: 'No, everyone does things their own way', score: 0 },
+      { text: 'A few are written down somewhere', score: 1 },
+      { text: 'Most are documented but not always followed', score: 2 },
+      { text: 'Yes, they are documented and regularly updated', score: 3 },
+    ]},
+    { category: 'processes', q: 'How do you currently handle customer enquiries or support?', options: [
+      { text: 'Entirely manual, phone and email only', score: 0 },
+      { text: 'We have a basic system but it is mostly manual', score: 1 },
+      { text: 'We use some tools but response times vary', score: 2 },
+      { text: 'Well systematised with templates and routing', score: 3 },
+    ]},
+    { category: 'processes', q: 'How long does it take to onboard a new customer or client?', options: [
+      { text: 'Weeks, lots of manual steps', score: 0 },
+      { text: 'Several days with some manual work', score: 1 },
+      { text: 'A day or two, mostly streamlined', score: 2 },
+      { text: 'Hours, largely automated', score: 3 },
+    ]},
+    { category: 'team', q: 'How would you describe your team\'s comfort level with new technology?', options: [
+      { text: 'Reluctant, new tools cause friction', score: 0 },
+      { text: 'Mixed, some embrace it and some avoid it', score: 1 },
+      { text: 'Generally comfortable, they adapt within a few weeks', score: 2 },
+      { text: 'Eager, they actively suggest new tools', score: 3 },
+    ]},
+    { category: 'team', q: 'Has anyone in your business used modern software tools or platforms to improve their work?', options: [
+      { text: 'No one, as far as I know', score: 0 },
+      { text: 'One or two people have tried it', score: 1 },
+      { text: 'Several people use them regularly', score: 2 },
+      { text: 'Most of the team uses them in some form', score: 3 },
+    ]},
+    { category: 'team', q: 'Does your team have time to learn new tools alongside their regular work?', options: [
+      { text: 'No, everyone is at capacity', score: 0 },
+      { text: 'Barely, it would be a squeeze', score: 1 },
+      { text: 'Yes, with some planning we can make time', score: 2 },
+      { text: 'Yes, we actively allocate time for learning', score: 3 },
+    ]},
+    { category: 'team', q: 'How does leadership view software investment?', options: [
+      { text: 'It is not on the radar yet', score: 0 },
+      { text: 'Curious but cautious', score: 1 },
+      { text: 'Interested and actively exploring options', score: 2 },
+      { text: 'Committed, it is a strategic priority', score: 3 },
+    ]},
+    { category: 'strategy', q: 'Do you have a budget allocated for software or technology improvement?', options: [
+      { text: 'No, nothing specific', score: 0 },
+      { text: 'We could find budget if the case was strong', score: 1 },
+      { text: 'We have a general technology budget', score: 2 },
+      { text: 'Yes, we have allocated software or innovation budget', score: 3 },
+    ]},
+    { category: 'strategy', q: 'Have you identified specific problems you hope bespoke software could solve?', options: [
+      { text: 'No, we are not sure what custom software could do for us', score: 0 },
+      { text: 'Vaguely, we think it could help but not sure where', score: 1 },
+      { text: 'Yes, we have a few areas in mind', score: 2 },
+      { text: 'Yes, we have a clear list of problems to solve', score: 3 },
+    ]},
+    { category: 'strategy', q: 'How important is data security and compliance to your business?', options: [
+      { text: 'We have not thought about it much', score: 0 },
+      { text: 'We know it matters but have not done much', score: 1 },
+      { text: 'We have basic policies in place', score: 2 },
+      { text: 'It is a priority, we have proper governance', score: 3 },
+    ]},
+    { category: 'strategy', q: 'What is your timeline for starting a bespoke software project?', options: [
+      { text: 'No timeline, just exploring', score: 0 },
+      { text: 'Sometime in the next 12 months', score: 1 },
+      { text: 'In the next 3-6 months', score: 2 },
+      { text: 'Now, we want to start within weeks', score: 3 },
+    ]},
+  ];
+
+  const categoryLabels = {
+    data: 'Data Readiness',
+    processes: 'Process Maturity',
+    team: 'Team Readiness',
+    strategy: 'Strategy & Priority',
+  };
+
+  const categoryDescriptions = {
+    data: 'Software needs data to work. If your data is scattered, manual, or inaccessible, that is the first thing to fix before investing in bespoke software.',
+    processes: 'Bespoke software works best when it automates well-defined processes. If your workflows are undocumented or inconsistent, custom software will struggle to deliver value.',
+    team: 'Software adoption depends on people. If your team is not comfortable with new technology or does not have time to learn, even the best software tools will gather dust.',
+    strategy: 'Without a clear problem to solve and budget to solve it, bespoke software stays theoretical. You need a defined use case and leadership commitment.',
+  };
+
+  let currentQ = 0;
+  let answers = new Array(questions.length).fill(null);
+
+  const intro = document.getElementById('quiz-intro');
+  const container = document.getElementById('quiz-container');
+  const results = document.getElementById('quiz-results');
+  const startBtn = document.getElementById('quiz-start-btn');
+  const qEl = document.getElementById('quiz-question');
+  const optsEl = document.getElementById('quiz-options');
+  const prevBtn = document.getElementById('quiz-prev');
+  const nextBtn = document.getElementById('quiz-next');
+  const progressFill = document.getElementById('quiz-progress-fill');
+  const progressText = document.getElementById('quiz-progress-text');
+
+  startBtn.addEventListener('click', () => {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderQuestion();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips quiz and shows results with pre-filled answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers = questions.map((_, i) => i % 4); // spread answers across options
+    showResults();
+  }
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    qEl.innerHTML = `<h2 class="quiz-q-text">${q.q}</h2>`;
+    optsEl.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      if (answers[currentQ] === i) btn.classList.add('selected');
+      btn.textContent = opt.text;
+      btn.addEventListener('click', () => {
+        answers[currentQ] = i;
+        document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        nextBtn.disabled = false;
+        nextBtn.classList.add('btn-pulse');
+      });
+      optsEl.appendChild(btn);
+    });
+    prevBtn.style.display = currentQ > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentQ === questions.length - 1 ? 'See My Results' : 'Next';
+    nextBtn.disabled = answers[currentQ] === null;
+    const progress = ((currentQ + 1) / questions.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentQ > 0) { currentQ--; renderQuestion(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (answers[currentQ] === null) return;
+    if (currentQ < questions.length - 1) {
+      currentQ++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  });
+
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    const cats = { data: [], processes: [], team: [], strategy: [] };
+    questions.forEach((q, i) => { cats[q.category].push(answers[i]); });
+
+    const catScores = {};
+    Object.keys(cats).forEach(cat => {
+      const scores = cats[cat];
+      const max = scores.length * 3;
+      const actual = scores.reduce((a, b) => a + b, 0);
+      catScores[cat] = Math.round((actual / max) * 100);
+    });
+
+    const totalScore = Math.round(Object.values(catScores).reduce((a, b) => a + b, 0) / 4);
+
+    let verdict = '';
+    if (totalScore >= 75) verdict = 'You are ready for bespoke software. Time to pick your first project and start building.';
+    else if (totalScore >= 50) verdict = 'You are partially ready. Some groundwork needed before bespoke software will deliver full value.';
+    else if (totalScore >= 25) verdict = 'You have foundations to build on, but significant preparation is needed first.';
+    else verdict = 'You are at the start of the journey. Focus on data and process basics before investing in bespoke software.';
+
+    document.getElementById('quiz-score').innerHTML = totalScore + '<span class="quiz-score-total">/100</span>';
+    document.getElementById('quiz-score-label').textContent = verdict;
+
+    const breakdown = document.getElementById('quiz-breakdown');
+    breakdown.innerHTML = '<h3 class="quiz-section-title">Breakdown by Category</h3>';
+    Object.keys(catScores).forEach(cat => {
+      const score = catScores[cat];
+      const barColor = score >= 67 ? 'var(--teal)' : score >= 34 ? 'var(--navy)' : '#e53935';
+      breakdown.innerHTML += `
+        <div class="quiz-cat">
+          <div class="quiz-cat-header">
+            <span class="quiz-cat-name">${categoryLabels[cat]}</span>
+            <span class="quiz-cat-score">${score}/100</span>
+          </div>
+          <div class="quiz-cat-bar"><div class="quiz-cat-fill" style="width:${score}%;background:${barColor};"></div></div>
+          <p class="quiz-cat-desc">${categoryDescriptions[cat]}</p>
+        </div>
+      `;
+    });
+
+    const recs = document.getElementById('quiz-recommendations');
+    recs.innerHTML = '<h3 class="quiz-section-title">What to Do Next</h3>';
+    const sortedCats = Object.entries(catScores).sort((a, b) => a[1] - b[1]);
+    const recMap = {
+      data: 'Start by organising your data. Get your key business data into structured systems (CRM, database, or even well-organised spreadsheets). You cannot build bespoke software on data that lives in peoples\' heads.',
+      processes: 'Document your top 5 most repetitive workflows. Before custom software can automate a process, you need to know exactly what that process is. Write it down step by step.',
+      team: 'Run a short software awareness session for your team. Even 30 minutes showing how modern tools work for everyday tasks builds comfort and curiosity. Start with volunteers, not skeptics.',
+      strategy: 'Pick one specific, measurable problem. Not "use software to improve efficiency" but "reduce time spent on invoice processing by 50%". A clear problem makes everything else easier.',
+    };
+    sortedCats.slice(0, 2).forEach(([cat, score]) => {
+      recs.innerHTML += `<div class="quiz-rec"><span class="quiz-rec-priority">Priority</span><p>${recMap[cat]}</p></div>`;
+    });
+    if (totalScore >= 50) {
+      recs.innerHTML += `<div class="quiz-rec quiz-rec-cta"><p style="margin:0;">You are ready enough to take the next step. Our <a href="/services#audit">Technical Consultancy</a> (&pound;2,000) will identify your highest-ROI projects and give you a clear roadmap. <a href="/contact">Book a free call</a> to discuss.</p></div>`;
+    } else {
+      recs.innerHTML += `<div class="quiz-rec quiz-rec-cta"><p style="margin:0;">Not ready for bespoke software yet? That is fine. <a href="/contact">Book a free call</a> and we will help you figure out what to fix first. No pressure, no sales pitch.</p></div>`;
+    }
+  }
+
+  // Generate or retrieve user ID from localStorage (no cookies, no consent banner needed)
+  function getUserId() {
+    let userId = localStorage.getItem('ajairu_dev_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ajairu_dev_user_id', userId);
+    }
+    return userId;
+  }
+
+  // Save quiz results to database
+  function saveQuizResults(email, phone, company) {
+    const scoreEl = document.getElementById('quiz-score');
+    const score = parseInt(scoreEl.textContent) || 0;
+    const verdict = document.getElementById('quiz-score-label').textContent;
+    const userId = getUserId();
+
+    fetch('http://' + window.location.hostname + ':8092/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'quiz',
+        userId: userId,
+        email: email || null,
+        phone: phone || null,
+        company: company || null,
+        score: score,
+        categoryScores: catScores,
+        answers: answers,
+        verdict: verdict,
+      }),
+    }).catch(err => console.error('Save failed:', err));
+  }
+
+  document.getElementById('quiz-email-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('quiz-email-input').value;
+    const phone = document.getElementById('quiz-phone-input').value;
+    const company = document.getElementById('quiz-company-input').value;
+    saveQuizResults(email, phone, company);
+    document.getElementById('quiz-email-success').style.display = 'block';
+    document.getElementById('quiz-email-form').style.display = 'none';
+  });
+</script>

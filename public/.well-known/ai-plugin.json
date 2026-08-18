@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "name": "ajairu.dev",
+  "description": "Bespoke software development studio for UK SMEs",
+  "url": "https://ajairu.dev",
+  "contact_email": "hello@ajairu.dev",
+  "services": [
+    {"name": "System Integration & Automation", "url": "/services/system-integration-uk", "price_range": "£8,000-£30,000", "duration": "4-8 weeks"},
+    {"name": "Bespoke Software Platform", "url": "/services#bespoke", "price_range": "£25,000-£80,000+", "duration": "8-16 weeks"},
+    {"name": "SaaS / ERP Replacement", "url": "/services/erp-replacement-uk", "price_range": "£30,000-£80,000+", "duration": "12-20 weeks"},
+    {"name": "AI Automation", "url": "/services/ai-automation-uk", "price_range": "£8,000-£30,000", "duration": "4-8 weeks"},
+    {"name": "Technical Consultancy", "url": "/services#technical-consultancy", "price_range": "£2,000-£10,000", "duration": "1-3 weeks"},
+    {"name": "Ongoing Support", "url": "/services#support", "price_range": "from £350/month", "duration": "ongoing"}
+  ],
+  "founder": "Toby Callinan",
+  "founder_background": "Former CTO at Fabric Fintech (acquired by Aviva), 27+ years in software engineering",
+  "area_served": "United Kingdom",
+  "target_clients": "UK SMEs with 10-250 employees",
+  "key_differentiators": [
+    "Fixed-price engagements only",
+    "You own all source code",
+    "AI-accelerated development (60-70% lower build costs)",
+    "GDPR compliant, UK data residency",
+    "We tell you when off-the-shelf software is the better answer"
+  ],
+  "sister_site": {
+    "name": "ajairu.ai",
+    "url": "https://ajairu.ai",
+    "description": "AI consulting and strategy for UK SMEs"
+  }
+}

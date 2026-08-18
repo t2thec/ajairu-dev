@@ -1,0 +1,63 @@
+---
+// Subtle breadcrumb component - sits below nav bar
+export interface Props {
+  items: { name: string; href?: string }[];
+}
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      {items.map((item, i) => (
+        <li class="breadcrumb-item">
+          {item.href && i < items.length - 1 ? (
+            <a href={item.href}>{item.name}</a>
+          ) : (
+            <span aria-current={i === items.length - 1 ? 'page' : undefined}>{item.name}</span>
+          )}
+          {i < items.length - 1 && <span class="breadcrumb-sep" aria-hidden="true">/</span>}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  .breadcrumbs {
+    background: var(--grey-50);
+    border-bottom: 1px solid var(--grey-100);
+    padding: 8px 0;
+    font-size: 0.8rem;
+    color: var(--grey-400);
+  }
+  .breadcrumb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+  }
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+  }
+  .breadcrumb-item a {
+    color: var(--grey-500);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb-item a:hover {
+    color: var(--blue);
+  }
+  .breadcrumb-item span[aria-current] {
+    color: var(--grey-600);
+    font-weight: 500;
+  }
+  .breadcrumb-sep {
+    margin: 0 8px;
+    color: var(--grey-300);
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Financial Services",
+  metaTitle: "Bespoke Software for Financial Services UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK financial services. Compliance management, risk dashboards, client onboarding, and FCA-regulated platforms.",
+  h1: "Bespoke Software for Financial Services in the UK",
+  lead: "Custom software solutions for UK financial services firms. Build compliance management tools, risk dashboards, and client onboarding platforms built for FCA regulation.",
+  useCases: [
+    {"title": "Compliance Management Platform", "desc": "Custom compliance software that tracks regulatory requirements, manages audit trails, and automates reporting - built to handle FCA, MiFID II, and GDPR obligations specific to your firm."},
+    {"title": "Risk Assessment Dashboard", "desc": "Bespoke risk management software with real-time exposure tracking, automated alerts, and scenario modelling - giving risk officers and executives a single, accurate view of firm-wide risk."},
+    {"title": "Client Onboarding & KYC", "desc": "A custom onboarding platform that automates KYC/AML checks, document verification, and client risk profiling - reducing onboarding time from weeks to days while maintaining full compliance."},
+    {"title": "Portfolio Management Tool", "desc": "Custom portfolio management software with real-time valuations, performance attribution, and client reporting - integrated with your custodian and market data feeds."},
+    {"title": "Regulatory Reporting Automation", "desc": "Bespoke reporting software that automates FCA and regulatory submissions, validates data quality, and maintains audit-ready records - replacing manual spreadsheet-based reporting."},
+    {"title": "Client Relationship Portal", "desc": "A secure client portal where investors view portfolios, sign documents, and communicate with advisers - with role-based access, audit trails, and integration with your back-office systems."}
+  ],
+  benefits: [
+    {"title": "FCA-Compliant by Design", "desc": "We understand FCA regulation, MiFID II, and financial services compliance. Software is built with audit trails, access controls, and regulatory reporting built in from day one."},
+    {"title": "Legacy System Integration", "desc": "Custom software that integrates with your existing CRM, portfolio management, and back-office systems. We build around your current infrastructure - no rip-and-replace."},
+    {"title": "Security First", "desc": "Financial software demands the highest security standards. We build with encryption, role-based access, audit logging, and penetration testing as standard."}
+  ],
+  faqs: [
+    {"question": "Can bespoke software handle FCA regulatory requirements?", "answer": "Yes. We build compliance features into the software from the start - audit trails, access controls, data retention policies, and regulatory reporting. We work with your compliance team to ensure the software meets FCA, MiFID II, and GDPR requirements specific to your firm's permissions and activities."},
+    {"question": "How do you ensure financial data security?", "answer": "We build with bank-grade security: encrypted data storage and transmission, role-based access controls, comprehensive audit logging, and regular penetration testing. We use UK or EU-based hosting with appropriate certifications and can support on-premise deployment where required."},
+    {"question": "Can custom software integrate with our existing portfolio management system?", "answer": "Yes. We have experience integrating with major portfolio management platforms, custodian feeds, and market data providers. We build custom APIs and middleware that connect your systems without requiring a full platform migration."},
+    {"question": "How long does a financial services software project take?", "answer": "An initial consultancy engagement takes 1-2 weeks. Development projects typically run 8-16 weeks depending on scope, integrations, and compliance requirements. We start with the highest-impact, lowest-risk features and iterate."}
+  ],
+  slug: "software-for-financial-services",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Financial services firms in the UK operate in one of the most regulated environments in the world. Compliance burdens are growing, client expectations are rising, and margins are under pressure. Bespoke software can help you automate compliance, streamline operations, and deliver the digital experience clients now expect - but many firms are still managing regulatory obligations through spreadsheets and manual processes that are both error-prone and impossible to audit comprehensively.</p>
+<p>Off-the-shelf financial software rarely fits the reality of a modern UK financial services firm. Generic CRM systems don't understand suitability records or client risk profiling. Portfolio management platforms handle standard instruments but struggle with alternative investments, structured products, or bespoke client mandates. Compliance tools built for large banks are priced out of reach for independent wealth managers and boutique advisory firms, while consumer-grade tools lack the audit trails and access controls that regulation demands. The gap between what firms need and what they can buy is widening.</p>
+<p>We build custom software for UK financial services firms that's secure, compliant, and practical. We understand FCA regulation, MiFID II, and the compliance landscape, and we build systems that integrate with your existing infrastructure - from portfolio management platforms to back-office systems. Whether it's automating regulatory reporting, building a client onboarding workflow with embedded KYC and AML checks, or creating a secure client portal with real-time portfolio visibility, bespoke software fits your specific regulatory and operational requirements.</p>
+<p>Compliance in financial services leaves no room for error. Bespoke software can automate transaction reporting under MiFID II, maintain complete audit trails for every client interaction, enforce segregation of duties through role-based access control, and generate FCA-ready compliance reports on demand. Data encryption at rest and in transit, coupled with UK-based hosting, ensures your systems meet the security expectations of regulators and clients alike.</p>
+<p>A UK wealth management firm managing £400 million in client assets engaged us after their off-the-shelf CRM couldn't produce the suitability records required under FCA COBS rules. We built a bespoke client management system that captured risk profiles, recorded suitability assessments with full audit trails, and automated annual review scheduling. The firm passed their next FCA visit without a single data request outstanding, and their compliance team reduced time spent on record retrieval from days to minutes.</p>
+<p>From compliance automation and regulatory reporting to client onboarding and portfolio management tools, bespoke software is already delivering real ROI for forward-thinking UK financial services firms. The opportunity is building software that turns regulatory burden into competitive advantage.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your financial services firm? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

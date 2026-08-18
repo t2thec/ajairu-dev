@@ -1,0 +1,29 @@
+{
+  "name": "ajairu-dev",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --port 8092",
+    "start": "astro dev --port 8092",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test:unit": "vitest run --coverage",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test": "vitest run --coverage && npx playwright test"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.0",
+    "@astrojs/sitemap": "3.2.1",
+    "astro": "^4.16.0",
+    "better-sqlite3": "^13.0.3",
+    "nodemailer": "^9.0.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "playwright": "^1.62.1",
+    "vitest": "^4.1.10"
+  }
+}

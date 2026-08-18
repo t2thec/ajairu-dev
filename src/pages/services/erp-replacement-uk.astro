@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `ERP Replacement UK | Replace SaaS with Bespoke Software | ${SITE_NAME}`;
+const description = 'ERP replacement UK for SMEs. Replace expensive SaaS and ERP subscriptions with bespoke software you own outright. From £30,000. Fixed-price, break-even in 12-18 months.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'ERP Replacement UK', 'item': `${SITE_URL}/services/erp-replacement-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'ERP Replacement UK',
+  'serviceType': 'Bespoke ERP Development & SaaS Replacement',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'ERP replacement services for UK SMEs. Replace off-the-shelf ERP and SaaS subscriptions with bespoke software you own outright. Data migration, team training, and zero vendor lock-in.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single System Replacement', 'price': '30000', 'priceCurrency': 'GBP', 'description': 'Replace a single SaaS system (e.g. CRM or job management) with bespoke software. 12-16 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-System ERP Replacement', 'price': '50000', 'priceCurrency': 'GBP', 'description': 'Replace 2-3 SaaS systems with a unified bespoke platform. 16-20 weeks.' },
+    { '@type': 'Offer', 'name': 'Full ERP Replacement', 'price': '80000', 'priceCurrency': 'GBP', 'description': 'Replace your entire ERP system with a bespoke platform. 16-20 weeks. Full data migration and training.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does ERP replacement cost in the UK?', answer: 'Replacing a single SaaS system (for example, your CRM or job management tool) with bespoke software starts from £30,000. Replacing 2-3 systems with a unified bespoke platform typically costs £50,000-£80,000. Full ERP replacement for larger SMEs can range from £80,000 upwards. All engagements are fixed-price, so you know the total cost before we start.' },
+  { question: 'How long does an ERP replacement project take?', answer: 'Single system replacements take 12-16 weeks. Multi-system or full ERP replacements take 16-20 weeks. AI-accelerated development means we deliver in weeks what traditional agencies take 6-12 months to build. You get working software in months, not years.' },
+  { question: 'What happens to our existing data?', answer: 'Data migration is always included. We extract data from your existing systems, transform it to fit the new schema, validate it for accuracy, and load it into the new platform. We do this with validation checks and rollback procedures at every stage. You never lose data during a transition - and your old system stays running until you are confident in the new one.' },
+  { question: 'Is bespoke ERP really cheaper than SaaS?', answer: 'Over 2-3 years, yes. The build cost is now roughly equivalent to one year of SaaS subscription fees. If you are spending £50,000/year on ERP and SaaS subscriptions, a bespoke replacement costs approximately £50,000 to build. After year one, you own it outright with no more licence fees. Break-even is typically 12-18 months, and you own the asset forever.' },
+  { question: 'What if we need to change the software after it is built?', answer: 'You own the source code, so any developer can modify it - your in-house team, us, or any other agency. We provide full documentation and training so your team can extend the software independently. If you want ongoing support, we offer maintenance retainers from £350/month, but you are never locked in.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>ERP Replacement UK: Stop Renting, Start Owning</h1>
+      <p>Replace expensive ERP and SaaS subscriptions with bespoke software you own outright. The build cost is now roughly one year of subscription fees. Break-even in 12-18 months. No more licence increases, no more vendor lock-in, no more paying forever for software you will never own.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'ERP Replacement UK'}]} />
+
+  <!-- WHY SMES OUTGROW ERP -->
+  <section class="section" id="why-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem</span>
+      <h2 class="section-title reveal">Why SMEs Outgrow Off-the-Shelf ERP</h2>
+      <p class="section-subtitle reveal">Off-the-shelf ERP systems are built for everyone, which means they fit no one perfectly.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">The Off-the-Shelf Trap</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You buy an ERP system. It promises to handle everything - sales, inventory, accounting, HR, reporting. But it works the vendor's way, not yours. Your team adapts their processes to fit the software. The 30% of features you actually use cost you 100% of the licence fee. The 70% you do not use just adds clutter and confusion.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Every year, the price goes up. You add third-party plugins to fill the gaps. Your data lives in the vendor's cloud. You customise what you can, but you never truly own any of it. Stop paying, and everything disappears - your data, your customisations, your workflows.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">This is the ERP subscription trap that thousands of UK SMEs find themselves in. ERP replacement is the way out.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">The Bespoke Alternative</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Bespoke ERP replacement means we build software that does exactly what your business needs - nothing more, nothing less. Your processes, your terminology, your workflows. The software fits your business, not the other way around.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">You own the source code, the database, and the infrastructure. No licence fees after the build. No price increases. No vendor lock-in. If you want to change something, you can - with your own team or any developer. The software is yours, the same way a building you bought is yours.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">And because AI-accelerated development has cut build costs by 60-70%, bespoke ERP replacement is now financially viable for UK SMEs - not just enterprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST COMPARISON -->
+  <section class="section bg-grey" id="cost-comparison">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Numbers</span>
+      <h2 class="section-title reveal">The Cost of ERP Subscription Fatigue: 5-Year Comparison</h2>
+      <p class="section-subtitle reveal">Real numbers for a typical UK SME spending £50,000/year on ERP and SaaS subscriptions.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Off-the-Shelf ERP</h3>
+          <div style="font-size:2rem;font-weight:800;color:#e53935;margin:16px 0;">£250,000+</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">5 years of subscriptions at £50,000/year, with annual price increases of 8-15%. You own nothing. Stop paying, and you lose access to your data and workflows.</p>
+          <ul style="font-size:0.85rem;color:var(--grey-600);line-height:1.8;margin-top:16px;">
+            <li>£50,000/year, forever</li>
+            <li>Price increases every year</li>
+            <li>Add-on plugins cost extra</li>
+            <li>Customisation is limited</li>
+            <li>Vendor lock-in - no exit without data loss</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Bespoke ERP Replacement</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);margin:16px 0;">£68,000</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">£50,000 one-time build cost + £3,600/year maintenance (£18,000 over 5 years). You own the software forever. No licence fees, no price increases.</p>
+          <ul style="font-size:0.85rem;color:var(--grey-600);line-height:1.8;margin-top:16px;">
+            <li>£50,000 one-time build cost</li>
+            <li>£3,600/year optional maintenance</li>
+            <li>No price increases - you own it</li>
+            <li>Unlimited customisation</li>
+            <li>No vendor lock-in - you own the code</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--grey-300);background:var(--grey-50);">
+          <h3 style="font-size:1.1rem;">5-Year Savings</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);margin:16px 0;">£182,000</div>
+          <p style="font-size:0.85rem;color:var(--grey-500);">Savings over 5 years by choosing bespoke ERP replacement over off-the-shelf subscriptions. Break-even at 12-18 months. After that, the savings compound every year.</p>
+          <div style="margin-top:16px;padding:12px;background:var(--blue-light);border-radius:8px;">
+            <p style="font-size:0.85rem;color:var(--blue-dark);margin:0;"><strong>Break-even:</strong> 12-18 months</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Numbers are illustrative for a typical UK SME. Your actual costs depend on your subscription spend and project scope. <a href="/contact">Book a free call</a> for a tailored calculation.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Process</span>
+      <h2 class="section-title reveal">How Bespoke ERP Replacement Works</h2>
+      <p class="section-subtitle reveal">A proven process that gets you from subscription fatigue to software ownership in 16-20 weeks.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Audit</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We audit your current ERP usage - which features you actually use, which workflows are critical, and where the gaps are. This becomes the blueprint for your bespoke replacement.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the new platform around your actual workflows - not a vendor's idea of how your business should run. You approve the design before any code is written.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build &amp; Migrate</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the software and migrate your data in parallel. Your old system stays running. You test against real data in a staging environment until you are confident.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Launch &amp; Train</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production, train your team, and provide 30 days of post-launch support. Your old subscriptions are cancelled. You own the software outright.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA MIGRATION -->
+  <section class="section bg-grey" id="data-migration">
+    <div class="container">
+      <h2 class="section-title reveal">Data Migration Considerations</h2>
+      <p class="section-subtitle reveal">Data migration is the hardest part of any ERP replacement. Here is how we de-risk it.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">Our Migration Approach</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">We never do a "big bang" migration. Instead, we run your old and new systems in parallel. Data is extracted from your existing ERP, transformed to fit the new schema, validated for accuracy, and loaded into the new platform. We run validation checks at every stage - record counts, field-by-field comparison, financial reconciliation.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Your team tests the new system with real data in a staging environment. Only when everyone is confident do we switch over. And even then, the old system stays available for 30 days as a fallback. You never lose data, and you never have a gap in operations.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What We Migrate</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Customer and contact data</strong> - all records, histories, and relationships</li>
+            <li><strong>Product and inventory data</strong> - stock levels, pricing, categories</li>
+            <li><strong>Financial data</strong> - invoices, payments, chart of accounts, balances</li>
+            <li><strong>Operational data</strong> - jobs, projects, timesheets, work orders</li>
+            <li><strong>Documents and attachments</strong> - quotes, contracts, certificates</li>
+            <li><strong>User accounts and permissions</strong> - roles, access levels, audit trails</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE & COST -->
+  <section class="section" id="timeline-cost">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">What to Expect</span>
+      <h2 class="section-title reveal">Timeline and Cost Expectations</h2>
+      <p class="section-subtitle reveal">Transparent pricing and timelines. Fixed-price, no surprises.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single System</div>
+          <h3>Replace One SaaS Tool</h3>
+          <div class="pricing-price">from £30,000</div>
+          <div class="pricing-duration">12-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Replace CRM, job management, or single ERP module</li>
+            <li>Full data migration from existing system</li>
+            <li>Team training and change management</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code outright</li>
+            <li>No more licence fees</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Multi-System</div>
+          <h3>Replace 2-3 Systems</h3>
+          <div class="pricing-price">£50,000 - £80,000</div>
+          <div class="pricing-duration">16-20 weeks</div>
+          <ul class="pricing-features">
+            <li>Unified bespoke platform replacing multiple SaaS tools</li>
+            <li>Full data migration from all systems</li>
+            <li>Integrated workflows and dashboards</li>
+            <li>AI features built in from day one</li>
+            <li>Team training and change management</li>
+            <li>You own everything - code, data, infrastructure</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full ERP</div>
+          <h3>Complete ERP Replacement</h3>
+          <div class="pricing-price">£80,000+</div>
+          <div class="pricing-duration">16-20 weeks</div>
+          <ul class="pricing-features">
+            <li>Full replacement of your entire ERP system</li>
+            <li>Comprehensive data migration and validation</li>
+            <li>Custom modules for every department</li>
+            <li>API integrations with remaining external tools</li>
+            <li>Enterprise-grade monitoring and compliance</li>
+            <li>You own the complete platform</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Read our <a href="/blog/erp-replacement-uk-sme-guide">ERP replacement guide for UK SMEs</a> or <a href="/services">view all our bespoke software development services</a>.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">ERP Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before replacing their ERP with bespoke software.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Stop Renting Your Software?"
+    text="Book a free 30-minute discovery call. We will review your current ERP subscriptions, calculate your break-even point, and tell you honestly whether bespoke ERP replacement makes financial sense for your business right now."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

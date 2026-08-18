@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Accountants",
+  metaTitle: "Bespoke Software for Accountants UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK accounting practices. Practice management, client portals, automated workflows, and reporting tools.",
+  h1: "Bespoke Software for Accountants in the UK",
+  lead: "Custom software solutions for UK accounting practices. Streamline workflows, build client portals, and automate compliance processes with software that fits your practice.",
+  useCases: [
+    {"title": "Practice Management System", "desc": "Custom practice management software that tracks deadlines, manages work allocation, and gives partners a real-time view of capacity and profitability across the firm."},
+    {"title": "Client Portal", "desc": "A branded, secure client portal where clients upload documents, view reports, sign off accounts, and message your team - replacing email chains and shared drives with a single, professional hub."},
+    {"title": "Automated Bookkeeping Workflow", "desc": "Custom workflow software that connects to Xero, QuickBooks, or Sage, automatically categorises transactions, and flags exceptions for review - reducing manual bookkeeping time by up to 60%."},
+    {"title": "Audit Working Papers Platform", "desc": "Bespoke audit software that standardises working papers, tracks review status, and generates compliance-ready documentation - tailored to your firm's methodology and templates."},
+    {"title": "Client Reporting Dashboards", "desc": "Custom dashboards that pull data from accounting platforms and present clients with real-time financial insights - turning compliance data into advisory opportunities your clients will pay for."},
+    {"title": "Deadline & Compliance Tracker", "desc": "A bespoke compliance tracker that monitors filing deadlines across all clients, sends automated reminders, and generates partner-level reports on upcoming work and risk exposure."}
+  ],
+  benefits: [
+    {"title": "ICAEW & ACCA Aware", "desc": "We understand professional standards for UK accountants. Software is built to comply with ethical guidelines, professional conduct rules, and data protection requirements."},
+    {"title": "Practice Software Integration", "desc": "Custom software that integrates with Xero, QuickBooks, Sage, IRIS, and your existing practice management tools. No rip-and-replace - we build around your current stack."},
+    {"title": "From Compliance to Advisory", "desc": "Free your team from routine compliance work with automation, so they can deliver higher-value advisory services that clients pay more for."}
+  ],
+  faqs: [
+    {"question": "Can custom software replace our current practice management system?", "answer": "It depends on your needs. Many firms have practice management software that handles 80% of what they need but falls short in specific areas. We can build custom modules that integrate with your existing system, or build a complete replacement if your current platform is holding you back. We assess this during the consultancy phase."},
+    {"question": "Will bespoke software integrate with Xero, QuickBooks, and Sage?", "answer": "Yes. We have extensive experience integrating with all major UK accounting platforms via their APIs. Whether it's pulling transaction data, pushing journal entries, or syncing client information, we build integrations that work reliably and keep data in sync across systems."},
+    {"question": "Is custom software compliant with UK accounting standards?", "answer": "Yes, when built correctly. Software doesn't replace professional judgement - it supports it. We ensure all implementations comply with ICAEW, ACCA, and FRC guidelines, plus GDPR and data protection requirements. The accountant remains responsible for the work product."},
+    {"question": "How long does a software project take for an accounting firm?", "answer": "An initial consultancy engagement takes 1-2 weeks. Development projects typically run 6-12 weeks depending on scope and integrations. We start with the highest-impact features - like a client portal or deadline tracker - and iterate from there."}
+  ],
+  slug: "software-for-accountants",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Accounting practices in the UK are under pressure. Compliance work is becoming commoditised, clients expect more for less, and advisory services are where the value lies. Bespoke software can help you automate the routine, streamline compliance, and free up your team to deliver the advisory work clients actually want - but most practices are still stitching together spreadsheets, practice management tools, and accounting platforms that don't talk to each other.</p>
+<p>Off-the-shelf practice management software was built for the average firm, not yours. It can't adapt to your specific client onboarding workflow, your custom management accounts templates, or the way your team handles deadline tracking across multiple entities. Generic bookkeeping tools handle the basics but choke on complex group structures, multi-currency consolidations, or industry-specific reporting. The result is staff spending hours on manual workarounds - copying data between systems, reformatting reports, and chasing information by email.</p>
+<p>We build custom software for UK accounting firms that's practical, compliant, and profitable. We understand the ICAEW and ACCA regulatory landscape, and we know how to build tools that integrate with your existing practice management software and accounting platforms. Whether it's a client portal that replaces email chains, automated bookkeeping workflows that pull transaction data directly from client bank feeds, or practice management dashboards that surface overdue tasks across the whole firm, bespoke software fits your exact processes.</p>
+<p>Compliance is non-negotiable in accounting. Bespoke software can automate Making Tax Digital submissions, maintain a full audit trail of every change to client data, and enforce document retention policies aligned with ICAEW and ACCA requirements. Role-based access control ensures only authorised staff can view sensitive client information - a level of granular control that off-the-shelf tools rarely offer without expensive enterprise tiers.</p>
+<p>A Top 50 UK accountancy firm engaged us to build a bespoke client onboarding portal after their existing system couldn't handle complex group structures or automate AML checks. We delivered a portal that collected KYC documentation, ran automated identity verification, and generated engagement letters - reducing onboarding time from an average of 12 days to under 4 and eliminating the spreadsheet tracking that consumed two administrators' time.</p>
+<p>From client portals that replace email chains to automated bookkeeping workflows and practice management dashboards, bespoke software is already delivering real ROI for forward-thinking UK accountants. The question isn't whether to invest in custom software, but how to prioritise it to maximise value.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your accountancy practice? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

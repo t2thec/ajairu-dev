@@ -1,0 +1,5822 @@
+{
+  "pages/comparison.astro": {
+    "page_info": {
+      "slug": "comparison",
+      "title": "How We Compare   vs Big Four, Freelancers & DIY",
+      "description": "A detailed comparison of bespoke software development options for UK SMEs: fixed-price development studio vs Big Four, f",
+      "h1": "How We Compare: The Middle Ground for SMEs",
+      "h2s": [
+        "Detailed Comparison Table",
+        "Why Each Option Falls Short for SMEs",
+        "Comparison FAQs"
+      ],
+      "word_count": 342,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 342
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "fixed-price",
+        "count": 1
+      },
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 2
+      },
+      {
+        "keyword": "SME",
+        "count": 10
+      },
+      {
+        "keyword": "IP ownership",
+        "count": 2
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 2
+      }
+    ]
+  },
+  "pages/guide.astro": {
+    "page_info": {
+      "slug": "guide",
+      "title": "Free Guide: 5 Custom Software Projects That Pay for Themselves in 12 Months",
+      "description": "Download our free practical guide for UK SMEs. 5 custom software projects with real ROI, implementation steps, and cost ",
+      "h1": "5 Custom Software Projects That Pay for Themselves in 12 Months",
+      "h2s": [
+        "What is in the guide",
+        "The 5 projects",
+        "Get the full guide",
+        "Who wrote this"
+      ],
+      "word_count": 501,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 501
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke CRM",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 4
+      },
+      {
+        "keyword": "SME",
+        "count": 4
+      },
+      {
+        "keyword": "software development studio",
+        "count": 1
+      },
+      {
+        "keyword": "system integration",
+        "count": 2
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 2
+      },
+      {
+        "keyword": "custom software",
+        "count": 5
+      }
+    ]
+  },
+  "pages/terms.astro": {
+    "page_info": {
+      "slug": "terms",
+      "title": "Terms of Service",
+      "description": "Terms of Service for ${SITE_NAME}. The terms and conditions governing use of our website and bespoke software developmen",
+      "h1": "Terms of Service",
+      "h2s": [
+        "Website Use",
+        "Intellectual Property",
+        "Consulting Services",
+        "No Warranty",
+        "Service Limitations",
+        "Liability",
+        "Confidentiality",
+        "Data Protection"
+      ],
+      "word_count": 475,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 475
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "fixed-price",
+        "count": 1
+      },
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 4
+      }
+    ]
+  },
+  "pages/about.astro": {
+    "page_info": {
+      "slug": "about",
+      "title": "About  Bespoke Software Development Team UK",
+      "description": "Founded by ${FOUNDER_NAME}. Former CTO at Fabric Fintech (acquired by Aviva). 27+ years in software engineering. Now hel",
+      "h1": "About {SITE_NAME}",
+      "h2s": [
+        "From enterprise platforms to SME software that fits",
+        "Why this studio exists now",
+        "What We Believe About Software",
+        "How We Work"
+      ],
+      "word_count": 823,
+      "alts": [
+        "Bespoke software development and system integration for UK SMEs"
+      ]
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 823
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "fixed-price",
+        "count": 2
+      },
+      {
+        "keyword": "UK SME",
+        "count": 4
+      },
+      {
+        "keyword": "SME",
+        "count": 10
+      },
+      {
+        "keyword": "software development studio",
+        "count": 1
+      },
+      {
+        "keyword": "enterprise software",
+        "count": 1
+      },
+      {
+        "keyword": "break-even",
+        "count": 1
+      },
+      {
+        "keyword": "subscription fees",
+        "count": 2
+      },
+      {
+        "keyword": "system integration",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 6
+      }
+    ]
+  },
+  "pages/privacy.astro": {
+    "page_info": {
+      "slug": "privacy",
+      "title": "Privacy Policy",
+      "description": "Privacy Policy for ${SITE_NAME}. How we collect, use, and protect your data in accordance with GDPR and UK data protecti",
+      "h1": "Privacy Policy",
+      "h2s": [
+        "Data We Collect",
+        "How We Use Your Data",
+        "Legal Basis for Processing",
+        "Data Storage and Security",
+        "Data Retention",
+        "Your Rights",
+        "Cookies",
+        "Third-Party Services"
+      ],
+      "word_count": 758,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 758
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "GDPR",
+        "count": 3
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/index.astro": {
+    "page_info": {
+      "slug": "index",
+      "title": "Bespoke Software Development UK  , Custom Software for UK SMEs",
+      "description": "AI-powered bespoke software development for UK SMEs. Custom platforms, system integration, ERP replacement, and workflow",
+      "h1": "",
+      "h2s": [
+        "What Bespoke Software Actually Means",
+        "The Economics Have Changed",
+        "Three Ways We Help",
+        "Our Tech Stack",
+        "What We Don't Do",
+        "Bespoke Software for Every Industry",
+        "A 4-Step Process That De-risks Bespoke Software",
+        "Free Guide: 5 Custom Software Projects That Pay for Themselves in 12 Months"
+      ],
+      "word_count": 982,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": true,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/2",
+        "exact_count": 1,
+        "flexible_count": 1,
+        "density_pct": 0.41,
+        "word_count": 982
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "4/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 982
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "custom platform",
+        "count": 2
+      },
+      {
+        "keyword": "workflow automation",
+        "count": 1
+      },
+      {
+        "keyword": "source code ownership",
+        "count": 1
+      },
+      {
+        "keyword": "vendor lock-in",
+        "count": 3
+      },
+      {
+        "keyword": "fixed-price",
+        "count": 1
+      },
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "UK data residency",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 5
+      },
+      {
+        "keyword": "SME",
+        "count": 9
+      },
+      {
+        "keyword": "break-even",
+        "count": 1
+      },
+      {
+        "keyword": "subscription fees",
+        "count": 4
+      },
+      {
+        "keyword": "licence fees",
+        "count": 1
+      },
+      {
+        "keyword": "system integration",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 10
+      },
+      {
+        "keyword": "custom software",
+        "count": 5
+      }
+    ]
+  },
+  "pages/process.astro": {
+    "page_info": {
+      "slug": "process",
+      "title": "Software Development Process  How It Works",
+      "description": "Our 4-step software development methodology: Discover, Design, Build, Deploy. A proven process for bespoke software deve",
+      "h1": "How Bespoke Software Development Works, Step by Step",
+      "h2s": [
+        "The 4D Methodology",
+        "Discover: We Learn Your Business",
+        "Design: We Architect the Solution",
+        "Build: We Develop the Software",
+        "Deploy: We Launch, Train, and Hand Over",
+        "Typical Timeline",
+        "Why This Process Works for SMEs"
+      ],
+      "word_count": 716,
+      "alts": [
+        "Software discovery phase: auditing business systems and workflows",
+        "Software architecture and integration design for UK SMEs",
+        "AI-accelerated bespoke software development for UK SMEs",
+        "Software deployment and team training for UK SMEs"
+      ]
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 716
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "API integration",
+        "count": 1
+      },
+      {
+        "keyword": "data migration",
+        "count": 1
+      },
+      {
+        "keyword": "fixed-price",
+        "count": 4
+      },
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "UK data residency",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 4
+      },
+      {
+        "keyword": "SME",
+        "count": 7
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      }
+    ]
+  },
+  "pages/services.astro": {
+    "page_info": {
+      "slug": "services",
+      "title": "Bespoke Software Development Services UK  Pricing",
+      "description": "Bespoke software development for UK SMEs. System integration from \\\\u00a38,000, bespoke platforms from \\\\u00a325,000, ER",
+      "h1": "Bespoke Software Development Services for UK SMEs",
+      "h2s": [
+        "Three Core Services",
+        "Consultancy &amp; Support Services",
+        "What's Different About Our Approach",
+        "Pricing &amp; Engagement FAQs"
+      ],
+      "word_count": 614,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/2",
+        "exact_count": 0,
+        "flexible_count": 1,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 614
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "custom platform",
+        "count": 1
+      },
+      {
+        "keyword": "API integration",
+        "count": 1
+      },
+      {
+        "keyword": "workflow automation",
+        "count": 1
+      },
+      {
+        "keyword": "vendor lock-in",
+        "count": 1
+      },
+      {
+        "keyword": "data migration",
+        "count": 2
+      },
+      {
+        "keyword": "fixed-price",
+        "count": 2
+      },
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "UK data residency",
+        "count": 1
+      },
+      {
+        "keyword": "custom API",
+        "count": 2
+      },
+      {
+        "keyword": "software development partner",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 4
+      },
+      {
+        "keyword": "SME",
+        "count": 6
+      },
+      {
+        "keyword": "break-even",
+        "count": 1
+      },
+      {
+        "keyword": "subscription fees",
+        "count": 1
+      },
+      {
+        "keyword": "licence fees",
+        "count": 1
+      },
+      {
+        "keyword": "IP ownership",
+        "count": 1
+      },
+      {
+        "keyword": "system integration",
+        "count": 3
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 9
+      }
+    ]
+  },
+  "pages/contact.astro": {
+    "page_info": {
+      "slug": "contact",
+      "title": "Contact  Book a Free Software Discovery Call",
+      "description": "Book a free 30-minute software discovery call with ${SITE_NAME}. Bespoke software development for UK SMEs. No pitch, no ",
+      "h1": "Book Your Free Software Discovery Call",
+      "h2s": [
+        "What to Expect on the Discovery Call"
+      ],
+      "word_count": 358,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 358
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 2
+      },
+      {
+        "keyword": "SME",
+        "count": 4
+      },
+      {
+        "keyword": "system integration",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 6
+      }
+    ]
+  },
+  "pages/assessment.astro": {
+    "page_info": {
+      "slug": "assessment",
+      "title": "Free Software Readiness Quiz  Is Your Business Ready for Bespoke Software?",
+      "description": "Take our free 2-minute software readiness quiz. 15 questions, instant results, no email required. Find out if your busin",
+      "h1": "Free Software Readiness Quiz",
+      "h2s": [
+        "Is your business ready for bespoke software?",
+        "${q.q}"
+      ],
+      "word_count": 178,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 178
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 4
+      }
+    ]
+  },
+  "pages/best-software-developer-uk.astro": {
+    "page_info": {
+      "slug": "best-software-developer-uk",
+      "title": "Best Software Developer UK 2026  Comparison of UK Software Development Companies",
+      "description": "A factual comparison of 11 UK software development companies including focus, pricing, team size, location, and services",
+      "h1": "Best Software Developer UK: A Factual Comparison",
+      "h2s": [
+        "UK Software Development Comparison Table",
+        "How to Choose the Right Software Developer",
+        "Frequently Asked Questions"
+      ],
+      "word_count": 590,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 590
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "fixed-price",
+        "count": 2
+      },
+      {
+        "keyword": "GDPR",
+        "count": 3
+      },
+      {
+        "keyword": "UK data residency",
+        "count": 3
+      },
+      {
+        "keyword": "SME",
+        "count": 1
+      },
+      {
+        "keyword": "IP ownership",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      }
+    ]
+  },
+  "pages/industries/software-for-real-estate.astro": {
+    "page_info": {
+      "slug": "software-for-real-estate",
+      "title": "Software for Real Estate",
+      "description": "Bespoke software development for UK estate agents and property firms. Property management, CRM, tenant portals, and list",
+      "h1": "Bespoke Software for Real Estate in the UK",
+      "h2s": [],
+      "word_count": 151,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 151
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-ecommerce.astro": {
+    "page_info": {
+      "slug": "software-for-ecommerce",
+      "title": "Software for E-commerce",
+      "description": "Bespoke software development for UK e-commerce businesses. Custom platforms, inventory sync, order management, and integ",
+      "h1": "Bespoke Software for E-commerce in the UK",
+      "h2s": [],
+      "word_count": 133,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 133
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "custom platform",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-manufacturing.astro": {
+    "page_info": {
+      "slug": "software-for-manufacturing",
+      "title": "Software for Manufacturing",
+      "description": "Bespoke software development for UK manufacturers. MES integration, production scheduling, inventory management, and qua",
+      "h1": "Bespoke Software for Manufacturing in the UK",
+      "h2s": [],
+      "word_count": 147,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-financial-services.astro": {
+    "page_info": {
+      "slug": "software-for-financial-services",
+      "title": "Software for Financial Services",
+      "description": "Bespoke software development for UK financial services. Compliance management, risk dashboards, client onboarding, and F",
+      "h1": "Bespoke Software for Financial Services in the UK",
+      "h2s": [],
+      "word_count": 149,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 149
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-education.astro": {
+    "page_info": {
+      "slug": "software-for-education",
+      "title": "Software for Education",
+      "description": "Bespoke software development for UK schools, colleges, and training providers. Student management, learning platforms, p",
+      "h1": "Bespoke Software for Education in the UK",
+      "h2s": [],
+      "word_count": 153,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 153
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "SME",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-marketing-agencies.astro": {
+    "page_info": {
+      "slug": "software-for-marketing-agencies",
+      "title": "Software for Marketing Agencies",
+      "description": "Bespoke software development for UK marketing agencies. Client dashboards, campaign management, reporting automation, an",
+      "h1": "Bespoke Software for Marketing Agencies in the UK",
+      "h2s": [],
+      "word_count": 147,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-law-firms.astro": {
+    "page_info": {
+      "slug": "software-for-law-firms",
+      "title": "Software for Law Firms",
+      "description": "Bespoke software development for UK law firms. Case management, document automation, client portals, and SRA-compliant p",
+      "h1": "Bespoke Software for Law Firms in the UK",
+      "h2s": [],
+      "word_count": 140,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 140
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-healthcare.astro": {
+    "page_info": {
+      "slug": "software-for-healthcare",
+      "title": "Software for Healthcare",
+      "description": "Bespoke software development for UK healthcare. Patient management systems, appointment scheduling, clinical documentati",
+      "h1": "Bespoke Software for Healthcare in the UK",
+      "h2s": [],
+      "word_count": 142,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 142
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-construction.astro": {
+    "page_info": {
+      "slug": "software-for-construction",
+      "title": "Software for Construction",
+      "description": "Bespoke software development for UK construction firms. Project management, site reporting, subcontractor management, an",
+      "h1": "Bespoke Software for Construction in the UK",
+      "h2s": [],
+      "word_count": 152,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-logistics.astro": {
+    "page_info": {
+      "slug": "software-for-logistics",
+      "title": "Software for Logistics",
+      "description": "Bespoke software development for UK logistics and haulage firms. Fleet management, route optimisation, warehouse managem",
+      "h1": "Bespoke Software for Logistics in the UK",
+      "h2s": [],
+      "word_count": 148,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 148
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-hospitality.astro": {
+    "page_info": {
+      "slug": "software-for-hospitality",
+      "title": "Software for Hospitality",
+      "description": "Bespoke software development for UK hospitality businesses. Booking systems, venue management, staff scheduling, and gue",
+      "h1": "Bespoke Software for Hospitality in the UK",
+      "h2s": [],
+      "word_count": 147,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 147
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 1
+      }
+    ]
+  },
+  "pages/industries/software-for-accountants.astro": {
+    "page_info": {
+      "slug": "software-for-accountants",
+      "title": "Software for Accountants",
+      "description": "Bespoke software development for UK accounting practices. Practice management, client portals, automated workflows, and ",
+      "h1": "Bespoke Software for Accountants in the UK",
+      "h2s": [],
+      "word_count": 152,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 152
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 2
+      }
+    ]
+  },
+  "content/blog/custom-software-vs-saas-total-cost-ownership.md": {
+    "page_info": {
+      "slug": "custom-software-vs-saas-total-cost-ownership",
+      "title": "Custom Software vs SaaS: The True 5-Year Cost Comparison",
+      "description": "A detailed five-year total cost of ownership comparison between bespoke software and SaaS subscriptions for a typical UK",
+      "h1": "",
+      "h2s": [
+        "The Scenario",
+        "The SaaS Path",
+        "The Bespoke Path",
+        "The Comparison",
+        "When the Crossover Happens",
+        "The Intangibles",
+        "The Honest Caveats"
+      ],
+      "word_count": 1060,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": true,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": true,
+        "in_alt": false,
+        "title_partial": "4/4",
+        "exact_count": 1,
+        "flexible_count": 1,
+        "density_pct": 0.38,
+        "word_count": 1060
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1060
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "data migration",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 3
+      },
+      {
+        "keyword": "SME",
+        "count": 5
+      },
+      {
+        "keyword": "licence fees",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 5
+      },
+      {
+        "keyword": "custom software",
+        "count": 2
+      }
+    ]
+  },
+  "content/blog/system-integration-for-uk-smes.md": {
+    "page_info": {
+      "slug": "system-integration-for-uk-smes",
+      "title": "System Integration: Connecting Your CRM, ERP and Accounting Software",
+      "description": "Disconnected systems are the number one productivity drain for UK SMEs. Here is how to approach system integration \u2014 and",
+      "h1": "",
+      "h2s": [
+        "The Integration Problem",
+        "Common Integration Scenarios",
+        "Three Approaches to Integration",
+        "What to Look for in an Integration Partner",
+        "Where to Start"
+      ],
+      "word_count": 1047,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1047
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "API integration",
+        "count": 2
+      },
+      {
+        "keyword": "GDPR",
+        "count": 2
+      },
+      {
+        "keyword": "custom API",
+        "count": 2
+      },
+      {
+        "keyword": "UK SME",
+        "count": 3
+      },
+      {
+        "keyword": "SME",
+        "count": 9
+      },
+      {
+        "keyword": "system integration",
+        "count": 2
+      }
+    ]
+  },
+  "content/blog/how-ai-accelerates-software-development.md": {
+    "page_info": {
+      "slug": "how-ai-accelerates-software-development",
+      "title": "How AI Is Accelerating Bespoke Software Development in 2026",
+      "description": "AI coding tools are transforming how bespoke software gets built \u2014 cutting timelines by 60% or more. But they are not re",
+      "h1": "",
+      "h2s": [
+        "The Tools Changing the Game",
+        "The Productivity Numbers",
+        "Build Times: From Months to Weeks",
+        "Why AI Doesn't Replace Engineering Judgement",
+        "What This Means for UK SMEs",
+        "The Bottom Line"
+      ],
+      "word_count": 1183,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1183
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "UK SME",
+        "count": 5
+      },
+      {
+        "keyword": "SME",
+        "count": 8
+      },
+      {
+        "keyword": "break-even",
+        "count": 1
+      },
+      {
+        "keyword": "system integration",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 7
+      }
+    ]
+  },
+  "content/blog/what-is-technical-consultancy.md": {
+    "page_info": {
+      "slug": "what-is-technical-consultancy",
+      "title": "What Is a Technical Consultancy and When Do You Need One?",
+      "description": "Technical consultancy helps UK SMEs make the right software decisions before they spend money on building. Here is what ",
+      "h1": "",
+      "h2s": [
+        "What Technical Consultancy Covers",
+        "When You Need Consultancy vs When You Need a Build",
+        "How Consultancy De-risks Software Projects",
+        "What to Expect for \u00a32,000\u2013\u00a310,000",
+        "Choosing a Technical Consultant",
+        "The Bottom Line"
+      ],
+      "word_count": 1369,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1369
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "UK SME",
+        "count": 3
+      },
+      {
+        "keyword": "SME",
+        "count": 13
+      },
+      {
+        "keyword": "system integration",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 1
+      }
+    ]
+  },
+  "content/blog/ai-automation-for-business-workflows.md": {
+    "page_info": {
+      "slug": "ai-automation-for-business-workflows",
+      "title": "AI Automation for Business: 5 Workflows You Can Build Today",
+      "description": "Five practical AI-powered automations you can build into custom business software to eliminate manual work and improve d",
+      "h1": "",
+      "h2s": [
+        "1. Intelligent Document Processing",
+        "2. Customer Enquiry Triage and Routing",
+        "3. Automated Reporting and Insights",
+        "4. Smart Job Scheduling and Resource Allocation",
+        "5. Predictive Cash Flow Management",
+        "Building Automation Into Your Software"
+      ],
+      "word_count": 1157,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1157
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "UK SME",
+        "count": 1
+      },
+      {
+        "keyword": "SME",
+        "count": 4
+      },
+      {
+        "keyword": "custom software",
+        "count": 2
+      }
+    ]
+  },
+  "content/blog/bespoke-software-for-small-business-uk.md": {
+    "page_info": {
+      "slug": "bespoke-software-for-small-business-uk",
+      "title": "Bespoke Software for Small Businesses: A UK Guide",
+      "description": "A practical guide to bespoke software for UK small businesses \u2014 what it means, how to know if you need it, and what to e",
+      "h1": "",
+      "h2s": [
+        "What Bespoke Software Actually Means",
+        "How to Know If Your Business Needs It",
+        "How to Choose a Development Partner",
+        "What to Expect: Cost and Timeline",
+        "Getting Started"
+      ],
+      "word_count": 1237,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": true,
+        "in_alt": false,
+        "title_partial": "4/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1237
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "GDPR",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 4
+      },
+      {
+        "keyword": "SME",
+        "count": 8
+      },
+      {
+        "keyword": "break-even",
+        "count": 1
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 16
+      }
+    ]
+  },
+  "content/blog/erp-replacement-uk-sme-guide.md": {
+    "page_info": {
+      "slug": "erp-replacement-uk-sme-guide",
+      "title": "Replacing Your ERP: A Guide for UK SMEs",
+      "description": "Why UK SMEs are replacing off-the-shelf ERP systems with bespoke alternatives \u2014 and what to expect in terms of cost, tim",
+      "h1": "",
+      "h2s": [
+        "Why SMEs Outgrow Off-the-Shelf ERP",
+        "The Cost of ERP Subscription Fatigue",
+        "How Bespoke ERP Replacement Works",
+        "Data Migration Considerations",
+        "Timeline and Cost Expectations",
+        "Is It Right for You?"
+      ],
+      "word_count": 1175,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": true,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 1175
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "data migration",
+        "count": 5
+      },
+      {
+        "keyword": "bespoke ERP",
+        "count": 5
+      },
+      {
+        "keyword": "UK SME",
+        "count": 5
+      },
+      {
+        "keyword": "SME",
+        "count": 11
+      }
+    ]
+  },
+  "content/blog/build-vs-buy-software-uk-sme.md": {
+    "page_info": {
+      "slug": "build-vs-buy-software-uk-sme",
+      "title": "Build vs Buy: When Bespoke Software Beats SaaS for UK SMEs",
+      "description": "The economics of bespoke software vs off-the-shelf SaaS have shifted dramatically in 2026. Here is when building your ow",
+      "h1": "",
+      "h2s": [
+        "What Changed in 2026",
+        "The New Break-Even Maths",
+        "When You Should Buy",
+        "When You Should Build",
+        "The Middle Ground: Phased Builds",
+        "Making the Decision"
+      ],
+      "word_count": 922,
+      "alts": []
+    },
+    "keyword_analysis": {
+      "bespoke software development UK": {
+        "keyword": "bespoke software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "custom software development UK": {
+        "keyword": "custom software development UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "system integration UK SME": {
+        "keyword": "system integration UK SME",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "ERP replacement UK": {
+        "keyword": "ERP replacement UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "AI automation UK business": {
+        "keyword": "AI automation UK business",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "bespoke software for small business UK": {
+        "keyword": "bespoke software for small business UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "2/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "custom software vs SaaS": {
+        "keyword": "custom software vs SaaS",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/4",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "software development services UK pricing": {
+        "keyword": "software development services UK pricing",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "1/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "bespoke software development for SMEs": {
+        "keyword": "bespoke software development for SMEs",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "3/3",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      },
+      "system integration services UK": {
+        "keyword": "system integration services UK",
+        "in_title": false,
+        "in_description": false,
+        "in_h1": false,
+        "in_h2": false,
+        "in_first_100": false,
+        "in_slug": false,
+        "in_alt": false,
+        "title_partial": "0/2",
+        "exact_count": 0,
+        "flexible_count": 0,
+        "density_pct": 0.0,
+        "word_count": 922
+      }
+    },
+    "lsi_keywords": [
+      {
+        "keyword": "vendor lock-in",
+        "count": 1
+      },
+      {
+        "keyword": "UK SME",
+        "count": 5
+      },
+      {
+        "keyword": "SME",
+        "count": 7
+      },
+      {
+        "keyword": "break-even",
+        "count": 5
+      },
+      {
+        "keyword": "bespoke software",
+        "count": 9
+      },
+      {
+        "keyword": "custom software",
+        "count": 2
+      }
+    ]
+  }
+}

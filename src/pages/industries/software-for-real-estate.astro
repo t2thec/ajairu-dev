@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Real Estate",
+  metaTitle: "Bespoke Software for Real Estate UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK estate agents and property firms. Property management, CRM, tenant portals, and listing platforms.",
+  h1: "Bespoke Software for Real Estate in the UK",
+  lead: "Custom software solutions for UK estate agents and property firms. Manage properties, track leads, and build client portals with software built for your workflow.",
+  useCases: [
+    {"title": "Property Management Platform", "desc": "Custom property management software that handles tenancies, rent collection, maintenance requests, and landlord reporting - replacing spreadsheets and fragmented tools with a single, integrated system."},
+    {"title": "Estate Agency CRM", "desc": "A bespoke CRM built for estate agency workflows - tracking buyers, sellers, vendors, and applicants with automated matching, viewing scheduling, and chase-up sequences built in."},
+    {"title": "Tenant & Landlord Portal", "desc": "A secure portal where tenants pay rent, report maintenance issues, and view documents - and where landlords track rental income, view statements, and manage their portfolio online."},
+    {"title": "Property Listing Syndication", "desc": "Custom software that publishes listings to Rightmove, Zoopla, OnTheMarket, and your website from a single dashboard - with automated synchronisation of availability, pricing, and photos."},
+    {"title": "Viewing & Valuation Booking", "desc": "An online booking system that lets applicants schedule viewings and request valuations directly - synced with agent calendars and integrated with your CRM for automatic follow-up."},
+    {"title": "Commission & Sales Tracker", "desc": "A bespoke sales tracking system that manages deals from offer to completion, tracks commission, generates conveyancing progress reports, and gives managers a real-time pipeline view."}
+  ],
+  benefits: [
+    {"title": "Portal Integration", "desc": "Custom software that integrates with Rightmove, Zoopla, OnTheMarket, and your existing property management tools. No manual re-entry of listing data."},
+    {"title": "Built for Agency Workflows", "desc": "We understand estate agency workflows - from valuations to completion. Software is built around how your team actually works, not the other way around."},
+    {"title": "You Own the Code", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. No per-branch licensing fees, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with Rightmove and Zoopla?", "answer": "Yes. We build integrations with Rightmove, Zoopla, OnTheMarket, and other property portals using their data feeds and APIs. Listings, availability, and pricing can be managed from a single dashboard and automatically syndicated to all portals."},
+    {"question": "How is bespoke software different from estate agency software like Alto or Jupix?", "answer": "Off-the-shelf platforms are built for the average agency. Bespoke software fits your exact workflows, branding, and reporting needs. It integrates with the specific tools you use, eliminates manual workarounds, and scales with your business. You own the codebase - no per-branch licensing fees or vendor lock-in."},
+    {"question": "Can you build a client portal for tenants and landlords?", "answer": "Yes. We build secure, branded portals where tenants can pay rent, report maintenance, and view documents, and where landlords can track income, view statements, and manage their portfolio. Portals integrate with your property management system for real-time data sync."},
+    {"question": "How long does a real estate software project take?", "answer": "Quick wins like a viewing booking system or listing syndication tool can be built in 4-6 weeks. A full property management platform or CRM typically takes 10-16 weeks. We start with the highest-impact features and iterate from there."}
+  ],
+  slug: "software-for-real-estate",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>The UK property market is competitive, and estate agents and property firms that win are the ones that operate efficiently and deliver a seamless digital experience. Bespoke software can help you manage properties better, track leads more effectively, and give clients the self-service portal they now expect - but most agencies are still juggling a CRM that doesn't understand property, a separate listing management tool, and spreadsheets for everything in between.</p>
+<p>Off-the-shelf estate agency software was built for a market that no longer exists. Legacy CRM systems treat every lead the same whether it's a first-time buyer or a portfolio landlord. They can't automate the specific nurture sequences that different client types need. Property management tools handle rent collection but fall apart on complex multi-let arrangements, HMO licensing tracking, or deposit protection compliance. Generic booking systems don't understand viewing availability tied to specific properties, agent schedules, and vendor preferences - so coordinators end up managing viewings by phone and spreadsheet.</p>
+<p>We build custom software for UK estate agents, letting agents, and property management firms. We understand property workflows - from valuations and viewings to tenancy management and completion - and we build systems that integrate with Rightmove, Zoopla, and your existing tools. Whether it's a bespoke CRM that nurtures leads based on property type and buyer profile, a property management platform that tracks tenancy compliance automatically, or a tenant portal that handles maintenance requests and rent payments, bespoke software fits your exact workflow.</p>
+<p>Property compliance is increasingly complex. Right to Rent checks, Tenant Fees Act compliance, deposit protection schemes, EPC and gas safety certificate tracking, and AML requirements on large transactions all demand robust record-keeping. Bespoke software can automate compliance tracking, send expiry alerts for certifications, and generate audit-ready documentation - eliminating the risk of penalties for missed deadlines.</p>
+<p>A UK lettings agency managing 300 properties across two branches was struggling with tenancy compliance - deposit registrations were occasionally missed, and gas safety renewals relied on a single administrator's calendar. We built a bespoke property management system that automated deposit protection, tracked certificate expiry dates with escalation alerts, and generated compliance reports for management meetings. Compliance breaches dropped to zero within four months, and the agency secured a larger portfolio acquisition partly because their compliance systems impressed the vendor.</p>
+<p>From property management platforms and tenant portals to CRM systems and listing syndication, bespoke software is already delivering real ROI for forward-thinking UK property firms. The opportunity is replacing fragmented spreadsheets and off-the-shelf tools with software that fits your exact workflow.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your property business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

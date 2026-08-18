@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Custom Web Portal Development UK | Client & Staff Portals | ${SITE_NAME}`;
+const description = 'Custom web portal development UK for SMEs. Customer portals, staff portals, partner portals, and B2B self-service platforms. Secure login, document sharing, and messaging. From £12,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Custom Web Portal Development UK', 'item': `${SITE_URL}/services/custom-web-portal-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Custom Web Portal Development UK',
+  'serviceType': 'Web Portal Development',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Custom web portal development for UK SMEs. Customer portals, staff portals, partner portals, and B2B self-service platforms - with secure login, document sharing, messaging, and system integration. Fixed-price, you own the code.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Essential Portal', 'price': '12000', 'priceCurrency': 'GBP', 'description': 'Custom portal with secure login, document sharing, and user management. 4-6 weeks.' },
+    { '@type': 'Offer', 'name': 'Professional Portal', 'price': '22000', 'priceCurrency': 'GBP', 'description': 'Portal with messaging, system integration, and role-based access. 6-10 weeks.' },
+    { '@type': 'Offer', 'name': 'Enterprise Portal Platform', 'price': '40000', 'priceCurrency': 'GBP', 'description': 'Full portal platform with multi-tenant architecture, APIs, and automation. 10-16 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does custom web portal development cost in the UK?', answer: 'A custom portal with secure login, document sharing, and user management starts from £12,000. A professional portal with messaging, system integration, and role-based access typically costs £18,000 to £28,000. Full enterprise portal platforms with multi-tenant architecture, APIs, and automation range from £35,000 to £50,000+. All projects are fixed-price - you know the total cost before we start.' },
+  { question: 'What is the difference between a website and a web portal?', answer: 'A website is public - anyone can visit and see the same content. A web portal is private - users log in to see content and tools that are specific to them. Portals are interactive: users can view their documents, submit forms, send messages, track orders, and manage their accounts. A website broadcasts information. A portal provides personalised, secure access to services and data. For UK SMEs, a portal is how you give customers, staff, or partners self-service access to your systems without emailing or phoning your team.' },
+  { question: 'Can you build separate portals for customers, staff, and partners?', answer: 'Yes. We can build a single portal with role-based access (customers see customer features, staff see staff features, partners see partner features) or separate portals for each audience. The right approach depends on your needs. A single portal with roles is usually more cost-effective and easier to maintain. Separate portals make sense when the audiences have very different needs or when you want distinct branding for each.' },
+  { question: 'Can the portal integrate with our existing systems?', answer: 'Yes. We integrate portals with your CRM, accounting software, ERP, inventory system, and other tools via <a href="/services/custom-api-development-uk">custom APIs</a>. Customers see their order history from your ERP, invoices from your accounting system, and support tickets from your helpdesk - all in one place. Staff see real-time data from every system without switching between applications. Your portal becomes the single interface for your entire business.' },
+  { question: 'Do we own the portal source code?', answer: 'Yes, entirely. You own the source code, the database, and all intellectual property from day one. No per-user licence fees, no vendor lock-in. Your team can maintain and extend the portal independently, or we can provide ongoing support from £350/month. You are never trapped with a single supplier - the portal is yours, and you can add unlimited users at no extra cost.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Custom Web Portal Development UK for SMEs</h1>
+      <p>Give your customers, staff, and partners a secure place to serve themselves. We build custom web portals - customer portals, staff portals, partner portals - with secure login, document sharing, messaging, and integration with your existing systems. Reduce support calls, improve satisfaction, and scale without adding headcount.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Custom Web Portal UK'}]} />
+
+  <!-- WHAT IS A WEB PORTAL -->
+  <section class="section" id="what-is-a-portal">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">What a Web Portal Is (In Plain English)</h2>
+      <p class="section-subtitle reveal">A website is public. A portal is private - a secure, personalised gateway to your business.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">A web portal is a secure, login-protected website where specific users access specific information and tools. Think of it as a private entrance to your business. Customers log in to see their orders, invoices, and support tickets. Staff log in to see their schedules, documents, and internal tools. Partners log in to see their commission reports, marketing materials, and deal pipelines. Each person sees only what is relevant to them.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">For UK SMEs, a portal is the difference between your team spending hours answering "where is my invoice?" emails and your customers finding that information themselves at 11pm on a Sunday. It is the difference between staff phoning the office to check their rota and seeing it on their phone. A portal turns your business into a 24/7 self-service operation - without hiring more people. And because it integrates with your existing systems, the data is always current, always accurate, and never double-keyed. The return on investment is usually immediate: most UK SMEs see a 40-60% reduction in routine support enquiries within the first month of launching a customer portal, and similar reductions in internal admin when staff portals go live. The portal pays for itself not through new revenue, but through time saved - time your team redirects to higher-value work that actually grows the business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES OF PORTALS -->
+  <section class="section bg-grey" id="portal-types">
+    <div class="container">
+      <h2 class="section-title reveal">Types of Portals We Build</h2>
+      <p class="section-subtitle reveal">Different audiences, different needs. We build the right portal for each one.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Customer Portals</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Let customers serve themselves 24/7. They can view order history, download invoices, track shipments, submit support requests, update account details, and reorder products - without phoning or emailing your team. Reduces support calls by 40-60%. Improves customer satisfaction. Integrates with your <a href="/services/bespoke-crm-development-uk">CRM</a>, accounting, and e-commerce systems.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>Staff Portals</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Give your team a single place for everything internal - rotas, timesheets, holiday requests, company documents, internal announcements, and department-specific tools. Replaces the mess of shared drives, email attachments, and disconnected HR systems. Role-based access means each person sees what they need. Reduces admin overhead for HR and operations.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="handshake" /></div>
+          <h3>Partner Portals</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Give resellers, distributors, and channel partners secure access to pricing, marketing materials, deal registration, commission reports, and training resources. They get what they need to sell your products effectively. You get visibility into partner activity and pipeline. Reduces partner support burden and strengthens channel relationships.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="cart" /></div>
+          <h3>B2B Self-Service Portals</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Let business customers place orders, view stock levels, download product specifications, manage multiple delivery addresses, and access trade pricing - all self-service. Replaces phone and email ordering with a 24/7 platform. Integrates with your ERP and accounting systems for real-time stock and pricing. Increases order accuracy and reduces admin.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Not sure which type of portal you need? The free discovery call will clarify this in 30 minutes. <a href="/contact">Book yours now</a>.</p>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section" id="key-features">
+    <div class="container">
+      <h2 class="section-title reveal">What Our Web Portals Include</h2>
+      <p class="section-subtitle reveal">These features are standard in every portal we build - not expensive add-ons.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="lock" /></div>
+          <h3>Secure Login</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Encrypted authentication with password policies, session management, and optional two-factor authentication. Single sign-on (SSO) integration with Google, Microsoft, or your existing identity provider. Role-based access control ensures users only see what they should.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="file" /></div>
+          <h3>Document Sharing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Upload, organise, and share documents securely. Version control, access permissions, and audit trails. Customers download their invoices and contracts. Staff access company policies and forms. Partners download marketing materials. Everything in one place, properly organised.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3>Messaging &amp; Notifications</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">In-portal messaging between users and your team. Email and SMS notifications for important events - new documents, order updates, approval requests. Notification preferences are user-controlled. Reduces email clutter and keeps communications in context.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>System Integration</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Your portal connects to your CRM, accounting, ERP, inventory, and other systems via <a href="/services/custom-api-development-uk">custom APIs</a>. Data flows in real time - no manual sync, no stale information. Your portal becomes the single interface for your entire business ecosystem.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>User Management</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Admin dashboard for managing users, roles, and permissions. Self-service registration and password reset. Bulk user import. Activity logging and audit trails. You have full control over who can access what - and you can see exactly what each user has done.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="devices" /></div>
+          <h3>Responsive Design</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Portals work on desktops, tablets, and mobile phones. Your customers check their orders on their phone. Your staff check their rota on their tablet. Your partners download materials on their laptop. One portal, every device, no separate mobile app required - though we can build one if you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAL BENEFITS -->
+  <section class="section bg-grey" id="benefits">
+    <div class="container">
+      <h2 class="section-title reveal">The Business Benefits of a Custom Portal</h2>
+      <p class="section-subtitle reveal">A portal is not just a website with a login. It is a strategic tool that changes how your business operates.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Reduce Support Costs</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">When customers can find their own answers - order status, invoice downloads, account details - they stop calling and emailing your team. UK SMEs typically see a 40-60% reduction in routine support enquiries after launching a customer portal. Your team handles complex issues that actually need human judgement, not "can you resend my invoice?" for the hundredth time.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>24/7 Self-Service</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Your customers, staff, and partners can access information and complete tasks at any time - not just during business hours. Orders placed at 11pm. Invoices downloaded on a Sunday. Holiday requests submitted from a phone. Your business operates around the clock without hiring night shift staff or weekend cover.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Improve Data Accuracy</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">When customers update their own details in the portal, your data stays current without manual admin. When staff enter data directly into the system instead of emailing it to someone else to re-key, errors disappear. Your <a href="/services/database-development-uk">database</a> is always accurate because the people who know the data are the ones entering it.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Scale Without Hiring</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">A portal handles 10 customers or 10,000 customers with the same infrastructure. You do not need more support staff, more admin, or more phone lines as you grow. The portal absorbs the volume. Your team focuses on high-value work - sales, strategy, relationship building - while the portal handles the routine. That is how SMEs scale efficiently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Discover, Design, Build, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that ensures your portal serves its users.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We identify who will use the portal, what they need to do, and what systems they need to connect to. We map user journeys and identify the features that will deliver the most value. No assumptions - we understand your users and their needs.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the portal - screens, navigation, user roles, security model, and integrations. You see wireframes and approve the design before any code is written. You know exactly what your users will experience.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the portal using AI-accelerated development. Weekly demos let you and a small group of users test throughout. Feedback is incorporated immediately. Nothing goes live until you sign off.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production with user onboarding, data migration, and training. 30 days of post-launch support is included. You own the code, the database, and the portal - add unlimited users at no extra cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Custom Web Portal Development UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Essential</div>
+          <h3>Core Portal</h3>
+          <div class="pricing-price">from £12,000</div>
+          <div class="pricing-duration">4-6 weeks</div>
+          <ul class="pricing-features">
+            <li>Secure login and user management</li>
+            <li>Document sharing and storage</li>
+            <li>Role-based access control</li>
+            <li>Up to 5 main screens</li>
+            <li>Email notifications</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Professional</div>
+          <h3>Portal + Integration</h3>
+          <div class="pricing-price">£18,000 - £28,000</div>
+          <div class="pricing-duration">6-10 weeks</div>
+          <ul class="pricing-features">
+            <li>Everything in Essential, plus:</li>
+            <li>Messaging and in-portal communication</li>
+            <li>Integration with CRM, accounting, or ERP</li>
+            <li>Custom forms and workflows</li>
+            <li>Two-factor authentication</li>
+            <li>Responsive mobile design</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Enterprise</div>
+          <h3>Full Portal Platform</h3>
+          <div class="pricing-price">£35,000 - £50,000+</div>
+          <div class="pricing-duration">10-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Everything in Professional, plus:</li>
+            <li>Multi-tenant architecture</li>
+            <li>Multiple audience portals (customer/staff/partner)</li>
+            <li>SSO and enterprise security</li>
+            <li>Advanced workflow automation</li>
+            <li>Analytics and reporting dashboards</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-grey" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Web Portal Development</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, database, and documentation. No per-user licence fees, no vendor lock-in. Add unlimited users at no extra cost. Your team can maintain and extend the portal independently, or we can provide ongoing support from £350/month.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Built for Your Users</h3>
+          <p style="color:var(--grey-600);">We design portals around the people who will use them - your customers, your staff, your partners. Intuitive interfaces mean minimal training. Responsive design means it works on any device. We build portals people actually want to use, not portals they are forced to use.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Integrated, Not Isolated</h3>
+          <p style="color:var(--grey-600);">Your portal connects to your existing systems - CRM, accounting, ERP, inventory. Data flows in real time. No manual sync, no stale information. Your portal becomes the single interface for your entire business, not another disconnected tool.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Custom Web Portal Development FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about web portal development.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Give Your Users a Portal They Will Actually Use?"
+    text="Book a free 30-minute discovery call. We will identify who needs a portal, what they need it to do, and give you a fixed-price quote - with honest advice about whether a custom portal is the right solution or an off-the-shelf tool would do."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

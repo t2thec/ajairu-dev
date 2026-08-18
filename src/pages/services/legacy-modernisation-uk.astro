@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Legacy Software Modernisation UK | System Upgrades | ${SITE_NAME}`;
+const description = 'Legacy software modernisation UK for SMEs. Upgrade outdated systems, preserve business logic, and re-platform with modern technology. Reduce risk, improve performance, and cut costs. From £15,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Legacy Software Modernisation UK', 'item': `${SITE_URL}/services/legacy-modernisation-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Legacy Software Modernisation UK',
+  'serviceType': 'Legacy System Modernisation & Re-platforming',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Legacy software modernisation services for UK SMEs. Upgrade outdated systems, preserve critical business logic, and re-platform with modern technology. Reduce risk, improve performance, cut maintenance costs, and enable future growth. Fixed-price, you own the code.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Single System Modernisation', 'price': '15000', 'priceCurrency': 'GBP', 'description': 'Modernise one legacy system with re-platforming and data migration. 6-8 weeks.' },
+    { '@type': 'Offer', 'name': 'Multi-System Modernisation', 'price': '28000', 'priceCurrency': 'GBP', 'description': 'Modernise 2-3 connected systems with API integration and migration. 8-14 weeks.' },
+    { '@type': 'Offer', 'name': 'Full Legacy Transformation', 'price': '45000', 'priceCurrency': 'GBP', 'description': 'Complete legacy transformation with cloud migration, APIs, and automation. 12-20 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does legacy software modernisation cost in the UK?', answer: 'Modernising a single legacy system with re-platforming and data migration starts from £15,000. Modernising 2-3 connected systems with API integration typically costs £25,000 to £35,000. Full legacy transformations with cloud migration, APIs, and automation range from £40,000 to £60,000+. All projects are fixed-price - you know the total cost before we start. Most UK SMEs see ROI within 12-18 months through reduced maintenance and improved efficiency.' },
+  { question: 'How do we know if our system needs modernising?', answer: 'Common signs include: the original developer has left and no one understands the code; it only runs on outdated hardware or operating systems; security patches are no longer available; it cannot integrate with modern tools; changes take weeks because the code is fragile; it crashes under load; or you are paying escalating fees to maintain it. If any of these sound familiar, your system is a liability. The free discovery call will give you an honest assessment - including whether modernisation is actually necessary or whether a smaller fix would do.' },
+  { question: 'Can you preserve our existing business logic?', answer: 'Yes - this is the most important part of legacy modernisation. Your system contains years of business knowledge encoded in its logic. We extract and document that logic before we touch the code, then replicate it precisely in the new system. Your business rules, calculations, and workflows work exactly as they did before - just on modern, maintainable technology. We do not throw away what works. We preserve it and improve what does not.' },
+  { question: 'What is the difference between re-platforming and rewriting?', answer: 'Re-platforming means moving your application to a new technology stack while preserving its core functionality - like moving a .NET Framework app to .NET Core, or a desktop app to a web app. It is faster and lower risk. Rewriting means building the system from scratch with modern architecture, preserving the business logic but discarding the old code entirely. It is more thorough but takes longer. We help you choose based on the state of your existing code and your goals - most projects use a mix of both.' },
+  { question: 'Will there be downtime during the modernisation?', answer: 'No. We run the new system in parallel with the old one, sync data continuously, and cut over during a low-traffic window. Your users verify the new system works with real data before we switch. If anything goes wrong, the old system is still there as a fallback. For critical systems, we use blue-green deployment - the new system runs alongside the old one until we confirm everything works, then we switch. Your business should not notice the transition.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Legacy Software Modernisation UK for SMEs</h1>
+      <p>That system that only one person understands, runs on hardware you cannot buy anymore, and breaks every time someone tries to change it? We can fix that. We modernise legacy software - preserving your business logic, migrating your data, and re-platforming with current technology - so your system becomes an asset again, not a liability.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Legacy Software Modernisation UK'}]} />
+
+  <!-- WHY LEGACY IS A RISK -->
+  <section class="section" id="why-legacy-is-risk">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">Why Legacy Systems Are a Risk (In Plain English)</h2>
+      <p class="section-subtitle reveal">That old system works fine - until the day it does not. Here is why waiting is the risky choice.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">A legacy system is software that still works but is built on outdated technology. It might be a desktop application written in VB6, a web app running on an old framework, a database in Access, or a custom system built by someone who left the company years ago. It does the job today, but it is quietly becoming a bigger risk every month.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">The risk is not that it will break tomorrow. The risk is what happens when it does break - and it will. The developer who built it is gone. The documentation does not exist. The hardware it runs on is no longer manufactured. The security patches stopped years ago. No one on your team knows how it works. And every day, more of your business depends on a system that fewer and fewer people understand. Modernisation is not about chasing the latest technology. It is about reducing risk before it becomes a crisis - and giving your business a system that can grow with you instead of holding you back.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNS YOU NEED MODERNISATION -->
+  <section class="section bg-grey" id="signs">
+    <div class="container">
+      <h2 class="section-title reveal">Signs You Need Legacy Modernisation</h2>
+      <p class="section-subtitle reveal">If any of these sound familiar, your system is a liability. The free discovery call will confirm it.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="alert" /></div>
+          <h3>Knowledge Concentration</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">One person - or no one - understands how the system works. If they leave, you are in trouble. Documentation does not exist or is years out of date. Every change requires tribal knowledge that lives in one person's head. This is a single point of failure for your business.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="alert" /></div>
+          <h3>Outdated Technology</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">The system runs on hardware, operating systems, or frameworks that are no longer supported. Security patches have stopped. You cannot buy replacement parts. It only works on Internet Explorer or Windows 7. Every year, the technology gets harder to maintain and the risk gets higher.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="alert" /></div>
+          <h3>Change is Dangerous</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Every change takes weeks because the code is fragile and untested. Fixing one bug breaks something else. No one dares touch it. New features are impossible because the architecture cannot support them. Your competitors are moving faster because their systems are modern and yours is not.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="alert" /></div>
+          <h3>Integration Impossible</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">The system cannot connect to modern tools - no API, no web hooks, no export functionality that works with current systems. Data is trapped. You cannot integrate it with your CRM, accounting, or e-commerce platform. Your business is siloed because your software is siloed.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="alert" /></div>
+          <h3>Escalating Maintenance Costs</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You are paying more every year to maintain a system that does less. Specialist developers who know the old technology charge premium rates. Hosting costs are higher. Every fix takes longer. The total cost of keeping the old system running often exceeds the cost of modernising it within 2-3 years.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="alert" /></div>
+          <h3>Performance Issues</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">The system is slow, crashes under load, or cannot scale with your business. It was built for 50 users and you now have 200. It was built for 10,000 records and you now have 500,000. Performance problems are not going to fix themselves - they will only get worse as you grow.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Recognise any of these? The free discovery call will give you an honest assessment. <a href="/contact">Book yours now</a>.</p>
+    </div>
+  </section>
+
+  <!-- MIGRATION STRATEGIES -->
+  <section class="section" id="strategies">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Technical Approach</span>
+      <h2 class="section-title reveal">Modernisation Strategies: Re-Platform vs Rewrite</h2>
+      <p class="section-subtitle reveal">Two main approaches to legacy modernisation. We help you choose the right one for each system.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Re-Platform (Migrate)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>What it means:</strong> Move the application to a modern technology stack while preserving its core structure and functionality. Like moving a .NET Framework app to .NET Core, or a desktop app to a web app.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Systems where the core logic is sound but the technology is outdated. When you want to reduce risk and cost while preserving what works. When you need to move quickly.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Pros:</strong> Faster (6-10 weeks), lower cost, lower risk. Preserves working logic. Your team recognises the system - it is the same but better.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cons:</strong> Some technical debt may be carried forward. Not as thorough as a full rewrite.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £15,000 per system</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:var(--blue);">Rewrite (Rebuild)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>What it means:</strong> Build the system from scratch with modern architecture, preserving the business logic but discarding the old code entirely. Clean slate, modern patterns, no legacy baggage.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Best for:</strong> Systems where the code is too fragile or tangled to re-platform. When you want to take advantage of modern architecture (microservices, serverless). When the old system is fundamentally limited.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Pros:</strong> Clean, maintainable code. Modern architecture. No technical debt. Future-proof. Easier to extend and scale.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cons:</strong> Slower (10-16 weeks), higher upfront cost. But the long-term savings in maintenance and flexibility usually justify it.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Cost:</strong> From £25,000 per system</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Most modernisation projects use a mix of both - re-platform where the code is sound, rewrite where it is not. We help you decide which is which.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE PRESERVE -->
+  <section class="section bg-grey" id="what-we-preserve">
+    <div class="container">
+      <h2 class="section-title reveal">What We Preserve During Modernisation</h2>
+      <p class="section-subtitle reveal">Your system contains years of business knowledge. We do not throw that away - we carry it forward.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Business Logic</h3>
+          <p style="color:var(--grey-600);">Every calculation, rule, and workflow in your system exists for a reason. We extract, document, and replicate it precisely in the new system. Your business rules work exactly as they did before - on modern, maintainable technology.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>All Your Data</h3>
+          <p style="color:var(--grey-600);">We migrate every record, every relationship, every historical entry. Data is cleaned, validated, and imported into the new <a href="/services/database-development-uk">database</a> with full integrity checks. Nothing is lost. Nothing is corrupted. You can verify before we go live.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>User Experience</h3>
+          <p style="color:var(--grey-600);">Your team knows how the system works. We preserve the workflows they are familiar with while improving the interface. Modern design, same functionality, minimal retraining. Your users transition smoothly - not with a jarring "everything has changed" experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Assess, Plan, Modernise, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that de-risks every legacy modernisation project.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Assess</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We audit the legacy system - code, data, integrations, and business logic. We document what it does, how it works, and what needs to change. We identify the risks and the opportunities. You get a clear picture of what modernisation will involve.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Plan</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We create a modernisation plan - which strategy to use (re-platform or rewrite), timeline, cost, and migration approach. We document the business logic to preserve. You approve the plan before any work begins.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Modernise</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the modernised system in parallel with the old one. Data syncs continuously. Weekly demos let your team test against real data. Business logic is verified against the original. Nothing goes live until you sign off.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We cut over with zero downtime - parallel running, data migration, and controlled switch. Your team gets training and documentation. 30 days of post-launch support is included. The old system stays as fallback until you are confident.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section bg-grey" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Legacy Software Modernisation UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single System</div>
+          <h3>Re-Platform One System</h3>
+          <div class="pricing-price">from £15,000</div>
+          <div class="pricing-duration">6-8 weeks</div>
+          <ul class="pricing-features">
+            <li>Modernise one legacy system</li>
+            <li>Re-platform to modern technology</li>
+            <li>Preserve all business logic</li>
+            <li>Data migration with integrity checks</li>
+            <li>Zero-downtime cut-over</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Multi-System</div>
+          <h3>2-3 Systems + Integration</h3>
+          <div class="pricing-price">£25,000 - £35,000</div>
+          <div class="pricing-duration">8-14 weeks</div>
+          <ul class="pricing-features">
+            <li>Modernise 2-3 connected systems</li>
+            <li>Mixed re-platform and rewrite</li>
+            <li>API integration between systems</li>
+            <li>Cloud migration included</li>
+            <li>Modern web interface</li>
+            <li>Full data migration and validation</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full Transformation</div>
+          <h3>Complete Legacy Overhaul</h3>
+          <div class="pricing-price">£40,000 - £60,000+</div>
+          <div class="pricing-duration">12-20 weeks</div>
+          <ul class="pricing-features">
+            <li>Full legacy transformation</li>
+            <li>Complete rewrite with modern architecture</li>
+            <li>Cloud-native deployment</li>
+            <li>CI/CD pipelines and automation</li>
+            <li>API layer for future integrations</li>
+            <li>Advanced security and compliance</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Legacy Modernisation</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>We Preserve What Works</h3>
+          <p style="color:var(--grey-600);">Your legacy system contains years of business knowledge. We extract, document, and replicate that logic precisely in the new system. We do not throw away what works - we preserve it and improve what does not. Your business rules survive the transition intact.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Zero-Downtime Transition</h3>
+          <p style="color:var(--grey-600);">We run the new system in parallel with the old one, sync data continuously, and cut over during a low-traffic window. Your users verify the new system with real data before we switch. If anything goes wrong, the old system is still there as fallback. Your business does not stop.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, documentation, and deployment rights. No licence fees, no vendor lock-in. Your team can maintain and extend the modernised system independently. The single point of failure (one person who understands the old system) is eliminated - modern code with documentation is maintainable by any competent developer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Legacy Software Modernisation FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about legacy modernisation.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Turn Your Legacy System Into an Asset?"
+    text="Book a free 30-minute discovery call. We will assess your legacy system, identify the risks and opportunities, and give you a fixed-price modernisation quote - with honest advice about whether you need a full rewrite or a targeted re-platform would do."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

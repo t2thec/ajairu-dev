@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Trades",
+  metaTitle: "Bespoke Software for Trades UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK trades businesses. Job management, quoting and invoicing, van stock tracking, customer CRM, and photo documentation.",
+  h1: "Bespoke Software for Trades in the UK",
+  lead: "Custom software solutions for UK trades businesses - plumbers, electricians, builders, and contractors. Manage jobs, quotes, invoicing, and customer relationships in one system.",
+  useCases: [
+    {"title": "Job Management System", "desc": "A bespoke job management platform that tracks every job from quote to completion - with scheduling, job status updates, site notes, and customer communication in one place, accessible from phone or tablet on site."},
+    {"title": "Quoting & Invoicing", "desc": "Custom quoting and invoicing software that generates professional quotes on site, converts approved quotes to jobs, and produces invoices from completed work - with pricing templates, material lists, and accounting integration."},
+    {"title": "Van Stock Tracking", "desc": "A bespoke van inventory system that tracks materials and parts on each van, automates reordering from suppliers, and flags low stock before it becomes a problem - eliminating mid-job trips to the merchants."},
+    {"title": "Customer CRM", "desc": "A bespoke customer management system that stores contact details, job history, warranty records, and communication history - with automated service reminders for annual inspections and boiler services."},
+    {"title": "Calendar Sync", "desc": "Custom scheduling software that syncs jobs across your team's calendars, accounts for travel time between jobs, and sends automated appointment reminders to customers - reducing no-shows and improving daily efficiency."},
+    {"title": "Photo Documentation", "desc": "A bespoke photo documentation app that captures before, during, and after photos tagged to specific jobs - with timestamp, location, and annotation, producing professional completion reports for customers and insurance claims."}
+  ],
+  benefits: [
+    {"title": "Built for the Van", "desc": "Trades businesses need software that works on a phone, on site, in all weather. We build mobile-first apps that work offline and sync when connectivity returns - built for real working conditions, not the office."},
+    {"title": "Accounting Integration", "desc": "Custom software that integrates with Sage, Xero, QuickBooks, and your existing accounting system. Quotes become jobs, jobs become invoices, and material costs flow to your books automatically."},
+    {"title": "Built to Last", "desc": "We build maintainable, well-documented software with clear ownership of the codebase. You own everything we build - no per-user licensing, no vendor lock-in, no black boxes."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with our existing accounting system?", "answer": "Yes. We build integrations with Sage, Xero, QuickBooks, and other accounting systems used by UK trades businesses. Quotes, invoices, and material costs flow automatically - no manual data entry, no double-keying between your job management and your books."},
+    {"question": "How is bespoke software different from off-the-shelf job management apps?", "answer": "Off-the-shelf apps like SimPRO, Jobber, or Commusoft are built for the average trades business, not your specific trade. They can't handle your specific pricing structures, your unique workflow, or the way you manage van stock and customer relationships. Bespoke software fits your exact processes and integrates with your specific systems. You also own the codebase - no per-user monthly fees."},
+    {"question": "Will the software work on site without internet?", "answer": "Yes. We build mobile apps with offline-first design - you can create quotes, log job progress, capture photos, and record materials without connectivity, and the app syncs automatically when signal returns. This is essential for trades work in basements, lofts, and new builds without WiFi."},
+    {"question": "How long does a trades software project take?", "answer": "Quick wins like a quoting app or van stock tracker can be built in 6-8 weeks. A full job management platform with CRM, scheduling, and accounting integration typically takes 10-16 weeks. We start with the highest-impact features and iterate."}
+  ],
+  slug: "software-for-trades-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK trades businesses - plumbers, electricians, builders, HVAC engineers, and specialist contractors - operate in a competitive market where reputation and efficiency determine success. The trades businesses thriving are the ones using technology to quote faster, manage jobs more efficiently, and deliver a professional customer experience. Yet many UK trades businesses still rely on a tangle of paper job sheets, spreadsheets for quoting, and evenings spent on admin that could be automated.</p>
+<p>Off-the-shelf job management apps are built for the average trades business, not your specific trade. Generic packages don't understand the specific pricing structures of your trade, the way you manage van stock for your typical jobs, or the compliance requirements specific to your work - Gas Safe notifications for plumbers, Part P certifications for electricians, or building control sign-offs for builders. Quoting tools produce generic documents that don't reflect your branding or your specific service offering. Calendar and scheduling add-ons don't account for travel time between jobs or the specific skills and certifications each job requires. The result is trades business owners spending evenings on admin and losing jobs to competitors who quote faster.</p>
+<p>We build custom software for UK trades businesses that streamlines the entire job lifecycle. From quoting and job management to van stock tracking and customer CRM, we build systems that fit your exact workflows. We understand trades - from the van to the customer's kitchen - and we build software that integrates with your existing accounting systems. Whether it's a bespoke quoting app that generates professional quotes on site and converts them to jobs with one tap, or a van stock system that tracks materials on each van and auto-reorders before you run out, bespoke software fits your trade.</p>
+<p>Trades compliance carries real consequences. Gas Safe registrations, Part P electrical certifications, building control notifications, and H&S risk assessments all have specific record-keeping requirements. A missing Gas Safe notification or an unsigned electrical completion certificate isn't just a paperwork gap - it's a legal liability. Bespoke software generates compliance documentation automatically from job data, records certifications against specific jobs and customers, and sends automated reminders for annual inspections and service contracts - replacing paper systems that get lost in the van and are impossible to search during an audit.</p>
+<p>A UK electrical contractor with 12 engineers was spending every evening generating quotes and invoices, with quotes often taking 24 hours to reach customers - losing jobs to faster competitors. We built a bespoke mobile app with on-site quoting, job management, photo documentation, and accounting integration. Quote turnaround dropped from 24 hours to 15 minutes, the business won 30% more jobs thanks to faster quoting, and evening admin was eliminated entirely. Van stock tracking reduced merchant trips by 40% and material waste by 15%.</p>
+<p>Trades is a sector where bespoke software delivers clear, fast ROI. Every quote, every job, and every invoice generates data. The opportunity is building software that turns that data into faster quotes, efficient job management, and a professional customer experience that wins repeat business and referrals.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your trades business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

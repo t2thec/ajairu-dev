@@ -1,0 +1,43 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "Software for Recruitment",
+  metaTitle: "Bespoke Software for Recruitment UK | Custom Software Development | ajairu".replace('ajairu', SITE_NAME),
+  description: "Bespoke software development for UK recruitment agencies. Candidate CRM, job board integration, timesheet automation, compliance tracking, and client portals.",
+  h1: "Bespoke Software for Recruitment in the UK",
+  lead: "Custom software solutions for UK recruitment agencies. Manage candidates, automate timesheets, track compliance, and give clients a portal - all in one system.",
+  useCases: [
+    {"title": "Candidate CRM", "desc": "A bespoke candidate management system that tracks every interaction, stores CVs and notes, matches candidates to roles automatically, and gives consultants a 360-degree view of each candidate's journey - from first contact to placement."},
+    {"title": "Job Board Integration", "desc": "Custom software that posts roles to multiple job boards automatically, tracks applications back to the original source, and syncs candidate data into your CRM - eliminating manual data entry and giving you true source attribution."},
+    {"title": "Timesheet Automation", "desc": "A bespoke timesheet system where temps log hours via mobile app, clients approve online, and approved timesheets flow directly to payroll and invoicing - eliminating the weekly timesheet chase and reducing payroll errors."},
+    {"title": "Compliance Tracking", "desc": "Custom compliance software that tracks DBS checks, right-to-work documentation, qualifications, and certifications - with automated expiry alerts and audit-ready compliance reports for each candidate and placement."},
+    {"title": "Client Portal", "desc": "A bespoke client portal where clients can submit vacancy requirements, review shortlisted candidates, approve timesheets, and download invoices - giving clients 24/7 self-service access and reducing consultant admin."},
+    {"title": "Reporting Dashboards", "desc": "Custom dashboards that track placements, margin, time-to-fill, consultant performance, and pipeline - giving directors real-time visibility across every desk, sector, and client relationship."}
+  ],
+  benefits: [
+    {"title": "Built for Agency Workflows", "desc": "We understand recruitment from the consultant's desk to the director's office. Software is built around how agencies actually work - temps, perms, contract, and locum desks all handled in one system."},
+    {"title": "Accounting & Payroll Integration", "desc": "Custom software that integrates with your existing payroll, accounting, and back-office systems. Approved timesheets flow to payroll, placements generate invoices, and margin rolls up to financial reports automatically."},
+    {"title": "Compliance Built In", "desc": "Right-to-work, DBS, and certification tracking are built into the system from the start - with automated expiry alerts and audit-ready reports. Never lose a placement to an expired compliance document again."}
+  ],
+  faqs: [
+    {"question": "Can custom software integrate with our existing recruitment CRM?", "answer": "Yes. We can build integrations with existing recruitment CRMs like Bullhorn, Bond Adapt, or Tribepad - extending their functionality with custom timesheet automation, compliance tracking, or client portals. Alternatively, if your current CRM is holding you back, we can build a bespoke replacement that fits your exact workflows. We assess your current systems during the consultancy phase and recommend the best approach."},
+    {"question": "How is bespoke software different from off-the-shelf recruitment platforms?", "answer": "Off-the-shelf recruitment software is built for the average agency, not your specific model. It can't handle your unique compliance requirements, your specific timesheet approval workflow, or the way your temps are paid. Bespoke software fits your exact processes, integrates with your specific payroll and accounting systems, and eliminates the manual workarounds. You also own the codebase - no per-consultant licensing fees."},
+    {"question": "Can the software handle both temp and permanent recruitment?", "answer": "Yes. We build recruitment systems that handle temps, perms, contract, and locum placements in one platform - with different workflows, compliance requirements, and financial models for each. Timesheets and payroll apply to temps; placement fees and guarantee periods apply to perms. The system handles both seamlessly."},
+    {"question": "How long does a recruitment software project take?", "answer": "Quick wins like a timesheet automation app or compliance tracker can be built in 6-8 weeks. A full candidate CRM with client portal and reporting typically takes 12-18 weeks. We start with the highest-impact features and iterate from there."}
+  ],
+  slug: "software-for-recruitment-uk",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>UK recruitment agencies operate in a fast-moving, competitive market where speed and compliance are everything. The agency that gets the right candidate in front of the client first wins the placement. Yet many UK agencies still rely on a tangle of generic CRM software, spreadsheets for timesheets, and manual compliance checks that slow consultants down and create risk every time a compliance document expires unnoticed.</p>
+<p>Off-the-shelf recruitment software is built for the average agency, not your specific model. Generic CRMs don't understand the difference between a temp desk and a perm desk, or the specific compliance requirements of healthcare locums versus construction CSCS cards. Timesheet tools built for general use can't handle the approval workflow your clients demand or the specific pay rules your payroll requires. Job board integration is often limited to a few platforms, forcing consultants to post manually to the rest. Client portals, where they exist, are rigid templates that don't match your branding or your client relationship model.</p>
+<p>We build custom software for UK recruitment agencies that streamlines the entire placement lifecycle. From candidate CRM and job board integration to timesheet automation and compliance tracking, we build systems that fit your exact workflows. We understand recruitment - from the consultant's desk to the payroll office - and we build software that integrates with your existing accounting, payroll, and back-office systems. Whether it's a bespoke timesheet app that eliminates the weekly chase or a client portal that lets clients self-serve vacancy submissions and timesheet approvals, bespoke software fits your processes.</p>
+<p>Recruitment compliance carries serious consequences. Right-to-work checks, DBS certificates, CSCS cards, and professional qualifications all have expiry dates and specific verification requirements. Placing a candidate with an expired DBS or missing right-to-work documentation isn't just a compliance breach - it's a legal risk. Bespoke software tracks every compliance document, sends automated expiry alerts, and generates audit-ready reports so you never lose a placement to a lapsed certification.</p>
+<p>A UK healthcare recruitment agency with 200 active locums was spending two full days each week chasing timesheets and verifying compliance documents. We built a bespoke system with a mobile timesheet app for temps, online approval for clients, and automated compliance tracking with expiry alerts. Timesheet processing time dropped from two days to two hours, compliance-related placement cancellations fell to zero, and the compliance team was redeployed from document chasing to proactive candidate onboarding.</p>
+<p>Recruitment is a sector where bespoke software delivers clear ROI. Every placement generates data - candidate interactions, timesheet hours, compliance documents, margin calculations. The opportunity is building software that turns that data into faster placements, automated admin, and real-time visibility across every desk and client.</p>
+
+<p style="margin-top:32px;">Ready to explore bespoke software for your recruitment agency? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

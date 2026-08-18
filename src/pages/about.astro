@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL, FOUNDER_NAME } from '../config';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `About | Bespoke Software Development Team UK | ${SITE_NAME}`;
+const description = `Founded by ${FOUNDER_NAME}. Former CTO at Fabric Fintech (acquired by Aviva). 27+ years in software engineering. Now helping UK SMEs build bespoke software that fits their business, not the other way round.`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'About', 'item': `${SITE_URL}/about` },
+  ],
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  'name': SITE_NAME,
+  'url': SITE_URL,
+  'founder': { '@type': 'Person', 'name': FOUNDER_NAME, 'jobTitle': 'Software Architect & Engineering Lead' },
+  'description': 'Bespoke software development studio for UK SMEs. Founded by Toby Callinan, former CTO at Fabric Fintech (acquired by Aviva). 27+ years building software platforms.',
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': FOUNDER_NAME,
+  'jobTitle': 'Software Architect & Engineering Lead',
+  'worksFor': { '@type': 'Organization', 'name': SITE_NAME },
+  'description': `Software architect and engineering lead for UK SMEs. Former CTO at Fabric Fintech, acquired by Aviva. 27+ years in software engineering leadership. Delivered Aviva's first customer-facing generative AI product.`,
+  'knowsAbout': ['bespoke software development', 'system integration', 'AI automation', 'technology leadership', 'enterprise software', 'SME consulting', 'ERP replacement', 'cloud architecture', 'API design', 'team leadership'],
+  'nationality': 'British',
+  'address': { '@type': 'PostalAddress', 'addressCountry': 'GB' },
+  'award': ['Tech of the Year 2024 (UK Fintech Awards)', 'Pension Innovation Award 2024 (MoneyFacts)'],
+};
+---
+
+<BaseLayout title={title} description={description} ogType="profile" schema={[breadcrumbSchema, organizationSchema, personSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>About {SITE_NAME}</h1>
+      <p>A software development studio built on 27+ years of enterprise platform experience. Now bringing that expertise to UK SMEs who want software that fits their business, not the other way round.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'About'}]} />
+
+  <!-- TEAM BIO -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="about-photo" role="img" aria-label={`${SITE_NAME}, bespoke software development studio`}>
+            <img src="/images/about-portrait.jpg" alt={`${SITE_NAME}, bespoke software development studio UK`} width="1200" height="1800" />
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <h2>From enterprise platforms to SME software that fits</h2>
+          <p>{SITE_NAME} was founded by {FOUNDER_NAME}, who has spent 27+ years leading software engineering teams and building platforms that solve real business problems. Over that career, the work has spanned the full spectrum: small businesses figuring out their first systems, mid-market companies scaling their operations, and large enterprises like Aviva, Jaguar Land Rover, and NHS Digital where the stakes and the complexity are at their highest.</p>
+          <p>Most recently, Toby was CTO at Fabric Fintech, which was acquired by Aviva in late 2023. At Aviva, he led a 45-person cross-functional group that delivered Aviva's first customer-facing generative AI project, taking it from concept to a 1,000-customer pilot in just six months. He built the shared platform that powered pension tracing, document processing, customer communications, and AI-driven financial advice.</p>
+          <p>That project worked because it was built with discipline: clear use cases, proper architecture, and a team that understood both the technology and the business it was serving. It also showed what happens when any of those pieces are missing. Software bolted on as an afterthought fails. Software without governance creates risk. Software without business context creates tools nobody uses.</p>
+          <p>The experience left a conviction: the engineering that makes enterprise software work is not exclusive to enterprises. The principles transfer. The budgets do not have to. What SMEs need is a team that has done it at scale, who can translate that experience into something a 30-person business can actually afford and use.</p>
+          <p>That is what this studio does. Fixed-price engagements. Plain English. Working software you own, not slideware you rent.</p>
+
+          <div style="margin-top:24px;padding:16px 20px;background:var(--grey-50);border-left:4px solid var(--blue);border-radius:4px;">
+            <p style="font-size:0.95rem;color:var(--grey-600);margin:0;"><strong>Recognition:</strong> UK Fintech Awards, Tech of the Year 2024. MoneyFacts Pension Innovation Award 2024.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY NOW -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin:0 auto;">
+        <h2 class="section-title">Why this studio exists now</h2>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">For decades, bespoke software was out of reach for most businesses. Build costs of &pound;300,000 to &pound;700,000 and timelines of 12+ months made off-the-shelf SaaS the only rational choice for SMEs. So businesses bought SaaS, adapted their processes to fit the software, and paid subscription fees forever.</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">AI has changed both sides of that equation simultaneously. AI-accelerated development has cut build costs by 60-70% and compressed timelines from months to weeks. A bespoke build now costs roughly one year of SaaS subscription fees. The break-even point is 12-18 months, not 6-14 years. For the first time, bespoke software is a rational financial decision for a significant number of UK SMEs.</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">At the same time, SaaS vendors are raising prices, gating AI features as paid add-ons, and forcing businesses into rigid workflows. The implicit promise of SaaS - continuous improvement at a stable price - has broken down. The middle of the market, the CRM that costs &pound;50,000 a year and fits at 60%, the ERP that requires monthly workarounds, is under genuine competitive threat from bespoke development for the first time.</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">This studio exists to help SMEs capitalise on that shift. Enterprise engineering experience, SME pricing, and software you own outright.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What We Believe About Software</h2>
+      <p class="section-subtitle reveal">Three principles that guide every engagement. We call them The Ownership Standard.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>Software Follows the Business</h3>
+          <p>Your software should work the way your business works, not the way a vendor decided it should. We build around your actual processes, not a template. If off-the-shelf software fits your workflow better than bespoke, we will tell you to buy it. We only build when custom is the right answer.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="handshake" /></div>
+          <h3>Ownership Over Dependency</h3>
+          <p>Too many software providers build systems that only they can maintain. We do the opposite. Every engagement includes full source code, documentation, team training, and deployment rights. You should be able to run and extend what we build without us in the room. If you cannot, we have not finished the job.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="scale" /></div>
+          <h3>Honesty Over Hype</h3>
+          <p>Bespoke software is not always the right answer. Some businesses are better served by off-the-shelf tools. Some problems are not big enough to justify a custom build. We will tell you that, clearly and early, before you spend money. The &pound;2,000 technical consultancy exists specifically to find out whether bespoke makes sense before you commit to a &pound;50,000 build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section">
+    <div class="container">
+      <div class="split-content">
+        <div class="reveal">
+          <h2 class="section-title">How We Work</h2>
+          <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);">Every engagement is fixed-price, agreed upfront, with clear deliverables. No open-ended billing, no surprise invoices, no scope creep billed at premium rates.</p>
+          <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">Toby leads every project directly. The same person who scopes the work does the work. AI-accelerated development tools help move faster, but every line of code is reviewed and owned by someone who understands it. AI helps build faster. It does not replace engineering judgement.</p>
+          <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">You own everything we build. Full source code, documentation, and training are included as standard, not sold as an add-on. When the engagement ends, your team can run and extend the work independently.</p>
+          <p style="margin-top:20px;">Learn more about <a href="/process">how we work</a> or explore our <a href="/services">services and pricing</a>.</p>
+        </div>
+        <div class="split-visual reveal" role="img" aria-label="How we work">
+          <img src="/images/about-side.jpg" alt="Bespoke software development and system integration for UK SMEs" width="1200" height="675" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Let's Talk About Your Systems"
+    text="No pitch. No pressure. Just a 30-minute conversation about your business, your software, and whether bespoke development makes sense for you right now."
+  />
+</BaseLayout>

@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../../config';
+
+const title = `Custom CRM Development UK | Bespoke CRM Software | ${SITE_NAME}`;
+const description = 'Custom CRM development UK for SMEs. Bespoke CRM software built around your sales process, not the other way round. Contact management, pipelines, dashboards, accounting integration. From £15,000. Fixed-price, you own the code.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Bespoke CRM Development UK', 'item': `${SITE_URL}/services/bespoke-crm-development-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Bespoke CRM Development UK',
+  'serviceType': 'Custom CRM Software Development',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Bespoke CRM development for UK SMEs. Custom CRM software built around your sales process - contact management, sales pipelines, customer journey mapping, reporting dashboards, and accounting integration. Fixed-price, you own the code.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Essential Custom CRM', 'price': '15000', 'priceCurrency': 'GBP', 'description': 'Custom CRM with contact management, sales pipeline, and reporting dashboards. 6-8 weeks.' },
+    { '@type': 'Offer', 'name': 'Professional Custom CRM', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'CRM with customer journey mapping, accounting integration, and automated workflows. 8-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Enterprise Custom CRM', 'price': '40000', 'priceCurrency': 'GBP', 'description': 'Full CRM platform with multi-team pipelines, advanced automation, and third-party integrations. 10-16 weeks.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does bespoke CRM development cost in the UK?', answer: 'A custom CRM for a UK SME starts from £15,000 for a core system with contact management, sales pipeline, and reporting dashboards. A professional CRM with customer journey mapping and accounting integration typically costs £20,000 to £30,000. Full enterprise-grade CRM platforms with advanced automation range from £35,000 to £50,000+. All projects are fixed-price - you know the total cost before we start.' },
+  { question: 'Why build a bespoke CRM instead of using Salesforce or HubSpot?', answer: 'Off-the-shelf CRMs like Salesforce and HubSpot force you to work their way. You adapt your sales process to fit their data model, pay escalating per-seat licence fees, and hit walls when you need custom fields or workflows. A bespoke CRM is built around your actual sales process - your terminology, your pipeline stages, your reporting needs. No per-seat fees, no licence costs, and you own the software outright.' },
+  { question: 'How long does it take to build a custom CRM?', answer: 'An essential custom CRM takes 6-8 weeks. A professional CRM with integrations and automation takes 8-12 weeks. Full enterprise CRM platforms take 10-16 weeks. AI-accelerated development means we deliver in weeks what traditional agencies take months to build. You get weekly demos and can test against real data throughout.' },
+  { question: 'Can you integrate the CRM with our accounting software?', answer: 'Yes. We integrate custom CRMs with Xero, QuickBooks, Sage, FreeAgent, and other UK accounting platforms. When a deal closes in the CRM, the customer is automatically created in your accounting system. Invoices sync without manual entry. Payment status flows back to your sales team. This eliminates double-keying and keeps finance and sales aligned.' },
+  { question: 'Do we own the CRM source code?', answer: 'Yes, entirely. You own the source code, the database, and all intellectual property from day one. No licence fees, no per-seat charges, no vendor lock-in. Your team can extend and maintain the CRM independently, or we can provide ongoing support from £350/month. You are never trapped with a single supplier.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Bespoke CRM Development UK for SMEs</h1>
+      <p>Stop bending your sales process to fit someone else's software. We build custom CRM software around the way your team actually sells - with contact management, sales pipelines, customer journey mapping, and reporting dashboards designed for your business, not a template.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Bespoke CRM Development UK'}]} />
+
+  <!-- WHY BESPOKE CRM -->
+  <section class="section" id="why-bespoke-crm">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Plain English</span>
+      <h2 class="section-title reveal">Why Off-the-Shelf CRMs Force You to Work Their Way</h2>
+      <p class="section-subtitle reveal">Salesforce, HubSpot, and Zoho are powerful. But they were built for everyone, which means they fit no one perfectly.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">When you buy an off-the-shelf CRM, you are buying someone else's idea of how sales should work. Your team has to learn new terminology, adapt to rigid pipeline stages, and work around fields and features you will never use. Every customisation costs extra - if it is even possible. And every month, you pay a per-seat licence fee that grows as your team grows.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">A bespoke CRM flips that relationship. Instead of adapting your business to the software, the software adapts to your business. Your sales stages, your terminology, your reporting needs, your integrations. No per-seat fees, no licence costs, and no limits on customisation because you own the code. For UK SMEs with 10-250 employees, bespoke CRM development often costs less over three years than the cumulative licence fees of a mainstream CRM platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT BESPOKE CRM INCLUDES -->
+  <section class="section bg-grey" id="what-it-includes">
+    <div class="container">
+      <h2 class="section-title reveal">What a Bespoke CRM Includes</h2>
+      <p class="section-subtitle reveal">Every custom CRM we build is tailored to your business. These are the core modules we typically deliver.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Contact Management</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">A central database of every contact, company, and relationship in your business. Track interactions, log calls and emails, set reminders, and see a complete history of every customer touchpoint. Custom fields for the data that matters to you - not just what a template allows.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Sales Pipeline</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Visual pipelines that match your actual sales process - your stages, your terminology, your win criteria. Drag-and-drop deals, probability tracking, and automated stage transitions. See exactly where every deal stands and what needs to happen next to move it forward.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="route" /></div>
+          <h3>Customer Journey Mapping</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Track every customer from first enquiry through to repeat business. Map the touchpoints, identify bottlenecks, and see where prospects drop off. Automated triggers move customers through stages without manual intervention - welcome emails, follow-up reminders, renewal alerts.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Reporting Dashboards</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Real-time dashboards showing the metrics that matter to your business - not generic CRM reports. Sales by rep, conversion rates by stage, average deal size, pipeline velocity, forecast accuracy. Export to spreadsheets or schedule automated email reports for stakeholders.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>Accounting Integration</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Connect your CRM to Xero, QuickBooks, Sage, or FreeAgent. When a deal closes, the customer is created in your accounting system automatically. Invoices sync, payment status flows back to sales, and revenue data appears in your CRM dashboards without manual entry.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="bolt" /></div>
+          <h3>Automated Workflows</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Automate repetitive tasks - lead assignment, follow-up reminders, quote generation, contract renewal alerts. Rules-based triggers act on your data without human intervention. Your team focuses on selling, not admin. See our <a href="/services/workflow-automation-uk">workflow automation services</a> for more detail.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Every CRM is built to your specification. These modules are a starting point, not a fixed list. <a href="/contact">Book a free call</a> to discuss your requirements.</p>
+    </div>
+  </section>
+
+  <!-- OFF-THE-SHELF VS BESPOKE -->
+  <section class="section" id="comparison">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Real Difference</span>
+      <h2 class="section-title reveal">Off-the-Shelf CRM vs Bespoke CRM: The Real Cost</h2>
+      <p class="section-subtitle reveal">Licence fees add up. Over three years, bespoke often costs less - and you own the software.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal">
+          <h3 style="color:var(--grey-500);">Salesforce / HubSpot (15 seats)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Year 1:</strong> £7,200 - £18,000 in licence fees</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Year 2:</strong> £7,200 - £18,000 (fees typically rise)</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Year 3:</strong> £7,200 - £18,000 (fees typically rise again)</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>3-year total:</strong> £21,600 - £54,000</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>You own:</strong> Nothing. Stop paying and you lose access to your CRM and all your data.</p>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--blue);">
+          <h3 style="color:var(--blue);">Bespoke CRM (unlimited seats)</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>Year 1:</strong> £15,000 - £30,000 (one-off build cost)</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Year 2:</strong> £0 (or optional support from £350/month)</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>Year 3:</strong> £0 (or optional support from £350/month)</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;"><strong>3-year total:</strong> £15,000 - £42,600</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:12px;"><strong>You own:</strong> The complete source code, database, and all intellectual property. Add as many users as you like at no extra cost.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Figures are illustrative based on typical UK SME deployments. Your actual costs depend on your requirements. <a href="/contact">Get a fixed-price quote</a>.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="section bg-grey" id="industries">
+    <div class="container">
+      <h2 class="section-title reveal">Industries We Build Custom CRMs For</h2>
+      <p class="section-subtitle reveal">Every industry sells differently. We build CRMs that match the way your sector actually works.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Professional Services</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Law firms, accountants, consultancies, and agencies need CRMs that track client relationships across multiple partners, manage matter or project pipelines, and generate engagement letters automatically. We build CRMs that handle complex multi-stakeholder relationships, conflict checking, and time tracking integration - features that mainstream CRMs charge enterprise prices for or simply cannot do.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Manufacturing &amp; Distribution</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Manufacturers and distributors need CRMs that understand quotes, specifications, lead times, and repeat orders. We build CRMs with product catalogues, quote generation, stock-aware pipelines, and trade pricing logic. When a rep closes a deal, the system checks stock, generates a quote PDF, and creates the sales order in your ERP - all automatically.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>B2B Services</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">B2B companies with long sales cycles need CRMs that track multiple decision-makers per deal, manage contract renewals, and surface upsell opportunities. We build CRMs with account hierarchies, relationship mapping, renewal alerts, and custom opportunity scoring. Your team sees which accounts are at risk and which are ripe for expansion - before it is too late.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Field Service</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Field service businesses - plumbers, electricians, engineers, HVAC - need CRMs that link customer records to job history, equipment records, and service contracts. We build CRMs with service history tracking, contract renewal reminders, equipment registers, and automated job scheduling integration. Your engineers see the full customer history on their <a href="/services/mobile-app-development-uk">mobile app</a> before they arrive on site.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Property &amp; Construction</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Estate agents, developers, and construction firms need CRMs that manage buyer journeys, plot availability, reservation processes, and surveyor relationships. We build CRMs with plot tracking, reservation workflows, milestone-based pipelines, and automated buyer communications. Your sales team sees exactly where each buyer is in their journey and what action is needed next.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Healthcare &amp; Care</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Healthcare providers and care companies need CRMs that manage patient or client relationships, track treatment plans, and coordinate between clinicians, carers, and family members. We build GDPR-compliant CRMs with consent management, care plan tracking, and secure document sharing. Sensitive data is protected with role-based access and full audit trails.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Do not see your industry? We build custom CRMs for any sector. <a href="/contact">Book a free call</a> to discuss your needs.</p>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" id="our-approach">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How We Work</span>
+      <h2 class="section-title reveal">Our Approach: Discover, Design, Build, Deploy</h2>
+      <p class="section-subtitle reveal">A proven 4-step process that ensures your CRM matches your real sales process.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We shadow your sales team, map your actual sales process, and document every field, stage, and workflow. No assumptions - we see how your business really works, not how a template says it should.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We design the CRM - data model, pipeline stages, dashboards, integrations, and automation rules. You see wireframes and approve the design before any code is written. You know exactly what you are getting.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We build the CRM using AI-accelerated development. Weekly demos let your team test against real data in a staging environment. Feedback is incorporated immediately. Nothing goes live until you sign off.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">4</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Deploy</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">We deploy to production with user training, data migration from your existing CRM, and 30 days of post-launch support. Your team is confident on day one. You own all the code and documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="section-title reveal">Bespoke CRM Development UK: Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price engagements. You know the total cost before we start. No day rates, no surprise billing.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Essential</div>
+          <h3>Core Custom CRM</h3>
+          <div class="pricing-price">from £15,000</div>
+          <div class="pricing-duration">6-8 weeks</div>
+          <ul class="pricing-features">
+            <li>Contact and company management</li>
+            <li>Custom sales pipeline with your stages</li>
+            <li>Reporting dashboards</li>
+            <li>Email integration and activity logging</li>
+            <li>User roles and permissions</li>
+            <li>30-day post-launch support</li>
+            <li>You own the source code</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Common</div>
+          <div class="pricing-tier">Professional</div>
+          <h3>CRM + Integrations</h3>
+          <div class="pricing-price">£20,000 - £30,000</div>
+          <div class="pricing-duration">8-12 weeks</div>
+          <ul class="pricing-features">
+            <li>Everything in Essential, plus:</li>
+            <li>Accounting integration (Xero/Sage/QuickBooks)</li>
+            <li>Customer journey mapping and automation</li>
+            <li>Custom document generation (quotes, contracts)</li>
+            <li>Automated workflow rules and triggers</li>
+            <li>Data migration from existing CRM</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Enterprise</div>
+          <h3>Full CRM Platform</h3>
+          <div class="pricing-price">£35,000 - £50,000+</div>
+          <div class="pricing-duration">10-16 weeks</div>
+          <ul class="pricing-features">
+            <li>Everything in Professional, plus:</li>
+            <li>Multi-team pipelines and territories</li>
+            <li>Advanced automation and AI features</li>
+            <li>Third-party API integrations (3+ systems)</li>
+            <li>Custom mobile app or responsive design</li>
+            <li>SSO and enterprise security</li>
+            <li>Documentation, training, and 30-day support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">All prices are fixed - you approve the scope before we start. <a href="/services">See all our bespoke software development services</a> or <a href="/contact">book a free discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section bg-grey" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose Our Bespoke CRM Development</h2>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>You Own the Code</h3>
+          <p style="color:var(--grey-600);">Full source code, database, and documentation. No per-seat licence fees, no vendor lock-in. Add unlimited users at no extra cost. Your team can maintain and extend the CRM independently.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Built Around Your Process</h3>
+          <p style="color:var(--grey-600);">We shadow your sales team and map your actual process - not a template. Your CRM uses your terminology, your pipeline stages, and your reporting metrics. It works the way you work, not the way a software company thinks you should.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Fixed-Price, Always</h3>
+          <p style="color:var(--grey-600);">You know the total cost before we start. No day rates, no open-ended billing. If the scope changes, we agree the new price before proceeding - never a surprise invoice. Data migration from your existing CRM is included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Bespoke CRM Development FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about custom CRM software.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Build a CRM That Fits Your Business?"
+    text="Book a free 30-minute discovery call. We will map your sales process, identify the features that will make the biggest difference, and give you a fixed-price quote - even if that means telling you an off-the-shelf CRM would do the job."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>
