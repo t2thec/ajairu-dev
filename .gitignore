@@ -23,3 +23,5 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+# Data directory (contains user submissions)
+data/
