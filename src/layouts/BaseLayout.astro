@@ -50,13 +50,18 @@ const ogImage = new URL(ogImagePath, SITE_URL).toString();
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
-  <!-- Fonts -->
+  <!-- Fonts (non-render-blocking: loads async via media=print swap trick) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Comfortaa:wght@700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Comfortaa:wght@700&display=swap" />
+  </noscript>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#2563eb" />
 
@@ -70,135 +75,9 @@ const ogImage = new URL(ogImagePath, SITE_URL).toString();
   <slot />
   <Footer />
 
-  <!-- Client-side interactions: nav toggle, dropdown, scroll reveal, FAQ accordion -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function () {
-      // --- Mobile Nav Toggle ---
-      var navToggle = document.querySelector('.nav-toggle');
-      var navLinks = document.querySelector('.nav-links');
-
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', function () {
-          navToggle.classList.toggle('open');
-          navLinks.classList.toggle('open');
-        });
-
-        navLinks.querySelectorAll('a:not(.nav-dropdown-toggle)').forEach(function (link) {
-          link.addEventListener('click', function () {
-            navToggle.classList.remove('open');
-            navLinks.classList.remove('open');
-          });
-        });
-      }
-
-      // --- Industries Dropdown (click + keyboard) ---
-      var dropdowns = document.querySelectorAll('.nav-dropdown');
-      dropdowns.forEach(function (dd) {
-        var toggle = dd.querySelector('.nav-dropdown-toggle');
-        if (!toggle) return;
-
-        function toggleDropdown(open) {
-          if (typeof open === 'boolean') {
-            if (open) dd.classList.add('open'); else dd.classList.remove('open');
-          } else {
-            dd.classList.toggle('open');
-          }
-          toggle.setAttribute('aria-expanded', dd.classList.contains('open'));
-        }
-
-        toggle.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          // close other dropdowns
-          dropdowns.forEach(function (other) { if (other !== dd) other.classList.remove('open'); });
-          toggleDropdown();
-        });
-
-        toggle.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleDropdown();
-          }
-          if (e.key === 'Escape') {
-            toggleDropdown(false);
-          }
-        });
-
-        // Close when clicking outside
-        document.addEventListener('click', function (e) {
-          if (!dd.contains(e.target)) toggleDropdown(false);
-        });
-      });
-
-      // --- Smooth Scroll for in-page anchors ---
-      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-          var targetId = this.getAttribute('href');
-          if (targetId === '#' || targetId === '#!') return;
-          var target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            var headerOffset = 80;
-            var elementPosition = target.getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-          }
-        });
-      });
-
-      // --- Scroll Reveal Animation ---
-      var revealElements = document.querySelectorAll('.reveal');
-
-      if ('IntersectionObserver' in window && revealElements.length > 0) {
-        var revealObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(function (el) {
-          revealObserver.observe(el);
-        });
-      } else {
-        revealElements.forEach(function (el) {
-          el.classList.add('visible');
-        });
-      }
-
-      // --- FAQ Accordion ---
-      var faqItems = document.querySelectorAll('.faq-item');
-
-      faqItems.forEach(function (item) {
-        var question = item.querySelector('.faq-question');
-        if (question) {
-          question.addEventListener('click', function () {
-            var isOpen = item.classList.contains('open');
-            faqItems.forEach(function (other) {
-              other.classList.remove('open');
-            });
-            if (!isOpen) {
-              item.classList.add('open');
-            }
-          });
-          question.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              question.click();
-            }
-          });
-        }
-      });
-
-      // --- Update footer year ---
-      var yearEls = document.querySelectorAll('.current-year');
-      if (yearEls.length > 0) {
-        var year = new Date().getFullYear();
-        yearEls.forEach(function (el) { el.textContent = year; });
-      }
-    });
+  <!-- Client-side interactions (bundled + minified by Vite) -->
+  <script>
+    import '../scripts/main.js';
   </script>
 </body>
 </html>

@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace Sage with Custom Software UK | ${SITE_NAME}`;
+const description = 'Replace Sage with custom software you own. UK SMEs save £20k-£60k/year. Build vs integrate guide with cost comparison. Break-even in 12-18 months.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace Sage UK', 'item': `${SITE_URL}/replace-sage` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Sage Replacement UK',
+  'serviceType': 'Custom Accounting Software Development & Sage Replacement',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Replace Sage with custom accounting software you own outright. UK SMEs save £20,000 to £60,000 per year with bespoke finance software. Build vs integrate guide, cost comparison, and break-even analysis.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Sage Integration with AI', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Keep Sage, add an AI automation layer to connect it with your other systems. 4-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Custom Accounting Software Replacement', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'Replace Sage with bespoke finance software you own outright. 8-16 weeks. Break-even in 12-18 months.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does it cost to replace Sage with custom software?', answer: 'A focused accounting software replacement starts from £25,000. Larger replacements with integrations and custom workflows typically range from £35,000 to £70,000. Compare that to Sage 200 at £150 per user per month plus add-ons: a 20-person team costs £36,000 per year before additional modules. Break-even on a custom build is 12-18 months, and you own the software forever after that.' },
+  { question: 'Can custom accounting software handle VAT and Making Tax Digital?', answer: 'Yes. Custom finance software can be built to handle VAT calculations, Making Tax Digital submissions, and HMRC compliance from day one. We build direct HMRC API connections so your VAT returns submit automatically. You get the compliance you need without the dated interface and per-seat costs that come with Sage.' },
+  { question: 'How long does it take to replace Sage?', answer: 'A focused accounting software replacement takes 8-16 weeks using AI-accelerated development. Your existing Sage stays running throughout the build, and we migrate your chart of accounts, historical transactions, and reports in parallel. You only switch over when your finance team is confident in the new system. Traditional agencies quote 6-12 months for the same work.' },
+  { question: 'Should I replace Sage or integrate it?', answer: 'If you use Sage primarily for standard accounting and VAT, and your team is comfortable with it, integrate. Keep Sage and add an AI automation layer to connect it with your sales, operations, and reporting tools. If you need custom workflows, multi-entity consolidation, or real-time reporting that Sage cannot deliver, replace it with custom software. The build-vs-buy calculator can help you decide which path fits your situation.' },
+  { question: 'Do I own the source code?', answer: 'Yes, entirely. You own the source code, the database, and the infrastructure from day one. No licence fees, no vendor lock-in, no price increases. Your in-house team can modify the software, or any developer can take it over. We provide full documentation and training so you are never dependent on us.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace Sage with Custom Software</h1>
+      <p>Sage is the default accounting platform for UK SMEs, but the cost adds up fast. Sage 50 costs £60 per month and Sage 200 costs £150 per user per month, before add-ons. A 20-person team on Sage 200 pays £36,000 a year before additional modules. There is a better way: keep Sage and automate it, or replace it with software you own outright.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace Sage UK'}]} />
+
+  <!-- WHAT SAGE DOES WELL -->
+  <section class="section" id="what-sage-does-well">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Be Fair</span>
+      <h2 class="section-title reveal">What Sage Does Well</h2>
+      <p class="section-subtitle reveal">Sage has been the backbone of UK accounting for decades. Here is what it genuinely gets right.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Accounting Core</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Double-entry bookkeeping, general ledger, and trial balance are accurate and proven. The accounting engine is trustworthy.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">VAT &amp; Compliance</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Making Tax Digital, VAT submissions, and HMRC compliance are built in. For UK businesses, this is essential and Sage handles it reliably.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Reporting</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Standard financial reports, profit and loss, balance sheets, and management accounts are available out of the box. The reporting is functional.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Trust &amp; Familiarity</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Most UK accountants know Sage. Your bookkeeper, your auditor, and your finance team are already trained on it. That familiarity has real value.</p>
+        </div>
+      </div>
+      <p class="reveal" style="max-width:760px;margin:40px auto 0;text-align:center;color:var(--grey-600);font-size:1.05rem;line-height:1.7;">None of this is in question. The accounting is solid. The problem is what it costs UK SMEs to get there, and how hard it is to connect Sage to the rest of your business.</p>
+    </div>
+  </section>
+
+  <!-- WHERE SAGE FALLS SHORT -->
+  <section class="section bg-grey" id="where-sage-fails">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem</span>
+      <h2 class="section-title reveal">Where Sage Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">A capable accounting engine trapped in a dated interface with limited modern integration.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Dated Interface</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Sage 50 still carries the look and feel of desktop software from the 2000s. Sage 200 is better but still lags behind modern web applications. Your finance team works in an interface that feels slow, cluttered, and unintuitive compared to the tools they use everywhere else.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Simple tasks take more clicks than they should. New staff need training to find basic functions. The interface actively slows down your finance team.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Per-Seat Costs Add Up</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Sage 200 charges £150 per user per month. Add a new finance team member and the bill goes up. Add modules for payroll, manufacturing, or reporting and the annual cost climbs past £40,000 for a mid-sized SME.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">You pay per seat regardless of how much each user actually does. The intern who enters a few invoices costs the same as your finance director.</p>
+        </div>
+      </div>
+      <div class="cards-grid cards-3" style="margin-top:32px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Limited Automation</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Sage automation is basic. Recurring entries and bank feeds exist, but complex workflows like automated approvals, multi-step reconciliations, or custom alerts require third-party tools or manual workarounds.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Hard to Integrate</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Connecting Sage to your CRM, e-commerce platform, or operations software is painful. The API is limited, documentation is sparse, and third-party connectors are expensive. Sage sits in a silo while the rest of your business moves on.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Add-On Costs</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Sage modules are sold separately. Payroll, CRM, manufacturing, reporting tools, and multi-company consolidation each add to the bill. What starts at £60 a month quickly becomes £300-£500 a month per user once you add what you actually need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE -->
+  <section class="section" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A</span>
+      <h2 class="section-title reveal">Integrate Sage with AI Automation</h2>
+      <p class="section-subtitle reveal">Keep Sage. Add an AI layer that connects it with the rest of your business.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your finance team relies on Sage for day-to-day accounting and VAT, and the main frustration is that Sage does not talk to your other systems, do not rip it out. The accounting engine is doing its job. The problem is the silo.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">An AI automation layer solves this. We build custom APIs that sync data between Sage and every other system you run: your CRM, e-commerce platform, stock management, and reporting tools. Your team stops entering data twice. Decisions get made on complete information.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Cost: from £8,000. Timeline: 4-12 weeks. You keep your Sage investment and make it work harder.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Real-time data sync</strong> between Sage and your CRM, e-commerce, stock, and operations tools</li>
+            <li><strong>Automated invoice generation</strong> triggered by sales orders, with no manual re-entry</li>
+            <li><strong>AI-powered reconciliations</strong> that match transactions across systems automatically</li>
+            <li><strong>Unified dashboards</strong> showing finance, sales, and operations data together</li>
+            <li><strong>You own the integration code</strong> outright, no ongoing licence fees for the automation layer</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:24px;">Explore System Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE -->
+  <section class="section bg-grey" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B</span>
+      <h2 class="section-title reveal">Replace Sage with Custom Software</h2>
+      <p class="section-subtitle reveal">Build accounting software that works your way. Own the code. Break even in 12-18 months.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If you need custom workflows, multi-entity consolidation, real-time reporting, or integration with systems that Sage cannot reach, replacing it is the better financial decision. You are already paying for a platform that fights you at every turn, and adding modules to fix its gaps only increases the bill.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Custom accounting software means the system does exactly what your business needs, handles your specific reporting requirements, and follows your approval workflows. No unused modules. No per-seat pricing. No dated interface.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Build cost: £25,000 to £70,000. Timeline: 8-16 weeks. Break-even: 12-18 months versus £36,000+ a year on Sage 200.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Accounting software built around your process</strong>, not a vendor's template</li>
+            <li><strong>Full source code ownership</strong>: database, infrastructure, and all intellectual property</li>
+            <li><strong>No per-seat pricing</strong>: add as many users as you like at zero additional cost</li>
+            <li><strong>HMRC-compliant VAT and Making Tax Digital</strong> built in from day one</li>
+            <li><strong>Real-time reporting</strong> with custom dashboards tailored to your business</li>
+            <li><strong>Integrations included</strong> with your CRM, e-commerce, stock, and operations tools</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:24px;">Explore ERP Replacement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Make the Call</span>
+      <h2 class="section-title reveal">How to Decide: Integrate or Replace?</h2>
+      <p class="section-subtitle reveal">Two questions will tell you which path fits your business.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Integrate If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your finance team is comfortable with Sage</li>
+            <li>Sage handles your accounting and VAT requirements adequately</li>
+            <li>The main pain is Sage not talking to your other systems</li>
+            <li>You want results in 4-12 weeks, not a full rebuild</li>
+            <li>Your reporting needs are met by standard financial reports</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:20px;">Explore Integration</a>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Replace If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>You need custom workflows Sage cannot deliver</li>
+            <li>You require multi-entity or multi-company consolidation</li>
+            <li>Per-seat pricing is a real financial burden</li>
+            <li>You want to own the software outright</li>
+            <li>You are spending £30,000+ a year on Sage before add-ons</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:20px;">Explore Replacement</a>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey-600);font-size:1.05rem;margin-bottom:20px;">Still unsure? Use our free calculator to get a clear recommendation based on your actual situation.</p>
+        <a href="/build-vs-buy" class="btn btn-primary btn-lg">Try the Build vs Buy Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Sage Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before deciding whether to integrate or replace Sage.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Integrate or Replace?"
+    text="Book a free 30-minute discovery call. We will look at your actual Sage usage, calculate what you spend versus what a custom build would cost, and tell you honestly which path makes financial sense for your business. No hard sell."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

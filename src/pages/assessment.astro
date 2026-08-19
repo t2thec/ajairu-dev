@@ -99,6 +99,40 @@ const quizSchema = {
     </div>
   </section>
 
+  <!-- CROSS-TOOL PROMO -->
+  <section class="section bg-grey" id="other-tools">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p class="reveal" style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">Each takes about 2 minutes. No email needed to see your results.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+          <h3>SaaS ROI Calculator</h3>
+          <p>See the true cost of your SaaS stack vs custom software.</p>
+          <a href="/saas-roi-calculator" class="btn btn-primary">Calculate My SaaS ROI</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">⚖️</div>
+          <h3>Build vs Buy Calculator</h3>
+          <p>Should you buy off-the-shelf or build custom?</p>
+          <a href="/build-vs-buy" class="btn btn-primary">Start Calculator</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔧</div>
+          <h3>Tech Debt Calculator</h3>
+          <p>How much is your legacy software costing you?</p>
+          <a href="/tech-debt-calculator" class="btn btn-primary">Check My Tech Debt</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔗</div>
+          <h3>Integration Health Check</h3>
+          <p>How well-connected is your tech stack?</p>
+          <a href="/integration-health-check" class="btn btn-primary">Check My Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <CTASection
     title="Not Sure Where to Start?"
     text="Book a free 30-minute discovery call. We will talk through your business and point you to the right service, even if that is none of them yet."
@@ -300,7 +334,7 @@ const quizSchema = {
     if (totalScore >= 75) verdict = 'You are ready for bespoke software. Time to pick your first project and start building.';
     else if (totalScore >= 50) verdict = 'You are partially ready. Some groundwork needed before bespoke software will deliver full value.';
     else if (totalScore >= 25) verdict = 'You have foundations to build on, but significant preparation is needed first.';
-    else verdict = 'You are at the start of the journey. Focus on data and process basics before investing in bespoke software.';
+    else verdict = 'You are at the start of the process. Focus on data and process basics before investing in bespoke software.';
 
     document.getElementById('quiz-score').innerHTML = totalScore + '<span class="quiz-score-total">/100</span>';
     document.getElementById('quiz-score-label').textContent = verdict;

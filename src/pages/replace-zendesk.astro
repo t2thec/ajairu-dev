@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace Zendesk with Custom Software UK | ${SITE_NAME}`;
+const description = 'Replace Zendesk with custom software you own. UK SMEs save £20k-£60k/year. Build vs integrate guide with cost comparison. Break-even in 12-18 months.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace Zendesk UK', 'item': `${SITE_URL}/replace-zendesk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Zendesk Replacement UK',
+  'serviceType': 'Custom Support Software Development & Zendesk Replacement',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Replace Zendesk with custom support software you own outright. UK SMEs save £20,000 to £60,000 per year with bespoke helpdesk software. Build vs integrate guide, cost comparison, and break-even analysis.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Zendesk Integration with AI', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Keep Zendesk, add an AI automation layer to connect it with your other systems. 4-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Custom Helpdesk Software Replacement', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'Replace Zendesk with bespoke support software you own outright. 8-16 weeks. Break-even in 12-18 months.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does it cost to replace Zendesk with custom software?', answer: 'A focused helpdesk replacement starts from £25,000. Larger replacements with integrations and custom workflows typically range from £35,000 to £65,000. Compare that to Zendesk Suite at £49-£89 per agent per month: a 20-agent team costs £12,000 to £21,000 per year before add-ons. Break-even on a custom build is 12-18 months, and you own the software forever after that.' },
+  { question: 'Can custom support software handle ticket routing and knowledge base?', answer: 'Yes. Custom helpdesk software can be built to handle ticket routing, SLA management, knowledge base, customer portals, and AI-powered responses from day one. We build the exact workflows your support team needs, with the automation rules and escalation paths that match your business, not a vendor template.' },
+  { question: 'How long does it take to replace Zendesk?', answer: 'A focused helpdesk replacement takes 8-16 weeks using AI-accelerated development. Your existing Zendesk stays running throughout the build, and we migrate your tickets, contacts, and knowledge base in parallel. You only switch over when your support team is confident in the new system. Traditional agencies quote 6-12 months for the same work.' },
+  { question: 'Should I replace Zendesk or integrate it?', answer: 'If your support team uses Zendesk for standard ticket management and the main pain is disconnected systems or add-on costs, integrate. Keep Zendesk and add an AI automation layer to connect it with your CRM and operations tools. If your support workflows are custom and you are paying for add-ons that do not fit, replace it with custom software. The build-vs-buy calculator can help you decide which path fits your situation.' },
+  { question: 'Do I own the source code?', answer: 'Yes, entirely. You own the source code, the database, and the infrastructure from day one. No licence fees, no vendor lock-in, no price increases. Your in-house team can modify the software, or any developer can take it over. We provide full documentation and training so you are never dependent on us.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace Zendesk with Custom Software</h1>
+      <p>Zendesk is the dominant helpdesk platform, but the per-agent pricing model is expensive for UK SMEs. Suite Team costs £49 per agent per month and Suite Professional costs £89 per agent per month. A 20-agent team on Professional pays £21,000 a year before add-ons. There is a better way: keep Zendesk and automate it, or replace it with software you own outright.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace Zendesk UK'}]} />
+
+  <!-- WHAT ZENDESK DOES WELL -->
+  <section class="section" id="what-zendesk-does-well">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Be Fair</span>
+      <h2 class="section-title reveal">What Zendesk Does Well</h2>
+      <p class="section-subtitle reveal">Zendesk earned its market position. Here is what it genuinely gets right.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Ticket Management</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Ticket routing, assignment, escalation, and SLA management are mature and reliable. The core helpdesk engine handles high volumes without breaking a sweat.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Knowledge Base</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">The Guide knowledge base product is well-built. Article authoring, categorisation, and customer-facing help centres are functional and easy to maintain.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Reporting</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Pre-built reports on ticket volume, response times, and agent performance are available out of the box. The reporting is genuinely useful for support teams.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Omnichannel</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Email, chat, phone, and social channels converge into one inbox. For teams handling multiple support channels, the unified view is a real advantage.</p>
+        </div>
+      </div>
+      <p class="reveal" style="max-width:760px;margin:40px auto 0;text-align:center;color:var(--grey-600);font-size:1.05rem;line-height:1.7;">None of this is in question. Zendesk is a capable helpdesk. The problem is what it costs UK SMEs per agent, and how the add-on model pushes the bill higher every year.</p>
+    </div>
+  </section>
+
+  <!-- WHERE ZENDESK FALLS SHORT -->
+  <section class="section bg-grey" id="where-zendesk-fails">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem</span>
+      <h2 class="section-title reveal">Where Zendesk Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">A per-agent pricing model that punishes growing support teams and limited room for custom workflows.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Expensive Per-Agent Model</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Suite Professional costs £89 per agent per month. A 20-agent team pays £21,000 a year. Every new support hire increases the bill. You pay the same per-agent price for a part-time weekend cover agent as you do for your full-time senior support engineer.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">The pricing model assumes every agent is a full-time, heavy user. For SMEs with part-time staff, seasonal cover, or shared inboxes, that assumption is wrong and the cost is disproportionate.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Add-On Costs Stack Up</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Zendesk sells features separately. Advanced reporting, quality assurance, workforce management, and AI add-ons each increase the per-agent cost. What starts at £49 a month quickly becomes £100+ per agent once you add what your team actually needs.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">The base price is a starting point, not the real cost. By the time you add the modules your support team needs to work effectively, the annual bill has often doubled.</p>
+        </div>
+      </div>
+      <div class="cards-grid cards-2" style="margin-top:32px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Limited Workflow Customisation</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Zendesk workflows are built around standard ticket lifecycles. Custom escalation paths, conditional routing, and integration-triggered automations require Zendesk Automations Plus or third-party tools. Non-standard support processes are hard to model.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Data Lock-In</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Your ticket history, customer interactions, and knowledge base articles live in Zendesk's cloud. Exporting gives you flat files that lose relationships and context. Stop paying, and years of support history disappears. Your accumulated knowledge belongs to the vendor, not you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE -->
+  <section class="section" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A</span>
+      <h2 class="section-title reveal">Integrate Zendesk with AI Automation</h2>
+      <p class="section-subtitle reveal">Keep Zendesk. Add an AI layer that connects it with the rest of your business.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your support team relies on Zendesk for ticket management and the main frustration is that support data sits in isolation from your CRM, product, and operations tools, do not rip it out. The helpdesk engine is doing its job. The problem is the silo.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">An AI automation layer solves this. We build custom APIs that sync data between Zendesk and every other system you run. Support tickets connect to customer records, product data, and order history. Agents get full context without switching tools.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Cost: from £8,000. Timeline: 4-12 weeks. You keep your Zendesk investment and make it work harder.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Real-time data sync</strong> between Zendesk and your CRM, product, and order management tools</li>
+            <li><strong>AI-powered ticket triage</strong> that routes and prioritises based on customer context across systems</li>
+            <li><strong>Automated escalations</strong> that trigger actions in your CRM or operations tools without manual handoffs</li>
+            <li><strong>Unified customer view</strong> showing support history alongside sales and account data</li>
+            <li><strong>You own the integration code</strong> outright, no ongoing licence fees for the automation layer</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:24px;">Explore System Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE -->
+  <section class="section bg-grey" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B</span>
+      <h2 class="section-title reveal">Replace Zendesk with Custom Software</h2>
+      <p class="section-subtitle reveal">Build helpdesk software that works your way. Own the code. Break even in 12-18 months.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your support workflows are custom and you are paying for Zendesk add-ons that do not quite fit, replacing it is the better financial decision. You are already paying a premium per agent and adding modules to fill gaps that a custom build would handle natively.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Custom helpdesk software means the system does exactly what your support team needs, models your specific escalation paths, and uses your terminology. No unused add-ons. No per-agent pricing. No data lock-in.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Build cost: £25,000 to £65,000. Timeline: 8-16 weeks. Break-even: 12-18 months versus £21,000+ a year on Zendesk Professional.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Helpdesk software built around your process</strong>, not a vendor's ticket template</li>
+            <li><strong>Full source code ownership</strong>: database, infrastructure, and all intellectual property</li>
+            <li><strong>No per-agent pricing</strong>: add as many agents as you like at zero additional cost</li>
+            <li><strong>Custom workflows</strong> that model your exact escalation paths and SLA rules</li>
+            <li><strong>Knowledge base and customer portal</strong> built to your specifications</li>
+            <li><strong>Integrations included</strong> with your CRM, product, and order management tools</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:24px;">Explore ERP Replacement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Make the Call</span>
+      <h2 class="section-title reveal">How to Decide: Integrate or Replace?</h2>
+      <p class="section-subtitle reveal">Two questions will tell you which path fits your business.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Integrate If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your support team is comfortable with Zendesk</li>
+            <li>Your ticket workflows are fairly standard</li>
+            <li>The main pain is disconnected systems, not the tool itself</li>
+            <li>You want results in 4-12 weeks, not a full rebuild</li>
+            <li>Your team uses omnichannel features regularly</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:20px;">Explore Integration</a>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Replace If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your support workflows are custom and fight the platform</li>
+            <li>Per-agent pricing is a real financial burden</li>
+            <li>You are paying for add-ons that do not fit your needs</li>
+            <li>You want to own the software outright</li>
+            <li>You are spending £20,000+ a year on Zendesk before add-ons</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:20px;">Explore Replacement</a>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey-600);font-size:1.05rem;margin-bottom:20px;">Still unsure? Use our free calculator to get a clear recommendation based on your actual situation.</p>
+        <a href="/build-vs-buy" class="btn btn-primary btn-lg">Try the Build vs Buy Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Zendesk Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before deciding whether to integrate or replace Zendesk.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Integrate or Replace?"
+    text="Book a free 30-minute discovery call. We will look at your actual Zendesk usage, calculate what you spend versus what a custom build would cost, and tell you honestly which path makes financial sense for your business. No hard sell."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

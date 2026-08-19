@@ -18,7 +18,7 @@ This is not a minor inconvenience. It is the single biggest hidden cost in most 
 
 The average UK SME with 20–100 employees uses between 4 and 8 separate software systems. Each one was bought to solve a specific problem: a CRM for sales, Xero or Sage for accounting, a job management tool for operations, an e-commerce platform for online sales, maybe a inventory system, a project management tool, and a reporting dashboard.
 
-Each tool is good at its job. The problem is the gaps between them. Data entered in one system doesn't appear in another. Reports need to be compiled manually from multiple sources. A customer's journey from lead to invoice to delivery touches four different systems, and none of them knows what the other is doing.
+Each tool is good at its job. The problem is the gaps between them. Data entered in one system doesn't appear in another. Reports need to be compiled manually from multiple sources. A customer's process from lead to invoice to delivery touches four different systems, and none of them knows what the other is doing.
 
 ## Common Integration Scenarios
 

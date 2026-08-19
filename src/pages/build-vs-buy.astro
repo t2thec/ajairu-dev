@@ -1,0 +1,604 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Build vs Buy Calculator | Should You Buy Software or Build Custom? | ${SITE_NAME}`;
+const description = 'A free guided calculator for UK SME owners. Answer 6 questions about your software needs, spend, and integrations. Get a clear Buy, Hybrid, or Build recommendation with a 3-year cost comparison. No email required to see results.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Build vs Buy Calculator', 'item': `${SITE_URL}/build-vs-buy` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is the Build vs Buy calculator free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No email required to see your results.' } },
+    { '@type': 'Question', 'name': 'How long does the calculator take?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'About 2 to 3 minutes. 6 questions about your software, spend, and integrations.' } },
+    { '@type': 'Question', 'name': 'What do I get at the end?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'A clear recommendation to Buy, take a Hybrid approach, or Build custom, plus a 3-year cost comparison and a breakdown explaining why.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Build vs Buy Calculator</h1>
+      <p>6 questions. 2 minutes. A clear recommendation and 3-year cost comparison. No email required.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Build vs Buy Calculator'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Intro -->
+      <div id="calc-intro" class="quiz-intro">
+        <h2 class="section-title" style="text-align:left;">Should you buy off-the-shelf software or build custom?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-bottom:32px;">Most SME owners wrestle with this decision with incomplete information. This guided calculator walks you through the six questions that actually matter, explains why each one is important, and gives you a clear recommendation based on your answers.</p>
+        <button id="calc-start-btn" class="btn btn-primary btn-lg">Start the Calculator</button>
+      </div>
+
+      <!-- Calculator container -->
+      <div id="calc-container" class="quiz-container" style="display:none;">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="calc-progress-fill" class="quiz-progress-fill"></div></div>
+          <span id="calc-progress-text" class="quiz-progress-text">Question 1 of 6</span>
+        </div>
+        <div id="calc-question" class="quiz-question"></div>
+        <div id="calc-options" class="quiz-options"></div>
+        <div class="quiz-nav">
+          <button id="calc-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="calc-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results container -->
+      <div id="calc-results" class="quiz-results" style="display:none;">
+        <div id="calc-rec-card" class="calc-rec-card"></div>
+        <div id="calc-cost-comparison" class="calc-cost-comparison"></div>
+        <div id="calc-breakdown" class="calc-breakdown"></div>
+
+        <div class="quiz-email-capture quiz-email-prominent">
+          <h3>Get your personalised Build vs Buy report</h3>
+          <p>Enter your details and we will send you a copy of your recommendation, cost comparison, and a short summary explaining the reasoning. We will also follow up with a free 15-minute call to discuss your situation, no pressure.</p>
+          <form id="calc-email-form" class="quiz-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="quiz-form-stacked">
+              <input type="email" id="calc-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="calc-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="calc-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Get My Report &rarr;</button>
+            </div>
+          </form>
+          <p id="calc-email-success" style="display:none;color:var(--blue-dark);font-weight:600;margin-top:12px;">Report saved and sent. Check your inbox.</p>
+          <div id="calc-post-success" style="display:none;" class="calc-post-success">
+            <div class="quiz-cta-buttons">
+              <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+              <a href="/services" class="btn btn-outline btn-lg">View Services &amp; Pricing</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-cta">
+          <h3>Talk it through with someone who builds both</h3>
+          <p>Whether the answer is buy, build, or a mix of both, a 30-minute call will help you pressure-test the decision against your actual operations. No sales pitch, just practical advice from a founder who works with UK SMEs on this exact question.</p>
+          <div class="quiz-cta-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="/services" class="btn btn-outline btn-lg">View Services &amp; Pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-TOOL PROMO -->
+  <section class="section bg-grey" id="other-tools">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p class="reveal" style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">Each takes about 2 minutes. No email needed to see your results.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+          <h3>SaaS ROI Calculator</h3>
+          <p>See the true cost of your SaaS stack vs custom software.</p>
+          <a href="/saas-roi-calculator" class="btn btn-primary">Calculate My SaaS ROI</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔧</div>
+          <h3>Tech Debt Calculator</h3>
+          <p>How much is your legacy software costing you?</p>
+          <a href="/tech-debt-calculator" class="btn btn-primary">Check My Tech Debt</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔗</div>
+          <h3>Integration Health Check</h3>
+          <p>How well-connected is your tech stack?</p>
+          <a href="/integration-health-check" class="btn btn-primary">Check My Integration</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📋</div>
+          <h3>Software Readiness Quiz</h3>
+          <p>Is your business ready for custom software?</p>
+          <a href="/assessment" class="btn btn-primary">Take the Quiz</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your business and point you to the right approach, even if that means buying off-the-shelf software and not working with us."
+  />
+</BaseLayout>
+
+<script is:inline define:vars={{ SITE_NAME }}>
+  // --- Question definitions ---
+  // Step 1 is a free-text input; steps 2-6 are scored multiple choice.
+  const steps = [
+    {
+      id: 'problem',
+      type: 'text',
+      q: 'What problem are you trying to solve?',
+      placeholder: 'e.g. We manage customer onboarding across 3 tools and nothing talks to each other...',
+      explanation: 'This helps us understand whether your needs are standard (where off-the-shelf tools work well) or unique to your business (where custom software may be better).',
+    },
+    {
+      id: 'tools',
+      type: 'choice',
+      q: 'How many software subscriptions is your team currently paying for?',
+      options: [
+        { text: '1-3 tools', score: 0, value: '1-3' },
+        { text: '4-10 tools', score: 0, value: '4-10' },
+        { text: '11-20 tools', score: 1, value: '11-20' },
+        { text: '20+ tools', score: 2, value: '20+' },
+      ],
+      explanation: 'Most SMEs underestimate this. The average enterprise runs 900+ SaaS apps. Each tool has its own login, data model, and integration quirks. The more tools you have, the more integration debt you are carrying.',
+    },
+    {
+      id: 'fit',
+      type: 'choice',
+      q: 'How well does off-the-shelf software fit your actual workflow?',
+      options: [
+        { text: 'Perfectly, we adapted our process to fit the software', score: 0, value: 'perfectly' },
+        { text: 'Mostly, we work around a few annoyances', score: 0, value: 'mostly' },
+        { text: 'Partially, we have workarounds for major gaps', score: 1, value: 'partially' },
+        { text: 'Poorly, no existing tool does what we need', score: 2, value: 'poorly' },
+      ],
+      explanation: 'This is the key question. If you are bending your business to fit someone else\'s software, you are paying for the privilege of being frustrated. Custom software costs more upfront but fits your actual process.',
+    },
+    {
+      id: 'spend',
+      type: 'choice',
+      q: 'What is your annual software spend?',
+      options: [
+        { text: 'Under £6,000/year', score: 0, value: 'under6k', annualSpend: 4000 },
+        { text: '£6,000 to £15,000/year', score: 1, value: '6to15k', annualSpend: 10000 },
+        { text: '£15,000 to £30,000/year', score: 2, value: '15to30k', annualSpend: 22000 },
+        { text: '£30,000+/year', score: 2, value: 'over30k', annualSpend: 35000 },
+      ],
+      explanation: 'Below £6,000, SaaS almost always wins on cost. Above £15,000, custom software starts to make financial sense over 3 to 5 years. Between those, it depends on fit and integration complexity.',
+    },
+    {
+      id: 'integrations',
+      type: 'choice',
+      q: 'How many existing systems would custom software need to connect to?',
+      options: [
+        { text: '0-1 systems', score: 0, value: '0-1', integrationMultiplier: 1.0 },
+        { text: '2-3 systems', score: 1, value: '2-3', integrationMultiplier: 1.15 },
+        { text: '4-6 systems', score: 1, value: '4-6', integrationMultiplier: 1.3 },
+        { text: '7+ systems', score: 2, value: '7+', integrationMultiplier: 1.5 },
+      ],
+      explanation: 'Integration is the hidden cost of buying software. Each connection needs maintaining. When you build custom, you control the integration layer. When you buy, the vendor controls it, and integrations rot.',
+    },
+    {
+      id: 'differentiator',
+      type: 'choice',
+      q: 'Is this workflow a competitive differentiator for your business?',
+      options: [
+        { text: 'No, it is standard operations (accounting, email, CRM)', score: 0, value: 'no' },
+        { text: 'Somewhat, we have custom processes but tools cover most of it', score: 1, value: 'somewhat' },
+        { text: 'Yes, this workflow IS our competitive advantage', score: 2, value: 'yes' },
+      ],
+      explanation: 'Never build commodity software. Buy accounting tools, email, standard CRM. But if your workflow is what makes you different from competitors, that is worth owning. You do not want your competitive advantage locked inside someone else\'s platform.',
+    },
+  ];
+
+  // --- State ---
+  let currentStep = 0;
+  const answers = steps.map(() => null); // holds text string or option index
+
+  const intro = document.getElementById('calc-intro');
+  const container = document.getElementById('calc-container');
+  const results = document.getElementById('calc-results');
+  const startBtn = document.getElementById('calc-start-btn');
+  const qEl = document.getElementById('calc-question');
+  const optsEl = document.getElementById('calc-options');
+  const prevBtn = document.getElementById('calc-prev');
+  const nextBtn = document.getElementById('calc-next');
+  const progressFill = document.getElementById('calc-progress-fill');
+  const progressText = document.getElementById('calc-progress-text');
+
+  startBtn.addEventListener('click', () => {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderStep();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips to results with sample answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers[0] = 'We need a system to manage customer onboarding and link to our accounting and CRM.';
+    answers[1] = 2; // 11-20 tools
+    answers[2] = 2; // Partially
+    answers[3] = 2; // 15-30k
+    answers[4] = 2; // 4-6 systems
+    answers[5] = 1; // Somewhat
+    showResults();
+  }
+
+  function renderStep() {
+    const step = steps[currentStep];
+    const isText = step.type === 'text';
+
+    qEl.innerHTML = '<h2 class="quiz-q-text">' + step.q + '</h2>' +
+      '<p class="calc-explanation">' + step.explanation + '</p>';
+
+    optsEl.innerHTML = '';
+
+    if (isText) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'calc-text-input-wrapper';
+
+      const input = document.createElement('textarea');
+      input.id = 'calc-text-input';
+      input.className = 'calc-text-input';
+      input.placeholder = step.placeholder || 'Describe the problem in your own words...';
+      input.rows = 8;
+      input.maxLength = 1000;
+      if (answers[currentStep]) input.value = answers[currentStep];
+
+      input.addEventListener('input', () => {
+        answers[currentStep] = input.value.trim();
+        nextBtn.disabled = answers[currentStep].length < 3;
+      });
+
+      wrapper.appendChild(input);
+      optsEl.appendChild(wrapper);
+      // Focus after a short delay so the element is visible
+      setTimeout(() => { if (input.focus) input.focus(); }, 100);
+    } else {
+      step.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        if (answers[currentStep] === i) btn.classList.add('selected');
+        btn.textContent = opt.text;
+        btn.addEventListener('click', () => {
+          answers[currentStep] = i;
+          document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          nextBtn.disabled = false;
+          nextBtn.classList.add('btn-pulse');
+        });
+        optsEl.appendChild(btn);
+      });
+    }
+
+    prevBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentStep === steps.length - 1 ? 'See My Results' : 'Next';
+
+    // For text step, disable if not enough text; for choice, disable if no answer
+    if (isText) {
+      nextBtn.disabled = !(typeof answers[currentStep] === 'string' && answers[currentStep].length >= 3);
+    } else {
+      nextBtn.disabled = answers[currentStep] === null;
+    }
+
+    const progress = ((currentStep + 1) / steps.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = 'Question ' + (currentStep + 1) + ' of ' + steps.length;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) { currentStep--; renderStep(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      renderStep();
+    } else {
+      showResults();
+    }
+  });
+
+  // --- Results ---
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    // Calculate score from steps 2-6 (indices 1-5)
+    let score = 0;
+    let annualSpend = 0;
+    let integrationMultiplier = 1.0;
+
+    for (let i = 1; i < steps.length; i++) {
+      const step = steps[i];
+      const ansIndex = answers[i];
+      if (ansIndex !== null && step.options && step.options[ansIndex]) {
+        score += step.options[ansIndex].score;
+        if (step.id === 'spend' && typeof step.options[ansIndex].annualSpend === 'number') {
+          annualSpend = step.options[ansIndex].annualSpend;
+        }
+        if (step.id === 'integrations' && typeof step.options[ansIndex].integrationMultiplier === 'number') {
+          integrationMultiplier = step.options[ansIndex].integrationMultiplier;
+        }
+      }
+    }
+
+    // Default annualSpend if not answered (shouldn't happen in normal flow)
+    if (!annualSpend) annualSpend = 10000;
+
+    // Recommendation
+    let recommendation = '';
+    let recLabel = '';
+    let recColor = '';
+    let recBg = '';
+    if (score <= 3) {
+      recommendation = 'Buy';
+      recLabel = 'Buy off-the-shelf software';
+      recColor = '#1d4ed8';
+      recBg = 'rgba(37, 99, 235, 0.08)';
+    } else if (score <= 6) {
+      recommendation = 'Hybrid';
+      recLabel = 'Hybrid (buy core + custom layer)';
+      recColor = '#1a2332';
+      recBg = 'rgba(0, 196, 167, 0.1)';
+    } else {
+      recommendation = 'Build';
+      recLabel = 'Build custom software';
+      recColor = '#00a88e';
+      recBg = 'rgba(0, 168, 142, 0.1)';
+    }
+
+    // Cost estimation
+    // SaaS 3-year cost: annual spend x 3 + £2,000 setup + £1,000 integration
+    const saasThreeYear = Math.round(annualSpend * 3 + 2000 + 1000);
+    // Custom 3-year cost: £30,000 build + (£500/month x 36) maintenance = £48,000, adjusted by integration complexity
+    const customBase = 30000 + (500 * 36); // 48,000
+    const customThreeYear = Math.round(customBase * integrationMultiplier);
+
+    const cheaperIsCustom = customThreeYear < saasThreeYear;
+    const saving = Math.abs(saasThreeYear - customThreeYear);
+
+    // --- Recommendation card ---
+    const recCard = document.getElementById('calc-rec-card');
+    recCard.style.cssText = 'text-align:center;padding:32px;background:' + recBg + ';border-radius:12px;margin-bottom:28px;border:2px solid ' + recColor + ';';
+    recCard.innerHTML =
+      '<div style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:' + recColor + ';margin-bottom:8px;">Your Recommendation</div>' +
+      '<div style="font-size:2rem;font-weight:800;color:' + recColor + ';line-height:1.2;margin-bottom:12px;">' + recLabel + '</div>' +
+      '<div style="font-size:0.95rem;color:var(--grey-600);max-width:480px;margin:0 auto;">Based on your answers across software fit, spend, integrations, and competitive differentiation.</div>';
+
+    // --- Cost comparison ---
+    const costEl = document.getElementById('calc-cost-comparison');
+    const fmtGBP = function(n) { return '£' + n.toLocaleString('en-GB'); };
+    const cheaperLabel = cheaperIsCustom ? 'Custom is cheaper over 3 years' : 'SaaS is cheaper over 3 years';
+
+    costEl.style.cssText = 'background:var(--grey-50);border-radius:12px;padding:28px;margin-bottom:28px;';
+    costEl.innerHTML =
+      '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:20px;">3-Year Cost Comparison</h3>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">' +
+        '<div style="background:' + (cheaperIsCustom ? 'var(--white)' : 'var(--blue-light)') + ';border:2px solid ' + (cheaperIsCustom ? 'var(--grey-200)' : 'var(--blue)') + ';border-radius:10px;padding:20px;text-align:center;">' +
+          '<div style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--grey-500);margin-bottom:8px;">SaaS (Buy)</div>' +
+          '<div style="font-size:1.6rem;font-weight:800;color:var(--navy);">' + fmtGBP(saasThreeYear) + '</div>' +
+          '<div style="font-size:0.78rem;color:var(--grey-500);margin-top:6px;">3 years total</div>' +
+          (cheaperIsCustom ? '' : '<div style="font-size:0.8rem;font-weight:700;color:var(--blue-dark);margin-top:8px;">Cheaper option</div>') +
+        '</div>' +
+        '<div style="background:' + (cheaperIsCustom ? 'var(--blue-light)' : 'var(--white)') + ';border:2px solid ' + (cheaperIsCustom ? 'var(--blue)' : 'var(--grey-200)') + ';border-radius:10px;padding:20px;text-align:center;">' +
+          '<div style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--grey-500);margin-bottom:8px;">Custom (Build)</div>' +
+          '<div style="font-size:1.6rem;font-weight:800;color:var(--navy);">' + fmtGBP(customThreeYear) + '</div>' +
+          '<div style="font-size:0.78rem;color:var(--grey-500);margin-top:6px;">3 years total</div>' +
+          (cheaperIsCustom ? '<div style="font-size:0.8rem;font-weight:700;color:var(--blue-dark);margin-top:8px;">Cheaper option</div>' : '') +
+        '</div>' +
+      '</div>' +
+      '<p style="font-size:0.85rem;color:var(--grey-500);line-height:1.6;margin:0;">' +
+        'SaaS estimate: ' + fmtGBP(annualSpend) + '/year x 3 + £2,000 setup + £1,000 integration. ' +
+        'Custom estimate: £30,000 build + £18,000 maintenance (3 years), adjusted for your integration complexity. ' +
+        '<strong>' + cheaperLabel + '</strong>' + (saving > 0 ? ' by ' + fmtGBP(saving) + '.' : '.') +
+      '</p>';
+
+    // --- Breakdown ---
+    const breakdown = document.getElementById('calc-breakdown');
+    breakdown.style.cssText = 'margin-bottom:28px;';
+    let breakdownHTML = '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:20px;">Why This Recommendation</h3>';
+    breakdownHTML += '<div style="display:flex;flex-direction:column;gap:14px;">';
+
+    // Step 1 (problem) - reference their text
+    const problemText = (typeof answers[0] === 'string' && answers[0].length > 0) ? answers[0] : '';
+    if (problemText) {
+      const trimmed = problemText.length > 140 ? problemText.substring(0, 140) + '...' : problemText;
+      breakdownHTML += '<div class="quiz-rec"><span class="quiz-rec-priority">Your Problem</span><p>You described: "' + escapeHtml(trimmed) + '". ' + getProblemImplication(problemText) + '</p></div>';
+    }
+
+    // Step 2 (tools)
+    const toolsAns = steps[1].options[answers[1]];
+    if (toolsAns) {
+      breakdownHTML += '<div class="quiz-rec"><span class="quiz-rec-priority">Tool Count</span><p>You have ' + toolsAns.text.toLowerCase() + '. ';
+      if (toolsAns.score === 0) breakdownHTML += 'A manageable number of tools means less integration debt, which favours buying.';
+      else if (toolsAns.score === 1) breakdownHTML += 'You are in the zone where tool sprawl starts to create real integration overhead. A hybrid approach can help consolidate.';
+      else breakdownHTML += 'This level of tool sprawl generates significant integration debt. Custom software that unifies these into one workflow often pays for itself.';
+      breakdownHTML += '</p></div>';
+    }
+
+    // Step 3 (fit)
+    const fitAns = steps[2].options[answers[2]];
+    if (fitAns) {
+      breakdownHTML += '<div class="quiz-rec"><span class="quiz-rec-priority">Software Fit</span><p>Off-the-shelf software fits your workflow ' + fitAns.value.replace('perfectly', 'perfectly').replace('mostly', 'mostly').replace('partially', 'partially').replace('poorly', 'poorly') + '. ';
+      if (fitAns.score === 0) breakdownHTML += 'When existing tools fit well, buying is almost always the right call. Why pay to rebuild what already works?';
+      else if (fitAns.score === 1) breakdownHTML += 'You are working around real gaps. A custom layer on top of existing tools can bridge those gaps without a full rebuild.';
+      else breakdownHTML += 'No existing tool does what you need. This is the strongest signal for building custom. You are paying for software that fights your process.';
+      breakdownHTML += '</p></div>';
+    }
+
+    // Step 4 (spend)
+    const spendAns = steps[3].options[answers[3]];
+    if (spendAns) {
+      breakdownHTML += '<div class="quiz-rec"><span class="quiz-rec-priority">Spend Level</span><p>Your annual software spend is ' + spendAns.text.toLowerCase() + '. ';
+      if (spendAns.score === 0) breakdownHTML += 'At this spend level, SaaS is almost always the cheaper option. Custom software would not pay back in a reasonable timeframe.';
+      else if (spendAns.score === 1) breakdownHTML += 'You are in the crossover zone. The decision should hinge on fit and integration complexity, which your other answers address.';
+      else breakdownHTML += 'At this spend level, custom software becomes financially viable over 3 to 5 years, especially if it reduces your tool count.';
+      breakdownHTML += '</p></div>';
+    }
+
+    // Step 5 (integrations)
+    const intAns = steps[4].options[answers[4]];
+    if (intAns) {
+      breakdownHTML += '<div class="quiz-rec"><span class="quiz-rec-priority">Integration Complexity</span><p>Custom software would need to connect to ' + intAns.value + ' existing system' + (intAns.value === '0-1' ? '' : 's') + '. ';
+      if (intAns.score === 0) breakdownHTML += 'Few integrations mean lower custom build cost and less ongoing maintenance. This favours either approach.';
+      else if (intAns.score === 1) breakdownHTML += 'A moderate number of integrations. Buying means relying on vendor integrations that may break over time. Building gives you control of this layer.';
+      else breakdownHTML += 'Many integrations significantly increase both build cost and SaaS integration risk. When you build custom, you own the integration layer and it does not rot when a vendor changes their API.';
+      breakdownHTML += '</p></div>';
+    }
+
+    // Step 6 (differentiator)
+    const diffAns = steps[5].options[answers[5]];
+    if (diffAns) {
+      breakdownHTML += '<div class="quiz-rec"><span class="quiz-rec-priority">Strategic Value</span><p>';
+      if (diffAns.score === 0) breakdownHTML += 'This is standard operations work. Never build commodity software. Buy it, configure it, and spend your energy on what makes your business different.';
+      else if (diffAns.score === 1) breakdownHTML += 'You have some custom processes. A hybrid approach, buying core tools and building a thin custom layer for what is unique, is likely the sweet spot.';
+      else breakdownHTML += 'This workflow is your competitive advantage. That is worth owning outright. You do not want the thing that makes you different locked inside a vendor platform you do not control.';
+      breakdownHTML += '</p></div>';
+    }
+
+    // Final summary line
+    breakdownHTML += '<div class="quiz-rec quiz-rec-cta"><p style="margin:0;"><strong>Bottom line:</strong> Your answers point to <strong>' + recLabel + '</strong>. ';
+    if (recommendation === 'Buy') {
+      breakdownHTML += 'Off-the-shelf software fits your needs and budget. Focus on choosing the right tools and configuring them well.';
+    } else if (recommendation === 'Hybrid') {
+      breakdownHTML += 'Buy the core tools that do the standard parts well, then build a custom layer for what is unique to your business. This gives you the best of both worlds.';
+    } else {
+      breakdownHTML += 'Your spend, integration complexity, and strategic need all point toward custom software. The upfront cost is higher, but you get software that fits your actual process and that you own outright.';
+    }
+    breakdownHTML += '</p></div>';
+
+    breakdownHTML += '</div>';
+    breakdown.innerHTML = breakdownHTML;
+
+    // Store for submission
+    window.__calcResults = {
+      recommendation: recommendation,
+      recLabel: recLabel,
+      score: score,
+      saasThreeYear: saasThreeYear,
+      customThreeYear: customThreeYear,
+      annualSpend: annualSpend,
+      integrationMultiplier: integrationMultiplier,
+    };
+  }
+
+  // Heuristic: detect keywords in the problem description to add nuance
+  function getProblemImplication(text) {
+    const lower = text.toLowerCase();
+    const standardKeywords = ['accounting', 'invoice', 'payroll', 'email', 'crm standard', 'bookkeeping', 'timesheet'];
+    const uniqueKeywords = ['custom workflow', 'unique', 'proprietary', 'our own process', 'specialist', 'bespoke process', 'nothing fits'];
+    const isStandard = standardKeywords.some(k => lower.includes(k));
+    const isUnique = uniqueKeywords.some(k => lower.includes(k));
+    if (isUnique) return 'This sounds specific to your business, which tends to favour custom software.';
+    if (isStandard) return 'This sounds like a standard operational need, where off-the-shelf tools usually work well.';
+    return 'We will weigh this alongside your other answers below.';
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+  }
+
+  // --- User ID (localStorage, no cookies) ---
+  function getUserId() {
+    let userId = localStorage.getItem('ajairu_calc_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ajairu_calc_user_id', userId);
+    }
+    return userId;
+  }
+
+  // --- Email form submission ---
+  document.getElementById('calc-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('calc-email-input').value.trim();
+    const phone = document.getElementById('calc-phone-input').value.trim();
+    const company = document.getElementById('calc-company-input').value.trim();
+
+    if (!email) return;
+
+    const r = window.__calcResults || {};
+    const userId = getUserId();
+
+    // Build answers payload (human-readable)
+    const answersPayload = steps.map(function(step, i) {
+      if (step.type === 'text') {
+        return { step: i + 1, question: step.q, answer: answers[i] || '' };
+      }
+      const opt = step.options && answers[i] !== null ? step.options[answers[i]] : null;
+      return { step: i + 1, question: step.q, answer: opt ? opt.text : '', score: opt ? opt.score : 0 };
+    });
+
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'calculator',
+        userId: userId,
+        email: email,
+        phone: phone || null,
+        company: company || null,
+        answers: answersPayload,
+        recommendation: r.recommendation || '',
+        recLabel: r.recLabel || '',
+        score: r.score || 0,
+        saasThreeYearCost: r.saasThreeYear || 0,
+        customThreeYearCost: r.customThreeYear || 0,
+        annualSpend: r.annualSpend || 0,
+      }),
+    }).catch(function(err) { console.error('Save failed:', err); });
+
+    document.getElementById('calc-email-success').style.display = 'block';
+    document.getElementById('calc-email-form').style.display = 'none';
+    document.getElementById('calc-post-success').style.display = 'block';
+  });
+</script>
+
+<style>
+  .calc-explanation {
+    font-size: 0.95rem;
+    color: var(--grey-500);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: var(--grey-50);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+  }
+  /* calc-text-input styles moved to global.css (JS-created elements don't get scoped styles) */
+  .calc-post-success {
+    margin-top: 20px;
+  }
+  .calc-post-success .quiz-cta-buttons {
+    margin-top: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .calc-cost-comparison > div:first-of-type {
+      grid-template-columns: 1fr !important;
+    }
+    #calc-cost-comparison > div[style*="grid"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

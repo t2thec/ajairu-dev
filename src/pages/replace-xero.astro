@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace Xero with Custom Software UK | Xero Alternative | ${SITE_NAME}`;
+const description = 'Replace or integrate Xero with custom software. An honest guide for UK SMEs - when to keep Xero, when to build custom accounting software. Cost comparison, break-even analysis, and a clear decision framework.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace Xero with Custom Software', 'item': `${SITE_URL}/replace-xero` },
+  ],
+};
+
+const faqItems = [
+  { question: 'Should I replace Xero or integrate it?', answer: 'For most UK SMEs, the honest answer is to integrate Xero rather than replace it. Xero is excellent at core accounting: bank feeds, VAT, bookkeeping, and standard reporting are hard to beat. You should only consider replacing Xero with custom software if you have non-standard billing, complex inventory, or industry-specific workflows that Xero genuinely cannot handle. Most businesses get more value from keeping Xero and adding an automation layer on top.' },
+  { question: 'How much does custom accounting software cost?', answer: 'A custom accounting and business management system typically costs £30,000 to £80,000 depending on scope. Compare that to Xero at roughly £500 to £1,000 per year once you add the multi-currency, advanced reporting, and app add-ons most growing SMEs need. Break-even against ongoing Xero plus add-on subscriptions is usually 18 to 24 months, but only if your needs genuinely require custom software. For most SMEs, Xero plus integration is the cheaper path.' },
+  { question: 'Can custom software do what Xero does?', answer: 'Custom software can replicate core bookkeeping, invoicing, and reporting, but Xero bank feeds and HMRC VAT integration are genuinely hard to beat. Custom software makes sense when you need accounting combined with job management, inventory, and CRM in one unified system. If you only need accounting, Xero is almost always the better choice.' },
+  { question: 'How long does it take to build custom accounting software?', answer: 'A full accounting and business management system takes 12 to 20 weeks, depending on scope. A system that replaces Xero plus 2 or 3 add-on apps takes longer than a single-purpose replacement. AI-accelerated development means we deliver in weeks what traditional agencies take months to build.' },
+  { question: 'Do I own the source code if I build custom software?', answer: 'Yes, entirely. You own the source code, the data, and all intellectual property from day one. No licence fees, no vendor lock-in, no recurring charges for software you have already paid for. Your team can extend and maintain it independently, or we can support it from £350 per month. You are never locked in.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace Xero with Custom Software</h1>
+      <p>Xero is excellent for small businesses, but it hits limits fast. £42 to £72 a month sounds cheap until the add-ons stack up. Multi-currency, advanced reporting, and custom workflows all cost extra. Here is an honest guide to when you should keep Xero, integrate it, or replace it with custom accounting software.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace Xero with Custom Software'}]} />
+
+  <!-- INTRO / HONEST FRAMING -->
+  <section class="section" id="intro">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">An Honest Guide</span>
+      <h2 class="section-title reveal">Xero Is Good Software. Most SMEs Should Keep It.</h2>
+      <p class="section-subtitle reveal">This page is not a sales pitch for replacing Xero. It is a decision framework.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Let us start with the truth: Xero is one of the best accounting platforms available to UK small businesses. Bank feeds work. VAT submission to HMRC works. The bookkeeping is solid. For most SMEs, Xero does the core job well, and the £42 to £72 monthly subscription is genuinely good value for what you get.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">The trouble starts when your business outgrows standard accounting. Multi-currency costs extra. Advanced reporting costs extra. Each app you bolt on from the Xero marketplace adds another subscription, another login, another place where data lives separately. For growing SMEs with non-standard billing, complex inventory, or industry-specific workflows, the stack of add-ons can quietly become more expensive and more fragile than a single custom system.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">So this page gives you two realistic options and tells you plainly which one most businesses should choose. We build custom software for a living, and we still tell most of our clients to keep Xero. Honesty builds trust, and trust is worth more to us than any single engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT XERO DOES WELL -->
+  <section class="section bg-grey" id="what-xero-does-well">
+    <div class="container">
+      <h2 class="section-title reveal">What Xero Does Well</h2>
+      <p class="section-subtitle reveal">Before we talk about replacing anything, here is what Xero genuinely gets right.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="money" /></div>
+          <h3>Bank Feeds & Reconciliation</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Direct feeds from UK banks, automatic matching, and clean reconciliation. This is genuinely hard to reproduce in custom software and is one of Xero's strongest features.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="calculator" /></div>
+          <h3>VAT & HMRC Submission</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Making Tax Digital compliance, VAT returns, and direct HMRC submission are built in and reliable. Rebuilding this from scratch is rarely worth it.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Standard Bookkeeping</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Invoicing, bills, expenses, and the day-to-day bookkeeping most SMEs need. Xero does this cleanly, and your accountant already knows it.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="clipboard" /></div>
+          <h3>Standard Reporting</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Profit and loss, balance sheet, cash flow, and the core financial reports a finance team expects. These cover most compliance and management needs out of the box.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="user" /></div>
+          <h3>Ease of Use</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">A clean interface your bookkeeper and non-technical staff can use without training. Adoption is fast, and support is widely available from accountants across the UK.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>A Mature App Ecosystem</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Hundreds of add-ons for inventory, expenses, payroll, and reporting. The ecosystem is a strength, though it is also where the costs and complexity start to creep in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE XERO FALLS SHORT -->
+  <section class="section" id="where-xero-falls-short">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Limits</span>
+      <h2 class="section-title reveal">Where Xero Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">These are the real pain points that push growing businesses past what Xero can do.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Limited Customisation</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You work within Xero's chart of accounts, invoice templates, and workflow model. Non-standard billing structures, custom approval chains, and bespoke financial logic cannot be added. You adapt your process to fit Xero, or you do without.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Add-on Costs Stack Up</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Multi-currency, advanced reporting, inventory, expenses, and payroll are often separate subscriptions. A £42 plan can quietly become £150 to £300 a month once you add the apps you actually need, each with its own limits and integration quirks.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Reporting Constraints</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Custom reports, cross-system dashboards, and non-standard management information are hard. You are limited to what Xero's reporting engine and your add-ons expose. Complex multi-entity or project-based reporting often requires manual export and spreadsheet work.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Data Lives in Silos</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Your accounting data sits in Xero, your CRM data in another tool, your inventory in another. Getting a single joined-up view of the business means exporting and reconciling across platforms, which is slow and error-prone.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Workflow Constraints</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your business has non-standard workflows - staged billing, complex job costing, industry-specific compliance, or multi-step approvals - Xero's fixed workflow model fights you. Workarounds proliferate, and the finance team carries the cost in manual steps.</p>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>Partial Data Lock-in</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You can export your data, but the relationships, custom fields, and historical context built up inside Xero and its add-ons do not export cleanly. Moving away means accepting some loss of structure, which makes the decision feel bigger than the software alone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE XERO -->
+  <section class="section bg-grey" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A - What Most SMEs Should Do</span>
+      <h2 class="section-title reveal">Keep Xero. Add an AI Automation Layer.</h2>
+      <p class="section-subtitle reveal">For the majority of UK SMEs, this is the right answer. Keep Xero for accounting, connect it to everything else.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 40px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Instead of ripping out Xero, you keep it as your accounting engine and build a thin automation layer on top. That layer connects Xero to your CRM, inventory, and job management systems so data flows automatically instead of being re-keyed. Data entry gets automated. Reports pull from every system at once. Your team stops being the integration.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">This gives you most of the benefits of a custom system - joined-up data, automated workflows, single-view reporting - without throwing away Xero's bank feeds, VAT submission, and the bookkeeping your accountant already trusts. It is faster, cheaper, and lower risk than a full replacement, and you keep the option to replace Xero later if you outgrow it.</p>
+      </div>
+      <div class="cards-grid cards-3" style="margin-top:24px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Connect CRM + Accounting</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">When a deal closes, the customer and invoice appear in Xero automatically. Payment status flows back to sales. No double-keying between HubSpot or Salesforce and Xero.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="cart" /></div>
+          <h3>Sync Inventory + Invoicing</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Stock movements and order data flow between your inventory tool and Xero. Cost of goods, stock valuations, and invoices stay aligned without manual reconciliation.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Automate Data Entry</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Invoices, receipts, and documents are read by AI and posted to Xero with the right coding. Your team reviews rather than re-types, which cuts hours of admin every week.</p>
+        </div>
+      </div>
+      <div class="reveal" style="max-width:760px;margin:40px auto 0;">
+        <div class="card" style="border:2px solid var(--blue);background:var(--blue-light);">
+          <h3 style="color:var(--blue-dark);">Want to explore this path?</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;">Our system integration services connect Xero to the rest of your business with custom APIs and automated workflows. From £8,000, fixed-price, and you own the code.</p>
+          <a href="/services/system-integration-uk" class="btn btn-primary" style="margin-top:16px;">Explore System Integration Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE XERO -->
+  <section class="section" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B - For a Minority of SMEs</span>
+      <h2 class="section-title reveal">Replace Xero with Custom Software</h2>
+      <p class="section-subtitle reveal">Build accounting and business management in one system you own outright. Break-even in 18 to 24 months - but only if your needs genuinely require it.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 40px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">This is the option where you stop renting and start owning. Instead of Xero plus a stack of add-ons, you build one system that handles accounting, job management, inventory, and CRM together. No more monthly subscriptions that rise every year. No more data living in five places. No more working around a platform that was not designed for your industry.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">The build cost is £30,000 to £80,000 depending on scope. Against a typical Xero plus add-ons spend of £500 to £1,000 a month, break-even lands around 18 to 24 months. After that, you own the software outright with no licence fees. The maths works, but only for businesses whose needs genuinely exceed what Xero can do.</p>
+      </div>
+      <div class="cards-grid cards-2" style="margin-top:24px;">
+        <div class="card reveal" style="border-left:4px solid var(--blue);">
+          <h3>When Replacement Makes Sense</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;margin-top:12px;padding-left:20px;">
+            <li>Non-standard billing Xero cannot model</li>
+            <li>Complex or industry-specific inventory</li>
+            <li>Job costing and project accounting beyond Xero's limits</li>
+            <li>Workflows tied to industry compliance</li>
+            <li>You need accounting, CRM, and operations in one system</li>
+            <li>You are spending £15,000+ a year across Xero and add-ons</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-left:4px solid var(--grey-200);">
+          <h3>When It Does Not</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;margin-top:12px;padding-left:20px;">
+            <li>You only need standard bookkeeping and VAT</li>
+            <li>Your team is comfortable and Xero fits your workflow</li>
+            <li>Your annual software spend is under £6,000</li>
+            <li>Your accountant is set up on Xero and happy</li>
+            <li>Your main pain is disconnected data (integrate instead)</li>
+            <li>You want to move fast with low risk</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal" style="max-width:760px;margin:40px auto 0;">
+        <div class="card" style="border:2px solid var(--blue);background:var(--blue-light);">
+          <h3 style="color:var(--blue-dark);">Want to explore this path?</h3>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:8px;">Our ERP replacement service helps SMEs replace SaaS subscriptions with bespoke software they own outright. Fixed-price, full data migration, and you own the source code.</p>
+          <a href="/services/erp-replacement-uk" class="btn btn-primary" style="margin-top:16px;">Explore ERP Replacement Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE HONEST NUANCE -->
+  <section class="section bg-grey" id="honest-assessment">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Honest Truth</span>
+      <h2 class="section-title reveal">Most SMEs Should Integrate Xero, Not Replace It</h2>
+      <p class="section-subtitle reveal">We build custom software for a living. We still tell most clients to keep Xero.</p>
+      <div class="reveal" style="max-width:760px;margin:0 auto 32px;">
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);">Here is the nuance most "Xero alternative" pages will not give you. Xero is genuinely good at core accounting, and its bank feeds and HMRC VAT integration are hard to reproduce. Rebuilding those from scratch is almost never the smart move. Custom accounting software makes sense only for businesses with non-standard billing, complex inventory, or industry-specific workflows that Xero cannot handle no matter how many add-ons you stack on.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">If your real problem is that your systems do not talk to each other, the answer is integration, not replacement. If your real problem is that Xero cannot model how your business actually bills or operates, then replacement is worth considering. Telling the difference is the whole point of this page.</p>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">We would rather turn away work we are not the right fit for than sell you a custom build you do not need. That honesty is why our clients trust us, and it is why most of them end up keeping Xero and letting us connect it to the rest of their business instead.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Make the Decision</span>
+      <h2 class="section-title reveal">How to Decide: Integrate or Replace</h2>
+      <p class="section-subtitle reveal">Two free tools to help you reach an honest answer for your specific business.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto;"><Icon name="compass" /></div>
+          <h3>Build vs Buy Calculator</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Six questions, two minutes, a clear recommendation and a 3-year cost comparison. No email required to see your result. The most honest way to test whether custom software makes sense for you.</p>
+          <a href="/build-vs-buy" class="btn btn-primary" style="margin-top:16px;">Try the Calculator</a>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto;"><Icon name="clipboard" /></div>
+          <h3>Free Software Assessment</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Tell us about your current setup, pain points, and goals. We will give you a straightforward assessment of whether Xero integration or replacement is the right call, even if the answer is to change nothing.</p>
+          <a href="/assessment" class="btn btn-outline" style="margin-top:16px;">Start the Assessment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Replace or Integrate Xero - FAQs</h2>
+      <p class="section-subtitle reveal">Straight answers to the questions UK SMEs ask us about Xero alternatives.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Keep or Replace Xero?"
+    text="Book a free 30-minute discovery call. We will look at your actual setup and tell you honestly whether to integrate Xero, replace it, or change nothing at all - even if that means we do not end up working together."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

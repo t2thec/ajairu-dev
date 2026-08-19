@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace Pipedrive with Custom Software UK | ${SITE_NAME}`;
+const description = 'Replace Pipedrive with custom software you own. UK SMEs save £10k-£40k/year. Build vs integrate guide with cost comparison. Break-even in 12-18 months.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace Pipedrive UK', 'item': `${SITE_URL}/replace-pipedrive` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Pipedrive Replacement UK',
+  'serviceType': 'Custom CRM Development & Pipedrive Replacement',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Replace Pipedrive with custom CRM software you own outright. UK SMEs save £10,000 to £40,000 per year with bespoke sales software. Build vs integrate guide, cost comparison, and break-even analysis.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Pipedrive Integration with AI', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Keep Pipedrive, add an AI automation layer to connect it with your other systems. 4-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Custom CRM Replacement', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'Replace Pipedrive with bespoke CRM software you own outright. 8-16 weeks. Break-even in 12-18 months.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does it cost to replace Pipedrive with custom software?', answer: 'A focused CRM replacement starts from £25,000. Larger replacements with integrations and custom workflows typically range from £30,000 to £55,000. Compare that to Pipedrive at £14-£49 per user per month: a 20-person team on Advanced costs £8,400 per year. Break-even on a custom build is 12-18 months, and you own the software forever after that.' },
+  { question: 'Can a custom CRM integrate with my accounting and operations tools?', answer: 'Yes. Any tool with an API can be integrated: Xero, Sage, Stripe, Shopify, QuickBooks, and hundreds more. We build custom API connectors that sync data in real time, so your bespoke CRM talks to your accounting, stock, and operations software. Pipedrive has limited native integrations and no accounting connectivity, which is where a custom build adds real value.' },
+  { question: 'How long does it take to replace Pipedrive?', answer: 'A focused CRM replacement takes 8-16 weeks using AI-accelerated development. Your existing Pipedrive stays running throughout the build, and we migrate your deals, contacts, and pipeline stages in parallel. You only switch over when your sales team is confident in the new system. Traditional agencies quote 6-12 months for the same work.' },
+  { question: 'Should I replace Pipedrive or integrate it?', answer: 'If your sales team uses Pipedrive for standard pipeline tracking and the main pain is limited reporting or no accounting integration, integrate. Keep Pipedrive and add an AI automation layer to connect it with your other systems. If your sales process is non-standard and Pipedrive lacks the automation and reporting you need, replace it with custom software. The build-vs-buy calculator can help you decide which path fits your situation.' },
+  { question: 'Do I own the source code?', answer: 'Yes, entirely. You own the source code, the database, and the infrastructure from day one. No licence fees, no vendor lock-in, no price increases. Your in-house team can modify the software, or any developer can take it over. We provide full documentation and training so you are never dependent on us.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace Pipedrive with Custom Software</h1>
+      <p>Pipedrive is a popular CRM for small sales teams, but its limitations become apparent as your business grows. Essential tier costs £14 per user per month and Advanced costs £49 per user per month. A 20-person team on Advanced pays £8,400 a year. There is a better way: keep Pipedrive and automate it, or replace it with software you own outright.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace Pipedrive UK'}]} />
+
+  <!-- WHAT PIPEDRIVE DOES WELL -->
+  <section class="section" id="what-pipedrive-does-well">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Be Fair</span>
+      <h2 class="section-title reveal">What Pipedrive Does Well</h2>
+      <p class="section-subtitle reveal">Pipedrive earned its popularity with sales teams. Here is what it genuinely gets right.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Visual Pipeline</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">The kanban-style pipeline view is genuinely intuitive. Sales teams can see the full funnel at a glance and drag deals through stages with minimal friction.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Ease of Use</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Pipedrive is one of the most user-friendly CRMs on the market. Onboarding takes hours, not days. Sales teams adopt it quickly because the interface is simple and focused.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Sales Tracking</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Deal tracking, activity reminders, and sales forecasting are solid. The focus on sales activity is genuine and helps teams stay on top of their pipeline.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Affordable Entry Point</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">At £14 per user per month on Essential, Pipedrive is one of the more affordable CRMs. For small teams just starting out, the price is reasonable.</p>
+        </div>
+      </div>
+      <p class="reveal" style="max-width:760px;margin:40px auto 0;text-align:center;color:var(--grey-600);font-size:1.05rem;line-height:1.7;">None of this is in question. Pipedrive is a good entry-level CRM. The problem is that it stays entry-level, and the limitations become costly as your sales process grows more sophisticated.</p>
+    </div>
+  </section>
+
+  <!-- WHERE PIPEDRIVE FALLS SHORT -->
+  <section class="section bg-grey" id="where-pipedrive-fails">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem</span>
+      <h2 class="section-title reveal">Where Pipedrive Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">Basic automation, no accounting integration, and reporting that cannot keep up with growing teams.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Limited Automation</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Pipedrive automation is basic. Workflow automations exist on higher tiers but are limited in scope. Complex multi-step sequences, conditional branching, and cross-system triggers require third-party tools like Zapier, which adds cost and fragility.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">For sales teams that want to automate follow-ups, lead scoring, or handoffs to operations, Pipedrive's native automation is not enough. You end up building workarounds or paying for add-ons.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">No Accounting Integration</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Pipedrive has no native accounting integration. Connecting it to Xero, Sage, or QuickBooks requires third-party connectors that are often unreliable. Your sales data and your finance data live in separate worlds.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">This means manual re-entry, reconciliation errors, and a disconnect between what was sold and what was invoiced. For SMEs that want sales-to-cash visibility, this is a real gap.</p>
+        </div>
+      </div>
+      <div class="cards-grid cards-2" style="margin-top:32px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Basic Reporting</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Pipedrive reporting covers the basics: pipeline value, win rates, and activity counts. But custom dashboards, cross-field analysis, and revenue forecasting beyond the standard views are limited. Teams that need deeper insight hit a wall quickly.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Workflow Constraints</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Pipedrive forces your sales process into its pipeline model. Non-standard sales processes with custom stages, conditional paths, or multi-team handoffs are hard to model. The platform works for straightforward sales but fights anything more complex.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE -->
+  <section class="section" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A</span>
+      <h2 class="section-title reveal">Integrate Pipedrive with AI Automation</h2>
+      <p class="section-subtitle reveal">Keep Pipedrive. Add an AI layer that connects it with the rest of your business.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your sales team relies on Pipedrive for pipeline tracking and the main frustration is that sales data does not flow to your accounting, operations, or reporting tools, do not rip it out. The pipeline view is doing its job. The problem is the silo.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">An AI automation layer solves this. We build custom APIs that sync data between Pipedrive and every other system you run, including accounting tools that Pipedrive cannot reach natively. Your team stops entering data twice. Sales-to-cash visibility becomes real.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Cost: from £8,000. Timeline: 4-12 weeks. You keep your Pipedrive investment and make it work harder.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Real-time data sync</strong> between Pipedrive and Xero, Sage, Stripe, and your operations tools</li>
+            <li><strong>Automated invoice generation</strong> triggered by won deals, with no manual re-entry</li>
+            <li><strong>AI-powered lead scoring</strong> that pulls context from every system, not just CRM data</li>
+            <li><strong>Unified dashboards</strong> showing pipeline value alongside revenue and cash flow</li>
+            <li><strong>You own the integration code</strong> outright, no ongoing licence fees for the automation layer</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:24px;">Explore System Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE -->
+  <section class="section bg-grey" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B</span>
+      <h2 class="section-title reveal">Replace Pipedrive with Custom Software</h2>
+      <p class="section-subtitle reveal">Build a CRM that works your way. Own the code. Break even in 12-18 months.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your sales process is non-standard and you are outgrowing Pipedrive's automation and reporting limits, replacing it is the better financial decision. You are already paying for a CRM that cannot keep up with your process, and third-party connectors to fill the gaps add cost and fragility.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Custom CRM software means the system does exactly what your sales team needs, models your specific pipeline stages, and integrates natively with your accounting and operations tools. No workflow constraints. No basic reporting. No connector dependencies.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Build cost: £25,000 to £55,000. Timeline: 8-16 weeks. Break-even: 12-18 months versus £8,400+ a year on Pipedrive Advanced plus connector costs.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>A CRM built around your sales process</strong>, not a vendor's pipeline template</li>
+            <li><strong>Full source code ownership</strong>: database, infrastructure, and all intellectual property</li>
+            <li><strong>No per-seat pricing</strong>: add as many users as you like at zero additional cost</li>
+            <li><strong>Native accounting integration</strong> with Xero, Sage, and Stripe from day one</li>
+            <li><strong>Custom reporting</strong> with dashboards tailored to your business metrics</li>
+            <li><strong>Advanced automation</strong> that models your exact sales workflows and handoffs</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:24px;">Explore ERP Replacement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Make the Call</span>
+      <h2 class="section-title reveal">How to Decide: Integrate or Replace?</h2>
+      <p class="section-subtitle reveal">Two questions will tell you which path fits your business.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Integrate If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your sales team is comfortable with Pipedrive</li>
+            <li>Your pipeline stages are fairly standard</li>
+            <li>The main pain is no accounting or operations integration</li>
+            <li>You want results in 4-12 weeks, not a full rebuild</li>
+            <li>Your reporting needs are met by basic pipeline views</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:20px;">Explore Integration</a>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Replace If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your sales process is non-standard and fights the platform</li>
+            <li>You need automation and reporting Pipedrive cannot deliver</li>
+            <li>You need native accounting integration, not connectors</li>
+            <li>You want to own the software outright</li>
+            <li>You are spending £8,000+ a year on Pipedrive plus connectors</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:20px;">Explore Replacement</a>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey-600);font-size:1.05rem;margin-bottom:20px;">Still unsure? Use our free calculator to get a clear recommendation based on your actual situation.</p>
+        <a href="/build-vs-buy" class="btn btn-primary btn-lg">Try the Build vs Buy Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Pipedrive Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before deciding whether to integrate or replace Pipedrive.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Integrate or Replace?"
+    text="Book a free 30-minute discovery call. We will look at your actual Pipedrive usage, calculate what you spend versus what a custom build would cost, and tell you honestly which path makes financial sense for your business. No hard sell."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

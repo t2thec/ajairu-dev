@@ -49,7 +49,20 @@ const currentPath = Astro.url.pathname;
         <li><a href="/process" aria-current={currentPath.startsWith('/process') ? 'page' : undefined}>How It Works</a></li>
         <li><a href="/about" aria-current={currentPath.startsWith('/about') ? 'page' : undefined}>About</a></li>
         <li><a href="/blog" aria-current={currentPath.startsWith('/blog') ? 'page' : undefined}>Blog</a></li>
-        <li><a href="/assessment" aria-current={currentPath.startsWith('/assessment') ? 'page' : undefined}>Free Software Quiz</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Free Tools
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/saas-roi-calculator" aria-current={currentPath === '/saas-roi-calculator' ? 'page' : undefined}>SaaS ROI Calculator</a>
+            <a href="/build-vs-buy" aria-current={currentPath === '/build-vs-buy' ? 'page' : undefined}>Build vs Buy Calculator</a>
+            <a href="/assessment" aria-current={currentPath === '/assessment' ? 'page' : undefined}>Software Readiness Quiz</a>
+            <a href="/tech-debt-calculator" aria-current={currentPath === '/tech-debt-calculator' ? 'page' : undefined}>Tech Debt Calculator</a>
+            <a href="/integration-health-check" aria-current={currentPath === '/integration-health-check' ? 'page' : undefined}>Integration Health Check</a>
+            <a href="/guide" class="nav-dropdown-cta">Free Guide: 5 Projects That Pay for Themselves &rsaquo;</a>
+          </div>
+        </li>
         <li class="nav-cta"><a href="/contact">Book a Call</a></li>
       </ul>
     </nav>

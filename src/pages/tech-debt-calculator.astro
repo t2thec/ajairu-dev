@@ -1,0 +1,534 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Tech Debt Calculator | What Is Your Legacy Software Costing You? | ${SITE_NAME}`;
+const description = 'A free guided calculator for UK SMEs. Answer 6 questions about your legacy systems and get a tech debt score, estimated annual cost of carrying the debt, and a clear recommendation. No email required to see results.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Tech Debt Calculator', item: `${SITE_URL}/tech-debt-calculator` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', name: 'Is the tech debt calculator free?', 'acceptedAnswer': { '@type': 'Answer', text: 'Yes, completely free. No email required to see your results.' } },
+    { '@type': 'Question', name: 'How long does the calculator take?', 'acceptedAnswer': { '@type': 'Answer', text: 'About 2 minutes. 6 questions about your systems, maintenance hours, workarounds, failures, integrations, and documentation.' } },
+    { '@type': 'Question', name: 'What do I get at the end?', 'acceptedAnswer': { '@type': 'Answer', text: 'A tech debt score out of 100, an estimated annual cost of carrying the debt, and a clear recommendation to maintain, refactor, or replace your systems.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Tech Debt Calculator</h1>
+      <p>6 questions. 2 minutes. Find out what your legacy software is really costing you. No email required.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Tech Debt Calculator'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Intro -->
+      <div id="tdc-intro" class="quiz-intro">
+        <h2 class="section-title" style="text-align:left;">What is your legacy software really costing you?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-bottom:32px;">Technical debt is the hidden cost of carrying old software. It shows up as maintenance hours, manual workarounds, system failures, and the slow drain on productivity that nobody quite quantifies. This guided calculator walks you through six questions and gives you a score, an estimated annual cost, and a clear recommendation.</p>
+        <button id="tdc-start-btn" class="btn btn-primary btn-lg">Start the Calculator</button>
+      </div>
+
+      <!-- Calculator container -->
+      <div id="tdc-container" class="quiz-container" style="display:none;">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="tdc-progress-fill" class="quiz-progress-fill"></div></div>
+          <span id="tdc-progress-text" class="quiz-progress-text">Question 1 of 6</span>
+        </div>
+        <div id="tdc-question" class="quiz-question"></div>
+        <div id="tdc-options" class="quiz-options"></div>
+        <div class="quiz-nav">
+          <button id="tdc-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="tdc-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results container -->
+      <div id="tdc-results" class="quiz-results" style="display:none;">
+        <div class="quiz-score-card">
+          <div class="quiz-score-label">Your Tech Debt Score</div>
+          <div id="tdc-score" class="quiz-score-num">0<span class="quiz-score-total">/100</span></div>
+          <div id="tdc-score-label" class="quiz-score-verdict"></div>
+        </div>
+
+        <div id="tdc-cost-card" class="tdc-cost-card"></div>
+
+        <div id="tdc-recommendation" class="tdc-recommendation"></div>
+
+        <div id="tdc-breakdown" class="tdc-breakdown"></div>
+
+        <div class="quiz-email-capture quiz-email-prominent">
+          <h3>Get your tech debt report by email</h3>
+          <p>Enter your details and we will send you a copy of your score, estimated annual cost, recommendation, and breakdown. We will also follow up with a free 15-minute call to discuss your situation, no pressure.</p>
+          <form id="tdc-email-form" class="quiz-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="quiz-form-stacked">
+              <input type="email" id="tdc-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="tdc-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="tdc-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Get My Report &rarr;</button>
+            </div>
+          </form>
+          <p id="tdc-email-success" style="display:none;color:var(--blue-dark);font-weight:600;margin-top:12px;">Report saved and sent. Check your inbox.</p>
+          <div id="tdc-post-success" style="display:none;" class="tdc-post-success">
+            <div class="quiz-cta-buttons">
+              <a href="/services/legacy-modernisation-uk" class="btn btn-primary btn-lg">Explore Legacy Modernisation</a>
+              <a href="/contact" class="btn btn-outline btn-lg">Book a Call</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-cta">
+          <h3>Talk it through with someone who has done this before</h3>
+          <p>Whether the answer is maintain, refactor, or replace, a 30-minute call will help you weigh the options against your actual operations. No sales pitch, just practical advice from a founder who has modernised legacy systems for UK SMEs.</p>
+          <div class="quiz-cta-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="/services/legacy-modernisation-uk" class="btn btn-outline btn-lg">Legacy Modernisation Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-TOOL PROMO -->
+  <section class="section bg-grey" id="other-tools">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p class="reveal" style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">Each takes about 2 minutes. No email needed to see your results.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+          <h3>SaaS ROI Calculator</h3>
+          <p>See the true cost of your SaaS stack vs custom software.</p>
+          <a href="/saas-roi-calculator" class="btn btn-primary">Calculate My SaaS ROI</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">⚖️</div>
+          <h3>Build vs Buy Calculator</h3>
+          <p>Should you buy off-the-shelf or build custom?</p>
+          <a href="/build-vs-buy" class="btn btn-primary">Start Calculator</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔗</div>
+          <h3>Integration Health Check</h3>
+          <p>How well-connected is your tech stack?</p>
+          <a href="/integration-health-check" class="btn btn-primary">Check My Integration</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📋</div>
+          <h3>Software Readiness Quiz</h3>
+          <p>Is your business ready for custom software?</p>
+          <a href="/assessment" class="btn btn-primary">Take the Quiz</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your systems and point you to the right approach, even if that means maintaining what you have for now."
+  />
+</BaseLayout>
+
+<script is:inline define:vars={{ SITE_NAME }}>
+  // --- Question definitions ---
+  // Each question has 4 options. Score 0 (good) to 3 (bad).
+  // Mid-values used for cost estimation.
+  const steps = [
+    {
+      id: 'age',
+      q: 'How old are your main business systems?',
+      options: [
+        { text: 'Under 2 years', score: 0, value: 'under2', ageYears: 1 },
+        { text: '2 to 5 years', score: 1, value: '2to5', ageYears: 3.5 },
+        { text: '5 to 10 years', score: 2, value: '5to10', ageYears: 7.5 },
+        { text: '10+ years', score: 3, value: 'over10', ageYears: 12 },
+      ],
+      explanation: 'Older systems accumulate debt faster. Software that has not been touched in a decade is usually running on frameworks nobody supports, on infrastructure nobody wants to touch.',
+    },
+    {
+      id: 'hours',
+      q: 'How many hours per month does your team spend on maintenance, fixes, and workarounds?',
+      options: [
+        { text: 'Under 10 hrs', score: 0, value: 'under10', hoursMonth: 5 },
+        { text: '10 to 25 hrs', score: 1, value: '10to25', hoursMonth: 17 },
+        { text: '25 to 50 hrs', score: 2, value: '25to50', hoursMonth: 37 },
+        { text: '50+ hrs', score: 3, value: 'over50', hoursMonth: 65 },
+      ],
+      explanation: 'This is the most direct measure of tech debt. Every hour spent keeping old systems alive is an hour not spent on things that move the business forward.',
+    },
+    {
+      id: 'workarounds',
+      q: 'How many manual workarounds or spreadsheets on top of spreadsheets do you have?',
+      options: [
+        { text: 'None', score: 0, value: 'none', workaroundFactor: 0 },
+        { text: 'A few', score: 1, value: 'few', workaroundFactor: 1 },
+        { text: 'Quite a few', score: 2, value: 'quitefew', workaroundFactor: 2 },
+        { text: 'Too many to count', score: 3, value: 'toomany', workaroundFactor: 3 },
+      ],
+      explanation: 'Workarounds are the duct tape holding legacy systems together. Each one is a process that should be automated but is not, costing time and introducing errors.',
+    },
+    {
+      id: 'failures',
+      q: 'How often do systems fail or need restarting?',
+      options: [
+        { text: 'Rarely', score: 0, value: 'rarely', failureCostMonth: 0 },
+        { text: 'Monthly', score: 1, value: 'monthly', failureCostMonth: 400 },
+        { text: 'Weekly', score: 2, value: 'weekly', failureCostMonth: 1600 },
+        { text: 'Daily', score: 3, value: 'daily', failureCostMonth: 6000 },
+      ],
+      explanation: 'Frequent failures mean the system is unstable. Each failure costs productivity, sometimes data, and always trust. Daily failures are a sign the system is on borrowed time.',
+    },
+    {
+      id: 'integrations',
+      q: 'How many systems need to share data but do not talk to each other?',
+      options: [
+        { text: '0 to 1', score: 0, value: '0to1', integrationGaps: 1 },
+        { text: '2 to 3', score: 1, value: '2to3', integrationGaps: 3 },
+        { text: '4 to 6', score: 2, value: '4to6', integrationGaps: 5 },
+        { text: '7+', score: 3, value: 'over7', integrationGaps: 8 },
+      ],
+      explanation: 'Systems that do not talk to each other force manual data entry and re-entry. Each gap is a place where errors creep in and where staff time gets wasted moving data around.',
+    },
+    {
+      id: 'documentation',
+      q: 'Are key systems documented, or does knowledge live in one person\'s head?',
+      options: [
+        { text: 'Fully documented', score: 0, value: 'fully', busRisk: 0 },
+        { text: 'Mostly documented', score: 1, value: 'mostly', busRisk: 1 },
+        { text: 'Partially', score: 2, value: 'partially', busRisk: 2 },
+        { text: 'In one person\'s head', score: 3, value: 'oneperson', busRisk: 3 },
+      ],
+      explanation: 'Undocumented systems are a single point of failure. If the one person who understands the system leaves, the business has a serious problem. This is the most overlooked form of tech debt.',
+    },
+  ];
+
+  // --- State ---
+  let currentStep = 0;
+  const answers = steps.map(() => null);
+
+  const intro = document.getElementById('tdc-intro');
+  const container = document.getElementById('tdc-container');
+  const results = document.getElementById('tdc-results');
+  const startBtn = document.getElementById('tdc-start-btn');
+  const qEl = document.getElementById('tdc-question');
+  const optsEl = document.getElementById('tdc-options');
+  const prevBtn = document.getElementById('tdc-prev');
+  const nextBtn = document.getElementById('tdc-next');
+  const progressFill = document.getElementById('tdc-progress-fill');
+  const progressText = document.getElementById('tdc-progress-text');
+
+  startBtn.addEventListener('click', () => {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderStep();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips to results with sample answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers[0] = 2; // 5 to 10 years
+    answers[1] = 2; // 25 to 50 hrs
+    answers[2] = 2; // Quite a few
+    answers[3] = 1; // Monthly
+    answers[4] = 2; // 4 to 6
+    answers[5] = 2; // Partially
+    showResults();
+  }
+
+  function renderStep() {
+    const step = steps[currentStep];
+
+    qEl.innerHTML = '<h2 class="quiz-q-text">' + step.q + '</h2>' +
+      '<p class="tdc-explanation">' + step.explanation + '</p>';
+
+    optsEl.innerHTML = '';
+
+    step.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      if (answers[currentStep] === i) btn.classList.add('selected');
+      btn.textContent = opt.text;
+      btn.addEventListener('click', () => {
+        answers[currentStep] = i;
+        document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        nextBtn.disabled = false;
+        nextBtn.classList.add('btn-pulse');
+      });
+      optsEl.appendChild(btn);
+    });
+
+    prevBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentStep === steps.length - 1 ? 'See My Results' : 'Next';
+    nextBtn.disabled = answers[currentStep] === null;
+
+    const progress = ((currentStep + 1) / steps.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = 'Question ' + (currentStep + 1) + ' of ' + steps.length;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) { currentStep--; renderStep(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      renderStep();
+    } else {
+      showResults();
+    }
+  });
+
+  // --- Results ---
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    // Calculate raw score (0 to 18), normalise to 0 to 100
+    let rawScore = 0;
+    for (let i = 0; i < steps.length; i++) {
+      const ansIndex = answers[i];
+      if (ansIndex !== null && steps[i].options[ansIndex]) {
+        rawScore += steps[i].options[ansIndex].score;
+      }
+    }
+    const totalScore = Math.round((rawScore / 18) * 100);
+
+    // Gather answer values for cost calculation
+    const ageOpt = steps[0].options[answers[0]];
+    const hoursOpt = steps[1].options[answers[1]];
+    const workOpt = steps[2].options[answers[2]];
+    const failOpt = steps[3].options[answers[3]];
+    const intOpt = steps[4].options[answers[4]];
+    const docOpt = steps[5].options[answers[5]];
+
+    // Cost calculation:
+    // Maintenance cost = monthly hours x hourly rate x 12
+    // Hourly rate for UK dev/maintenance work: £75
+    const HOURLY_RATE = 75;
+    const maintenanceAnnual = Math.round(hoursOpt.hoursMonth * HOURLY_RATE * 12);
+
+    // Productivity loss = failure cost (annual) + workaround cost (annual) + integration gap cost
+    // Failure cost already monthly
+    const failureAnnual = failOpt.failureCostMonth * 12;
+    // Workaround cost: each workaround level adds ~20 hrs/month of lost productivity
+    const workaroundAnnual = workOpt.workaroundFactor * 20 * HOURLY_RATE * 12;
+    // Integration gap cost: each gap adds ~8 hrs/month of manual data handling
+    const integrationAnnual = intOpt.integrationGaps * 8 * HOURLY_RATE * 12;
+
+    const productivityLoss = failureAnnual + workaroundAnnual + integrationAnnual;
+    const totalAnnualCost = maintenanceAnnual + productivityLoss;
+
+    // Recommendation
+    let recommendation = '';
+    let recLabel = '';
+    let recColor = '';
+    let recBg = '';
+    if (totalScore <= 33) {
+      recommendation = 'maintain';
+      recLabel = 'Maintain your current systems';
+      recColor = '#1d4ed8';
+      recBg = 'rgba(37, 99, 235, 0.08)';
+    } else if (totalScore <= 66) {
+      recommendation = 'refactor';
+      recLabel = 'Refactor your key systems';
+      recColor = '#1a2332';
+      recBg = 'rgba(245, 158, 11, 0.1)';
+    } else {
+      recommendation = 'replace';
+      recLabel = 'Replace your legacy systems';
+      recColor = '#dc2626';
+      recBg = 'rgba(220, 38, 38, 0.08)';
+    }
+
+    // Verdict text
+    let verdict = '';
+    if (totalScore <= 33) verdict = 'Your tech debt is manageable. Keep maintaining, but watch the warning signs.';
+    else if (totalScore <= 66) verdict = 'Your tech debt is building up. Refactoring now will be cheaper than replacing later.';
+    else verdict = 'Your tech debt is high. These systems are costing you real money and will only get more expensive to fix.';
+
+    document.getElementById('tdc-score').innerHTML = totalScore + '<span class="quiz-score-total">/100</span>';
+    document.getElementById('tdc-score-label').textContent = verdict;
+
+    // --- Cost card ---
+    const fmtGBP = function(n) { return '\u00A3' + n.toLocaleString('en-GB'); };
+    const costEl = document.getElementById('tdc-cost-card');
+    costEl.innerHTML =
+      '<div class="tdc-cost-label">Estimated Annual Cost of Carrying the Debt</div>' +
+      '<div class="tdc-cost-amount">' + fmtGBP(totalAnnualCost) + '</div>' +
+      '<div class="tdc-cost-breakdown">' +
+        '<div class="tdc-cost-row"><span>Maintenance and fixes (' + hoursOpt.text.toLowerCase() + '/month)</span><span>' + fmtGBP(maintenanceAnnual) + '</span></div>' +
+        '<div class="tdc-cost-row"><span>Productivity loss from workarounds</span><span>' + fmtGBP(workaroundAnnual) + '</span></div>' +
+        '<div class="tdc-cost-row"><span>Cost of system failures (' + failOpt.text.toLowerCase() + ')</span><span>' + fmtGBP(failureAnnual) + '</span></div>' +
+        '<div class="tdc-cost-row"><span>Manual data handling across ' + intOpt.value + ' disconnected system' + (intOpt.value === '0-1' || intOpt.value === '1' ? '' : 's') + '</span><span>' + fmtGBP(integrationAnnual) + '</span></div>' +
+      '</div>' +
+      '<p class="tdc-cost-note">Based on maintenance hours at an assumed rate of ' + fmtGBP(HOURLY_RATE) + '/hour, plus estimated productivity loss from workarounds, failures, and manual data handling. Your actual costs may vary.</p>';
+
+    // --- Recommendation card ---
+    const recEl = document.getElementById('tdc-recommendation');
+    recEl.innerHTML =
+      '<div class="tdc-rec-card" style="background:' + recBg + ';border-color:' + recColor + ';">' +
+        '<div class="tdc-rec-label" style="color:' + recColor + ';">Your Recommendation</div>' +
+        '<div class="tdc-rec-title" style="color:' + recColor + ';">' + recLabel + '</div>' +
+        '<p class="tdc-rec-text">' + getRecommendationDetail(recommendation, totalAnnualCost) + '</p>' +
+      '</div>';
+
+    // --- Breakdown ---
+    const breakdown = document.getElementById('tdc-breakdown');
+    let breakdownHTML = '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:20px;">Why This Recommendation</h3>';
+    breakdownHTML += '<div style="display:flex;flex-direction:column;gap:14px;">';
+
+    breakdownHTML += getBreakdownItem('System Age', ageOpt, ageOpt.ageYears <= 2
+      ? 'Your systems are relatively new. Tech debt has not had time to accumulate.'
+      : ageOpt.ageYears <= 5
+      ? 'Your systems are mature but still within their useful life. Regular maintenance should keep them healthy.'
+      : ageOpt.ageYears <= 10
+      ? 'Your systems are aging. Frameworks may be losing support and finding developers is getting harder.'
+      : 'Your systems are over a decade old. They are likely running on unsupported technology and the risk of failure is growing.');
+
+    breakdownHTML += getBreakdownItem('Maintenance Hours', hoursOpt, hoursOpt.hoursMonth <= 10
+      ? 'Low maintenance hours suggest your systems are stable and well supported.'
+      : hoursOpt.hoursMonth <= 25
+      ? 'Moderate maintenance hours. Some debt is present but it is manageable with attention.'
+      : hoursOpt.hoursMonth <= 50
+      ? 'High maintenance hours. Your team is spending significant time keeping systems alive instead of building value.'
+      : 'Very high maintenance hours. Your team is essentially running on a treadmill, spending most of their effort just keeping things working.');
+
+    breakdownHTML += getBreakdownItem('Workarounds', workOpt, workOpt.workaroundFactor === 0
+      ? 'No workarounds is a good sign. Your systems handle your processes directly.'
+      : workOpt.workaroundFactor === 1
+      ? 'A few workarounds is normal for most businesses. Worth documenting so they do not multiply.'
+      : workOpt.workaroundFactor === 2
+      ? 'Quite a few workarounds means staff are compensating for system gaps regularly. This is where productivity leaks out.'
+      : 'Too many workarounds to count means your systems no longer match how your business actually works. This is a strong signal for replacement.');
+
+    breakdownHTML += getBreakdownItem('System Failures', failOpt, failOpt.failureCostMonth === 0
+      ? 'Rarely failing systems are stable. Good news.'
+      : failOpt.failureCostMonth <= 400
+      ? 'Monthly failures are a warning sign. Each failure erodes trust and costs productivity.'
+      : failOpt.failureCostMonth <= 1600
+      ? 'Weekly failures are a serious problem. Your systems are unreliable and staff are likely working around the instability.'
+      : 'Daily failures mean your systems are on borrowed time. This level of instability is costing you customers, data, and staff goodwill.');
+
+    breakdownHTML += getBreakdownItem('Integration Gaps', intOpt, intOpt.integrationGaps <= 1
+      ? 'Few integration gaps means your systems talk to each other well. Data flows without manual handling.'
+      : intOpt.integrationGaps <= 3
+      ? 'A few integration gaps. Manual data entry between systems is costing time and introducing errors.'
+      : intOpt.integrationGaps <= 6
+      ? 'Several integration gaps. Staff are spending significant time moving data between systems that should be connected.'
+      : 'Many integration gaps. Your data is scattered across systems that do not communicate, making reporting and decision making difficult.');
+
+    breakdownHTML += getBreakdownItem('Documentation', docOpt, docOpt.busRisk === 0
+      ? 'Fully documented systems mean anyone can pick up the work. This is how it should be.'
+      : docOpt.busRisk === 1
+      ? 'Mostly documented is good, but the gaps are where knowledge gets lost when people move on.'
+      : docOpt.busRisk === 2
+      ? 'Partially documented means significant knowledge lives in peoples\' heads. This is a risk that grows over time.'
+      : 'Knowledge in one person\'s head is the highest risk form of tech debt. If that person leaves, the business has a serious problem.');
+
+    // Final summary
+    breakdownHTML += '<div class="quiz-rec quiz-rec-cta"><p style="margin:0;"><strong>Bottom line:</strong> Your tech debt score is <strong>' + totalScore + '/100</strong> with an estimated annual cost of <strong>' + fmtGBP(totalAnnualCost) + '</strong>. ' + getRecommendationDetail(recommendation, totalAnnualCost) + '</p></div>';
+
+    breakdownHTML += '</div>';
+    breakdown.innerHTML = breakdownHTML;
+
+    // Store for submission
+    window.__tdcResults = {
+      recommendation: recommendation,
+      recLabel: recLabel,
+      score: totalScore,
+      annualCost: totalAnnualCost,
+      maintenanceAnnual: maintenanceAnnual,
+      productivityLoss: productivityLoss,
+    };
+  }
+
+  function getBreakdownItem(label, opt, detail) {
+    return '<div class="quiz-rec"><span class="quiz-rec-priority">' + label + '</span><p>' + detail + '</p></div>';
+  }
+
+  function getRecommendationDetail(recommendation, annualCost) {
+    if (recommendation === 'maintain') {
+      return 'Your systems are in reasonable shape. Keep up regular maintenance, document what is undocumented, and address workarounds before they multiply. A small investment now prevents debt from accumulating.';
+    } else if (recommendation === 'refactor') {
+      return 'Your systems have significant debt that will only get more expensive to fix. Refactoring the key systems now, while preserving what works, is the most cost-effective path. Waiting risks the debt growing to the point where full replacement becomes the only option.';
+    } else {
+      return 'Your systems are carrying debt that is costing you an estimated ' + '\u00A3' + annualCost.toLocaleString('en-GB') + ' per year. At this level, replacing the worst systems is likely cheaper than continuing to maintain them. A phased replacement, starting with the highest-risk systems, reduces disruption and spreads cost.';
+    }
+  }
+
+  // --- User ID (localStorage, no cookies) ---
+  function getUserId() {
+    let userId = localStorage.getItem('ajairu_tdc_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ajairu_tdc_user_id', userId);
+    }
+    return userId;
+  }
+
+  // --- Email form submission ---
+  document.getElementById('tdc-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('tdc-email-input').value.trim();
+    const phone = document.getElementById('tdc-phone-input').value.trim();
+    const company = document.getElementById('tdc-company-input').value.trim();
+
+    if (!email) return;
+
+    const r = window.__tdcResults || {};
+    const userId = getUserId();
+
+    // Build answers payload (human-readable)
+    const answersPayload = steps.map(function(step, i) {
+      const opt = answers[i] !== null ? step.options[answers[i]] : null;
+      return {
+        step: i + 1,
+        question: step.q,
+        answer: opt ? opt.text : '',
+        score: opt ? opt.score : 0,
+      };
+    });
+
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'calculator',
+        userId: userId,
+        email: email,
+        phone: phone || null,
+        company: company || null,
+        answers: answersPayload,
+        recommendation: r.recommendation || '',
+        recLabel: r.recLabel || '',
+        score: r.score || 0,
+        annualCost: r.annualCost || 0,
+        maintenanceAnnual: r.maintenanceAnnual || 0,
+        productivityLoss: r.productivityLoss || 0,
+      }),
+    }).catch(function(err) { console.error('Save failed:', err); });
+
+    document.getElementById('tdc-email-success').style.display = 'block';
+    document.getElementById('tdc-email-form').style.display = 'none';
+    document.getElementById('tdc-post-success').style.display = 'block';
+  });
+</script>

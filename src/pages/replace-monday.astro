@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace Monday.com with Custom Software UK | ${SITE_NAME}`;
+const description = 'Replace Monday.com with custom software you own. UK SMEs save £15k-£50k/year. Build vs integrate guide with cost comparison. Break-even in 12-18 months.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace Monday.com UK', 'item': `${SITE_URL}/replace-monday` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Monday.com Replacement UK',
+  'serviceType': 'Custom Project Management Software Development & Monday.com Replacement',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Replace Monday.com with custom project management software you own outright. UK SMEs save £15,000 to £50,000 per year with bespoke PM software. Build vs integrate guide, cost comparison, and break-even analysis.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Monday.com Integration with AI', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Keep Monday.com, add an AI automation layer to connect it with your other systems. 4-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Custom PM Software Replacement', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'Replace Monday.com with bespoke project management software you own outright. 8-16 weeks. Break-even in 12-18 months.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does it cost to replace Monday.com with custom software?', answer: 'A focused project management replacement starts from £25,000. Larger replacements with integrations and custom workflows typically range from £35,000 to £60,000. Compare that to Monday.com at £24-£48 per user per month: a 30-person team costs £8,600 to £17,000 per year. Break-even on a custom build is 12-18 months, and you own the software forever after that.' },
+  { question: 'Can a custom project management tool integrate with my existing systems?', answer: 'Yes. Any tool with an API can be integrated: Slack, Google Workspace, Xero, Sage, Stripe, Jira, and hundreds more. We build custom API connectors that sync data in real time, so your bespoke PM tool talks to your accounting, communication, and operations software exactly the way Monday.com did, without the per-seat licence fees.' },
+  { question: 'How long does it take to replace Monday.com?', answer: 'A focused project management replacement takes 8-16 weeks using AI-accelerated development. Your existing Monday.com stays running throughout the build, and we migrate your boards, automations, and data in parallel. You only switch over when your team is confident in the new system. Traditional agencies quote 6-12 months for the same work.' },
+  { question: 'Should I replace Monday.com or integrate it?', answer: 'If your team uses Monday.com for standard project tracking and the main pain is disconnected systems, integrate. Keep Monday.com and add an AI automation layer to connect it with your other tools. If your workflows are non-standard and you are fighting Monday.com to bend it to your process, replace it with custom software. The build-vs-buy calculator can help you decide which path fits your situation.' },
+  { question: 'Do I own the source code?', answer: 'Yes, entirely. You own the source code, the database, and the infrastructure from day one. No licence fees, no vendor lock-in, no price increases. Your in-house team can modify the software, or any developer can take it over. We provide full documentation and training so you are never dependent on us.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace Monday.com with Custom Software</h1>
+      <p>Monday.com is a capable project management tool, but the costs scale fast. Standard tier costs £24 per user per month and Pro tier costs £48 per user per month. A 30-person team on Pro pays £17,000 a year. There is a better way: keep Monday.com and automate it, or replace it with software you own outright.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace Monday.com UK'}]} />
+
+  <!-- WHAT MONDAY.COM DOES WELL -->
+  <section class="section" id="what-monday-does-well">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Be Fair</span>
+      <h2 class="section-title reveal">What Monday.com Does Well</h2>
+      <p class="section-subtitle reveal">Monday.com earned its popularity. Here is what it genuinely gets right.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Visual Project Management</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Boards, columns, and views make project tracking visual and intuitive. The colour-coded interface is genuinely easy to understand at a glance.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Automations</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">The automation builder is accessible to non-technical users. Status changes, notifications, and recurring tasks can be set up without code.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Dashboards</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Custom dashboards pull data from multiple boards into one view. Charts, timelines, and workload views give teams a clear picture of progress.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Ease of Use</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Onboarding is fast. Most teams are productive within a day. The learning curve is gentle, and the interface is genuinely user-friendly.</p>
+        </div>
+      </div>
+      <p class="reveal" style="max-width:760px;margin:40px auto 0;text-align:center;color:var(--grey-600);font-size:1.05rem;line-height:1.7;">None of this is in question. Monday.com is a good tool. The problem is what it costs UK SMEs as teams grow, and how hard it is to make it fit non-standard processes.</p>
+    </div>
+  </section>
+
+  <!-- WHERE MONDAY.COM FALLS SHORT -->
+  <section class="section bg-grey" id="where-monday-fails">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem</span>
+      <h2 class="section-title reveal">Where Monday.com Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">Per-seat pricing that punishes growth and a rigid structure that fights non-standard workflows.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Becomes Expensive Fast</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Pro tier costs £48 per user per month. A 30-person team pays £17,000 a year. Add contractors, freelancers, or part-time staff and the bill keeps climbing. Every new team member increases the cost, whether they use the tool heavily or barely at all.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">The pricing model punishes growth. The more successful your team becomes, the more Monday.com charges you for the privilege.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Limited Customisation</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Monday.com forces your work into boards, columns, and groups. If your process fits that model, it works well. If your process is non-standard, you spend your time bending Monday.com to fit, using workarounds, dummy columns, and complex automations to approximate what you actually need.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">The platform decides how your data is structured. You do not. For businesses with unique workflows, that constraint becomes a daily frustration.</p>
+        </div>
+      </div>
+      <div class="cards-grid cards-2" style="margin-top:32px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Data Lock-In</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Your project data lives in Monday.com's cloud. Exporting it gives you flat CSV files that lose all the relationships, automations, and history. Stop paying, and access disappears. Your accumulated project knowledge belongs to the vendor, not you.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Workflow Constraints</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Non-standard processes are hard to model. Approval chains, conditional workflows, and cross-project dependencies require complex automation setups that break easily. The platform works for standard project tracking but fights you on anything more sophisticated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE -->
+  <section class="section" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A</span>
+      <h2 class="section-title reveal">Integrate Monday.com with AI Automation</h2>
+      <p class="section-subtitle reveal">Keep Monday.com. Add an AI layer that connects it with the rest of your business.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your team uses Monday.com for standard project tracking and the main frustration is that it sits in isolation from your accounting, CRM, and operations tools, do not rip it out. The platform is doing its job. The problem is the silo.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">An AI automation layer solves this. We build custom APIs that sync data between Monday.com and every other system you run. Your team stops updating status in three places. Decisions get made on complete information, not siloed snapshots.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Cost: from £8,000. Timeline: 4-12 weeks. You keep your Monday.com investment and make it work harder.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Real-time data sync</strong> between Monday.com and your CRM, accounting, and operations tools</li>
+            <li><strong>AI-powered automations</strong> that trigger actions across platforms without manual handoffs</li>
+            <li><strong>Unified dashboards</strong> showing project progress alongside finance and sales data</li>
+            <li><strong>Automated status updates</strong> that propagate across all your systems in real time</li>
+            <li><strong>You own the integration code</strong> outright, no ongoing licence fees for the automation layer</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:24px;">Explore System Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE -->
+  <section class="section bg-grey" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B</span>
+      <h2 class="section-title reveal">Replace Monday.com with Custom Software</h2>
+      <p class="section-subtitle reveal">Build project management software that works your way. Own the code. Break even in 12-18 months.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your workflows are non-standard and you are spending more time bending Monday.com to fit your process than actually managing projects, replacing it is the better financial decision. You are already paying for a platform that fights you, and the per-seat cost grows with every hire.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Custom project management software means the system does exactly what your business needs, models your specific workflows, and uses your terminology. No unused features. No per-seat pricing. No workarounds.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Build cost: £25,000 to £60,000. Timeline: 8-16 weeks. Break-even: 12-18 months versus £17,000+ a year on Monday.com Pro.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>PM software built around your process</strong>, not a vendor's board template</li>
+            <li><strong>Full source code ownership</strong>: database, infrastructure, and all intellectual property</li>
+            <li><strong>No per-seat pricing</strong>: add as many users as you like at zero additional cost</li>
+            <li><strong>Custom workflows</strong> that model your exact approval chains and dependencies</li>
+            <li><strong>Client-facing features</strong> like portals, shared views, and permission-controlled access</li>
+            <li><strong>Integrations included</strong> with your CRM, accounting, and communication tools</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:24px;">Explore ERP Replacement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Make the Call</span>
+      <h2 class="section-title reveal">How to Decide: Integrate or Replace?</h2>
+      <p class="section-subtitle reveal">Two questions will tell you which path fits your business.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Integrate If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your team is comfortable with Monday.com</li>
+            <li>Your project workflows are fairly standard</li>
+            <li>The main pain is disconnected systems, not the tool itself</li>
+            <li>You want results in 4-12 weeks, not a full rebuild</li>
+            <li>Your team uses the visual boards and dashboards regularly</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:20px;">Explore Integration</a>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Replace If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your workflows are non-standard and fight the platform</li>
+            <li>Per-seat pricing is a real financial burden as you grow</li>
+            <li>You need client-facing features Monday.com cannot deliver</li>
+            <li>You want to own the software outright</li>
+            <li>You are spending £15,000+ a year on Monday.com</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:20px;">Explore Replacement</a>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey-600);font-size:1.05rem;margin-bottom:20px;">Still unsure? Use our free calculator to get a clear recommendation based on your actual situation.</p>
+        <a href="/build-vs-buy" class="btn btn-primary btn-lg">Try the Build vs Buy Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Monday.com Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before deciding whether to integrate or replace Monday.com.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Integrate or Replace?"
+    text="Book a free 30-minute discovery call. We will look at your actual Monday.com usage, calculate what you spend versus what a custom build would cost, and tell you honestly which path makes financial sense for your business. No hard sell."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

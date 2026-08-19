@@ -1,0 +1,770 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `SaaS ROI Calculator | True Cost of SaaS vs Custom Software | ${SITE_NAME}`;
+const description = 'A free guided calculator for UK SMEs. List the SaaS tools you pay for, see your true annual cost including hidden manual data transfer, compare against a custom build, and find your break-even point over 5 years. No email required to see results.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'SaaS ROI Calculator', 'item': `${SITE_URL}/saas-roi-calculator` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is the SaaS ROI Calculator free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No email required to see your results.' } },
+    { '@type': 'Question', 'name': 'How long does the calculator take?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'About 2 to 3 minutes. 5 questions about the SaaS tools you use, your seat count, and the time your team spends moving data between systems.' } },
+    { '@type': 'Question', 'name': 'What do I get at the end?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Your total annual SaaS cost including hidden costs, a custom build estimate, your break-even point, a 5-year cost comparison, and a clear verdict on whether replacing your SaaS stack with custom software makes financial sense.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>SaaS ROI Calculator</h1>
+      <p>5 questions. 2 minutes. Your true SaaS cost versus custom software, break-even point, and 5-year comparison. No email required.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'SaaS ROI Calculator'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Intro -->
+      <div id="src-intro" class="quiz-intro">
+        <h2 class="section-title" style="text-align:left;">What is your SaaS stack really costing you?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-500);margin-bottom:32px;">Most SME owners see the monthly invoice but miss the hidden costs: seat licences stacking up, hours lost moving data between tools, and paying for features nobody uses. This calculator adds it all up, compares it to what custom software would cost, and shows your break-even point over 5 years.</p>
+        <button id="src-start-btn" class="btn btn-primary btn-lg">Start the Calculator</button>
+      </div>
+
+      <!-- Calculator container -->
+      <div id="src-container" class="quiz-container" style="display:none;">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="src-progress-fill" class="quiz-progress-fill"></div></div>
+          <span id="src-progress-text" class="quiz-progress-text">Question 1 of 6</span>
+        </div>
+        <div id="src-question" class="quiz-question"></div>
+        <div id="src-options" class="quiz-options"></div>
+        <div class="quiz-nav">
+          <button id="src-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="src-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results container -->
+      <div id="src-results" class="quiz-results" style="display:none;">
+        <div id="src-verdict-card" class="src-verdict-card"></div>
+        <div id="src-big-cost" class="src-big-cost"></div>
+        <div id="src-cost-breakdown" class="src-cost-breakdown"></div>
+        <div id="src-break-even" class="src-break-even"></div>
+        <div id="src-five-year" class="src-five-year"></div>
+
+        <div class="quiz-email-capture quiz-email-prominent">
+          <h3>Get your SaaS ROI report by email</h3>
+          <p>Enter your details and we will send you a copy of your true cost breakdown, custom build estimate, break-even point, and 5-year comparison. We will also follow up with a free 15-minute call to discuss your situation, no pressure.</p>
+          <form id="src-email-form" class="quiz-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="quiz-form-stacked">
+              <input type="email" id="src-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="src-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="src-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Get My Report &rarr;</button>
+            </div>
+          </form>
+          <p id="src-email-success" style="display:none;color:var(--blue-dark);font-weight:600;margin-top:12px;">Report saved and sent. Check your inbox.</p>
+          <div id="src-post-success" style="display:none;" class="src-post-success">
+            <div class="quiz-cta-buttons">
+              <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+              <a href="/services/erp-replacement-uk" class="btn btn-outline btn-lg">Explore ERP Replacement</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-cta">
+          <h3>Talk it through with someone who builds custom software</h3>
+          <p>Whether the numbers say build or keep SaaS, a 30-minute call will help you pressure-test the decision against your actual operations. No sales pitch, just practical advice from a founder who works with UK SMEs on this exact question.</p>
+          <div class="quiz-cta-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="/build-vs-buy" class="btn btn-outline btn-lg">See Build vs Buy Calculator</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-TOOL PROMO -->
+  <section class="section bg-grey" id="other-tools">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p class="reveal" style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">Each takes about 2 minutes. No email needed to see your results.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">⚖️</div>
+          <h3>Build vs Buy Calculator</h3>
+          <p>Should you buy off-the-shelf or build custom?</p>
+          <a href="/build-vs-buy" class="btn btn-primary">Start Calculator</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔧</div>
+          <h3>Tech Debt Calculator</h3>
+          <p>How much is your legacy software costing you?</p>
+          <a href="/tech-debt-calculator" class="btn btn-primary">Check My Tech Debt</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔗</div>
+          <h3>Integration Health Check</h3>
+          <p>How well-connected is your tech stack?</p>
+          <a href="/integration-health-check" class="btn btn-primary">Check My Integration</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📋</div>
+          <h3>Software Readiness Quiz</h3>
+          <p>Is your business ready for custom software?</p>
+          <a href="/assessment" class="btn btn-primary">Take the Quiz</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your SaaS stack and point you to the right approach, even if that means keeping your current tools and not working with us."
+  />
+</BaseLayout>
+
+<script is:inline define:vars={{ SITE_NAME }}>
+  // --- SaaS tool catalogue with default monthly costs (GBP) ---
+  const SAAS_TOOLS = [
+    { id: 'salesforce',  name: 'Salesforce',    monthlyCost: 150 },
+    { id: 'hubspot',     name: 'HubSpot',        monthlyCost: 90 },
+    { id: 'xero',        name: 'Xero',           monthlyCost: 30 },
+    { id: 'sage',        name: 'Sage',           monthlyCost: 35 },
+    { id: 'monday',      name: 'Monday.com',     monthlyCost: 25 },
+    { id: 'asana',       name: 'Asana',          monthlyCost: 20 },
+    { id: 'slack',       name: 'Slack',          monthlyCost: 7 },
+    { id: 'zendesk',     name: 'Zendesk',        monthlyCost: 55 },
+    { id: 'shopify',     name: 'Shopify',        monthlyCost: 60 },
+    { id: 'woocommerce', name: 'WooCommerce',    monthlyCost: 20 },
+    { id: 'stripe',      name: 'Stripe',         monthlyCost: 0 },   // usage based, no fixed sub
+    { id: 'quickbooks',  name: 'QuickBooks',     monthlyCost: 30 },
+    { id: 'pipedrive',   name: 'Pipedrive',      monthlyCost: 14 },
+    { id: 'calendly',    name: 'Calendly',       monthlyCost: 10 },
+  ];
+
+  // --- Question definitions ---
+  // Step 1 is multi-select (checkboxes); steps 2-5 are single-choice.
+  const steps = [
+    {
+      id: 'tools',
+      type: 'multi',
+      q: 'Which SaaS tools do you currently use?',
+      explanation: 'Tick every tool you currently pay for. Each shows a typical UK monthly cost. The calculation uses your selection plus the number of seats on the next question. Pick "Other" to add any tool not listed.',
+    },
+    {
+      id: 'seats',
+      type: 'choice',
+      q: 'How many users or seat licences do you have across these tools?',
+      options: [
+        { text: '1 to 10 seats',   value: '1-10',   seatCount: 6,  perSeatCost: 18 },
+        { text: '11 to 25 seats',  value: '11-25',  seatCount: 18, perSeatCost: 18 },
+        { text: '26 to 50 seats',   value: '26-50',  seatCount: 38, perSeatCost: 16 },
+        { text: '51 to 100 seats',  value: '51-100', seatCount: 75, perSeatCost: 15 },
+        { text: '100+ seats',       value: '100+',   seatCount: 150, perSeatCost: 13 },
+      ],
+      explanation: 'Most SaaS tools charge per seat. Two tools at 5 seats each can quietly cost more than people think. We use your seat band to estimate the per-seat portion of your bill.',
+    },
+    {
+      id: 'manualHours',
+      type: 'choice',
+      q: 'How many hours per week does your team spend manually moving data between these systems?',
+      options: [
+        { text: 'Under 2 hours',  value: 'under2', hoursPerWeek: 1 },
+        { text: '2 to 5 hours',    value: '2-5',    hoursPerWeek: 3.5 },
+        { text: '5 to 10 hours',   value: '5-10',   hoursPerWeek: 7.5 },
+        { text: '10+ hours',       value: '10+',    hoursPerWeek: 12 },
+      ],
+      explanation: 'Copying a customer from your CRM into your accounting system, re-keying orders, exporting CSVs. Every manual data transfer is a hidden cost on top of the subscription, and a common source of errors.',
+    },
+    {
+      id: 'featureUse',
+      type: 'choice',
+      q: 'How many of these tools do you actually use more than 50% of the features?',
+      options: [
+        { text: 'All of them',     value: 'all',     utilisation: 0.95 },
+        { text: 'Most of them',     value: 'most',    utilisation: 0.75 },
+        { text: 'About half',       value: 'half',    utilisation: 0.50 },
+        { text: 'Less than half',   value: 'less',    utilisation: 0.30 },
+      ],
+      explanation: 'SaaS pricing is built for power users. If you use 30% of the features, you are still paying for 100% of the platform. Low feature utilisation is one of the strongest signals that a custom build (which only does what you need) could save money.',
+    },
+    {
+      id: 'hourlyCost',
+      type: 'choice',
+      q: 'What is your average hourly cost per employee?',
+      options: [
+        { text: 'Under £15/hour',   value: 'under15', hourlyRate: 12 },
+        { text: '£15 to £25/hour',   value: '15-25',   hourlyRate: 20 },
+        { text: '£25 to £35/hour',   value: '25-35',   hourlyRate: 30 },
+        { text: '£35+/hour',        value: '35+',     hourlyRate: 40 },
+      ],
+      explanation: 'We use this to put a real price on the hours your team spends moving data between tools. The higher your labour cost, the more painful manual data transfer becomes.',
+    },
+  ];
+
+  // --- State ---
+  let currentStep = 0;
+  const answers = steps.map(function() { return null; }); // multi: array of selected tool ids; choice: option index
+
+  const intro = document.getElementById('src-intro');
+  const container = document.getElementById('src-container');
+  const results = document.getElementById('src-results');
+  const startBtn = document.getElementById('src-start-btn');
+  const qEl = document.getElementById('src-question');
+  const optsEl = document.getElementById('src-options');
+  const prevBtn = document.getElementById('src-prev');
+  const nextBtn = document.getElementById('src-next');
+  const progressFill = document.getElementById('src-progress-fill');
+  const progressText = document.getElementById('src-progress-text');
+
+  startBtn.addEventListener('click', function() {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderStep();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips to results with sample answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers[0] = ['salesforce', 'hubspot', 'xero', 'slack', 'monday'];
+    answers[1] = 1; // 11-25 seats
+    answers[2] = 2; // 5-10 hours
+    answers[3] = 3; // Less than half
+    answers[4] = 2; // £25-35/hour
+    showResults();
+  }
+
+  function renderStep() {
+    const step = steps[currentStep];
+    const isMulti = step.type === 'multi';
+
+    qEl.innerHTML = '<h2 class="quiz-q-text">' + step.q + '</h2>' +
+      '<p class="src-explanation">' + step.explanation + '</p>';
+
+    optsEl.innerHTML = '';
+
+    if (isMulti) {
+      renderToolSelector(step);
+    } else {
+      step.options.forEach(function(opt, i) {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        if (answers[currentStep] === i) btn.classList.add('selected');
+        btn.textContent = opt.text;
+        btn.addEventListener('click', function() {
+          answers[currentStep] = i;
+          document.querySelectorAll('.quiz-option').forEach(function(b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+          nextBtn.disabled = false;
+          nextBtn.classList.add('btn-pulse');
+        });
+        optsEl.appendChild(btn);
+      });
+    }
+
+    prevBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentStep === steps.length - 1 ? 'See My Results' : 'Next';
+
+    if (isMulti) {
+      nextBtn.disabled = !(Array.isArray(answers[currentStep]) && answers[currentStep].length >= 1);
+    } else {
+      nextBtn.disabled = answers[currentStep] === null;
+    }
+
+    const progress = ((currentStep + 1) / (steps.length + 1)) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = 'Question ' + (currentStep + 1) + ' of ' + steps.length;
+  }
+
+  // --- Multi-select tool selector (step 1) ---
+  function renderToolSelector(step) {
+    var selected = Array.isArray(answers[currentStep]) ? answers[currentStep].slice() : [];
+
+    var grid = document.createElement('div');
+    grid.className = 'src-tool-grid';
+
+    SAAS_TOOLS.forEach(function(tool) {
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'src-tool-card';
+      card.dataset.toolId = tool.id;
+      if (selected.indexOf(tool.id) !== -1) card.classList.add('selected');
+
+      var nameEl = document.createElement('div');
+      nameEl.className = 'src-tool-name';
+      nameEl.textContent = tool.name;
+
+      var costEl = document.createElement('div');
+      costEl.className = 'src-tool-cost';
+      costEl.textContent = tool.monthlyCost > 0
+        ? '\u00A3' + tool.monthlyCost + '/mo typical'
+        : 'Usage based';
+
+      card.appendChild(nameEl);
+      card.appendChild(costEl);
+      grid.appendChild(card);
+
+      card.addEventListener('click', function() {
+        var idx = selected.indexOf(tool.id);
+        if (idx === -1) {
+          selected.push(tool.id);
+          card.classList.add('selected');
+        } else {
+          selected.splice(idx, 1);
+          card.classList.remove('selected');
+        }
+        answers[currentStep] = selected;
+        nextBtn.disabled = selected.length < 1;
+        if (!nextBtn.disabled) nextBtn.classList.add('btn-pulse');
+      });
+    });
+
+    // Other (with text input)
+    var otherWrap = document.createElement('div');
+    otherWrap.className = 'src-tool-other-wrap';
+
+    var otherCard = document.createElement('button');
+    otherCard.type = 'button';
+    otherCard.className = 'src-tool-card src-tool-other';
+    otherCard.dataset.toolId = '__other__';
+    var otherName = document.createElement('div');
+    otherName.className = 'src-tool-name';
+    otherName.textContent = 'Other';
+    var otherCost = document.createElement('div');
+    otherCost.className = 'src-tool-cost';
+    otherCost.textContent = 'Add your own';
+    otherCard.appendChild(otherName);
+    otherCard.appendChild(otherCost);
+    grid.appendChild(otherCard);
+
+    var otherInputWrap = document.createElement('div');
+    otherInputWrap.className = 'src-tool-other-input-wrap';
+    otherInputWrap.style.display = 'none';
+
+    var otherLabel = document.createElement('label');
+    otherLabel.className = 'src-tool-other-label';
+    otherLabel.htmlFor = 'src-other-input';
+    otherLabel.textContent = 'Tool name and typical monthly cost';
+
+    var otherInput = document.createElement('input');
+    otherInput.type = 'text';
+    otherInput.id = 'src-other-input';
+    otherInput.className = 'src-tool-other-input';
+    otherInput.placeholder = 'e.g. Intercom, \u00A350/month';
+    otherInput.maxLength = 60;
+
+    otherInputWrap.appendChild(otherLabel);
+    otherInputWrap.appendChild(otherInput);
+    grid.appendChild(otherInputWrap);
+
+    // restore previously entered "Other" text
+    var otherMeta = getOtherMeta();
+    if (otherMeta) {
+      otherCard.classList.add('selected');
+      otherInputWrap.style.display = 'block';
+      otherInput.value = otherMeta.text;
+    }
+
+    otherCard.addEventListener('click', function() {
+      if (otherCard.classList.contains('selected')) {
+        otherCard.classList.remove('selected');
+        otherInputWrap.style.display = 'none';
+        clearOtherMeta();
+      } else {
+        otherCard.classList.add('selected');
+        otherInputWrap.style.display = 'block';
+        setTimeout(function() { otherInput.focus(); }, 50);
+      }
+      // re-sync selected array (Other is tracked via meta, not the id list)
+      answers[currentStep] = buildSelectedArray(selected);
+      nextBtn.disabled = !hasAnySelected(selected, otherCard.classList.contains('selected'));
+      if (!nextBtn.disabled) nextBtn.classList.add('btn-pulse');
+    });
+
+    otherInput.addEventListener('input', function() {
+      setOtherMeta(otherInput.value);
+      // other card already selected; just keep next enabled
+      if (otherCard.classList.contains('selected')) {
+        nextBtn.disabled = !hasAnySelected(selected, true);
+      }
+    });
+
+    optsEl.appendChild(grid);
+  }
+
+  // --- "Other" tool metadata helpers (stored on the answers object via a side field) ---
+  function getOtherMeta() {
+    return (answers[0] && answers[0].__other__) || null;
+  }
+  function setOtherMeta(text) {
+    if (!answers[0]) answers[0] = [];
+    if (!answers[0].__other__) answers[0].__other__ = {};
+    if (!text) { delete answers[0].__other__; return; }
+    // parse "name £cost/month" style input
+    var parsed = parseOtherText(text);
+    answers[0].__other__ = parsed;
+  }
+  function clearOtherMeta() {
+    if (answers[0] && answers[0].__other__) delete answers[0].__other__;
+  }
+  function parseOtherText(text) {
+    var t = (text || '').trim();
+    // try to find a number that looks like a monthly cost
+    var moneyMatch = t.match(/\u00A3?\s*(\d+(?:\.\d+)?)/);
+    var cost = moneyMatch ? parseFloat(moneyMatch[1]) : 30; // default 30 if unparseable
+    var name = t.replace(/\u00A3?\s*\d+(?:\.\d+)?\s*(\/|per)?\s*(mo|month|monthly)?/i, '').trim() || 'Other tool';
+    return { name: name, monthlyCost: cost, text: t };
+  }
+  function buildSelectedArray(selectedToolIds) {
+    // return a fresh array copy (the __other__ meta lives alongside as a property)
+    var arr = selectedToolIds.slice();
+    return arr;
+  }
+  function hasAnySelected(selectedToolIds, otherSelected) {
+    return selectedToolIds.length >= 1 || otherSelected;
+  }
+
+  prevBtn.addEventListener('click', function() {
+    if (currentStep > 0) { currentStep--; renderStep(); }
+  });
+
+  nextBtn.addEventListener('click', function() {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      renderStep();
+    } else {
+      showResults();
+    }
+  });
+
+  // --- Results calculation ---
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    // --- Gather inputs ---
+    var selectedToolIds = Array.isArray(answers[0]) ? answers[0] : [];
+    var otherMeta = getOtherMeta();
+
+    var seatsAns = steps[1].options[answers[1]] || steps[1].options[0];
+    var manualAns = steps[2].options[answers[2]] || steps[2].options[0];
+    var featureAns = steps[3].options[answers[3]] || steps[3].options[0];
+    var hourlyAns = steps[4].options[answers[4]] || steps[4].options[0];
+
+    // --- SaaS subscription cost (tools + seats) ---
+    var toolMonthly = 0;
+    var toolList = [];
+    selectedToolIds.forEach(function(id) {
+      var tool = SAAS_TOOLS.find(function(t) { return t.id === id; });
+      if (tool) {
+        toolMonthly += tool.monthlyCost;
+        toolList.push({ name: tool.name, monthlyCost: tool.monthlyCost });
+      }
+    });
+    if (otherMeta) {
+      toolMonthly += otherMeta.monthlyCost;
+      toolList.push({ name: otherMeta.name, monthlyCost: otherMeta.monthlyCost, isOther: true });
+    }
+    var toolsAnnual = toolMonthly * 12;
+
+    var seatCount = seatsAns.seatCount;
+    var perSeatCost = seatsAns.perSeatCost;
+    var seatsAnnual = perSeatCost * seatCount * 12;
+
+    var saasAnnualCost = Math.round(toolsAnnual + seatsAnnual);
+
+    // --- Hidden cost (manual data transfer) ---
+    var hoursPerWeek = manualAns.hoursPerWeek;
+    var hourlyRate = hourlyAns.hourlyRate;
+    var hiddenCost = Math.round(hoursPerWeek * hourlyRate * 48);
+
+    // --- Total true cost ---
+    var totalTrueCost = saasAnnualCost + hiddenCost;
+
+    // --- Custom build estimate (based on number of tools replaced) ---
+    var toolsReplacedCount = toolList.length;
+    var customBuildCost;
+    if (toolsReplacedCount <= 1) customBuildCost = 25000;
+    else if (toolsReplacedCount <= 3) customBuildCost = 40000;
+    else if (toolsReplacedCount <= 6) customBuildCost = 60000;
+    else customBuildCost = 80000;
+
+    // Custom annual run cost: scaled by tool count (hosting + maintenance)
+    var customRunAnnual;
+    if (toolsReplacedCount <= 1) customRunAnnual = 5000;
+    else if (toolsReplacedCount <= 3) customRunAnnual = 8000;
+    else if (toolsReplacedCount <= 6) customRunAnnual = 12000;
+    else customRunAnnual = 15000;
+
+    // --- Annual saving & break-even ---
+    var annualSaving = totalTrueCost - customRunAnnual;
+    var breakEvenYears = annualSaving > 0 ? Math.round((customBuildCost / annualSaving) * 10) / 10 : null;
+
+    // --- 5-year comparison (SaaS with 10% annual increase) ---
+    var fiveYearSaaS = 0;
+    for (var y = 0; y < 5; y++) {
+      fiveYearSaaS += Math.round(totalTrueCost * Math.pow(1.10, y));
+    }
+    var fiveYearCustom = customBuildCost + (customRunAnnual * 5);
+    var fiveYearSaving = fiveYearSaaS - fiveYearCustom;
+
+    // --- Verdict ---
+    var verdict, verdictLabel, verdictColor, verdictBg, verdictDesc;
+    if (breakEvenYears !== null && breakEvenYears <= 2 && annualSaving > 0) {
+      verdict = 'build';
+      verdictLabel = 'Strong case to build';
+      verdictColor = '#00a88e';
+      verdictBg = 'rgba(0, 168, 142, 0.1)';
+      verdictDesc = 'Your true SaaS cost is high enough that custom software would pay for itself within ' + breakEvenYears + ' years. Over 5 years you would save an estimated ' + fmtGBP(fiveYearSaving) + ' and own the software outright.';
+    } else if (breakEvenYears !== null && breakEvenYears <= 4 && annualSaving > 0) {
+      verdict = 'evaluate';
+      verdictLabel = 'Worth evaluating';
+      verdictColor = '#d97706';
+      verdictBg = 'rgba(217, 119, 6, 0.1)';
+      verdictDesc = 'Custom software would break even in about ' + breakEvenYears + ' years. That is viable but not a slam dunk. The decision should hinge on how well your current tools fit your actual process and how much integration pain you carry.';
+    } else {
+      verdict = 'keep';
+      verdictLabel = 'Keep SaaS for now';
+      verdictColor = '#1d4ed8';
+      verdictBg = 'rgba(37, 99, 235, 0.08)';
+      verdictDesc = annualSaving <= 0
+        ? 'Your current SaaS spend is low enough that custom software would not pay back in a reasonable timeframe. Keep your tools, but watch for seat count creep and integration debt as you grow.'
+        : 'Custom software would take ' + (breakEvenYears ? breakEvenYears + ' years' : 'too long') + ' to break even. SaaS is the cheaper option for your current size. Revisit this when your spend or seat count grows.';
+    }
+
+    // --- Render verdict card ---
+    var verdictCard = document.getElementById('src-verdict-card');
+    verdictCard.style.cssText = 'text-align:center;padding:32px;background:' + verdictBg + ';border-radius:12px;margin-bottom:28px;border:2px solid ' + verdictColor + ';';
+    verdictCard.innerHTML =
+      '<div style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:' + verdictColor + ';margin-bottom:8px;">Your Verdict</div>' +
+      '<div style="font-size:2rem;font-weight:800;color:' + verdictColor + ';line-height:1.2;margin-bottom:12px;">' + verdictLabel + '</div>' +
+      '<div style="font-size:0.95rem;color:var(--grey-700);max-width:520px;margin:0 auto;line-height:1.6;">' + verdictDesc + '</div>';
+
+    // --- Big number: total annual true cost ---
+    var bigCost = document.getElementById('src-big-cost');
+    bigCost.style.cssText = 'text-align:center;padding:36px 32px;background:var(--grey-50);border-radius:12px;margin-bottom:28px;';
+    bigCost.innerHTML =
+      '<div style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-500);margin-bottom:10px;">Your True Annual Cost of SaaS</div>' +
+      '<div style="font-size:3rem;font-weight:800;color:var(--navy);line-height:1;margin-bottom:10px;">' + fmtGBP(totalTrueCost) + '</div>' +
+      '<div style="font-size:0.9rem;color:var(--grey-500);max-width:480px;margin:0 auto;line-height:1.6;">Subscriptions plus seat licences plus the hidden cost of manual data transfer. This is what you actually spend per year.</div>';
+
+    // --- Cost breakdown ---
+    var breakdownEl = document.getElementById('src-cost-breakdown');
+    breakdownEl.style.cssText = 'background:var(--grey-50);border-radius:12px;padding:28px;margin-bottom:28px;';
+    var breakdownHTML = '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:20px;">Cost Breakdown</h3>';
+    breakdownHTML += '<div class="src-breakdown-list">';
+    breakdownHTML += srcBreakdownRow('Tool subscriptions (' + toolsReplacedCount + ' tool' + (toolsReplacedCount === 1 ? '' : 's') + ')', fmtGBP(toolsAnnual), 'Sum of monthly costs x 12');
+    breakdownHTML += srcBreakdownRow('Seat licences (' + seatCount + ' seats x ' + fmtGBP(perSeatCost) + '/mo)', fmtGBP(seatsAnnual), 'Per-seat portion of your bill');
+    breakdownHTML += srcBreakdownRow('Hidden cost of manual data transfer', fmtGBP(hiddenCost), hoursPerWeek + ' hrs/week x ' + fmtGBP(hourlyRate) + '/hr x 48 weeks');
+    breakdownHTML += '<div class="src-breakdown-total"><span>Total true annual cost</span><span>' + fmtGBP(totalTrueCost) + '</span></div>';
+    breakdownHTML += '</div>';
+
+    // tool-level list
+    if (toolList.length > 0) {
+      breakdownHTML += '<div class="src-tool-list-wrap"><div class="src-tool-list-title">Tools included</div><ul class="src-tool-list">';
+      toolList.forEach(function(t) {
+        breakdownHTML += '<li><span>' + escapeHtml(t.name) + (t.isOther ? ' (other)' : '') + '</span><span>' + (t.monthlyCost > 0 ? fmtGBP(t.monthlyCost) + '/mo' : 'Usage based') + '</span></li>';
+      });
+      breakdownHTML += '</ul></div>';
+    }
+
+    breakdownEl.innerHTML = breakdownHTML;
+
+    // --- Break-even point ---
+    var breakEvenEl = document.getElementById('src-break-even');
+    breakEvenEl.style.cssText = 'padding:24px 28px;background:var(--white);border:2px solid var(--grey-200);border-radius:12px;margin-bottom:28px;';
+    var breakEvenHTML = '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:16px;">Break-Even Point</h3>';
+    breakEvenHTML += '<div class="src-breakeven-grid">';
+    breakEvenHTML += srcStatBox('Custom build cost', fmtGBP(customBuildCost), 'One-off');
+    breakEvenHTML += srcStatBox('Annual saving vs SaaS', annualSaving > 0 ? fmtGBP(annualSaving) : '£0', 'True cost minus run cost');
+    breakEvenHTML += srcStatBox('Custom run cost', fmtGBP(customRunAnnual) + '/yr', 'Hosting + maintenance');
+    var breakEvenDisplay = breakEvenYears !== null && annualSaving > 0
+      ? breakEvenYears + ' year' + (breakEvenYears === 1 ? '' : 's')
+      : 'Beyond 5 years';
+    breakEvenHTML += srcStatBox('Break-even point', breakEvenDisplay, 'When build pays for itself', breakEvenYears !== null && annualSaving > 0 && breakEvenYears <= 2 ? '#00a88e' : '#d97706');
+    breakEvenHTML += '</div>';
+    breakEvenEl.innerHTML = breakEvenHTML;
+
+    // --- 5-year comparison chart ---
+    var fiveYearEl = document.getElementById('src-five-year');
+    fiveYearEl.style.cssText = 'background:var(--grey-50);border-radius:12px;padding:28px;margin-bottom:28px;';
+    var maxBar = Math.max(fiveYearSaaS, fiveYearCustom, 1);
+    var saasBarPct = Math.round((fiveYearSaaS / maxBar) * 100);
+    var customBarPct = Math.round((fiveYearCustom / maxBar) * 100);
+    var savingColor = fiveYearSaving > 0 ? '#00a88e' : '#dc2626';
+
+    var fiveYearHTML = '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:8px;">5-Year Cost Comparison</h3>';
+    fiveYearHTML += '<p style="font-size:0.85rem;color:var(--grey-500);margin-bottom:24px;">SaaS shown with a 10% annual price increase, which is typical for seat-based pricing as teams grow.</p>';
+    fiveYearHTML += '<div class="src-bar-chart">';
+    fiveYearHTML += '<div class="src-bar-row">';
+    fiveYearHTML += '<div class="src-bar-label">Keep SaaS<br><span class="src-bar-sub">5 years total</span></div>';
+    fiveYearHTML += '<div class="src-bar-track"><div class="src-bar-fill src-bar-saas" style="width:' + saasBarPct + '%;"><span class="src-bar-value">' + fmtGBP(fiveYearSaaS) + '</span></div></div>';
+    fiveYearHTML += '</div>';
+    fiveYearHTML += '<div class="src-bar-row">';
+    fiveYearHTML += '<div class="src-bar-label">Custom build<br><span class="src-bar-sub">Build + 5 years run cost</span></div>';
+    fiveYearHTML += '<div class="src-bar-track"><div class="src-bar-fill src-bar-custom" style="width:' + customBarPct + '%;"><span class="src-bar-value">' + fmtGBP(fiveYearCustom) + '</span></div></div>';
+    fiveYearHTML += '</div>';
+    fiveYearHTML += '</div>';
+    fiveYearHTML += '<div class="src-five-year-saving" style="border-color:' + savingColor + ';">';
+    fiveYearHTML += '<div class="src-five-year-saving-label" style="color:' + savingColor + ';">5-year ' + (fiveYearSaving > 0 ? 'saving' : 'extra cost') + '</div>';
+    fiveYearHTML += '<div class="src-five-year-saving-value" style="color:' + savingColor + ';">' + (fiveYearSaving > 0 ? fmtGBP(fiveYearSaving) : fmtGBP(Math.abs(fiveYearSaving))) + '</div>';
+    fiveYearHTML += '<div class="src-five-year-saving-desc">' + (fiveYearSaving > 0
+      ? 'Building custom saves you this much over 5 years compared to keeping your SaaS stack.'
+      : 'Keeping SaaS is cheaper by this much over 5 years at your current size.') + '</div>';
+    fiveYearHTML += '</div>';
+
+    fiveYearEl.innerHTML = fiveYearHTML;
+
+    // --- Store for submission ---
+    window.__srcResults = {
+      verdict: verdict,
+      verdictLabel: verdictLabel,
+      toolsReplacedCount: toolsReplacedCount,
+      saasAnnualCost: saasAnnualCost,
+      toolsAnnual: toolsAnnual,
+      seatsAnnual: seatsAnnual,
+      hiddenCost: hiddenCost,
+      totalTrueCost: totalTrueCost,
+      customBuildCost: customBuildCost,
+      customRunAnnual: customRunAnnual,
+      annualSaving: annualSaving,
+      breakEvenYears: breakEvenYears,
+      fiveYearSaaS: fiveYearSaaS,
+      fiveYearCustom: fiveYearCustom,
+      fiveYearSaving: fiveYearSaving,
+      toolList: toolList.map(function(t) { return { name: t.name, monthlyCost: t.monthlyCost }; }),
+    };
+  }
+
+  // --- Formatting & render helpers ---
+  function fmtGBP(n) {
+    return '\u00A3' + Math.round(n).toLocaleString('en-GB');
+  }
+  function srcBreakdownRow(label, value, sub) {
+    return '<div class="src-breakdown-row">' +
+      '<div class="src-breakdown-row-label">' +
+        '<span class="src-breakdown-row-name">' + label + '</span>' +
+        (sub ? '<span class="src-breakdown-row-sub">' + sub + '</span>' : '') +
+      '</div>' +
+      '<div class="src-breakdown-row-value">' + value + '</div>' +
+    '</div>';
+  }
+  function srcStatBox(label, value, sub, accentColor) {
+    var borderStyle = accentColor ? 'border-color:' + accentColor + ';' : '';
+    var valueStyle = accentColor ? 'color:' + accentColor + ';' : '';
+    return '<div class="src-stat-box" style="' + borderStyle + '">' +
+      '<div class="src-stat-label">' + label + '</div>' +
+      '<div class="src-stat-value" style="' + valueStyle + '">' + value + '</div>' +
+      '<div class="src-stat-sub">' + sub + '</div>' +
+    '</div>';
+  }
+  function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+  }
+
+  // --- User ID (localStorage, no cookies) ---
+  function getUserId() {
+    let userId = localStorage.getItem('ajairu_src_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ajairu_src_user_id', userId);
+    }
+    return userId;
+  }
+
+  // --- Email form submission ---
+  document.getElementById('src-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('src-email-input').value.trim();
+    const phone = document.getElementById('src-phone-input').value.trim();
+    const company = document.getElementById('src-company-input').value.trim();
+
+    if (!email) return;
+
+    const r = window.__srcResults || {};
+    const userId = getUserId();
+
+    // Build answers payload (human-readable)
+    const answersPayload = steps.map(function(step, i) {
+      if (step.type === 'multi') {
+        var selected = Array.isArray(answers[i]) ? answers[i] : [];
+        var otherMeta = (i === 0 && answers[0] && answers[0].__other__) ? answers[0].__other__ : null;
+        var names = selected.map(function(id) {
+          var tool = SAAS_TOOLS.find(function(t) { return t.id === id; });
+          return tool ? tool.name : '';
+        }).filter(Boolean);
+        if (otherMeta) names.push(otherMeta.name + ' (other)');
+        return { step: i + 1, question: step.q, answer: names.join(', '), tools: selected, other: otherMeta };
+      }
+      const opt = step.options && answers[i] !== null ? step.options[answers[i]] : null;
+      return { step: i + 1, question: step.q, answer: opt ? opt.text : '', value: opt ? opt.value : '' };
+    });
+
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'calculator',
+        calculatorType: 'saas-roi',
+        userId: userId,
+        email: email,
+        phone: phone || null,
+        company: company || null,
+        answers: answersPayload,
+        verdict: r.verdict || '',
+        verdictLabel: r.verdictLabel || '',
+        toolsReplacedCount: r.toolsReplacedCount || 0,
+        saasAnnualCost: r.saasAnnualCost || 0,
+        toolsAnnual: r.toolsAnnual || 0,
+        seatsAnnual: r.seatsAnnual || 0,
+        hiddenCost: r.hiddenCost || 0,
+        totalTrueCost: r.totalTrueCost || 0,
+        customBuildCost: r.customBuildCost || 0,
+        customRunAnnual: r.customRunAnnual || 0,
+        annualSaving: r.annualSaving || 0,
+        breakEvenYears: r.breakEvenYears,
+        fiveYearSaaS: r.fiveYearSaaS || 0,
+        fiveYearCustom: r.fiveYearCustom || 0,
+        fiveYearSaving: r.fiveYearSaving || 0,
+        toolList: r.toolList || [],
+      }),
+    }).catch(function(err) { console.error('Save failed:', err); });
+
+    document.getElementById('src-email-success').style.display = 'block';
+    document.getElementById('src-email-form').style.display = 'none';
+    document.getElementById('src-post-success').style.display = 'block';
+  });
+</script>
+
+<style>
+  .src-explanation {
+    font-size: 0.95rem;
+    color: var(--grey-500);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: var(--grey-50);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+  }
+  /* CSS for JS-created elements (.src-*) lives in global.css */
+  .src-post-success { margin-top: 20px; }
+  .src-post-success .quiz-cta-buttons { margin-top: 16px; }
+</style>

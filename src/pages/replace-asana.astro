@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace Asana with Custom Software UK | ${SITE_NAME}`;
+const description = 'Replace Asana with custom software you own. UK SMEs save £8k-£30k/year. Build vs integrate guide with cost comparison. Break-even in 12-18 months.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace Asana UK', 'item': `${SITE_URL}/replace-asana` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Asana Replacement UK',
+  'serviceType': 'Custom Task & Project Management Software Development & Asana Replacement',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Replace Asana with custom task management software you own outright. UK SMEs save £8,000 to £30,000 per year with bespoke PM software. Build vs integrate guide, cost comparison, and break-even analysis.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'Asana Integration with AI', 'price': '8000', 'priceCurrency': 'GBP', 'description': 'Keep Asana, add an AI automation layer to connect it with your other systems. 4-12 weeks.' },
+    { '@type': 'Offer', 'name': 'Custom Task Management Software Replacement', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'Replace Asana with bespoke project management software you own outright. 8-16 weeks. Break-even in 12-18 months.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does it cost to replace Asana with custom software?', answer: 'A focused task management replacement starts from £25,000. Larger replacements with integrations and custom workflows typically range from £30,000 to £50,000. Compare that to Asana at £9-£19 per user per month: a 30-person team on Business costs £6,800 per year. Break-even on a custom build is 12-18 months, and you own the software forever after that.' },
+  { question: 'Can a custom task management tool handle client-facing work?', answer: 'Yes. This is one of the main reasons SMEs replace Asana. Custom software can include client portals, shared project views, permission-controlled access, and client-specific dashboards. Your clients see exactly what they need to see, without exposing your internal workflow. Asana has no native client-facing features, which is a real gap for service businesses.' },
+  { question: 'How long does it take to replace Asana?', answer: 'A focused task management replacement takes 8-16 weeks using AI-accelerated development. Your existing Asana stays running throughout the build, and we migrate your projects, tasks, and timelines in parallel. You only switch over when your team is confident in the new system. Traditional agencies quote 6-12 months for the same work.' },
+  { question: 'Should I replace Asana or integrate it?', answer: 'If your team uses Asana for standard task tracking and collaboration and the main pain is disconnected systems, integrate. Keep Asana and add an AI automation layer to connect it with your other tools. If you need client-facing features, complex workflows, or your team has outgrown Asana limits, replace it with custom software. The build-vs-buy calculator can help you decide which path fits your situation.' },
+  { question: 'Do I own the source code?', answer: 'Yes, entirely. You own the source code, the database, and the infrastructure from day one. No licence fees, no vendor lock-in, no price increases. Your in-house team can modify the software, or any developer can take it over. We provide full documentation and training so you are never dependent on us.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace Asana with Custom Software</h1>
+      <p>Asana is a popular task management tool, but the costs grow with your team and the platform has real limits for service businesses. Starter costs £9 per user per month and Business costs £19 per user per month. A 30-person team on Business pays £6,800 a year. There is a better way: keep Asana and automate it, or replace it with software you own outright.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace Asana UK'}]} />
+
+  <!-- WHAT ASANA DOES WELL -->
+  <section class="section" id="what-asana-does-well">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Be Fair</span>
+      <h2 class="section-title reveal">What Asana Does Well</h2>
+      <p class="section-subtitle reveal">Asana earned its popularity with teams. Here is what it genuinely gets right.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Task Management</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Task creation, assignment, due dates, and subtasks are clean and intuitive. The core task engine is reliable and easy to use for teams of any size.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Team Collaboration</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Comments, mentions, file attachments, and project conversations keep communication tied to work. The collaboration features are genuinely well designed.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Timelines</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Gantt-style timeline views help teams visualise project schedules and dependencies. The timeline feature is one of Asana's genuine strengths.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Ease of Adoption</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;line-height:1.6;">Asana is quick to set up and easy to adopt. Most teams are productive within a day. The learning curve is gentle, which is real value for busy teams.</p>
+        </div>
+      </div>
+      <p class="reveal" style="max-width:760px;margin:40px auto 0;text-align:center;color:var(--grey-600);font-size:1.05rem;line-height:1.7;">None of this is in question. Asana is a good task management tool. The problem is what it costs as teams grow, and what it cannot do for service businesses that need more.</p>
+    </div>
+  </section>
+
+  <!-- WHERE ASANA FALLS SHORT -->
+  <section class="section bg-grey" id="where-asana-fails">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem</span>
+      <h2 class="section-title reveal">Where Asana Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">Per-seat costs that scale with growth and a feature set that stops short of what service businesses need.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">Becomes Expensive With Team Growth</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Business tier costs £19 per user per month. A 30-person team pays £6,800 a year. A 50-person team pays £11,400. Every new hire increases the bill, whether they use Asana heavily or log in once a week.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">The pricing model punishes the thing you want: growth. The more successful your team becomes, the more Asana charges you for the same task management features.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">No Client-Facing Features</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">Asana has no native client portal. If you run a service business, you cannot give clients a view of their projects without giving them a full Asana licence or building a workaround. Client communication stays in email, separate from the task it relates to.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">For agencies, consultancies, and service businesses, this is a real gap. Your clients are part of your workflow, and Asana treats them as an afterthought.</p>
+        </div>
+      </div>
+      <div class="cards-grid cards-2" style="margin-top:32px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Limited for Complex Workflows</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Asana handles standard task lists well, but complex workflows with conditional logic, cross-project dependencies, and multi-stage approvals are hard to model. The platform works for simple task tracking but fights anything more sophisticated.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.05rem;color:#e53935;">Data Lock-In</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:8px;">Your project data lives in Asana's cloud. Exporting gives you CSV files that lose relationships, comments, and history. Stop paying, and access disappears. Your accumulated project knowledge belongs to the vendor, not you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE -->
+  <section class="section" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A</span>
+      <h2 class="section-title reveal">Integrate Asana with AI Automation</h2>
+      <p class="section-subtitle reveal">Keep Asana. Add an AI layer that connects it with the rest of your business.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If your team uses Asana for standard task tracking and collaboration and the main frustration is that task data sits in isolation from your CRM, accounting, and operations tools, do not rip it out. The task engine is doing its job. The problem is the silo.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">An AI automation layer solves this. We build custom APIs that sync data between Asana and every other system you run. Tasks connect to client records, project budgets, and delivery timelines. Your team stops updating status in three places.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Cost: from £8,000. Timeline: 4-12 weeks. You keep your Asana investment and make it work harder.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Real-time data sync</strong> between Asana and your CRM, accounting, and operations tools</li>
+            <li><strong>AI-powered task creation</strong> that generates tasks from CRM events and client activity</li>
+            <li><strong>Automated status updates</strong> that propagate across all your systems in real time</li>
+            <li><strong>Unified dashboards</strong> showing task progress alongside client and financial data</li>
+            <li><strong>You own the integration code</strong> outright, no ongoing licence fees for the automation layer</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:24px;">Explore System Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE -->
+  <section class="section bg-grey" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B</span>
+      <h2 class="section-title reveal">Replace Asana with Custom Software</h2>
+      <p class="section-subtitle reveal">Build task management software that works your way. Own the code. Break even in 12-18 months.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">When This Works</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">If you run a service business that needs client-facing features, or your team has outgrown Asana's workflow limits, replacing it is the better financial decision. You are already paying per seat for a tool that cannot handle client portals or complex workflows, and the cost grows with every hire.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Custom task management software means the system does exactly what your business needs, includes client portals, models your specific workflows, and uses your terminology. No per-seat pricing. No client-facing gaps. No data lock-in.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">Build cost: £25,000 to £50,000. Timeline: 8-16 weeks. Break-even: 12-18 months versus £6,800+ a year on Asana Business.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="color:var(--blue);margin-bottom:16px;">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Task management software built around your process</strong>, not a vendor's template</li>
+            <li><strong>Client-facing portals</strong> with permission-controlled views and shared project access</li>
+            <li><strong>Full source code ownership</strong>: database, infrastructure, and all intellectual property</li>
+            <li><strong>No per-seat pricing</strong>: add as many users as you like at zero additional cost</li>
+            <li><strong>Custom workflows</strong> that model your exact approval chains and dependencies</li>
+            <li><strong>Integrations included</strong> with your CRM, accounting, and communication tools</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:24px;">Explore ERP Replacement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Make the Call</span>
+      <h2 class="section-title reveal">How to Decide: Integrate or Replace?</h2>
+      <p class="section-subtitle reveal">Two questions will tell you which path fits your business.</p>
+      <div class="cards-grid cards-2" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Integrate If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>Your team is comfortable with Asana</li>
+            <li>Your task workflows are fairly standard</li>
+            <li>The main pain is disconnected systems, not the tool itself</li>
+            <li>You want results in 4-12 weeks, not a full rebuild</li>
+            <li>You do not need client-facing features</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-outline" style="margin-top:20px;">Explore Integration</a>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.15rem;color:var(--blue);margin-bottom:16px;">Choose Replace If</h3>
+          <ul style="color:var(--grey-600);line-height:1.9;">
+            <li>You need client-facing features Asana cannot deliver</li>
+            <li>Your workflows are complex and fight the platform</li>
+            <li>Per-seat pricing is a real financial burden as you grow</li>
+            <li>You want to own the software outright</li>
+            <li>You are a service business that needs client portals</li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-outline" style="margin-top:20px;">Explore Replacement</a>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey-600);font-size:1.05rem;margin-bottom:20px;">Still unsure? Use our free calculator to get a clear recommendation based on your actual situation.</p>
+        <a href="/build-vs-buy" class="btn btn-primary btn-lg">Try the Build vs Buy Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Asana Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before deciding whether to integrate or replace Asana.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Integrate or Replace?"
+    text="Book a free 30-minute discovery call. We will look at your actual Asana usage, calculate what you spend versus what a custom build would cost, and tell you honestly which path makes financial sense for your business. No hard sell."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

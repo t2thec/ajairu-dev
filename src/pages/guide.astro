@@ -124,7 +124,7 @@ const breadcrumbSchema = {
     const honeypot = formData.get('website') || '';
     const userId = getUserId();
 
-    fetch('http://' + window.location.hostname + ':8092/api/submit', {
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

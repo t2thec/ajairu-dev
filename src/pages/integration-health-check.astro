@@ -1,0 +1,552 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Integration Health Check | How Well Connected Is Your Tech Stack? | ${SITE_NAME}`;
+const description = 'A free guided tool for UK SMEs. Answer 6 questions about your software systems and get an instant integration health score, a list of problem areas, and an estimate of hours wasted on manual data transfer. No email required to see results.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Integration Health Check', 'item': `${SITE_URL}/integration-health-check` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is the Integration Health Check free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No email required to see your results.' } },
+    { '@type': 'Question', 'name': 'How long does the health check take?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'About 2 minutes. 6 questions about your software systems, manual data entry, sync failures, and API access.' } },
+    { '@type': 'Question', 'name': 'What do I get at the end?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'An integration score out of 100, a health level (Healthy, At Risk, or Critical), a list of your problem areas, and an estimate of hours wasted per week on manual data transfer.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Integration Health Check</h1>
+      <p>6 questions. 2 minutes. Your integration health score and problem areas. No email required.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Integration Health Check'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Intro -->
+      <div id="ihc-intro" class="quiz-intro">
+        <h2 class="section-title" style="text-align:left;">How well connected is your tech stack?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-500);margin-bottom:32px;">Most UK SMEs run a handful of software systems that barely talk to each other. Manual data entry, broken syncs, and blind spots cost real time and money. This guided tool walks you through six questions and gives you an instant integration health score, a list of problem areas, and an estimate of how many hours you waste each week on manual data transfer.</p>
+        <button id="ihc-start-btn" class="btn btn-primary btn-lg">Start the Health Check</button>
+      </div>
+
+      <!-- Health check container -->
+      <div id="ihc-container" class="quiz-container" style="display:none;">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="ihc-progress-fill" class="quiz-progress-fill"></div></div>
+          <span id="ihc-progress-text" class="quiz-progress-text">Question 1 of 6</span>
+        </div>
+        <div id="ihc-question" class="quiz-question"></div>
+        <div id="ihc-options" class="quiz-options"></div>
+        <div class="quiz-nav">
+          <button id="ihc-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="ihc-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results container -->
+      <div id="ihc-results" class="quiz-results" style="display:none;">
+        <div id="ihc-score-card" class="ihc-score-card"></div>
+        <div id="ihc-health-summary" class="ihc-health-summary"></div>
+        <div id="ihc-problem-areas" class="ihc-problem-areas"></div>
+        <div id="ihc-hours-wasted" class="ihc-hours-wasted"></div>
+
+        <div class="quiz-email-capture quiz-email-prominent">
+          <h3>Get your Integration Health Check report by email</h3>
+          <p>Enter your details and we will send you a copy of your score, problem areas, and a short summary of what to fix first. We will also follow up with a free 15-minute call to discuss your integration situation, no pressure.</p>
+          <form id="ihc-email-form" class="quiz-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="quiz-form-stacked">
+              <input type="email" id="ihc-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="ihc-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="ihc-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Send My Report &rarr;</button>
+            </div>
+          </form>
+          <p id="ihc-email-success" style="display:none;color:var(--blue-dark);font-weight:600;margin-top:12px;">Report saved and sent. Check your inbox.</p>
+          <div id="ihc-post-success" style="display:none;" class="ihc-post-success">
+            <div class="quiz-cta-buttons">
+              <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+              <a href="/services/system-integration-uk" class="btn btn-outline btn-lg">System Integration Service</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-cta">
+          <h3>Stop fighting your software stack</h3>
+          <p>Whether your stack is healthy or critical, a 30-minute call will help you see exactly where the leaks are and what to fix first. No sales pitch, just practical advice from a founder who connects UK SME systems for a living.</p>
+          <div class="quiz-cta-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="/services/system-integration-uk" class="btn btn-outline btn-lg">System Integration Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-TOOL PROMO -->
+  <section class="section bg-grey" id="other-tools">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p class="reveal" style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">Each takes about 2 minutes. No email needed to see your results.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+          <h3>SaaS ROI Calculator</h3>
+          <p>See the true cost of your SaaS stack vs custom software.</p>
+          <a href="/saas-roi-calculator" class="btn btn-primary">Calculate My SaaS ROI</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">⚖️</div>
+          <h3>Build vs Buy Calculator</h3>
+          <p>Should you buy off-the-shelf or build custom?</p>
+          <a href="/build-vs-buy" class="btn btn-primary">Start Calculator</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🔧</div>
+          <h3>Tech Debt Calculator</h3>
+          <p>How much is your legacy software costing you?</p>
+          <a href="/tech-debt-calculator" class="btn btn-primary">Check My Tech Debt</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📋</div>
+          <h3>Software Readiness Quiz</h3>
+          <p>Is your business ready for custom software?</p>
+          <a href="/assessment" class="btn btn-primary">Take the Quiz</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your systems and point you to the right fix, even if that is a simple configuration change and not a project with us."
+  />
+</BaseLayout>
+
+<script is:inline define:vars={{ SITE_NAME }}>
+  // --- Question definitions ---
+  // Steps 1-5 are scored multiple choice; step 6 is free-text.
+  const steps = [
+    {
+      id: 'systems',
+      type: 'choice',
+      q: 'How many separate software systems does your business use?',
+      options: [
+        { text: '1 to 3', score: 3, value: '1-3' },
+        { text: '4 to 10', score: 2, value: '4-10' },
+        { text: '11 to 20', score: 1, value: '11-20' },
+        { text: '20+', score: 0, value: '20+' },
+      ],
+      explanation: 'A small number of systems is easier to integrate. Each extra system adds another data silo, another login, and another integration to maintain. Tool sprawl is the root cause of most integration pain.',
+    },
+    {
+      id: 'manualEntry',
+      type: 'choice',
+      q: 'How much manual data entry happens between systems?',
+      options: [
+        { text: 'Almost none', score: 3, value: 'almost-none', hoursBase: 0 },
+        { text: 'A few hours per week', score: 2, value: 'few-hours-week', hoursBase: 3 },
+        { text: 'A few hours per day', score: 1, value: 'few-hours-day', hoursBase: 10 },
+        { text: "It's constant", score: 0, value: 'constant', hoursBase: 30 },
+      ],
+      explanation: 'Manual data entry is the clearest sign of poor integration. Every hour spent copying data between systems is an hour not spent on customers, and a likely source of errors.',
+    },
+    {
+      id: 'syncFailures',
+      type: 'choice',
+      q: 'How often do systems fail to sync or require manual fixes?',
+      options: [
+        { text: 'Rarely', score: 3, value: 'rarely', hoursBase: 0 },
+        { text: 'Weekly', score: 2, value: 'weekly', hoursBase: 1 },
+        { text: 'Daily', score: 1, value: 'daily', hoursBase: 3 },
+        { text: 'Multiple times a day', score: 0, value: 'multiple-daily', hoursBase: 8 },
+      ],
+      explanation: 'Frequent sync failures mean your integrations are fragile. Each failure is a fire to put out, and brittle integrations erode trust in your data.',
+    },
+    {
+      id: 'customerHistory',
+      type: 'choice',
+      q: "Can you see a single customer's full history across all your systems?",
+      options: [
+        { text: 'Yes, easily', score: 3, value: 'yes-easily' },
+        { text: 'Yes, with effort', score: 2, value: 'yes-effort' },
+        { text: 'Partially', score: 1, value: 'partially' },
+        { text: 'No', score: 0, value: 'no' },
+      ],
+      explanation: 'A unified customer view is the benchmark of good integration. If you cannot see a customer full history in one place, your data is fragmented and your team is working blind.',
+    },
+    {
+      id: 'apiAccess',
+      type: 'choice',
+      q: 'How many systems have API access or integration options?',
+      options: [
+        { text: 'All of them', score: 3, value: 'all' },
+        { text: 'Most', score: 2, value: 'most' },
+        { text: 'A few', score: 1, value: 'few' },
+        { text: 'None or do not know', score: 0, value: 'none-dont-know' },
+      ],
+      explanation: 'API access is what makes integration possible. Systems without APIs are dead ends that force manual workarounds. If you do not know, that itself is a problem worth investigating.',
+    },
+    {
+      id: 'painPoint',
+      type: 'text',
+      q: 'What is the biggest integration pain point?',
+      placeholder: 'e.g. We retype every order from our website into our accounting and stock systems by hand...',
+      explanation: 'Tell us in your own words what frustrates you most. This helps us tailor the recommendations and spot the highest-impact fix.',
+    },
+  ];
+
+  // --- State ---
+  let currentStep = 0;
+  const answers = steps.map(() => null);
+
+  const intro = document.getElementById('ihc-intro');
+  const container = document.getElementById('ihc-container');
+  const results = document.getElementById('ihc-results');
+  const startBtn = document.getElementById('ihc-start-btn');
+  const qEl = document.getElementById('ihc-question');
+  const optsEl = document.getElementById('ihc-options');
+  const prevBtn = document.getElementById('ihc-prev');
+  const nextBtn = document.getElementById('ihc-next');
+  const progressFill = document.getElementById('ihc-progress-fill');
+  const progressText = document.getElementById('ihc-progress-text');
+
+  startBtn.addEventListener('click', () => {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderStep();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips to results with sample answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers[0] = 2; // 4-10 systems
+    answers[1] = 1; // A few hours per day
+    answers[2] = 2; // Weekly
+    answers[3] = 1; // Partially
+    answers[4] = 1; // A few
+    answers[5] = 'We retype customer orders into three different systems and it breaks every week.';
+    showResults();
+  }
+
+  function renderStep() {
+    const step = steps[currentStep];
+    const isText = step.type === 'text';
+
+    qEl.innerHTML = '<h2 class="quiz-q-text">' + step.q + '</h2>' +
+      '<p class="ihc-explanation">' + step.explanation + '</p>';
+
+    optsEl.innerHTML = '';
+
+    if (isText) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'calc-text-input-wrapper';
+
+      const input = document.createElement('textarea');
+      input.id = 'ihc-text-input';
+      input.className = 'calc-text-input';
+      input.placeholder = step.placeholder || 'Describe the problem in your own words...';
+      input.rows = 8;
+      input.maxLength = 1000;
+      if (answers[currentStep]) input.value = answers[currentStep];
+
+      input.addEventListener('input', () => {
+        answers[currentStep] = input.value.trim();
+        nextBtn.disabled = answers[currentStep].length < 3;
+      });
+
+      wrapper.appendChild(input);
+      optsEl.appendChild(wrapper);
+      setTimeout(() => { if (input.focus) input.focus(); }, 100);
+    } else {
+      step.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        if (answers[currentStep] === i) btn.classList.add('selected');
+        btn.textContent = opt.text;
+        btn.addEventListener('click', () => {
+          answers[currentStep] = i;
+          document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          nextBtn.disabled = false;
+          nextBtn.classList.add('btn-pulse');
+        });
+        optsEl.appendChild(btn);
+      });
+    }
+
+    prevBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentStep === steps.length - 1 ? 'See My Results' : 'Next';
+
+    if (isText) {
+      nextBtn.disabled = !(typeof answers[currentStep] === 'string' && answers[currentStep].length >= 3);
+    } else {
+      nextBtn.disabled = answers[currentStep] === null;
+    }
+
+    const progress = ((currentStep + 1) / steps.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = 'Question ' + (currentStep + 1) + ' of ' + steps.length;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) { currentStep--; renderStep(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      renderStep();
+    } else {
+      showResults();
+    }
+  });
+
+  // --- Results ---
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    // Calculate score from steps 1-5 (indices 0-4)
+    let totalScore = 0;
+    const maxScore = 15; // 5 questions x 3 max each
+    const problemAreas = [];
+    let manualHoursBase = 0;
+    let syncHoursBase = 0;
+    let systemsMultiplier = 1.0;
+
+    for (let i = 0; i < 5; i++) {
+      const step = steps[i];
+      const ansIndex = answers[i];
+      if (ansIndex !== null && step.options && step.options[ansIndex]) {
+        const opt = step.options[ansIndex];
+        totalScore += opt.score;
+
+        // Collect hours data
+        if (step.id === 'manualEntry' && typeof opt.hoursBase === 'number') manualHoursBase = opt.hoursBase;
+        if (step.id === 'syncFailures' && typeof opt.hoursBase === 'number') syncHoursBase = opt.hoursBase;
+        if (step.id === 'systems') {
+          if (opt.value === '1-3') systemsMultiplier = 1.0;
+          else if (opt.value === '4-10') systemsMultiplier = 1.2;
+          else if (opt.value === '11-20') systemsMultiplier = 1.5;
+          else systemsMultiplier = 2.0;
+        }
+
+        // Flag problem areas (score 0 or 1)
+        if (opt.score <= 1) {
+          problemAreas.push({
+            id: step.id,
+            label: getProblemLabel(step.id),
+            answer: opt.text,
+            detail: getProblemDetail(step.id, opt.score),
+            recommendation: getProblemRecommendation(step.id, opt.score),
+          });
+        }
+      }
+    }
+
+    const integrationScore = Math.round((totalScore / maxScore) * 100);
+
+    // Health level
+    let healthLevel = '';
+    let healthColor = '';
+    let healthBg = '';
+    let healthDesc = '';
+    if (integrationScore >= 70) {
+      healthLevel = 'Healthy';
+      healthColor = '#00a88e';
+      healthBg = 'rgba(0, 168, 142, 0.1)';
+      healthDesc = 'Your tech stack is well connected. Most data flows between systems without manual intervention. Focus on the few remaining gaps to keep things running smoothly.';
+    } else if (integrationScore >= 40) {
+      healthLevel = 'At Risk';
+      healthColor = '#d97706';
+      healthBg = 'rgba(217, 119, 6, 0.1)';
+      healthDesc = 'Your tech stack has significant integration gaps. Manual workarounds and sync failures are costing you time and creating data quality risks. Addressing the problem areas below will deliver quick wins.';
+    } else {
+      healthLevel = 'Critical';
+      healthColor = '#dc2626';
+      healthBg = 'rgba(220, 38, 38, 0.1)';
+      healthDesc = 'Your tech stack is poorly connected. You are likely losing substantial time to manual data transfer and dealing with frequent sync failures. Integration work would deliver major efficiency gains.';
+    }
+
+    // Estimated hours wasted per week
+    const estimatedHours = Math.round((manualHoursBase * systemsMultiplier) + syncHoursBase);
+
+    // --- Score card ---
+    const scoreCard = document.getElementById('ihc-score-card');
+    scoreCard.className = 'quiz-score-card';
+    scoreCard.style.cssText = 'text-align:center;padding:32px;background:' + healthBg + ';border-radius:12px;margin-bottom:24px;border:2px solid ' + healthColor + ';';
+    scoreCard.innerHTML =
+      '<div class="quiz-score-label">Your Integration Health Score</div>' +
+      '<div class="quiz-score-num">' + integrationScore + '<span class="quiz-score-total">/100</span></div>' +
+      '<div class="ihc-health-badge" style="background:' + healthColor + ';">' + healthLevel + '</div>';
+
+    // --- Health summary ---
+    const summary = document.getElementById('ihc-health-summary');
+    summary.style.cssText = 'padding:20px 24px;background:var(--grey-50);border-radius:8px;margin-bottom:28px;';
+    summary.innerHTML = '<p style="font-size:0.98rem;color:var(--grey-700);line-height:1.6;margin:0;">' + healthDesc + '</p>';
+
+    // --- Problem areas ---
+    const problemEl = document.getElementById('ihc-problem-areas');
+    let problemHTML = '<h3 class="quiz-section-title" style="text-align:left;margin-bottom:20px;">Problem Areas</h3>';
+    if (problemAreas.length === 0) {
+      problemHTML += '<div class="quiz-rec"><span class="quiz-rec-priority" style="background:#00a88e;">All Clear</span><p>No major problem areas detected. Your systems are well integrated. Keep monitoring for drift as your stack grows.</p></div>';
+    } else {
+      problemHTML += '<div style="display:flex;flex-direction:column;gap:14px;">';
+      problemAreas.forEach(function(pa) {
+        problemHTML += '<div class="quiz-rec">' +
+          '<span class="quiz-rec-priority" style="background:#dc2626;">' + pa.label + '</span>' +
+          '<p style="margin-bottom:10px;"><strong>Your answer:</strong> ' + pa.answer + '. ' + pa.detail + '</p>' +
+          '<p style="margin:0;color:var(--grey-700);"><strong>What to do:</strong> ' + pa.recommendation + '</p>' +
+          '</div>';
+      });
+      problemHTML += '</div>';
+    }
+    problemEl.innerHTML = problemHTML;
+
+    // --- Hours wasted ---
+    const hoursEl = document.getElementById('ihc-hours-wasted');
+    const hoursColor = estimatedHours >= 15 ? '#dc2626' : estimatedHours >= 5 ? '#d97706' : '#00a88e';
+    hoursEl.style.cssText = 'text-align:center;padding:28px;background:var(--grey-50);border-radius:12px;margin-bottom:28px;border-top:4px solid ' + hoursColor + ';';
+    let hoursDesc = '';
+    if (estimatedHours >= 15) {
+      hoursDesc = 'That is potentially ' + estimatedHours + ' hours of productive time lost every week, or roughly ' + (estimatedHours * 48) + ' hours a year. At an average UK SME salary, that is significant money walking out the door.';
+    } else if (estimatedHours >= 5) {
+      hoursDesc = 'That is ' + estimatedHours + ' hours of productive time lost every week, or about ' + (estimatedHours * 48) + ' hours a year. Worth fixing before it grows.';
+    } else if (estimatedHours > 0) {
+      hoursDesc = 'Only ' + estimatedHours + ' hours per week. You are in good shape, but keep an eye on it as your business grows.';
+    } else {
+      hoursDesc = 'Minimal time wasted on manual data transfer. Your integrations are doing their job.';
+    }
+    hoursEl.innerHTML =
+      '<div style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-500);margin-bottom:8px;">Estimated Time Wasted on Manual Data Transfer</div>' +
+      '<div style="font-size:2.2rem;font-weight:800;color:' + hoursColor + ';line-height:1;margin-bottom:8px;">' + estimatedHours + ' hrs/week</div>' +
+      '<p style="font-size:0.9rem;color:var(--grey-500);line-height:1.6;margin:0;max-width:500px;margin-left:auto;margin-right:auto;">' + hoursDesc + '</p>';
+
+    // Store for submission
+    window.__ihcResults = {
+      healthLevel: healthLevel,
+      integrationScore: integrationScore,
+      estimatedHours: estimatedHours,
+      problemAreas: problemAreas.map(function(pa) { return pa.label; }),
+    };
+  }
+
+  function getProblemLabel(id) {
+    var labels = {
+      systems: 'System Sprawl',
+      manualEntry: 'Manual Data Entry',
+      syncFailures: 'Sync Failures',
+      customerHistory: 'Fragmented Customer Data',
+      apiAccess: 'Limited API Access',
+    };
+    return labels[id] || 'Integration Gap';
+  }
+
+  function getProblemDetail(id, score) {
+    var details = {
+      systems: score === 0
+        ? 'Running 20 or more systems creates massive integration overhead. Every system is another silo to connect and maintain.'
+        : 'Running 11 to 20 systems is a lot of integration surface area. Each one is a potential point of failure.',
+      manualEntry: score === 0
+        ? 'Constant manual data entry between systems is a major drain on productivity and a frequent source of errors.'
+        : 'Spending hours each day on manual data entry signals that your systems are not talking to each other.',
+      syncFailures: score === 0
+        ? 'Multiple sync failures per day mean your integrations are fragile and unreliable. Your team is constantly firefighting.'
+        : 'Daily sync failures indicate brittle integrations that need attention before they get worse.',
+      customerHistory: score === 0
+        ? 'With no unified customer view, your team cannot see the full picture and risks providing inconsistent service.'
+        : 'Only a partial customer view means your team is making decisions with incomplete information.',
+      apiAccess: score === 0
+        ? 'Without API access, integration is nearly impossible. You are locked into manual workarounds with no path to automation.'
+        : 'Having only a few systems with API access limits what you can automate and connects through manual workarounds.',
+    };
+    return details[id] || 'This area needs attention.';
+  }
+
+  function getProblemRecommendation(id, score) {
+    var recs = {
+      systems: 'Audit your systems and identify which ones overlap or could be consolidated. Fewer well-connected systems beat many disconnected ones.',
+      manualEntry: 'Map every manual data transfer and prioritise the highest-volume ones for automation. API integration or an automation layer can eliminate most of this work.',
+      syncFailures: 'Review your current integrations for single points of failure. Add monitoring and retry logic, or replace brittle point-to-point connections with a more reliable integration approach.',
+      customerHistory: 'Centralise customer data into a single source of truth, such as a CRM or a unified data layer, and connect your other systems to it.',
+      apiAccess: 'Check each system documentation for API or webhook options. Where APIs do not exist, consider replacing the system or using an automation tool that works around the gap.',
+    };
+    return recs[id] || 'Review this area and identify the quickest fix.';
+  }
+
+  // --- User ID (localStorage, no cookies) ---
+  function getUserId() {
+    let userId = localStorage.getItem('ajairu_ihc_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ajairu_ihc_user_id', userId);
+    }
+    return userId;
+  }
+
+  // --- Email form submission ---
+  document.getElementById('ihc-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('ihc-email-input').value.trim();
+    const phone = document.getElementById('ihc-phone-input').value.trim();
+    const company = document.getElementById('ihc-company-input').value.trim();
+
+    if (!email) return;
+
+    const r = window.__ihcResults || {};
+    const userId = getUserId();
+
+    // Build answers payload (human-readable)
+    const answersPayload = steps.map(function(step, i) {
+      if (step.type === 'text') {
+        return { step: i + 1, question: step.q, answer: answers[i] || '' };
+      }
+      const opt = step.options && answers[i] !== null ? step.options[answers[i]] : null;
+      return { step: i + 1, question: step.q, answer: opt ? opt.text : '', score: opt ? opt.score : 0 };
+    });
+
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'calculator',
+        userId: userId,
+        email: email,
+        phone: phone || null,
+        company: company || null,
+        answers: answersPayload,
+        recommendation: r.healthLevel || '',
+        recLabel: 'Integration Health: ' + (r.healthLevel || ''),
+        score: r.integrationScore || 0,
+        saasThreeYearCost: 0,
+        customThreeYearCost: 0,
+        annualSpend: 0,
+      }),
+    }).catch(function(err) { console.error('Save failed:', err); });
+
+    document.getElementById('ihc-email-success').style.display = 'block';
+    document.getElementById('ihc-email-form').style.display = 'none';
+    document.getElementById('ihc-post-success').style.display = 'block';
+  });
+</script>
+
+<style>
+  /* Note: CSS for JS-created elements (.ihc-explanation, .ihc-health-badge) lives in global.css */
+</style>

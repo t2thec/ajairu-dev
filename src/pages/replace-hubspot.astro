@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL } from '../config';
+
+const title = `How to Replace HubSpot with Custom Software UK | ${SITE_NAME}`;
+const description = 'Replace HubSpot with custom software you own. UK SMEs save £15k-£30k/year. Build vs integrate guide. Break-even in 12-18 months. No per-seat fees, no vendor lock-in.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Replace HubSpot', 'item': `${SITE_URL}/replace-hubspot` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'HubSpot Replacement UK',
+  'serviceType': 'HubSpot Replacement with Custom Software',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME, 'email': CONTACT_EMAIL },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Replace HubSpot with bespoke software you own outright. UK SMEs replace Sales Hub and Marketing Hub with a custom CRM and marketing tool built around their process. No per-seat fees, no vendor lock-in. Break-even in 12-18 months.',
+  'offers': [
+    { '@type': 'Offer', 'name': 'HubSpot Replacement Build', 'price': '25000', 'priceCurrency': 'GBP', 'description': 'Replace Sales Hub with a custom CRM. 8-14 weeks. Data migration included.' },
+    { '@type': 'Offer', 'name': 'Full HubSpot Replacement', 'price': '60000', 'priceCurrency': 'GBP', 'description': 'Replace Sales Hub and Marketing Hub with a unified custom platform. 14-20 weeks. Email sequences, deal tracking, reporting, automation.' },
+  ],
+};
+
+const faqItems = [
+  { question: 'How much does it cost to replace HubSpot?', answer: 'A custom build to replace HubSpot typically costs between £25,000 and £60,000 depending on scope. A Sales Hub replacement starts at £25,000. Replacing both Sales Hub and Marketing Hub with a unified platform ranges from £40,000 to £60,000. Break-even is 12 to 18 months when you compare it to the £24,000+ per year most UK SMEs spend on HubSpot. After break-even, the savings compound every year because there are no per-seat fees and no licence increases.' },
+  { question: 'Can custom software do what HubSpot does?', answer: 'Yes. Email sequences, deal tracking, contact management, reporting dashboards, marketing automation, lead scoring, and workflow automation can all be built into custom software. The difference is it gets built around your actual sales and marketing process, not a template. You get the features you use and none of the ones you do not. HubSpot does this well out of the box, but you pay for 100% of the platform to use 30% of the features.' },
+  { question: 'How long does migration from HubSpot take?', answer: '8 to 14 weeks for a Sales Hub replacement, 14 to 20 weeks if you are replacing both Sales Hub and Marketing Hub. Data export from HubSpot is straightforward via their API. We extract contacts, companies, deals, emails, and notes, then map them to your new schema. Your HubSpot account stays running until you are confident in the new system, so there is no gap in operations.' },
+  { question: 'Should I keep HubSpot or replace it?', answer: 'If marketing automation is your core need and you use 70% or more of HubSpot features, keep it. The platform earns its keep. If you use less than 30% of the features and your sales process is non-standard, replace it. You are paying a premium for capabilities you never touch. The middle ground is Option A on this page: keep HubSpot and add an AI integration layer to connect it with Xero, Sage, and your other tools. That gets you more value without a full rebuild.' },
+  { question: 'Do I own the source code?', answer: 'Yes. Source code, database, infrastructure, everything. No per-seat fees, no licence costs, no vendor lock-in. If you want to change something, your team can do it, we can do it, or any developer can do it. You own the software the same way you own a building you bought, not the way you rent an office.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqItems.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>How to Replace HubSpot with Custom Software</h1>
+      <p>HubSpot is great for marketing-led SMEs but gets expensive fast. Sales Hub Pro is £85 per user per month. 15 users is £15,000 a year. Marketing Hub Pro is £780 a month, which is £9,000 a year. Total £24,000 plus a year, and rising. Here is how to decide whether to integrate, replace, or keep paying.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Replace HubSpot'}]} />
+
+  <!-- WHAT HUBSPOT DOES WELL -->
+  <section class="section" id="what-hubspot-does-well">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Honest Starting Point</span>
+      <h2 class="section-title reveal">What HubSpot Does Well</h2>
+      <p class="section-subtitle reveal">HubSpot earned its reputation. This is what it genuinely does better than most alternatives.</p>
+      <div class="cards-grid cards-4" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="megaphone" /></div>
+          <h3 style="font-size:1.1rem;margin-top:12px;">Marketing Automation</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Email sequences, lead nurturing, and drip campaigns work out of the box. The visual workflow builder is genuinely good for non-technical teams.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="email" /></div>
+          <h3 style="font-size:1.1rem;margin-top:12px;">Email Sequences</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Templated sales sequences with open and click tracking. Your sales team can send personalised follow-ups without writing each email from scratch.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3 style="font-size:1.1rem;margin-top:12px;">Reporting</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Dashboards across marketing and sales in one place. Pipeline reports, campaign attribution, and revenue tracking without building a data warehouse.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3 style="font-size:1.1rem;margin-top:12px;">Ease of Setup</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">You can get a team live in days, not months. The onboarding is well documented and the template library means you start with something that works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE HUBSPOT FALLS SHORT -->
+  <section class="section bg-grey" id="where-hubspot-falls-short">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Problem for UK SMEs</span>
+      <h2 class="section-title reveal">Where HubSpot Falls Short for UK SMEs</h2>
+      <p class="section-subtitle reveal">The cracks show when your team grows past 10 people or your process does not match HubSpot defaults.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Per-Seat Pricing</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:12px;">Sales Hub Pro at £85 per user per month means 15 users costs £15,300 a year. Add a marketing team and the bill climbs fast. You pay full price for every seat, including people who only need to view contacts or update a deal stage.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Hub Limits</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:12px;">Each Hub is sold separately. Sales Hub does not include marketing automation. Marketing Hub does not include deal tracking. Need both? You pay for both, and the costs stack on top of each other rather than bundling.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Workflow Constraints</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:12px;">Custom workflows hit ceilings. You cannot build a workflow that branches the way your sales process actually branches. You end up with workarounds, custom properties, and fragile automation that breaks when HubSpot updates the platform.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Data Lock-In</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:12px;">Your contacts, deals, and history live in HubSpot. Exporting is possible but the relationships and custom fields do not always map cleanly. Stop paying and you lose access to the workflow automations you spent months building.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Paying for What You Do Not Use</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:12px;">Most SMEs use 20 to 30 percent of HubSpot features. You pay for the other 70 to 80 percent because pricing is per seat, not per feature. A sales team that needs contact management and deal tracking subsidises the marketing automation modules they never open.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Price Increases</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;margin-top:12px;">HubSpot raises prices regularly. The contact-based pricing model means every new lead you add to marketing pushes you into a higher tier. Your costs grow with your success, which is the wrong incentive for a growing business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE COST REALITY -->
+  <section class="section" id="cost-reality">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Numbers</span>
+      <h2 class="section-title reveal">The Real Cost of HubSpot for a 15-Person SME</h2>
+      <p class="section-subtitle reveal">A typical UK SME with a sales team and a marketing function. This is what the bill actually looks like.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Sales Hub Pro</h3>
+          <div style="font-size:2rem;font-weight:800;color:#e53935;margin:16px 0;">£15,300/year</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">15 users at £85 per user per month. That is £1,275 a month before you add marketing.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Marketing Hub Pro</h3>
+          <div style="font-size:2rem;font-weight:800;color:#e53935;margin:16px 0;">£9,360/year</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">£780 a month for 2,000 contacts. More contacts means a higher tier. Add another £200 a month for 5,000 contacts.</p>
+        </div>
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Total Annual</h3>
+          <div style="font-size:2rem;font-weight:800;color:#e53935;margin:16px 0;">£24,660+/year</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">And rising. Add-ons, more contacts, and annual price increases push this higher every year. Over 3 years, that is £75,000 plus with nothing to show for it at the end.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Numbers reflect HubSpot pricing at time of writing. Your actual costs depend on user count and contact tier. <a href="/contact">Book a free call</a> for a tailored calculation against your HubSpot bill.</p>
+    </div>
+  </section>
+
+  <!-- OPTION A: INTEGRATE -->
+  <section class="section bg-grey" id="option-a-integrate">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option A</span>
+      <h2 class="section-title reveal">Integrate HubSpot with AI Automation</h2>
+      <p class="section-subtitle reveal">Keep HubSpot. Add an AI layer that connects it to the rest of your business so you actually use what you pay for.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">When This Is the Right Call</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You use 70 percent or more of HubSpot features and your marketing automation genuinely drives revenue. The problem is not HubSpot itself, it is that HubSpot sits in a silo. Your sales data does not flow into Xero. Your marketing leads do not reach Sage. Your team manually copies data between systems because HubSpot does not connect to the tools your finance and operations teams use.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">This is where an integration layer fixes the real problem without throwing away your HubSpot investment. We connect HubSpot to Xero, Sage, your stock system, and your reporting tools. Data flows automatically. Your finance team sees closed deals in real time. Your marketing team sees revenue attribution without manual exports. You keep the HubSpot features you actually use.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>HubSpot connected to Xero and Sage</strong> so closed deals create invoices automatically</li>
+            <li><strong>Lead data flowing into your operations system</strong> without manual entry</li>
+            <li><strong>Unified reporting</strong> across sales, marketing, and finance in one dashboard</li>
+            <li><strong>AI automation</strong> handling data entry, follow-ups, and status updates</li>
+            <li><strong>Keep your HubSpot workflows</strong> and add the missing connections</li>
+            <li><strong>Lower cost than a full replacement</strong> because you keep the platform</li>
+          </ul>
+          <a href="/services/system-integration-uk" class="btn btn-primary" style="margin-top:24px;">Explore System Integration UK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTION B: REPLACE -->
+  <section class="section" id="option-b-replace">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Option B</span>
+      <h2 class="section-title reveal">Replace HubSpot with Custom Software</h2>
+      <p class="section-subtitle reveal">Build a CRM and marketing tool that works your way. Break-even in 12 to 18 months. Then the savings start.</p>
+      <div class="split-content" style="margin-top:48px;">
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">When This Is the Right Call</h3>
+          <p style="color:var(--grey-600);line-height:1.7;">You use less than 30 percent of HubSpot features. Your sales process is non-standard and you have spent months bending it to fit HubSpot defaults. Your team complains about the interface. You are paying £24,000 a year and rising for a platform that fights your workflow instead of supporting it.</p>
+          <p style="color:var(--grey-600);line-height:1.7;margin-top:16px;">This is where replacing HubSpot with custom software makes financial sense. A bespoke build costs £25,000 to £60,000 depending on scope. Against £24,000 a year in HubSpot fees, break-even is 12 to 18 months. After that, you own the software outright with no per-seat fees and no licence increases. The savings compound every year.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="margin-bottom:16px;color:var(--blue);">What You Get</h3>
+          <ul style="color:var(--grey-600);line-height:2;">
+            <li><strong>Custom CRM</strong> with your pipeline stages, your terminology, your fields</li>
+            <li><strong>Email sequences and marketing automation</strong> built around your actual campaigns</li>
+            <li><strong>Reporting dashboards</strong> showing the metrics you actually care about</li>
+            <li><strong>Direct integration</strong> with Xero, Sage, and your other tools, no middleware needed</li>
+            <li><strong>No per-seat fees</strong> whether you have 5 users or 50</li>
+            <li><strong>You own the source code, database, and everything else</strong></li>
+          </ul>
+          <a href="/services/erp-replacement-uk" class="btn btn-primary" style="margin-top:24px;">Explore ERP Replacement UK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST COMPARISON: INTEGRATE VS REPLACE -->
+  <section class="section bg-grey" id="cost-comparison">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Numbers</span>
+      <h2 class="section-title reveal">Option A vs Option B: 3-Year Cost Comparison</h2>
+      <p class="section-subtitle reveal">Same 15-person SME, £24,660/year on HubSpot. Here is what each path looks like over 3 years.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="border-top:4px solid #e53935;">
+          <h3 style="font-size:1.1rem;color:#e53935;">Keep HubSpot As-Is</h3>
+          <div style="font-size:2rem;font-weight:800;color:#e53935;margin:16px 0;">£74,000+</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">3 years of subscriptions at £24,660/year, plus price increases. You own nothing. Stop paying and you lose access to your data, workflows, and automation.</p>
+          <ul style="font-size:0.85rem;color:var(--grey-600);line-height:1.8;margin-top:16px;">
+            <li>£24,660/year, forever</li>
+            <li>Price increases every year</li>
+            <li>Add-ons cost extra</li>
+            <li>Vendor lock-in, no exit without data loss</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Option A: Integrate</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);margin:16px 0;">£80,000</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">£74,000 HubSpot subscriptions over 3 years plus a one-time £6,000 integration build. You keep HubSpot and add the missing connections. Lower upfront cost, but you keep paying HubSpot forever.</p>
+          <ul style="font-size:0.85rem;color:var(--grey-600);line-height:1.8;margin-top:16px;">
+            <li>£6,000 one-time integration build</li>
+            <li>£24,660/year HubSpot continues</li>
+            <li>Data flows between systems</li>
+            <li>You still do not own the platform</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border-top:4px solid var(--blue);">
+          <h3 style="font-size:1.1rem;color:var(--blue);">Option B: Replace</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);margin:16px 0;">£50,000</div>
+          <p style="font-size:0.9rem;color:var(--grey-600);line-height:1.7;">£42,000 one-time build plus £8,000 maintenance over 3 years. You own the software outright. No per-seat fees, no licence increases. Break-even at 12 to 18 months, then savings compound.</p>
+          <ul style="font-size:0.85rem;color:var(--grey-600);line-height:1.8;margin-top:16px;">
+            <li>£42,000 one-time build cost</li>
+            <li>£2,600/year optional maintenance</li>
+            <li>No price increases, you own it</li>
+            <li>Unlimited users, no per-seat fees</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comparison-us-banner reveal" style="margin-top:40px;background:var(--navy);color:var(--white);border-radius:12px;padding:32px 40px;">
+        <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+          <div style="flex-shrink:0;">
+            <div style="width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;">
+              <Icon name="target" size={28} />
+            </div>
+          </div>
+          <div style="flex:1;min-width:280px;">
+            <h3 style="color:var(--white);font-size:1.4rem;margin-bottom:12px;">The Break-Even Math</h3>
+            <p style="color:rgba(255,255,255,0.9);font-size:1.05rem;line-height:1.7;margin-bottom:20px;">Option B saves £24,000 over Option A over 3 years. But the real win is year 4 and beyond. Option A keeps costing you £24,660 a year forever. Option B costs roughly £2,600 a year in maintenance. From year 2 onwards, you save over £22,000 a year, every year, for as long as you run the business.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:24px;">
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">12-18 months</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Break-even point</div>
+              </div>
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">£22k+/year</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Savings from year 2</div>
+              </div>
+              <div>
+                <div style="font-size:1.5rem;font-weight:800;color:var(--teal);">100%</div>
+                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Code ownership, yours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);">Numbers are illustrative for a 15-person UK SME spending £24,660/year on HubSpot. Your actual costs depend on scope and current spend. <a href="/contact">Book a free call</a> for a tailored calculation.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO DECIDE -->
+  <section class="section" id="how-to-decide">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Making the Decision</span>
+      <h2 class="section-title reveal">How to Decide: Integrate, Replace, or Keep Paying</h2>
+      <p class="section-subtitle reveal">Three questions that tell you which option fits your situation.</p>
+      <div class="cards-grid cards-3" style="margin-top:48px;">
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">1</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">How Much of HubSpot Do You Use?</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">If you use 70 percent or more of HubSpot features and marketing automation is your core need, keep it and look at Option A. If you use less than 30 percent, you are subsidising features you never touch. Option B is the better financial call.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">2</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">Is Your Sales Process Standard?</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">If your sales process fits HubSpot defaults, integration makes sense. If you have spent months bending your process to fit HubSpot, or your team works around the platform, replacement pays for itself in productivity alone.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;padding:32px 20px;">
+          <div style="font-size:2rem;font-weight:800;color:var(--blue);">3</div>
+          <h3 style="font-size:1.1rem;margin-top:8px;">What Is Your Annual HubSpot Spend?</h3>
+          <p style="font-size:0.9rem;color:var(--grey-600);margin-top:8px;">Below £10,000 a year, keep HubSpot. The build cost does not justify itself. Above £20,000 a year, replacement breaks even in 12 to 18 months and saves £15,000 to £30,000 a year after that.</p>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey-600);line-height:1.7;max-width:680px;margin:0 auto 24px;">Not sure which way to go? Use our Build vs Buy calculator to get a clear recommendation based on your software spend, integration needs, and how well your current tools fit your workflow. It takes 2 minutes and you do not need an email to see your results.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="/build-vs-buy" class="btn btn-primary btn-lg">Build vs Buy Calculator</a>
+          <a href="/saas-roi-calculator" class="btn btn-outline btn-lg">SaaS ROI Calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">HubSpot Replacement FAQs</h2>
+      <p class="section-subtitle reveal">The questions UK SMEs ask before replacing HubSpot with custom software.</p>
+      <FAQ items={faqItems} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Whether to Replace or Integrate?"
+    text="Book a free 30-minute discovery call. We will look at your HubSpot bill, your feature usage, and your sales process, and tell you honestly whether replacement, integration, or keeping HubSpot makes the most financial sense for your business right now."
+    primaryCtaText="Book a Free Discovery Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>
