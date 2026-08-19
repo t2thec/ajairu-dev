@@ -1,10 +1,11 @@
 // Standalone API server for quiz/guide/contact submissions
-// Runs on port 8092, receives POSTs from the static site
+// Runs on port 8091, receives POSTs from the static site
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import nodemailer from 'nodemailer';
+import { wrapEmailHtml, guideEmailInnerHtml, notificationInnerHtml, BRAND } from './email-template.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, 'data');
@@ -56,24 +57,24 @@ async function sendQuizResultsEmail(toEmail, score, verdict, categoryScores) {
     { name: 'Strategy & Priority', score: categoryScores?.strategy ?? '-' },
   ];
 
-  const scoreColor = score >= 75 ? '#00a88e' : score >= 50 ? '#1a2332' : score >= 25 ? '#e8a838' : '#e53935';
+  const scoreColor = score >= 75 ? BRAND.accent : score >= 50 ? BRAND.navy : score >= 25 ? '#e8a838' : '#e53935';
 
   const categoryBars = categories.map(c => {
     const s = typeof c.score === 'number' ? c.score : 0;
-    const barColor = s >= 67 ? '#00a88e' : s >= 34 ? '#1a2332' : '#e53935';
+    const barColor = s >= 67 ? BRAND.accent : s >= 34 ? BRAND.navy : '#e53935';
     return `
       <tr>
         <td style="padding:8px 0;">
-          <table width="100%" cellpadding="0" cellspacing="0">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
-              <td style="font-family:Arial,sans-serif;font-size:14px;font-weight:600;color:#1a2332;">${c.name}</td>
-              <td align="right" style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#1a2332;">${c.score}/100</td>
+              <td style="font-family:Arial,sans-serif;font-size:14px;font-weight:600;color:${BRAND.navy};">${c.name}</td>
+              <td align="right" style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:${BRAND.navy};">${c.score}/100</td>
             </tr>
           </table>
-          <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:6px;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
             <tr>
               <td style="background:#e8ecef;border-radius:100px;height:8px;">
-                <table cellpadding="0" cellspacing="0" style="width:${s}%;"><tr><td style="background:${barColor};border-radius:100px;height:8px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+                <table cellpadding="0" cellspacing="0" border="0" style="width:${s}%;"><tr><td style="background:${barColor};border-radius:100px;height:8px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
               </td>
             </tr>
           </table>
@@ -81,109 +82,112 @@ async function sendQuizResultsEmail(toEmail, score, verdict, categoryScores) {
       </tr>`;
   }).join('');
 
+  const innerHtml = `
+<h1 style="margin:0 0 8px;font-family:'Open Sans',Arial,sans-serif;font-size:14px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:1px;text-align:center;">Your Score</h1>
+<p style="margin:0;font-family:'Open Sans',Arial,sans-serif;font-size:56px;font-weight:800;color:${scoreColor};line-height:1;text-align:center;">${score}<span style="font-size:24px;color:#9aa5b1;">/100</span></p>
+<p style="margin:16px auto 0;max-width:420px;font-family:Arial,sans-serif;font-size:15px;color:#3d4d5c;line-height:1.6;text-align:center;">${verdict}</p>
+<hr style="border:none;border-top:1px solid #e8ecef;margin:24px 0;">
+<h2 style="margin:0 0 16px;font-family:'Open Sans',Arial,sans-serif;font-size:18px;color:${BRAND.navy};font-weight:700;">Breakdown by Category</h2>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  ${categoryBars}
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${BRAND.accentLight};border-radius:10px;border:1px solid ${BRAND.accent};margin-top:24px;">
+  <tr>
+    <td style="padding:24px;text-align:center;">
+      <h3 style="margin:0 0 8px;font-family:'Open Sans',Arial,sans-serif;font-size:16px;color:${BRAND.navy};font-weight:700;">Want to go deeper?</h3>
+      <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;color:#3d4d5c;line-height:1.5;">Our Technical Consultancy (from &pound;2,000) examines your actual operations and gives you a prioritised report with ROI estimates.</p>
+      <a href="${BRAND.contactUrl}" style="display:inline-block;background:${BRAND.accent};color:#ffffff;text-decoration:none;font-weight:700;font-size:14px;padding:14px 32px;border-radius:8px;font-family:Arial,sans-serif;">Book a Free Discovery Call</a>
+    </td>
+  </tr>
+</table>`;
+
   await transporter.sendMail({
     from: `"${emailConfig.fromName}" <${emailConfig.fromEmail}>`,
     to: toEmail,
     subject: `Your Software Readiness Score: ${score}/100`,
-    text: `Your Software Readiness Score: ${score}/100\n\n${verdict}\n\nBreakdown:\n${categories.map(c => `${c.name}: ${c.score}/100`).join('\n')}\n\nWant to go deeper? Our Technical Consultancy (from £2,000) examines your actual operations and gives you a prioritised report with ROI estimates. Book a free call: https://ajairu.dev/contact\n\n${emailConfig.fromName}`,
-    html: `<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:24px 0;">
-    <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;max-width:600px;">
-
-        <!-- Header -->
-        <tr>
-          <td style="background:#1a2332;padding:32px 40px;text-align:center;">
-            <h1 style="margin:0;color:#ffffff;font-size:24px;font-weight:800;">Your AI Readiness Results</h1>
-            <p style="margin:8px 0 0;color:rgba(255,255,255,0.7);font-size:14px;">From ${emailConfig.fromName}</p>
-          </td>
-        </tr>
-
-        <!-- Score -->
-        <tr>
-          <td style="padding:32px 40px;text-align:center;">
-            <p style="margin:0 0 8px;font-size:14px;color:#6b7785;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Your Score</p>
-            <p style="margin:0;font-size:56px;font-weight:800;color:${scoreColor};line-height:1;">${score}<span style="font-size:24px;color:#9aa5b1;">/100</span></p>
-            <p style="margin:16px auto 0;max-width:420px;font-size:15px;color:#3d4d5c;line-height:1.6;">${verdict}</p>
-          </td>
-        </tr>
-
-        <!-- Divider -->
-        <tr><td style="padding:0 40px;"><hr style="border:none;border-top:1px solid #e8ecef;margin:0;"></td></tr>
-
-        <!-- Breakdown -->
-        <tr>
-          <td style="padding:24px 40px;">
-            <h2 style="margin:0 0 16px;font-size:18px;color:#1a2332;font-weight:700;">Breakdown by Category</h2>
-            <table width="100%" cellpadding="0" cellspacing="0">
-              ${categoryBars}
-            </table>
-          </td>
-        </tr>
-
-        <!-- CTA -->
-        <tr>
-          <td style="padding:24px 40px 32px;">
-            <table width="100%" cellpadding="0" cellspacing="0" style="background:#e8f8f5;border-radius:10px;border:1px solid #00a88e;">
-              <tr>
-                <td style="padding:24px;text-align:center;">
-                  <h3 style="margin:0 0 8px;font-size:16px;color:#1a2332;font-weight:700;">Want to go deeper?</h3>
-                  <p style="margin:0 0 16px;font-size:14px;color:#3d4d5c;line-height:1.5;">Our AI Opportunity Audit (from &pound;750) examines your actual operations and gives you a prioritised report with ROI estimates.</p>
-                  <a href="https://ajairu.dev/contact" style="display:inline-block;background:#00a88e;color:#ffffff;text-decoration:none;font-weight:700;font-size:14px;padding:14px 32px;border-radius:8px;">Book a Free Discovery Call</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- Footer -->
-        <tr>
-          <td style="padding:24px 40px;background:#f8fafb;border-top:1px solid #e8ecef;">
-            <p style="margin:0;font-size:12px;color:#9aa5b1;text-align:center;line-height:1.5;">${emailConfig.fromName} | AI Consulting for UK SMEs<br>You received this email because you completed the AI Readiness Quiz. We will not send you anything else unless you ask.</p>
-          </td>
-        </tr>
-
-      </table>
-    </td></tr>
-  </table>
-</body>
-</html>`,
+    text: `Your Software Readiness Score: ${score}/100\n\n${verdict}\n\nBreakdown:\n${categories.map(c => `${c.name}: ${c.score}/100`).join('\n')}\n\nWant to go deeper? Our Technical Consultancy (from £2,000) examines your actual operations and gives you a prioritised report with ROI estimates. Book a free call: ${BRAND.contactUrl}\n\n${emailConfig.fromName}`,
+    html: wrapEmailHtml(innerHtml, { title: `Your Software Readiness Score: ${score}/100`, preheader: `Your score is ${score}/100` }),
   });
 }
 
 async function sendGuideEmail(toEmail) {
   if (!transporter || !toEmail) return;
+
+  const guideTitle = '5 Custom Software Projects That Pay for Themselves in 12 Months';
+  const guideSummary = `<p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:15px;color:#334155;line-height:1.6;">Here is a quick summary of the five projects covered in the guide:</p>
+<ol style="margin:0 0 16px;padding-left:20px;font-family:Arial,sans-serif;font-size:14px;color:#334155;line-height:1.8;">
+<li><strong>Custom CRM That Fits Your Sales Process</strong> &ndash; 40-60% reduction in admin time</li>
+<li><strong>Automated Invoice Processing System</strong> &ndash; 70% reduction in processing time</li>
+<li><strong>Integrated Job Management Platform</strong> &ndash; 3-5 hours saved per person per week</li>
+<li><strong>Bespoke Client Portal</strong> &ndash; 50-70% reduction in client communication overhead</li>
+<li><strong>System Integration Layer</strong> &ndash; 50% reduction in data admin</li>
+</ol>`;
+
+  // PDF attachment path
+  const pdfPath = path.join(__dirname, 'public', 'guides', '5-projects-that-pay-for-themselves.pdf');
+  let attachments = [];
+  if (fs.existsSync(pdfPath)) {
+    attachments.push({
+      filename: '5-projects-that-pay-for-themselves.pdf',
+      path: pdfPath,
+      contentType: 'application/pdf',
+    });
+  } else {
+    console.error('Guide PDF not found at:', pdfPath);
+  }
+
+  const innerHtml = guideEmailInnerHtml(guideTitle, guideSummary);
+
   await transporter.sendMail({
     from: `"${emailConfig.fromName}" <${emailConfig.fromEmail}>`,
     to: toEmail,
-    subject: 'Your Free Guide: 5 Custom Software Projects That Pay for Themselves in 12 Months',
-    text: `Here is your free guide: 5 Custom Software Projects That Pay for Themselves in 12 Months.\n\n1. Customer Enquiry Triage and Response - 60-80% of enquiries get a first response in seconds\n2. Invoice and Document Processing - 70% reduction in processing time\n3. Meeting Notes and Action Item Capture - 3-5 hours saved per person per week\n4. Content Drafting for Marketing - 50-70% reduction in content creation time\n5. Internal Knowledge Base and Search - 50% reduction in time spent searching\n\nWant help implementing any of these? Book a free discovery call: https://ajairu.dev/contact\n\n${emailConfig.fromName}`,
-    html: `<h2>Your Free Guide: 5 Custom Software Projects That Pay for Themselves in 12 Months</h2><ol><li><strong>Customer Enquiry Triage and Response</strong> - 60-80% of enquiries get a first response in seconds</li><li><strong>Invoice and Document Processing</strong> - 70% reduction in processing time</li><li><strong>Meeting Notes and Action Item Capture</strong> - 3-5 hours saved per person per week</li><li><strong>Content Drafting for Marketing</strong> - 50-70% reduction in content creation time</li><li><strong>Internal Knowledge Base and Search</strong> - 50% reduction in time spent searching</li></ol><p>Want help implementing any of these? <a href="https://ajairu.dev/contact">Book a free discovery call</a>.</p><p>${emailConfig.fromName}</p>`,
+    subject: `Your Free Guide: ${guideTitle}`,
+    text: `Here is your free guide: ${guideTitle}.\n\n1. Custom CRM That Fits Your Sales Process - 40-60% reduction in admin time\n2. Automated Invoice Processing System - 70% reduction in processing time\n3. Integrated Job Management Platform - 3-5 hours saved per person per week\n4. Bespoke Client Portal - 50-70% reduction in client communication overhead\n5. System Integration Layer - 50% reduction in data admin\n\nWant help implementing any of these? Book a free discovery call: ${BRAND.contactUrl}\n\n${emailConfig.fromName}`,
+    html: wrapEmailHtml(innerHtml, { title: `Your Free Guide`, preheader: 'Your guide is attached to this email' }),
+    attachments,
   });
 }
 
 async function sendContactNotification(data) {
   if (!transporter || !emailConfig.notifyEmail) return;
+  const contentHtml = `
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;font-size:14px;color:#334155;">
+<tr><td style="padding:4px 0;"><strong>Name:</strong></td><td style="padding:4px 0;">${data.name}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Email:</strong></td><td style="padding:4px 0;">${data.email}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Phone:</strong></td><td style="padding:4px 0;">${data.phone || 'Not provided'}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Company:</strong></td><td style="padding:4px 0;">${data.company || 'Not provided'}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Company Size:</strong></td><td style="padding:4px 0;">${data.employees || 'Not provided'}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Service Interest:</strong></td><td style="padding:4px 0;">${data.service || 'Not specified'}</td></tr>
+</table>
+<h3 style="margin:16px 0 8px;font-family:'Open Sans',Arial,sans-serif;font-size:15px;color:${BRAND.navy};font-weight:700;">Message</h3>
+<p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#334155;line-height:1.6;">${data.message}</p>
+<p style="margin:12px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#94a3b8;">User ID: ${data.userId || 'N/A'}<br>Submitted: ${new Date().toISOString()}</p>`;
   await transporter.sendMail({
     from: `"${emailConfig.fromName}" <${emailConfig.fromEmail}>`,
     to: emailConfig.notifyEmail,
     subject: `New contact form submission from ${data.name}`,
     text: `New contact form submission.\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\nCompany: ${data.company || 'Not provided'}\nCompany Size: ${data.employees || 'Not provided'}\nService Interest: ${data.service || 'Not specified'}\n\nMessage:\n${data.message}\n\nUser ID: ${data.userId || 'N/A'}\nSubmitted: ${new Date().toISOString()}`,
-    html: `<h2>New contact form submission</h2><table><tr><td><strong>Name:</strong></td><td>${data.name}</td></tr><tr><td><strong>Email:</strong></td><td>${data.email}</td></tr><tr><td><strong>Phone:</strong></td><td>${data.phone || 'Not provided'}</td></tr><tr><td><strong>Company:</strong></td><td>${data.company || 'Not provided'}</td></tr><tr><td><strong>Company Size:</strong></td><td>${data.employees || 'Not provided'}</td></tr><tr><td><strong>Service Interest:</strong></td><td>${data.service || 'Not specified'}</td></tr></table><h3>Message</h3><p>${data.message}</p><p style="color:#999;font-size:0.85rem;">User ID: ${data.userId || 'N/A'}<br>Submitted: ${new Date().toISOString()}</p>`,
+    html: wrapEmailHtml(notificationInnerHtml('New Contact Form Submission', contentHtml), { title: `New contact from ${data.name}` }),
   });
 }
 
 async function sendQuizNotification(data) {
   if (!transporter || !emailConfig.notifyEmail) return;
+  const contentHtml = `
+<p style="margin:0 0 12px;font-family:Arial,sans-serif;font-size:15px;color:${BRAND.navy};font-weight:700;">Score: ${data.score}/100</p>
+<p style="margin:0 0 12px;font-family:Arial,sans-serif;font-size:14px;color:#334155;">Verdict: ${data.verdict || 'N/A'}</p>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;font-size:14px;color:#334155;">
+<tr><td style="padding:4px 0;"><strong>Email:</strong></td><td style="padding:4px 0;">${data.email || 'Not provided'}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Phone:</strong></td><td style="padding:4px 0;">${data.phone || 'Not provided'}</td></tr>
+<tr><td style="padding:4px 0;"><strong>Company:</strong></td><td style="padding:4px 0;">${data.company || 'Not provided'}</td></tr>
+</table>
+<p style="margin:12px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#94a3b8;">User ID: ${data.userId}<br>Submitted: ${new Date().toISOString()}</p>`;
   await transporter.sendMail({
     from: `"${emailConfig.fromName}" <${emailConfig.fromEmail}>`,
     to: emailConfig.notifyEmail,
     subject: `New quiz completion - Score: ${data.score}/100${data.email ? ' from ' + data.email : ''}`,
     text: `New quiz completion.\n\nScore: ${data.score}/100\nVerdict: ${data.verdict || 'N/A'}\nEmail: ${data.email || 'Not provided'}\nPhone: ${data.phone || 'Not provided'}\nCompany: ${data.company || 'Not provided'}\nUser ID: ${data.userId}\nSubmitted: ${new Date().toISOString()}`,
-    html: `<h2>New quiz completion</h2><p><strong>Score: ${data.score}/100</strong></p><p>Verdict: ${data.verdict || 'N/A'}</p><table><tr><td><strong>Email:</strong></td><td>${data.email || 'Not provided'}</td></tr><tr><td><strong>Phone:</strong></td><td>${data.phone || 'Not provided'}</td></tr><tr><td><strong>Company:</strong></td><td>${data.company || 'Not provided'}</td></tr></table><p style="color:#999;font-size:0.85rem;">User ID: ${data.userId}<br>Submitted: ${new Date().toISOString()}</p>`,
+    html: wrapEmailHtml(notificationInnerHtml('New Quiz Completion', contentHtml), { title: `Quiz completion: ${data.score}/100` }),
   });
 }
 
@@ -425,5 +429,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8091, () => {
-  console.log('API server running on http://localhost:8092');
+  console.log('API server running on http://localhost:8091');
 });
